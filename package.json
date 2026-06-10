@@ -10,7 +10,9 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.14.2",
     "fuse.js": "^6.6.2",
+    "hanzi-writer": "^3.7.3",
     "lucide-react": "^0.499.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"

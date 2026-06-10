@@ -8,5 +8,18 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5000,
     allowedHosts: true,
-  }
+  },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          search: ['fuse.js'],
+          ui: ['lucide-react', '@tanstack/react-virtual'],
+        },
+      },
+    },
+    assetsInlineLimit: 0,
+  },
 });
