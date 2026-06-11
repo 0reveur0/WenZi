@@ -1,29 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  color-scheme: light;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-slate-950 text-slate-100 min-h-screen;
-}
-
-#root {
-  min-height: 100vh;
-}
-
-button,
-input {
-  font: inherit;
-}
-
-.modal-backdrop {
-  backdrop-filter: blur(8px);
-}
