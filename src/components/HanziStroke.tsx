@@ -7,27 +7,18 @@ interface HanziStrokeProps {
 
 const HanziStroke = ({ character }: HanziStrokeProps) => {
   const targetRef = useRef<HTMLDivElement>(null);
-  const writerRef = useRef<HanziWriter | null>(null);
 
   useEffect(() => {
-    if (targetRef.current) {
-      writerRef.current = HanziWriter.create(targetRef.current, character, {
-        width: 100,
-        height: 100,
+    if (targetRef.current && character) {
+      const writer = HanziWriter.create(targetRef.current, character, {
+        width: 200,
+        height: 200,
         padding: 5,
-        strokeAnimationSpeed: 1,
+        strokeAnimationSpeed: 1, 
         delayBetweenStrokes: 200,
       });
-
-      writerRef.current.animateCharacter();
+      writer.animateCharacter();
     }
-
-    return () => {
-      if (writerRef.current) {
-        writerRef.current.target.remove();
-        writerRef.current = null;
-      }
-    };
   }, [character]);
 
   return <div ref={targetRef} />;

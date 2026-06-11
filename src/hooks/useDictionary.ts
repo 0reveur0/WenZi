@@ -1,56 +1,61 @@
-import { useEffect, useState } from 'react';
-import type { DictionaryEntry, DictionaryMeta } from '../types';
+'''import { useState, useEffect } from 'react';
 
-export interface DictionaryState {
-  words: DictionaryEntry[];
-  loading: boolean;
-  error: string | null;
-  progress: number;
+// Define the structure of a dictionary entry, mirroring the Python script's output
+export interface DictionaryEntry {
+  id: number;
+  simplified: string;
+  traditional: string;
+  pinyin: string;
+  pinyinNumbered: string;
+  meanings: string[];
+  classifiers?: string[];
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  return res.json() as Promise<T>;
+// Define the structure of the metadata file
+interface DictionaryMeta {
+  totalEntries: number;
+  chunkCount: number;
+  chunkSize: number;
 }
 
-export function useDictionary(): DictionaryState {
-  const [state, setState] = useState<DictionaryState>({
-    words: [],
-    loading: true,
-    error: null,
-    progress: 0,
-  });
+// Custom hook to load the dictionary data
+const useDictionary = () => {
+  const [entries, setEntries] = useState<DictionaryEntry[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let cancelled = false;
-
-    const load = async () => {
+    const fetchDictionary = async () => {
       try {
-        const meta = await fetchJson<DictionaryMeta>('/data/meta.json');
-        if (cancelled) return;
+        setLoading(true);
+        // Fetch the metadata to know how many chunks to load
+        const metaResponse = await fetch('/data/meta.json');
+        const meta: DictionaryMeta = await metaResponse.json();
 
-        const allWords: DictionaryEntry[] = [];
+        // Fetch all word chunks in parallel
+        const chunkPromises = [];
         for (let i = 1; i <= meta.chunkCount; i++) {
-          const chunk = await fetchJson<DictionaryEntry[]>(`/data/words-${i}.json`);
-          if (cancelled) return;
-          allWords.push(...chunk);
-          setState((prev) => ({
-            ...prev,
-            progress: Math.round((i / meta.chunkCount) * 100),
-          }));
+          chunkPromises.push(fetch(`/data/words-${i}.json`).then((res) => res.json()));
         }
 
-        setState({ words: allWords, loading: false, error: null, progress: 100 });
-      } catch (err) {
-        if (cancelled) return;
-        setState({ words: [], loading: false, error: String(err), progress: 0 });
+        // Wait for all chunks to be loaded
+        const allChunks = await Promise.all(chunkPromises);
+        
+        // Combine the chunks into a single array
+        const allEntries = allChunks.flat();
+
+        setEntries(allEntries);
+      } catch (error) {
+        console.error("Failed to load dictionary:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
-    load();
-    return () => { cancelled = true; };
+    fetchDictionary();
   }, []);
 
-  return state;
-}
+  return { entries, loading };
+};
+
+export default useDictionary;
+''

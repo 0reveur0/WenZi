@@ -1,45 +1,30 @@
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import ResultsList from './components/ResultsList';
-import HanziStroke from './components/HanziStroke';
-import Cedict from './cedict.json';
-
-// A dictionary entry
-export interface DictionaryEntry {
-  simplified: string;
-  traditional: string;
-  pinyin: string;
-  definition: string;
-}
+import WordDetail from './components/WordDetail';
+import useDictionary, { DictionaryEntry } from './hooks/useDictionary';
+import useSearch from './hooks/useSearch';
+import useDebouncedValue from './hooks/useDebouncedValue';
+import LoadingSpinner from './components/LoadingSpinner';
 
 function App() {
-  const [results, setResults] = useState<DictionaryEntry[]>([]);
+  const { entries, loading } = useDictionary();
+  const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<DictionaryEntry | null>(null);
-
-  // This function will be called when the user searches for a word
-  const onSearch = (query: string) => {
-    if (!query) {
-      setResults([]);
-      return;
-    }
-
-    const searchResults = Cedict.filter(
-      (entry) =>
-        entry.simplified.includes(query) ||
-        entry.traditional.includes(query) ||
-        entry.pinyin.includes(query)
-    );
-
-    setResults(searchResults);
-  };
+  
+  const debouncedQuery = useDebouncedValue(query, 300); // Debounce search query by 300ms
+  const searchResults = useSearch(entries, debouncedQuery);
 
   return (
     <div className="App">
-      <SearchBar onSearch={onSearch} />
-      {results.length > 0 && (
-        <ResultsList results={results} onSelect={setSelected} />
+      <SearchBar query={query} onQueryChange={setQuery} />
+      {loading && <LoadingSpinner />}
+      {!loading && (
+        <>
+          <ResultsList results={searchResults} onSelect={setSelected} />
+          {selected && <WordDetail entry={selected} />}
+        </>
       )}
-      {selected && <HanziStroke character={selected.simplified} />}
     </div>
   );
 }

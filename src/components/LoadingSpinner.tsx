@@ -1,7 +1,9 @@
-export default function LoadingSpinner() {
+const LoadingSpinner = () => {
   return (
-    <div className="flex items-center justify-center py-12">
-      <div className="inline-flex h-16 w-16 items-center justify-center rounded-full border-4 border-cyan-400/30 border-t-cyan-300 animate-spin"></div>
+    <div className="flex justify-center items-center">
+      <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
     </div>
   );
-}
+};
+
+export default LoadingSpinner;
