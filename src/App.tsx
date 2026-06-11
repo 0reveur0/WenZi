@@ -1,85 +1,113 @@
-import { useState, useMemo } from 'react';
-import SearchBar from './components/SearchBar';
-import ResultsList from './components/ResultsList';
-import WordDetail from './components/WordDetail';
+import { useState, useEffect } from 'react';
 import useDictionary, { DictionaryEntry } from './hooks/useDictionary';
-import useSearch, { SearchFilter } from './hooks/useSearch';
-import useDebouncedValue from './hooks/useDebouncedValue';
-import LoadingSpinner from './components/LoadingSpinner';
-import { ReactComponent as Logo } from './logo.svg'; // Assuming you have a logo
+import SearchBar from './components/SearchBar';
+import WordDetail from './components/WordDetail';
+import LanguageToggle from './components/LanguageToggle';
+import { useLanguage } from './contexts/LanguageContext';
+import WordCard from './components/WordCard';
 
-function App() {
-  const { entries, loading } = useDictionary();
-  const [query, setQuery] = useState('');
-  const [selected, setSelected] = useState<DictionaryEntry | null>(null);
-  const [searchFilter, setSearchFilter] = useState<SearchFilter>('all');
+const App = () => {
+  const { entries, search, fuse } = useDictionary();
+  const [searchResults, setSearchResults] = useState<DictionaryEntry[]>([]);
+  const [selectedEntry, setSelectedEntry] = useState<DictionaryEntry | null>(null);
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const { language } = useLanguage();
 
-  const debouncedQuery = useDebouncedValue(query, 300);
-  const searchResults = useSearch(entries, debouncedQuery, searchFilter);
-
-  // Show some random/popular words when there's no query
-  const initialResults = useMemo(() => {
-    if (entries.length > 0) {
-        // Just a simple slice for now, could be made more sophisticated
-        return entries.slice(0, 15);
+  useEffect(() => {
+    const storedRecents = localStorage.getItem('recentSearches');
+    if (storedRecents) {
+      setRecentSearches(JSON.parse(storedRecents));
     }
-    return [];
-  }, [entries]);
+  }, []);
 
-  return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
-      <header className="flex flex-col items-center justify-center py-6 sm:py-10 px-4">
-        <Logo className="w-24 h-24 mb-4 text-blue-500" />
-        <h1 className="text-4xl sm:text-5xl font-bold text-center">Centi Dictionary</h1>
-        <p className="mt-2 text-lg text-gray-600 dark:text-gray-400 text-center">A modern Chinese-Vietnamese Dictionary.</p>
-      </header>
+  const updateRecentSearches = (query: string) => {
+    const updatedRecents = [query, ...recentSearches.filter(q => q !== query)].slice(0, 5);
+    setRecentSearches(updatedRecents);
+    localStorage.setItem('recentSearches', JSON.stringify(updatedRecents));
+  };
 
-      <main className="container mx-auto px-4 pb-16">
-        <div className="sticky top-0 z-10 py-4 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
-             <SearchBar 
-                query={query} 
-                onQueryChange={setQuery} 
-                filter={searchFilter} 
-                onFilterChange={setSearchFilter} 
-             />
-        </div>
-
-        {loading && <div className="mt-8"><LoadingSpinner /></div>}
-
-        {!loading && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-            <div className="md:col-span-1">
-              <ResultsList 
-                results={query ? searchResults : initialResults} 
-                onSelect={setSelected} 
-                selectedEntry={selected}
-              />
-            </div>
-            <div className="md:col-span-2">
-              {selected && <WordDetail entry={selected} />}
-              {!selected && (
-                <div className="p-6 text-center text-gray-500 dark:text-gray-400">
-                  <p>Search for a word or select one from the list to see details.</p>
-                </div>
-              )}
-            </div>
+  const handleSearch = (query: string) => {
+    if (!fuse) return;
+    if (query) {
+      const results = fuse.search(query).map(r => r.item);
+      setSearchResults(results);
+      updateRecentSearches(query);
+    } else {
+      setSearchResults([]);
+    }
+    setSelectedEntry(null);
+  };
+  
+  const InitialState = () => (
+    <div className="text-center pt-8">
+      {recentSearches.length > 0 && (
+        <div className="mb-12">
+          <h2 className="text-xl font-bold mb-4">{language === 'en' ? 'Recent Searches' : '最近搜索'}</h2>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {recentSearches.map(term => (
+              <button 
+                key={term}
+                onClick={() => handleSearch(term)} 
+                className="bg-secondary text-secondary-foreground hover:bg-accent px-4 py-2 rounded-lg text-md"
+              >
+                {term}
+              </button>
+            ))}
           </div>
-        )}
-      </main>
-
-      <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
-        <p>Centi Dictionary</p>
-        <p className="mt-1">
-          Data from 
-          <a href="https://github.com/makemeahanzi/makemeahanzi" className="underline hover:text-blue-500"> makemeahanzi</a> & 
-          <a href="https://github.com/tatoeba/tatoeba2" className="underline hover:text-blue-500"> Tatoeba</a>.
-        </p>
-        <p className="mt-1">
-          <a href="https://github.com/your-repo/centi" className="underline hover:text-blue-500">GitHub Repository</a>
-        </p>
-      </footer>
+        </div>
+      )}
+      
+      <div className="mb-12">
+        <h2 className="text-xl font-bold mb-4">{language === 'en' ? 'Random Words' : '随机词语'}</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {entries.slice(0, 4).map(entry => (
+              <WordCard key={entry.simplified} entry={entry} onSelect={setSelectedEntry} />
+          ))}
+        </div>
+      </div>
     </div>
   );
-}
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center space-x-8">
+              <h1 className="text-3xl font-bold text-primary">Centi</h1>
+              <nav className="hidden md:flex items-center space-x-6 text-lg">
+                <a href="#" className="font-semibold text-primary">Word</a>
+                <a href="#" className="text-muted-foreground hover:text-primary">Hanzi</a>
+                <a href="#" className="text-muted-foreground hover:text-primary">Examples</a>
+                <a href="#" className="text-muted-foreground hover:text-primary">Stroke</a>
+              </nav>
+            </div>
+            <LanguageToggle />
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <SearchBar onSearch={handleSearch} />
+        
+        {searchResults.length === 0 ? (
+          <InitialState />
+        ) : (
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {searchResults.map(entry => (
+              <WordCard key={entry.simplified} entry={entry} onSelect={setSelectedEntry} />
+            ))}
+          </div>
+        )}
+
+      </main>
+
+      {selectedEntry && 
+        <WordDetail entry={selectedEntry} onClose={() => setSelectedEntry(null)} />
+      }
+    </div>
+  );
+};
 
 export default App;
+

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { Mic, Pen, Search } from './icons';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -6,29 +8,54 @@ interface SearchBarProps {
 
 const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [query, setQuery] = useState('');
+  const { language } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch(query);
   };
 
+  const placeholder = language === 'en' 
+    ? "Search Hanzi / Pinyin / English"
+    : "搜索汉字 / Pinyin";
+
+  const hotSearches = ['你好', '谢谢', '爱', '学习', '中国'];
+
   return (
-    <form onSubmit={handleSubmit} className="mb-6">
-      <div className="relative">
+    <div className="w-full max-w-2xl mx-auto">
+      <form onSubmit={handleSubmit} className="relative mb-4">
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
+          <Search />
+        </div>
         <input
           type="search"
-          placeholder="Search for a word..."
+          placeholder={placeholder}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full px-4 py-3 text-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-500"
+          className="w-full bg-input text-foreground pl-14 pr-24 py-4 text-lg rounded-full border-2 border-border focus:outline-none focus:ring-2 focus:ring-primary"
         />
-        <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-4">
+          <button type="button" className="text-muted-foreground hover:text-primary">
+            <Mic />
+          </button>
+          <button type="button" className="text-muted-foreground hover:text-primary">
+            <Pen />
+          </button>
+        </div>
+      </form>
+      <div className="flex items-center justify-center space-x-4">
+        <span className="text-muted-foreground">{language === 'en' ? 'Hot Search:' : '热门搜索:'}</span>
+        {hotSearches.map((term) => (
+          <button 
+            key={term}
+            onClick={() => onSearch(term)} 
+            className="bg-secondary text-secondary-foreground hover:bg-accent px-3 py-1 rounded-full text-sm"
+          >
+            {term}
+          </button>
+        ))}
       </div>
-    </form>
+    </div>
   );
 };
 
