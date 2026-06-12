@@ -1,22 +1,47 @@
-# Centi - A Chinese-English Dictionary
+# WenZi - Từ điển Hán Việt
 
-![Centi](https://img.shields.io/badge/Centi-%E4%B8%AD%E6%96%87-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen)
+WenZi là một ứng dụng từ điển Hán Việt đơn giản, giúp bạn tra cứu từ vựng tiếng Trung một cách nhanh chóng và dễ dàng.
 
-**A fast, powerful, and modern static Chinese-English dictionary • Over 125,000 entries**
+## Tính năng chính
 
-Centi is a modern Chinese-English dictionary that runs entirely on static hosting (like GitHub Pages), designed for serious learners who need a fast and comprehensive tool.
+*   Tra cứu từ Hán Việt và nghĩa tiếng Việt.
+*   Hiển thị pinyin và chữ phồn thể.
+*   Giao diện song ngữ (tiếng Anh/tiếng Việt).
 
-### ✨ Features
+## Hướng dẫn cài đặt
 
-- **125,000+** entries from the CC-CEDICT project (updated regularly)
-- Fast search by **Hanzi** (simplified & traditional), **Pinyin**, and **English meaning**
-- Beautiful **Stroke Order Animation**
-- Clean, user-friendly, and mobile-responsive interface
-- Fully static, ensuring fast load times and offline capability (after initial cache)
-- No ads, no trackers
+1.  Clone a repository:
 
-### 🚀 Try it Live
+    ```bash
+    git clone https://github.com/your-username/wenzi.git
+    ```
 
-**[→ Open Centi](https://yourusername.github.io/centi)** *(Link to be updated after deployment)*
+2.  Di chuyển vào thư mục dự án:
+
+    ```bash
+    cd wenzi
+    ```
+
+3.  Cài đặt dependencies:
+
+    ```bash
+    npm install
+    ```
+
+## Hướng dẫn chạy local
+
+Để chạy dự án trên máy của bạn, sử dụng lệnh sau:
+
+```bash
+npm run dev
+```
+
+Ứng dụng sẽ có sẵn tại `http://localhost:5173`.
+
+## Cách đóng góp
+
+Chúng tôi hoan nghênh mọi đóng góp! Vui lòng tạo một Pull Request để đóng góp vào dự án.
+
+## Giấy phép
+
+Dự án này được cấp phép theo Giấy phép MIT. Xem chi tiết trong file `LICENSE`.

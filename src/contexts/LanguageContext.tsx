@@ -1,39 +1,31 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, ReactNode } from 'react';
 
-export type Language = 'en' | 'zh';
+type Language = 'en' | 'vi';
 
 interface LanguageContextType {
-  language: Language;
-  toggleLanguage: () => void;
+    language: Language;
+    toggleLanguage: () => void;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-};
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+    const [language, setLanguage] = useState<Language>(() => {
+        const storedLanguage = localStorage.getItem('language');
+        return (storedLanguage === 'en' || storedLanguage === 'vi') ? storedLanguage : 'vi';
+    });
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    const storedLang = localStorage.getItem('language') as Language;
-    return storedLang || 'en';
-  });
+    useEffect(() => {
+        localStorage.setItem('language', language);
+    }, [language]);
 
-  useEffect(() => {
-    localStorage.setItem('language', language);
-  }, [language]);
+    const toggleLanguage = () => {
+        setLanguage(prevLanguage => (prevLanguage === 'vi' ? 'en' : 'vi'));
+    };
 
-  const toggleLanguage = () => {
-    setLanguage((prevLang) => (prevLang === 'en' ? 'zh' : 'en'));
-  };
-
-  return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+    return (
+        <LanguageContext.Provider value={{ language, toggleLanguage }}>
+            {children}
+        </LanguageContext.Provider>
+    );
 };
