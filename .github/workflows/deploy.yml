@@ -1,1 +1,49 @@
-name: Deploy to GitHub Pages\n\non:\n  push:\n    branches:\n      - main # Or your default branch\n\njobs:\n  build-and-deploy:\n    runs-on: ubuntu-latest\n\n    steps:      - name: Checkout \ud83d\udc4b\n        uses: actions/checkout@v3\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v3\n        with:\n          node-version: 18 # Or your preferred node version\n\n      - name: Install dependencies\n        run: npm install\n\n      - name: Build project\n        run: npm run build\n        env:\n          VITE_BASE_PATH: /centi/ # The name of your repo\n\n      - name: Deploy to GitHub Pages \ud83d\ude80\n        uses: JamesIves/github-pages-deploy-action@v4\n        with:\n          branch: gh-pages # The branch the action should deploy to.\n          folder: dist # The folder the action should deploy.\n          clean: true # Automatically remove deleted files from the deploy branch\n
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: "main" # Hoặc "master" tùy vào tên nhánh chính của bạn
+
+# Cấp quyền cho GitHub Actions deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps: deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Thư mục xuất ra của Vite
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

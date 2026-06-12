@@ -3,17 +3,10 @@ import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
-export default defineConfig(({
-  command
-}) => {
+export default defineConfig(() => {
   const config = {
     plugins: [react(), svgr()],
-    base: '/',
-  }
-
-  if (command === 'build') {
-    //- Set base path for github pages
-    config.base = '/centi/' // Your repo name
+    base: '/', // Luôn để là '/' cho cả môi trường dev và build khi dùng custom domain
   }
 
   return config
