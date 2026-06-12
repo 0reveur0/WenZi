@@ -2,8 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Đảm bảo tên nhánh trùng với nhánh chính của bạn (main hoặc master)
+    branches: ["main"]
 
+# Cấp quyền tối đa cho việc deploy Pages
 permissions:
   contents: read
   pages: write
@@ -19,6 +20,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Sửa triệt để cái cảnh báo Node.js 20 của GitHub
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,17 +29,14 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Đã sửa lỗi typo node-node-version
+          node-version: 24 # Lên thẳng bản 24 mới nhất cho hợp thời đại
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install # Đổi từ npm ci sang npm install để linh hoạt hơn nếu thiếu file lock
+        run: npm install
 
       - name: Build
         run: npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
