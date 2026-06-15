@@ -20,7 +20,7 @@ const { backHref } = Astro.props;
       </a>
     ) : (
       <a href="/" class="brand" aria-label="WenZi — Trang chủ">
-        <img src="/favicon.png" alt="" width="28" height="28" />
+        <img src="/favicon.svg" alt="" width="28" height="28" class="brand-logo" />
         <span class="brand-name">WenZi</span>
         <span class="brand-han" aria-hidden="true">文字</span>
       </a>
@@ -58,7 +58,7 @@ const { backHref } = Astro.props;
     text-decoration: none; color: var(--color-text);
     margin-right: auto;
   }
-  .brand img { border-radius: 6px; }
+  .brand-logo { border-radius: 50%; width: 28px; height: 28px; flex-shrink: 0; }
   .brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; }
   .brand-han  { font-size: .9rem; color: var(--color-text-muted); }
 
