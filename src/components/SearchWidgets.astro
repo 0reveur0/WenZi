@@ -1,7 +1,7 @@
 ---
 /**
  * SearchWidgets — Từ khóa hot + Lịch sử tìm kiếm
- * Redesigned: clean pill tags, illustrated SVG empty state, auto-save to localStorage.
+ * Auth-aware history (localStorage auth), no SVG / img / icon / emoji.
  */
 
 const HOT_KEYWORDS = [
@@ -23,16 +23,8 @@ const HOT_KEYWORDS = [
   <!-- ── Card 1: Từ khóa hot ───────────────────────────────────────────── -->
   <div class="sw-card">
     <div class="sw-header">
-      <div class="sw-title-row">
-        <span class="sw-icon sw-icon--fire" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
-          </svg>
-        </span>
-        <h2 class="sw-title">Từ khóa hot</h2>
-      </div>
-      <span class="sw-count-badge">{HOT_KEYWORDS.length}</span>
+      <h2 class="sw-title">Từ khóa hot</h2>
+      <span class="sw-badge">{HOT_KEYWORDS.length}</span>
     </div>
 
     <div class="sw-tags-wrap" role="list" aria-label="Danh sách từ khóa hot">
@@ -56,72 +48,34 @@ const HOT_KEYWORDS = [
   <!-- ── Card 2: Lịch sử tìm kiếm ─────────────────────────────────────── -->
   <div class="sw-card">
     <div class="sw-header">
-      <div class="sw-title-row">
-        <span class="sw-icon sw-icon--clock" aria-hidden="true">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </span>
-        <h2 class="sw-title">Lịch sử</h2>
-      </div>
-      <button
-        class="sw-clear-btn"
-        id="sw-clear-hist"
-        type="button"
-        aria-label="Xóa lịch sử tìm kiếm"
-        hidden
-      >Xóa tất cả</button>
+      <h2 class="sw-title">Lịch sử</h2>
+      <button class="sw-clear-btn" id="sw-clear-hist" type="button"
+        aria-label="Xóa lịch sử tìm kiếm" hidden>Xóa tất cả</button>
     </div>
 
-    <!-- Tags — filled by JS -->
-    <div
-      class="sw-tags-wrap"
-      id="sw-hist-tags"
-      role="list"
-      aria-label="Lịch sử tìm kiếm"
-      aria-live="polite"
-    ></div>
-
-    <!-- Empty state — SVG illustration, no <img> -->
-    <div class="sw-empty" id="sw-hist-empty">
-      <div class="sw-empty-art" aria-hidden="true">
-        <!-- Outer clock ring -->
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
-          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Shadow / glow disc -->
-          <circle cx="28" cy="30" r="18" fill="#e2e8f0" opacity=".55"/>
-          <!-- Main clock face -->
-          <circle cx="28" cy="27" r="17" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Tick marks -->
-          <line x1="28" y1="12" x2="28" y2="15" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="28" y1="39" x2="28" y2="42" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="11" y1="27" x2="14" y2="27" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="42" y1="27" x2="45" y2="27" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- Hour hand -->
-          <line x1="28" y1="27" x2="28" y2="19" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
-          <!-- Minute hand -->
-          <line x1="28" y1="27" x2="35" y2="27" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-          <!-- Center dot -->
-          <circle cx="28" cy="27" r="2" fill="#64748b"/>
-          <!-- Arrow: history / back-in-time arc -->
-          <path d="M16 20 A14 14 0 0 0 15 27" stroke="#94a3b8" stroke-width="1.4"
-            stroke-linecap="round" fill="none"/>
-          <polyline points="13.5,18.5 16,20 18,17.5" stroke="#94a3b8"
-            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-      </div>
-      <p class="sw-empty-title">Chưa có dữ liệu</p>
-      <p class="sw-empty-sub">Tìm kiếm để lưu tự động</p>
+    <!-- State A: not logged in (default; hidden by JS when logged in) -->
+    <div class="sw-guest-notice" id="sw-guest-notice">
+      <p class="sw-guest-title">Yêu cầu đăng nhập</p>
+      <p class="sw-guest-body">
+        Vui lòng đăng nhập tài khoản để hệ thống kích hoạt tính năng lưu giữ
+        dữ liệu lịch sử tra cứu của bạn.
+      </p>
     </div>
+
+    <!-- State B: logged in, empty (hidden by default) -->
+    <p class="sw-logged-empty" id="sw-logged-empty" hidden>
+      Hệ thống chưa ghi nhận dữ liệu lịch sử tra cứu của bạn.
+    </p>
+
+    <!-- State C: logged in, has data — tags rendered by JS -->
+    <div class="sw-tags-wrap" id="sw-hist-tags"
+      role="list" aria-label="Lịch sử tìm kiếm" aria-live="polite"></div>
   </div>
 
 </div>
 
 <!-- ──────────────────────── STYLES ──────────────────────────────────── -->
 <style>
-  /* 2-col grid: stack on mobile, side-by-side on ≥600px */
   .sw-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -142,7 +96,7 @@ const HOT_KEYWORDS = [
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    min-height: 180px;
+    min-height: 160px;
   }
 
   /* Header row */
@@ -152,26 +106,12 @@ const HOT_KEYWORDS = [
     justify-content: space-between;
     gap: .5rem;
   }
-  .sw-title-row {
-    display: flex;
-    align-items: center;
-    gap: .4rem;
-  }
-  .sw-icon {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .sw-icon--fire  { color: #f97316; }
-  .sw-icon--clock { color: var(--color-text-muted); }
   .sw-title {
     font-size: .93rem;
     font-weight: 700;
     color: var(--color-text);
   }
-
-  /* Count badge */
-  .sw-count-badge {
+  .sw-badge {
     font-size: .68rem;
     font-weight: 700;
     background: var(--color-primary);
@@ -183,8 +123,6 @@ const HOT_KEYWORDS = [
     line-height: 1.6;
     flex-shrink: 0;
   }
-
-  /* Clear button */
   .sw-clear-btn {
     font-size: .72rem;
     font-weight: 500;
@@ -208,7 +146,7 @@ const HOT_KEYWORDS = [
     align-content: flex-start;
   }
 
-  /* Tag — shared base */
+  /* Tag — shared */
   :global(.sw-tag) {
     display: inline-flex;
     align-items: center;
@@ -222,6 +160,7 @@ const HOT_KEYWORDS = [
     line-height: 1.25;
     white-space: nowrap;
     -webkit-tap-highlight-color: transparent;
+    background: none;
   }
   :global(.sw-tag:active) { transform: scale(.93); }
 
@@ -240,9 +179,8 @@ const HOT_KEYWORDS = [
     letter-spacing: .02em;
   }
   :global(.sw-tag-sep) {
-    color: var(--color-border);
+    color: #cbd5e1;
     font-size: .72rem;
-    line-height: 1;
   }
   :global(.sw-tag-vi) {
     font-size: .73rem;
@@ -251,7 +189,7 @@ const HOT_KEYWORDS = [
   }
   :global(.sw-tag--hot:hover .sw-tag-sep),
   :global(.sw-tag--hot:hover .sw-tag-vi) {
-    color: color-mix(in srgb, var(--color-primary) 65%, transparent);
+    color: color-mix(in srgb, var(--color-primary) 60%, transparent);
   }
 
   /* History tag */
@@ -267,7 +205,7 @@ const HOT_KEYWORDS = [
     color: var(--color-primary);
   }
 
-  /* Remove ×  button inside history tag */
+  /* × remove button inside history tag */
   :global(.sw-tag-remove) {
     display: inline-flex;
     align-items: center;
@@ -277,47 +215,69 @@ const HOT_KEYWORDS = [
     border: none;
     background: #e2e8f0;
     color: #94a3b8;
-    cursor: pointer;
-    font-size: 10px;
+    font-size: .65rem;
+    font-weight: 700;
     line-height: 1;
     padding: 0;
+    cursor: pointer;
     transition: background .12s, color .12s;
     flex-shrink: 0;
   }
   :global(.sw-tag-remove:hover) { background: #ef4444; color: #fff; }
 
-  /* Empty state */
-  .sw-empty {
+  /* ── State A: not logged in ── */
+  .sw-guest-notice {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .15rem;
-    padding: .4rem 1rem 1.1rem;
+    gap: .35rem;
+    background: #f9fafb;
+    border: 1.5px dashed #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
     text-align: center;
   }
-  .sw-empty-art {
-    margin-bottom: .4rem;
-    filter: drop-shadow(0 2px 6px rgba(100,116,139,.12));
-  }
-  .sw-empty-title {
-    font-size: .83rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
-  }
-  .sw-empty-sub {
+  .sw-guest-title {
     font-size: .72rem;
-    color: var(--color-border);
-    margin-top: .1rem;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+  }
+  .sw-guest-body {
+    font-size: .8rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── State B: logged in, empty ── */
+  .sw-logged-empty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .83rem;
+    color: #9ca3af;
+    font-style: italic;
+    text-align: center;
+    padding: 1.25rem .5rem;
+    margin: 0;
   }
 </style>
 
 <!-- ──────────────────────── SCRIPT ──────────────────────────────────── -->
 <script>
+  const AUTH_KEY  = 'wz-user';
   const QHIST_KEY = 'wz-qhistory';
   const MAX_QHIST = 10;
   const MIN_QLEN  = 2;
+
+  // ── Auth helpers ──────────────────────────────────────────────────────────
+  function getUser(): string | null {
+    try { return localStorage.getItem(AUTH_KEY); }
+    catch { return null; }
+  }
 
   // ── Storage helpers ───────────────────────────────────────────────────────
   function loadQHist(): string[] {
@@ -330,7 +290,7 @@ const HOT_KEYWORDS = [
   }
   function addQuery(q: string) {
     q = q.trim();
-    if (q.length < MIN_QLEN) return;
+    if (!getUser() || q.length < MIN_QLEN) return;
     const arr = loadQHist().filter(x => x !== q);
     arr.unshift(q);
     saveQHist(arr.slice(0, MAX_QHIST));
@@ -358,23 +318,39 @@ const HOT_KEYWORDS = [
     setTimeout(() => input.focus(), 280);
   }
 
-  // ── Render history ────────────────────────────────────────────────────────
+  // ── Render history section ────────────────────────────────────────────────
   function renderHistory() {
-    const tagsEl   = document.getElementById('sw-hist-tags')!;
-    const emptyEl  = document.getElementById('sw-hist-empty')!;
-    const clearBtn = document.getElementById('sw-clear-hist') as HTMLButtonElement;
-    const hist     = loadQHist();
+    const guestEl    = document.getElementById('sw-guest-notice')!;
+    const emptyEl    = document.getElementById('sw-logged-empty')!;
+    const tagsEl     = document.getElementById('sw-hist-tags')!;
+    const clearBtn   = document.getElementById('sw-clear-hist') as HTMLButtonElement;
 
-    if (hist.length === 0) {
-      tagsEl.innerHTML     = '';
-      emptyEl.style.display = '';
-      clearBtn.hidden      = true;
+    const user = getUser();
+
+    if (!user) {
+      // State A: not logged in
+      guestEl.hidden = false;
+      emptyEl.hidden = true;
+      tagsEl.innerHTML = '';
+      clearBtn.hidden  = true;
       return;
     }
 
-    emptyEl.style.display = 'none';
-    clearBtn.hidden       = false;
-    tagsEl.innerHTML      = '';
+    guestEl.hidden = true;
+    const hist = loadQHist();
+
+    if (hist.length === 0) {
+      // State B: logged in, empty
+      emptyEl.hidden   = false;
+      tagsEl.innerHTML = '';
+      clearBtn.hidden  = true;
+      return;
+    }
+
+    // State C: logged in, has data
+    emptyEl.hidden  = true;
+    clearBtn.hidden = false;
+    tagsEl.innerHTML = '';
 
     hist.forEach(q => {
       const btn = document.createElement('button');
@@ -386,19 +362,13 @@ const HOT_KEYWORDS = [
       btn.innerHTML = `
         <span lang="auto">${q}</span>
         <span class="sw-tag-remove" data-remove="${q}"
-          aria-label="Xóa ${q}" title="Xóa" role="button">
-          <svg width="8" height="8" viewBox="0 0 10 10" fill="none"
-            stroke="currentColor" stroke-width="2.2"
-            stroke-linecap="round" aria-hidden="true">
-            <path d="M2 2l6 6M8 2l-6 6"/>
-          </svg>
-        </span>
+          aria-label="Xóa ${q}" title="Xóa" role="button">✕</span>
       `;
       tagsEl.appendChild(btn);
     });
   }
 
-  // ── Wire hot keyword tags (server-rendered) ───────────────────────────────
+  // ── Wire hot keyword tags ─────────────────────────────────────────────────
   document.querySelectorAll<HTMLButtonElement>('.sw-tag--hot').forEach(btn => {
     btn.addEventListener('click', () => {
       const q = btn.dataset.query ?? '';
@@ -421,15 +391,18 @@ const HOT_KEYWORDS = [
   // ── Clear all button ──────────────────────────────────────────────────────
   document.getElementById('sw-clear-hist')?.addEventListener('click', clearQHist);
 
-  // ── Auto-save typed queries after 1.4 s of inactivity ────────────────────
+  // ── Auto-save queries after 1.4 s of inactivity (only when logged in) ────
   let saveTimer: ReturnType<typeof setTimeout> | null = null;
   document.getElementById('search-input')?.addEventListener('input', e => {
     const q = (e.target as HTMLInputElement).value.trim();
     if (saveTimer) clearTimeout(saveTimer);
-    if (q.length >= MIN_QLEN) {
+    if (getUser() && q.length >= MIN_QLEN) {
       saveTimer = setTimeout(() => addQuery(q), 1400);
     }
   });
+
+  // ── React to auth changes from Header ────────────────────────────────────
+  document.addEventListener('wz:authchange', () => renderHistory());
 
   // ── Init ──────────────────────────────────────────────────────────────────
   renderHistory();

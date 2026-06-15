@@ -43,12 +43,46 @@ const { backHref, activePage = 'home' } = Astro.props;
       </a>
     </nav>
 
-    <!-- Right: Controls -->
+    <!-- Right: Controls + Auth -->
     <div class="controls">
       <ThemeToggle />
+
+      <!-- Auth: guest state (default visible, hidden by JS when logged in) -->
+      <div class="auth-guest" id="auth-guest">
+        <button class="btn-register" id="btn-register" type="button">Đăng ký</button>
+        <button class="btn-login" id="btn-login" type="button">Đăng nhập</button>
+      </div>
+
+      <!-- Auth: logged-in state (hidden by default, shown by JS) -->
+      <div class="auth-user" id="auth-user" hidden>
+        <span class="auth-username" id="auth-username"></span>
+        <button class="btn-logout" id="btn-logout" type="button">Đăng xuất</button>
+      </div>
     </div>
   </div>
 </header>
+
+<!-- ── Login / Register Modal ───────────────────────────────────────────── -->
+<div class="modal-backdrop" id="auth-modal" aria-modal="true" role="dialog"
+  aria-labelledby="modal-heading" hidden>
+  <div class="modal-box">
+    <p class="modal-label" id="modal-heading">Tên hiển thị</p>
+    <input
+      class="modal-input"
+      id="modal-name-input"
+      type="text"
+      placeholder="Nhập tên của bạn..."
+      maxlength="32"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <p class="modal-hint" id="modal-error" hidden>Vui lòng nhập ít nhất 2 ký tự.</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel" type="button">Hủy</button>
+      <button class="modal-confirm" id="modal-confirm" type="button">Xác nhận</button>
+    </div>
+  </div>
+</div>
 
 <style>
   .header {
@@ -135,14 +169,8 @@ const { backHref, activePage = 'home' } = Astro.props;
     background: var(--color-primary-dim);
     text-decoration: none;
   }
-  .nav-link--active {
-    background: var(--color-primary);
-    color: #fff !important;
-  }
-  .nav-link--active:hover {
-    background: var(--color-primary-hover);
-    color: #fff;
-  }
+  .nav-link--active { background: var(--color-primary); color: #fff !important; }
+  .nav-link--active:hover { background: var(--color-primary-hover); color: #fff; }
   .nav-icon { flex-shrink: 0; }
 
   /* Controls */
@@ -154,7 +182,228 @@ const { backHref, activePage = 'home' } = Astro.props;
     margin-left: auto;
   }
 
+  /* ── Auth buttons ── */
+  .auth-guest {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+  }
+  .btn-register {
+    background: none;
+    border: none;
+    font-size: .83rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: .4rem .6rem;
+    border-radius: 8px;
+    transition: color .15s;
+    white-space: nowrap;
+  }
+  .btn-register:hover { color: var(--color-text); }
+  .btn-login {
+    background: #2b4c7e;
+    color: #fff;
+    border: none;
+    font-size: .83rem;
+    font-weight: 600;
+    padding: .42rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .15s;
+    white-space: nowrap;
+  }
+  .btn-login:hover { background: #1e3559; }
+
+  /* Logged-in strip */
+  .auth-user {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+  }
+  .auth-username {
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--color-text);
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .btn-logout {
+    background: none;
+    border: none;
+    font-size: .8rem;
+    color: #ef4444;
+    cursor: pointer;
+    padding: .3rem .5rem;
+    border-radius: 6px;
+    transition: color .15s;
+    white-space: nowrap;
+    margin-left: .35rem;
+  }
+  .btn-logout:hover { color: #b91c1c; }
+
+  /* ── Modal ── */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(2px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fadeIn .15s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal-box {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 1.75rem 1.75rem 1.5rem;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+    animation: slideUp .18s ease;
+  }
+  @keyframes slideUp { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .modal-label {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+  .modal-input {
+    border: 1.5px solid var(--color-border);
+    border-radius: 10px;
+    padding: .65rem .9rem;
+    font-size: .92rem;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: var(--color-bg);
+    outline: none;
+    transition: border-color .15s;
+    width: 100%;
+  }
+  .modal-input:focus { border-color: #2b4c7e; }
+  .modal-hint {
+    font-size: .78rem;
+    color: #ef4444;
+    margin: -.4rem 0 0;
+  }
+  .modal-actions {
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+  }
+  .modal-cancel {
+    background: none;
+    border: 1.5px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: .85rem;
+    font-weight: 500;
+    padding: .5rem 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color .15s, color .15s;
+  }
+  .modal-cancel:hover { border-color: var(--color-text-muted); color: var(--color-text); }
+  .modal-confirm {
+    background: #2b4c7e;
+    color: #fff;
+    border: none;
+    font-size: .85rem;
+    font-weight: 600;
+    padding: .5rem 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .modal-confirm:hover { background: #1e3559; }
+
   @media (max-width: 480px) {
-    .nav-link span { display: none; }
+    .btn-register { display: none; }
+    .auth-username { max-width: 72px; }
   }
 </style>
+
+<script>
+  const AUTH_KEY = 'wz-user';
+
+  function getUser(): string | null {
+    try { return localStorage.getItem(AUTH_KEY); }
+    catch { return null; }
+  }
+  function setUser(name: string) {
+    try { localStorage.setItem(AUTH_KEY, name); }
+    catch { /* private mode */ }
+  }
+  function clearUser() {
+    try { localStorage.removeItem(AUTH_KEY); }
+    catch { /* */ }
+  }
+
+  const guestEl    = document.getElementById('auth-guest')!;
+  const userEl     = document.getElementById('auth-user')!;
+  const usernameEl = document.getElementById('auth-username')!;
+  const modal      = document.getElementById('auth-modal')!;
+  const nameInput  = document.getElementById('modal-name-input') as HTMLInputElement;
+  const errorEl    = document.getElementById('modal-error')!;
+
+  // ── Sync UI to auth state ─────────────────────────────────────────────────
+  function syncAuthUI() {
+    const user = getUser();
+    if (user) {
+      guestEl.hidden = true;
+      userEl.hidden  = false;
+      usernameEl.textContent = `Tài khoản: ${user}`;
+    } else {
+      guestEl.hidden = false;
+      userEl.hidden  = true;
+    }
+    // Notify SearchWidgets to re-render
+    document.dispatchEvent(new CustomEvent('wz:authchange'));
+  }
+
+  // ── Modal helpers ─────────────────────────────────────────────────────────
+  function openModal() {
+    nameInput.value   = '';
+    errorEl.hidden    = true;
+    modal.hidden      = false;
+    requestAnimationFrame(() => nameInput.focus());
+  }
+  function closeModal() {
+    modal.hidden = true;
+  }
+  function confirmLogin() {
+    const name = nameInput.value.trim();
+    if (name.length < 2) { errorEl.hidden = false; nameInput.focus(); return; }
+    setUser(name);
+    closeModal();
+    syncAuthUI();
+  }
+
+  // ── Wire buttons ──────────────────────────────────────────────────────────
+  document.getElementById('btn-login')?.addEventListener('click', openModal);
+  document.getElementById('btn-register')?.addEventListener('click', openModal);
+  document.getElementById('modal-cancel')?.addEventListener('click', closeModal);
+  document.getElementById('modal-confirm')?.addEventListener('click', confirmLogin);
+  nameInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') confirmLogin();
+    if (e.key === 'Escape') closeModal();
+  });
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  document.getElementById('btn-logout')?.addEventListener('click', () => {
+    clearUser();
+    syncAuthUI();
+  });
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+  syncAuthUI();
+</script>
