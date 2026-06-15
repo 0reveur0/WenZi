@@ -1,37 +1,7618 @@
 [
   {
+    "simplified": "儿",
+    "traditional": "兒",
+    "pinyin": "r",
+    "hanviet": "nhi",
+    "vietnamese": "non-syllabic diminutive suffix; retroflex final"
+  },
+  {
+    "simplified": "冉",
+    "traditional": "冉",
+    "pinyin": "rǎn",
+    "hanviet": "",
+    "vietnamese": "surname Ran"
+  },
+  {
+    "simplified": "冉",
+    "traditional": "冉",
+    "pinyin": "rǎn",
+    "hanviet": "",
+    "vietnamese": "edge of a tortoiseshell; used in 冉冉[ran3 ran3]"
+  },
+  {
+    "simplified": "染",
+    "traditional": "染",
+    "pinyin": "rǎn",
+    "hanviet": "",
+    "vietnamese": "to dye; to catch (a disease)"
+  },
+  {
+    "simplified": "然",
+    "traditional": "然",
+    "pinyin": "rán",
+    "hanviet": "",
+    "vietnamese": "correct; right"
+  },
+  {
+    "simplified": "燃",
+    "traditional": "燃",
+    "pinyin": "rán",
+    "hanviet": "",
+    "vietnamese": "to burn; to ignite"
+  },
+  {
+    "simplified": "珃",
+    "traditional": "珃",
+    "pinyin": "rǎn",
+    "hanviet": "",
+    "vietnamese": "(jade)"
+  },
+  {
+    "simplified": "䎃",
+    "traditional": "䎃",
+    "pinyin": "rǎn",
+    "hanviet": "",
+    "vietnamese": "(ornithology) down"
+  },
+  {
+    "simplified": "肰",
+    "traditional": "肰",
+    "pinyin": "rán",
+    "hanviet": "",
+    "vietnamese": "dog meat; old variant of 然[ran2]"
+  },
+  {
+    "simplified": "苒",
+    "traditional": "苒",
+    "pinyin": "rǎn",
+    "hanviet": "",
+    "vietnamese": "luxuriant growth; passing (of time)"
+  },
+  {
+    "simplified": "蚺",
+    "traditional": "蚺",
+    "pinyin": "rán",
+    "hanviet": "",
+    "vietnamese": "boa"
+  },
+  {
+    "simplified": "蛅",
+    "traditional": "蛅",
+    "pinyin": "rán",
+    "hanviet": "",
+    "vietnamese": "a caterpillar"
+  },
+  {
+    "simplified": "髯",
+    "traditional": "髯",
+    "pinyin": "rán",
+    "hanviet": "",
+    "vietnamese": "beard; whiskers"
+  },
+  {
+    "simplified": "燃爆",
+    "traditional": "燃爆",
+    "pinyin": "rán bào",
+    "hanviet": "",
+    "vietnamese": "to cause to explode; to fire"
+  },
+  {
+    "simplified": "染病",
+    "traditional": "染病",
+    "pinyin": "rǎn bìng",
+    "hanviet": "",
+    "vietnamese": "to catch an illness; to get infected with a disease"
+  },
+  {
+    "simplified": "染布",
+    "traditional": "染布",
+    "pinyin": "rǎn bù",
+    "hanviet": "",
+    "vietnamese": "to dye cloth"
+  },
+  {
+    "simplified": "染厂",
+    "traditional": "染廠",
+    "pinyin": "rǎn chǎng",
+    "hanviet": "xưởng",
+    "vietnamese": "dye factory; dye-works"
+  },
+  {
+    "simplified": "燃点",
+    "traditional": "燃點",
+    "pinyin": "rán diǎn",
+    "hanviet": "điểm",
+    "vietnamese": "to ignite; to set fire to; to light; (chemistry) ignition point; combustion point"
+  },
+  {
+    "simplified": "染毒",
+    "traditional": "染毒",
+    "pinyin": "rǎn dú",
+    "hanviet": "",
+    "vietnamese": "contamination"
+  },
+  {
+    "simplified": "然鹅",
+    "traditional": "然鵝",
+    "pinyin": "rán é",
+    "hanviet": "",
+    "vietnamese": "(Internet slang for 然而[ran2 er2]) however"
+  },
+  {
+    "simplified": "然而",
+    "traditional": "然而",
+    "pinyin": "rán ér",
+    "hanviet": "nhi",
+    "vietnamese": "however; but; yet"
+  },
+  {
+    "simplified": "染发",
+    "traditional": "染髮",
+    "pinyin": "rǎn fà",
+    "hanviet": "phát",
+    "vietnamese": "to dye one's hair; rinse"
+  },
+  {
+    "simplified": "燃放",
+    "traditional": "燃放",
+    "pinyin": "rán fàng",
+    "hanviet": "phóng",
+    "vietnamese": "to light; to set off (firecrackers etc)"
+  },
+  {
+    "simplified": "燃耗",
+    "traditional": "燃耗",
+    "pinyin": "rán hào",
+    "hanviet": "",
+    "vietnamese": "fuel consumption"
+  },
+  {
+    "simplified": "然后",
+    "traditional": "然後",
+    "pinyin": "rán hòu",
+    "hanviet": "hậu",
+    "vietnamese": "then; after that; afterwards"
+  },
+  {
+    "simplified": "髯口",
+    "traditional": "髯口",
+    "pinyin": "rán kou",
+    "hanviet": "khẩu",
+    "vietnamese": "artificial beard worn by Chinese opera actors"
+  },
+  {
+    "simplified": "染料",
+    "traditional": "染料",
+    "pinyin": "rǎn liào",
+    "hanviet": "",
+    "vietnamese": "dye"
+  },
+  {
+    "simplified": "燃料",
+    "traditional": "燃料",
+    "pinyin": "rán liào",
+    "hanviet": "",
+    "vietnamese": "fuel"
+  },
+  {
+    "simplified": "燃煤",
+    "traditional": "燃煤",
+    "pinyin": "rán méi",
+    "hanviet": "",
+    "vietnamese": "coal fuel"
+  },
+  {
+    "simplified": "燃眉",
+    "traditional": "燃眉",
+    "pinyin": "rán méi",
+    "hanviet": "",
+    "vietnamese": "to burn one's eyebrows; fig. desperately serious situation"
+  },
+  {
+    "simplified": "燃气",
+    "traditional": "燃氣",
+    "pinyin": "rán qì",
+    "hanviet": "",
+    "vietnamese": "fuel gas (coal gas, natural gas, methane etc)"
+  },
+  {
+    "simplified": "燃起",
+    "traditional": "燃起",
+    "pinyin": "rán qǐ",
+    "hanviet": "khởi",
+    "vietnamese": "to ignite; to light"
+  },
+  {
+    "simplified": "然顷",
+    "traditional": "然頃",
+    "pinyin": "rán qǐng",
+    "hanviet": "",
+    "vietnamese": "in a short time; soon"
+  },
+  {
+    "simplified": "冉冉",
+    "traditional": "冉冉",
+    "pinyin": "rǎn rǎn",
+    "hanviet": "",
+    "vietnamese": "gradually; slowly; (of branches or hair) softly drooping"
+  },
+  {
+    "simplified": "染色",
+    "traditional": "染色",
+    "pinyin": "rǎn sè",
+    "hanviet": "",
+    "vietnamese": "dye"
+  },
+  {
+    "simplified": "染上",
+    "traditional": "染上",
+    "pinyin": "rǎn shàng",
+    "hanviet": "thượng",
+    "vietnamese": "to catch (a disease); to get (a bad habit)"
+  },
+  {
+    "simplified": "燃烧",
+    "traditional": "燃燒",
+    "pinyin": "rán shāo",
+    "hanviet": "",
+    "vietnamese": "to ignite; to combust"
+  },
+  {
+    "simplified": "蚺蛇",
+    "traditional": "蚺蛇",
+    "pinyin": "rán shé",
+    "hanviet": "xà",
+    "vietnamese": "boa"
+  },
+  {
+    "simplified": "燃香",
+    "traditional": "燃香",
+    "pinyin": "rán xiāng",
+    "hanviet": "",
+    "vietnamese": "to burn incense"
+  },
+  {
+    "simplified": "髯须",
+    "traditional": "髯鬚",
+    "pinyin": "rán xū",
+    "hanviet": "",
+    "vietnamese": "beard; whiskers"
+  },
+  {
+    "simplified": "燃油",
+    "traditional": "燃油",
+    "pinyin": "rán yóu",
+    "hanviet": "",
+    "vietnamese": "fuel oil"
+  },
+  {
+    "simplified": "然则",
+    "traditional": "然則",
+    "pinyin": "rán zé",
+    "hanviet": "tắc",
+    "vietnamese": "that being the case; then"
+  },
+  {
+    "simplified": "染指",
+    "traditional": "染指",
+    "pinyin": "rǎn zhǐ",
+    "hanviet": "chỉ",
+    "vietnamese": "to dip a finger (idiom); fig. to get one's finger in the pie; to get a share of the action"
+  },
+  {
+    "simplified": "染织",
+    "traditional": "染織",
+    "pinyin": "rǎn zhī",
+    "hanviet": "",
+    "vietnamese": "dyeing and weaving"
+  },
+  {
+    "simplified": "勷",
+    "traditional": "勷",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "haste"
+  },
+  {
+    "simplified": "嚷",
+    "traditional": "嚷",
+    "pinyin": "rǎng",
+    "hanviet": "",
+    "vietnamese": "to shout; to bellow"
+  },
+  {
+    "simplified": "壤",
+    "traditional": "壤",
+    "pinyin": "rǎng",
+    "hanviet": "",
+    "vietnamese": "(bound form) soil; earth; (literary) the earth (contrasted with heaven 天[tian1])"
+  },
+  {
+    "simplified": "攘",
+    "traditional": "攘",
+    "pinyin": "rǎng",
+    "hanviet": "",
+    "vietnamese": "(literary) to push up one's sleeves; (literary) to reject; to resist"
+  },
+  {
+    "simplified": "瀼",
+    "traditional": "瀼",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "dewy"
+  },
+  {
+    "simplified": "瓤",
+    "traditional": "瓤",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "pulp (of fruit); sth inside a covering"
+  },
+  {
+    "simplified": "禳",
+    "traditional": "禳",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "sacrifice for avoiding calamity"
+  },
+  {
+    "simplified": "穰",
+    "traditional": "穰",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "surname Rang"
+  },
+  {
+    "simplified": "穰",
+    "traditional": "穰",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "abundant; stalk of grain"
+  },
+  {
+    "simplified": "蘘",
+    "traditional": "蘘",
+    "pinyin": "ráng",
+    "hanviet": "",
+    "vietnamese": "a kind of wild ginger"
+  },
+  {
+    "simplified": "让",
+    "traditional": "讓",
+    "pinyin": "ràng",
+    "hanviet": "",
+    "vietnamese": "to yield; to permit"
+  },
+  {
+    "simplified": "攘臂",
+    "traditional": "攘臂",
+    "pinyin": "rǎng bì",
+    "hanviet": "tý",
+    "vietnamese": "to bare one's arms (in agitation)"
+  },
+  {
+    "simplified": "攘辟",
+    "traditional": "攘辟",
+    "pinyin": "rǎng bì",
+    "hanviet": "",
+    "vietnamese": "to stand off; to make way"
+  },
+  {
+    "simplified": "让步",
+    "traditional": "讓步",
+    "pinyin": "ràng bù",
+    "hanviet": "",
+    "vietnamese": "to concede; to give in"
+  },
+  {
+    "simplified": "攘场",
+    "traditional": "攘場",
+    "pinyin": "rǎng cháng",
+    "hanviet": "tràng",
+    "vietnamese": "to spread harvested grain over an area"
+  },
+  {
+    "simplified": "攘除",
+    "traditional": "攘除",
+    "pinyin": "rǎng chú",
+    "hanviet": "",
+    "vietnamese": "to get rid of; to weed out"
+  },
+  {
+    "simplified": "让渡",
+    "traditional": "讓渡",
+    "pinyin": "ràng dù",
+    "hanviet": "",
+    "vietnamese": "to transfer (property, rights etc); to cede"
+  },
+  {
+    "simplified": "攘夺",
+    "traditional": "攘奪",
+    "pinyin": "rǎng dúo",
+    "hanviet": "",
+    "vietnamese": "to seize"
+  },
+  {
+    "simplified": "攘诟",
+    "traditional": "攘詬",
+    "pinyin": "rǎng gòu",
+    "hanviet": "",
+    "vietnamese": "to clear oneself of dishonor"
+  },
+  {
+    "simplified": "蘘荷",
+    "traditional": "蘘荷",
+    "pinyin": "ráng hé",
+    "hanviet": "hà",
+    "vietnamese": "myoga ginger (Zingiber mioga)"
+  },
+  {
+    "simplified": "禳解",
+    "traditional": "禳解",
+    "pinyin": "ráng jiě",
+    "hanviet": "",
+    "vietnamese": "to pray to the gods for the avoidance of a misfortune"
+  },
+  {
+    "simplified": "让开",
+    "traditional": "讓開",
+    "pinyin": "ràng kāi",
+    "hanviet": "khai",
+    "vietnamese": "to get out of the way; to step aside"
+  },
+  {
+    "simplified": "让利",
+    "traditional": "讓利",
+    "pinyin": "ràng lì",
+    "hanviet": "lợi",
+    "vietnamese": "to give a discount; to make a concession"
+  },
+  {
+    "simplified": "让路",
+    "traditional": "讓路",
+    "pinyin": "ràng lù",
+    "hanviet": "lộ",
+    "vietnamese": "to make way (for sth)"
+  },
+  {
+    "simplified": "攘袂",
+    "traditional": "攘袂",
+    "pinyin": "rǎng mèi",
+    "hanviet": "",
+    "vietnamese": "to rise to action with a determined shake of the arms"
+  },
+  {
+    "simplified": "让畔",
+    "traditional": "讓畔",
+    "pinyin": "ràng pàn",
+    "hanviet": "",
+    "vietnamese": "to be accommodating in negotiating the boundary of one's field; (fig.) (of farmers in ancient times) to be good-hearted "
+  },
+  {
+    "simplified": "嚷劈",
+    "traditional": "嚷劈",
+    "pinyin": "rǎng pī",
+    "hanviet": "",
+    "vietnamese": "shout oneself hoarse"
+  },
+  {
+    "simplified": "攘窃",
+    "traditional": "攘竊",
+    "pinyin": "rǎng qiè",
+    "hanviet": "",
+    "vietnamese": "to usurp; to steal"
+  },
+  {
+    "simplified": "让球",
+    "traditional": "讓球",
+    "pinyin": "ràng qiú",
+    "hanviet": "cầu",
+    "vietnamese": "to concede points (in a game)"
+  },
+  {
+    "simplified": "瓤儿",
+    "traditional": "瓤兒",
+    "pinyin": "ráng r",
+    "hanviet": "nhi",
+    "vietnamese": "erhua variant of 瓤[rang2]"
+  },
+  {
+    "simplified": "嚷嚷",
+    "traditional": "嚷嚷",
+    "pinyin": "rāng rang",
+    "hanviet": "",
+    "vietnamese": "to argue noisily; to shout"
+  },
+  {
+    "simplified": "攘攘",
+    "traditional": "攘攘",
+    "pinyin": "rǎng rǎng",
+    "hanviet": "",
+    "vietnamese": "disorderly; confused"
+  },
+  {
+    "simplified": "攘善",
+    "traditional": "攘善",
+    "pinyin": "rǎng shàn",
+    "hanviet": "thiện",
+    "vietnamese": "to claim credit due to others; to appropriate others' credit or honor"
+  },
+  {
+    "simplified": "壤土",
+    "traditional": "壤土",
+    "pinyin": "rǎng tǔ",
+    "hanviet": "thổ",
+    "vietnamese": "(agriculture) loam; (literary) land; territory"
+  },
+  {
+    "simplified": "攘外",
+    "traditional": "攘外",
+    "pinyin": "rǎng wài",
+    "hanviet": "ngoại",
+    "vietnamese": "to resist foreign aggression"
+  },
+  {
+    "simplified": "让位",
+    "traditional": "讓位",
+    "pinyin": "ràng wèi",
+    "hanviet": "",
+    "vietnamese": "to abdicate; to yield"
+  },
+  {
+    "simplified": "攘袖",
+    "traditional": "攘袖",
+    "pinyin": "rǎng xiù",
+    "hanviet": "",
+    "vietnamese": "to roll up the sleeves"
+  },
+  {
+    "simplified": "让烟",
+    "traditional": "讓煙",
+    "pinyin": "ràng yān",
+    "hanviet": "",
+    "vietnamese": "to offer a cigarette"
+  },
+  {
+    "simplified": "攘羊",
+    "traditional": "攘羊",
+    "pinyin": "rǎng yáng",
+    "hanviet": "dương",
+    "vietnamese": "to take home sb else's stray sheep"
+  },
+  {
+    "simplified": "攘夷",
+    "traditional": "攘夷",
+    "pinyin": "rǎng yí",
+    "hanviet": "",
+    "vietnamese": "to repel the barbarians"
+  },
+  {
+    "simplified": "攘灾",
+    "traditional": "攘災",
+    "pinyin": "rǎng zāi",
+    "hanviet": "",
+    "vietnamese": "to ward off calamities; to avoid disaster"
+  },
+  {
+    "simplified": "让座",
+    "traditional": "讓座",
+    "pinyin": "ràng zùo",
+    "hanviet": "",
+    "vietnamese": "to give up one's seat for sb"
+  },
+  {
+    "simplified": "娆",
+    "traditional": "嬈",
+    "pinyin": "ráo",
+    "hanviet": "",
+    "vietnamese": "graceful"
+  },
+  {
+    "simplified": "扰",
+    "traditional": "擾",
+    "pinyin": "rǎo",
+    "hanviet": "",
+    "vietnamese": "to disturb"
+  },
+  {
+    "simplified": "桡",
+    "traditional": "橈",
+    "pinyin": "ráo",
+    "hanviet": "",
+    "vietnamese": "radius (anatomy); bone of the forearm"
+  },
+  {
+    "simplified": "绕",
+    "traditional": "繞",
+    "pinyin": "rào",
+    "hanviet": "",
+    "vietnamese": "to wind; to coil (thread)"
+  },
+  {
+    "simplified": "荛",
+    "traditional": "蕘",
+    "pinyin": "ráo",
+    "hanviet": "",
+    "vietnamese": "fuel; grass"
+  },
+  {
+    "simplified": "饶",
+    "traditional": "饒",
+    "pinyin": "ráo",
+    "hanviet": "",
+    "vietnamese": "surname Rao"
+  },
+  {
+    "simplified": "饶",
+    "traditional": "饒",
+    "pinyin": "ráo",
+    "hanviet": "",
+    "vietnamese": "rich; abundant"
+  },
+  {
+    "simplified": "绕道",
+    "traditional": "繞道",
+    "pinyin": "rào dào",
+    "hanviet": "đạo",
+    "vietnamese": "to go by a roundabout route; to take a detour"
+  },
+  {
+    "simplified": "绕地",
+    "traditional": "繞地",
+    "pinyin": "rào dì",
+    "hanviet": "địa",
+    "vietnamese": "to orbit the Earth"
+  },
+  {
+    "simplified": "扰动",
+    "traditional": "擾動",
+    "pinyin": "rǎo dòng",
+    "hanviet": "động",
+    "vietnamese": "to disturb; to stir up"
+  },
+  {
+    "simplified": "饶富",
+    "traditional": "饒富",
+    "pinyin": "ráo fù",
+    "hanviet": "phú",
+    "vietnamese": "to be rich in (some quality or other)"
+  },
+  {
+    "simplified": "桡骨",
+    "traditional": "橈骨",
+    "pinyin": "ráo gǔ",
+    "hanviet": "cốt",
+    "vietnamese": "radius (anatomy); bone of the forearm"
+  },
+  {
+    "simplified": "绕过",
+    "traditional": "繞過",
+    "pinyin": "rào gùo",
+    "hanviet": "",
+    "vietnamese": "to detour; to bypass"
+  },
+  {
+    "simplified": "饶过",
+    "traditional": "饒過",
+    "pinyin": "ráo gùo",
+    "hanviet": "",
+    "vietnamese": "to pardon; to excuse"
+  },
+  {
+    "simplified": "饶了",
+    "traditional": "饒了",
+    "pinyin": "ráo le",
+    "hanviet": "liễu",
+    "vietnamese": "to spare; to forgive"
+  },
+  {
+    "simplified": "绕流",
+    "traditional": "繞流",
+    "pinyin": "rào liú",
+    "hanviet": "",
+    "vietnamese": "turbulence (in fluid mechanics)"
+  },
+  {
+    "simplified": "绕路",
+    "traditional": "繞路",
+    "pinyin": "rào lù",
+    "hanviet": "lộ",
+    "vietnamese": "to make a detour; to take the long route"
+  },
+  {
+    "simplified": "扰乱",
+    "traditional": "擾亂",
+    "pinyin": "rǎo luàn",
+    "hanviet": "",
+    "vietnamese": "to disturb; to perturb"
+  },
+  {
+    "simplified": "扰民",
+    "traditional": "擾民",
+    "pinyin": "rǎo mín",
+    "hanviet": "dân",
+    "vietnamese": "(of government policy, noise pollution, crime etc) to make people's lives difficult"
+  },
+  {
+    "simplified": "饶命",
+    "traditional": "饒命",
+    "pinyin": "ráo mìng",
+    "hanviet": "mệnh",
+    "vietnamese": "to spare sb's life"
+  },
+  {
+    "simplified": "扰攘",
+    "traditional": "擾攘",
+    "pinyin": "rǎo rǎng",
+    "hanviet": "",
+    "vietnamese": "bustling; to create trouble"
+  },
+  {
+    "simplified": "绕绕",
+    "traditional": "繞繞",
+    "pinyin": "rào rào",
+    "hanviet": "",
+    "vietnamese": "twisting and turning; involved and tricky"
+  },
+  {
+    "simplified": "绕射",
+    "traditional": "繞射",
+    "pinyin": "rào shè",
+    "hanviet": "",
+    "vietnamese": "(physics) to diffract"
+  },
+  {
+    "simplified": "饶舌",
+    "traditional": "饒舌",
+    "pinyin": "ráo shé",
+    "hanviet": "thiệt",
+    "vietnamese": "talkative; to blather"
+  },
+  {
+    "simplified": "绕手",
+    "traditional": "繞手",
+    "pinyin": "rào shǒu",
+    "hanviet": "thủ",
+    "vietnamese": "thorny issue; tricky case"
+  },
+  {
+    "simplified": "饶恕",
+    "traditional": "饒恕",
+    "pinyin": "ráo shù",
+    "hanviet": "",
+    "vietnamese": "to forgive; to pardon"
+  },
+  {
+    "simplified": "绕腾",
+    "traditional": "繞騰",
+    "pinyin": "rào teng",
+    "hanviet": "",
+    "vietnamese": "to run a long way around; fig. to speak vaguely around the topic without getting to the point"
+  },
+  {
+    "simplified": "绕弯",
+    "traditional": "繞彎",
+    "pinyin": "rào wān",
+    "hanviet": "",
+    "vietnamese": "to go for a walk around; fig. to speak in a roundabout way"
+  },
+  {
+    "simplified": "饶沃",
+    "traditional": "饒沃",
+    "pinyin": "ráo wò",
+    "hanviet": "",
+    "vietnamese": "fertile; rich"
+  },
+  {
+    "simplified": "绕膝",
+    "traditional": "繞膝",
+    "pinyin": "rào xī",
+    "hanviet": "",
+    "vietnamese": "(children) run around parent's knees; fig. to stay to look after one's elderly parents"
+  },
+  {
+    "simplified": "绕行",
+    "traditional": "繞行",
+    "pinyin": "rào xíng",
+    "hanviet": "hành",
+    "vietnamese": "to take a circular (or circuitous) route; to do a circuit"
+  },
+  {
+    "simplified": "饶有",
+    "traditional": "饒有",
+    "pinyin": "ráo yǒu",
+    "hanviet": "hữu",
+    "vietnamese": "full of (interest, humor, sentiment etc)"
+  },
+  {
+    "simplified": "绕组",
+    "traditional": "繞組",
+    "pinyin": "rào zǔ",
+    "hanviet": "",
+    "vietnamese": "coil (in electric motor or transformer)"
+  },
+  {
+    "simplified": "绕嘴",
+    "traditional": "繞嘴",
+    "pinyin": "rào zǔi",
+    "hanviet": "",
+    "vietnamese": "hard to get one's mouth around; a tongue-twister"
+  },
+  {
+    "simplified": "惹",
+    "traditional": "惹",
+    "pinyin": "rě",
+    "hanviet": "",
+    "vietnamese": "to provoke; to irritate"
+  },
+  {
     "simplified": "热",
     "traditional": "熱",
     "pinyin": "rè",
     "hanviet": "nhiệt",
-    "vietnamese": "Nóng"
+    "vietnamese": "to warm up; to heat up"
+  },
+  {
+    "simplified": "爇",
+    "traditional": "爇",
+    "pinyin": "rè",
+    "hanviet": "",
+    "vietnamese": "heat; to burn"
+  },
+  {
+    "simplified": "热爱",
+    "traditional": "熱愛",
+    "pinyin": "rè ài",
+    "hanviet": "nhiệt ái",
+    "vietnamese": "to love ardently; to adore"
+  },
+  {
+    "simplified": "热泵",
+    "traditional": "熱泵",
+    "pinyin": "rè bèng",
+    "hanviet": "nhiệt",
+    "vietnamese": "heat pump"
+  },
+  {
+    "simplified": "热病",
+    "traditional": "熱病",
+    "pinyin": "rè bìng",
+    "hanviet": "nhiệt",
+    "vietnamese": "fever; pyrexia"
+  },
+  {
+    "simplified": "热播",
+    "traditional": "熱播",
+    "pinyin": "rè bō",
+    "hanviet": "nhiệt bá",
+    "vietnamese": "to broadcast (or be broadcast) to an enthusiastic audience; to broadcast (or be broadcast) and get high ratings"
+  },
+  {
+    "simplified": "热补",
+    "traditional": "熱補",
+    "pinyin": "rè bǔ",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot patching (of insulating material in a furnace); hot patching (runtime correction in computing)"
+  },
+  {
+    "simplified": "热层",
+    "traditional": "熱層",
+    "pinyin": "rè céng",
+    "hanviet": "nhiệt",
+    "vietnamese": "(meteorology) thermosphere"
+  },
+  {
+    "simplified": "热茶",
+    "traditional": "熱茶",
+    "pinyin": "rè chá",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot tea"
+  },
+  {
+    "simplified": "热肠",
+    "traditional": "熱腸",
+    "pinyin": "rè cháng",
+    "hanviet": "nhiệt",
+    "vietnamese": "warmhearted; enthusiastic"
+  },
+  {
+    "simplified": "热潮",
+    "traditional": "熱潮",
+    "pinyin": "rè cháo",
+    "hanviet": "nhiệt",
+    "vietnamese": "wave of enthusiasm; craze; upsurge"
+  },
+  {
+    "simplified": "热炒",
+    "traditional": "熱炒",
+    "pinyin": "rè chǎo",
+    "hanviet": "nhiệt",
+    "vietnamese": "stir-fried dish (Tw)"
+  },
+  {
+    "simplified": "热忱",
+    "traditional": "熱忱",
+    "pinyin": "rè chén",
+    "hanviet": "nhiệt",
+    "vietnamese": "zeal; enthusiasm"
+  },
+  {
+    "simplified": "热诚",
+    "traditional": "熱誠",
+    "pinyin": "rè chéng",
+    "hanviet": "nhiệt thành",
+    "vietnamese": "devotion; fervor"
+  },
+  {
+    "simplified": "热词",
+    "traditional": "熱詞",
+    "pinyin": "rè cí",
+    "hanviet": "nhiệt từ",
+    "vietnamese": "buzzword"
+  },
+  {
+    "simplified": "热带",
+    "traditional": "熱帶",
+    "pinyin": "rè dài",
+    "hanviet": "nhiệt đới",
+    "vietnamese": "the tropics; tropical"
+  },
+  {
+    "simplified": "热导",
+    "traditional": "熱導",
+    "pinyin": "rè dǎo",
+    "hanviet": "nhiệt",
+    "vietnamese": "thermal conduction"
+  },
+  {
+    "simplified": "热点",
+    "traditional": "熱點",
+    "pinyin": "rè diǎn",
+    "hanviet": "nhiệt điểm",
+    "vietnamese": "hot spot; point of special interest"
+  },
+  {
+    "simplified": "热电",
+    "traditional": "熱電",
+    "pinyin": "rè diàn",
+    "hanviet": "nhiệt điện",
+    "vietnamese": "pyroelectric"
+  },
+  {
+    "simplified": "热度",
+    "traditional": "熱度",
+    "pinyin": "rè dù",
+    "hanviet": "nhiệt độ",
+    "vietnamese": "level of heat; (fig.) zeal"
+  },
+  {
+    "simplified": "热敷",
+    "traditional": "熱敷",
+    "pinyin": "rè fū",
+    "hanviet": "nhiệt",
+    "vietnamese": "to apply a hot compress"
+  },
+  {
+    "simplified": "热狗",
+    "traditional": "熱狗",
+    "pinyin": "rè gǒu",
+    "hanviet": "nhiệt cẩu",
+    "vietnamese": "hot dog (loanword)"
+  },
+  {
+    "simplified": "热管",
+    "traditional": "熱管",
+    "pinyin": "rè guǎn",
+    "hanviet": "nhiệt",
+    "vietnamese": "heat pipe"
+  },
+  {
+    "simplified": "热函",
+    "traditional": "熱函",
+    "pinyin": "rè hán",
+    "hanviet": "nhiệt",
+    "vietnamese": "enthalpy; heat content (thermodynamics)"
+  },
+  {
+    "simplified": "热焓",
+    "traditional": "熱焓",
+    "pinyin": "rè hán",
+    "hanviet": "nhiệt",
+    "vietnamese": "enthalpy; heat content (thermodynamics)"
+  },
+  {
+    "simplified": "热核",
+    "traditional": "熱核",
+    "pinyin": "rè hé",
+    "hanviet": "nhiệt",
+    "vietnamese": "thermonuclear"
+  },
+  {
+    "simplified": "热河",
+    "traditional": "熱河",
+    "pinyin": "rè hé",
+    "hanviet": "nhiệt hà",
+    "vietnamese": "Rehe, Qing dynasty province abolished in 1955 and divided among Hebei, Liaoning and Inner Mongolia; refers to the Qing i"
+  },
+  {
+    "simplified": "热乎",
+    "traditional": "熱乎",
+    "pinyin": "rè hu",
+    "hanviet": "nhiệt",
+    "vietnamese": "warm; hot"
+  },
+  {
+    "simplified": "热昏",
+    "traditional": "熱昏",
+    "pinyin": "rè hūn",
+    "hanviet": "nhiệt",
+    "vietnamese": "to be overcome by the heat"
+  },
+  {
+    "simplified": "惹火",
+    "traditional": "惹火",
+    "pinyin": "rě hǔo",
+    "hanviet": "hỏa",
+    "vietnamese": "to stir up the fire; fig. to provoke and offend people"
+  },
+  {
+    "simplified": "惹祸",
+    "traditional": "惹禍",
+    "pinyin": "rě hùo",
+    "hanviet": "họa",
+    "vietnamese": "to stir up trouble; to invite disaster"
+  },
+  {
+    "simplified": "热寂",
+    "traditional": "熱寂",
+    "pinyin": "rè jì",
+    "hanviet": "nhiệt",
+    "vietnamese": "(physics) heat death of the universe"
+  },
+  {
+    "simplified": "热机",
+    "traditional": "熱機",
+    "pinyin": "rè jī",
+    "hanviet": "nhiệt cơ",
+    "vietnamese": "heat engine"
+  },
+  {
+    "simplified": "热键",
+    "traditional": "熱鍵",
+    "pinyin": "rè jiàn",
+    "hanviet": "nhiệt",
+    "vietnamese": "hotkey; keyboard shortcut"
+  },
+  {
+    "simplified": "热解",
+    "traditional": "熱解",
+    "pinyin": "rè jiě",
+    "hanviet": "nhiệt",
+    "vietnamese": "thermal cleavage (i.e. sth splits when heated)"
+  },
+  {
+    "simplified": "热裤",
+    "traditional": "熱褲",
+    "pinyin": "rè kù",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot pants"
+  },
+  {
+    "simplified": "热浪",
+    "traditional": "熱浪",
+    "pinyin": "rè làng",
+    "hanviet": "nhiệt",
+    "vietnamese": "heat wave"
+  },
+  {
+    "simplified": "热泪",
+    "traditional": "熱淚",
+    "pinyin": "rè lèi",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot tears"
+  },
+  {
+    "simplified": "热力",
+    "traditional": "熱力",
+    "pinyin": "rè lì",
+    "hanviet": "nhiệt lực",
+    "vietnamese": "heat"
+  },
+  {
+    "simplified": "热恋",
+    "traditional": "熱戀",
+    "pinyin": "rè liàn",
+    "hanviet": "nhiệt",
+    "vietnamese": "to fall head over heels in love; to be passionately in love"
+  },
+  {
+    "simplified": "热量",
+    "traditional": "熱量",
+    "pinyin": "rè liàng",
+    "hanviet": "nhiệt lượng",
+    "vietnamese": "heat; quantity of heat"
+  },
+  {
+    "simplified": "热烈",
+    "traditional": "熱烈",
+    "pinyin": "rè liè",
+    "hanviet": "nhiệt",
+    "vietnamese": "enthusiastic; ardent"
+  },
+  {
+    "simplified": "热络",
+    "traditional": "熱絡",
+    "pinyin": "rè lùo",
+    "hanviet": "nhiệt",
+    "vietnamese": "intimate; friendly"
+  },
+  {
+    "simplified": "热卖",
+    "traditional": "熱賣",
+    "pinyin": "rè mài",
+    "hanviet": "nhiệt mại",
+    "vietnamese": "to sell strongly; to be in great demand"
+  },
+  {
+    "simplified": "惹毛",
+    "traditional": "惹毛",
+    "pinyin": "rě máo",
+    "hanviet": "",
+    "vietnamese": "(coll.) to irritate; to annoy"
+  },
+  {
+    "simplified": "热门",
+    "traditional": "熱門",
+    "pinyin": "rè mén",
+    "hanviet": "nhiệt môn",
+    "vietnamese": "popular; hot; in vogue"
+  },
+  {
+    "simplified": "热敏",
+    "traditional": "熱敏",
+    "pinyin": "rè mǐn",
+    "hanviet": "nhiệt",
+    "vietnamese": "heat-sensitive; thermal (printing)"
+  },
+  {
+    "simplified": "惹恼",
+    "traditional": "惹惱",
+    "pinyin": "rě nǎo",
+    "hanviet": "",
+    "vietnamese": "to offend"
+  },
+  {
+    "simplified": "热闹",
+    "traditional": "熱鬧",
+    "pinyin": "rè nao",
+    "hanviet": "nhiệt",
+    "vietnamese": "bustling with noise and excitement; lively"
+  },
+  {
+    "simplified": "热能",
+    "traditional": "熱能",
+    "pinyin": "rè néng",
+    "hanviet": "nhiệt năng",
+    "vietnamese": "heat energy"
+  },
+  {
+    "simplified": "惹怒",
+    "traditional": "惹怒",
+    "pinyin": "rě nù",
+    "hanviet": "",
+    "vietnamese": "to provoke anger"
+  },
+  {
+    "simplified": "热捧",
+    "traditional": "熱捧",
+    "pinyin": "rè pěng",
+    "hanviet": "nhiệt",
+    "vietnamese": "a craze; a popular wave"
+  },
+  {
+    "simplified": "热评",
+    "traditional": "熱評",
+    "pinyin": "rè píng",
+    "hanviet": "nhiệt",
+    "vietnamese": "popular comment; trending comment"
+  },
+  {
+    "simplified": "惹起",
+    "traditional": "惹起",
+    "pinyin": "rě qǐ",
+    "hanviet": "khởi",
+    "vietnamese": "provoke, incite; stir up"
+  },
+  {
+    "simplified": "热气",
+    "traditional": "熱氣",
+    "pinyin": "rè qì",
+    "hanviet": "nhiệt",
+    "vietnamese": "steam; heat"
+  },
+  {
+    "simplified": "热钱",
+    "traditional": "熱錢",
+    "pinyin": "rè qián",
+    "hanviet": "nhiệt tiền",
+    "vietnamese": "hot money, money flowing from one currency to another in the hope of quick profit"
+  },
+  {
+    "simplified": "热切",
+    "traditional": "熱切",
+    "pinyin": "rè qiè",
+    "hanviet": "nhiệt",
+    "vietnamese": "fervent"
+  },
+  {
+    "simplified": "热情",
+    "traditional": "熱情",
+    "pinyin": "rè qíng",
+    "hanviet": "nhiệt tình",
+    "vietnamese": "cordial; enthusiastic"
+  },
+  {
+    "simplified": "惹人",
+    "traditional": "惹人",
+    "pinyin": "rě rén",
+    "hanviet": "nhân",
+    "vietnamese": "to provoke (esp. annoyance, disgust etc); to offend"
+  },
+  {
+    "simplified": "热容",
+    "traditional": "熱容",
+    "pinyin": "rè róng",
+    "hanviet": "nhiệt",
+    "vietnamese": "thermal capacity"
+  },
+  {
+    "simplified": "热身",
+    "traditional": "熱身",
+    "pinyin": "rè shēn",
+    "hanviet": "nhiệt thân",
+    "vietnamese": "to warm up (sports); (fig.) to prepare"
+  },
+  {
+    "simplified": "惹事",
+    "traditional": "惹事",
+    "pinyin": "rě shì",
+    "hanviet": "",
+    "vietnamese": "to cause trouble"
+  },
+  {
+    "simplified": "热食",
+    "traditional": "熱食",
+    "pinyin": "rè shí",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot food"
+  },
+  {
+    "simplified": "热水",
+    "traditional": "熱水",
+    "pinyin": "rè shǔi",
+    "hanviet": "nhiệt thủy",
+    "vietnamese": "hot water"
+  },
+  {
+    "simplified": "热搜",
+    "traditional": "熱搜",
+    "pinyin": "rè sōu",
+    "hanviet": "nhiệt",
+    "vietnamese": "(Internet) popular search query"
+  },
+  {
+    "simplified": "热烫",
+    "traditional": "熱燙",
+    "pinyin": "rè tàng",
+    "hanviet": "nhiệt",
+    "vietnamese": "to burn"
+  },
+  {
+    "simplified": "热天",
+    "traditional": "熱天",
+    "pinyin": "rè tiān",
+    "hanviet": "nhiệt thiên",
+    "vietnamese": "hot day"
+  },
+  {
+    "simplified": "热帖",
+    "traditional": "熱帖",
+    "pinyin": "rè tiě",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot thread (in an Internet forum)"
+  },
+  {
+    "simplified": "热土",
+    "traditional": "熱土",
+    "pinyin": "rè tǔ",
+    "hanviet": "nhiệt thổ",
+    "vietnamese": "homeland; hot piece of real estate"
+  },
+  {
+    "simplified": "热望",
+    "traditional": "熱望",
+    "pinyin": "rè wàng",
+    "hanviet": "nhiệt",
+    "vietnamese": "to aspire"
+  },
+  {
+    "simplified": "热吻",
+    "traditional": "熱吻",
+    "pinyin": "rè wěn",
+    "hanviet": "nhiệt",
+    "vietnamese": "to kiss passionately"
+  },
+  {
+    "simplified": "热线",
+    "traditional": "熱線",
+    "pinyin": "rè xiàn",
+    "hanviet": "nhiệt tuyến",
+    "vietnamese": "hotline (communications link)"
+  },
+  {
+    "simplified": "热销",
+    "traditional": "熱銷",
+    "pinyin": "rè xiāo",
+    "hanviet": "nhiệt",
+    "vietnamese": "to sell well; hot-selling"
+  },
+  {
+    "simplified": "热心",
+    "traditional": "熱心",
+    "pinyin": "rè xīn",
+    "hanviet": "nhiệt tâm",
+    "vietnamese": "enthusiastic; ardent; zealous"
+  },
+  {
+    "simplified": "热血",
+    "traditional": "熱血",
+    "pinyin": "rè xuè",
+    "hanviet": "nhiệt huyết",
+    "vietnamese": "hot blood; warm-blooded (animal)"
+  },
+  {
+    "simplified": "热压",
+    "traditional": "熱壓",
+    "pinyin": "rè yā",
+    "hanviet": "nhiệt áp",
+    "vietnamese": "(manufacturing) hot pressing"
+  },
+  {
+    "simplified": "惹眼",
+    "traditional": "惹眼",
+    "pinyin": "rě yǎn",
+    "hanviet": "nhãn",
+    "vietnamese": "eye-catching; conspicuous"
+  },
+  {
+    "simplified": "热议",
+    "traditional": "熱議",
+    "pinyin": "rè yì",
+    "hanviet": "nhiệt nghị",
+    "vietnamese": "to discuss passionately; heated debate"
+  },
+  {
+    "simplified": "热饮",
+    "traditional": "熱飲",
+    "pinyin": "rè yǐn",
+    "hanviet": "nhiệt",
+    "vietnamese": "hot drink"
+  },
+  {
+    "simplified": "热映",
+    "traditional": "熱映",
+    "pinyin": "rè yìng",
+    "hanviet": "nhiệt",
+    "vietnamese": "(of a film or TV show) currently screening as a popular hit"
+  },
+  {
+    "simplified": "热源",
+    "traditional": "熱源",
+    "pinyin": "rè yuán",
+    "hanviet": "nhiệt",
+    "vietnamese": "heat source"
+  },
+  {
+    "simplified": "热轧",
+    "traditional": "熱軋",
+    "pinyin": "rè zhá",
+    "hanviet": "nhiệt",
+    "vietnamese": "(metallurgy) hot-rolled; hot-rolling"
+  },
+  {
+    "simplified": "热战",
+    "traditional": "熱戰",
+    "pinyin": "rè zhàn",
+    "hanviet": "nhiệt chiến",
+    "vietnamese": "hot war"
+  },
+  {
+    "simplified": "热值",
+    "traditional": "熱值",
+    "pinyin": "rè zhí",
+    "hanviet": "nhiệt trị",
+    "vietnamese": "calorific value"
+  },
+  {
+    "simplified": "热衷",
+    "traditional": "熱衷",
+    "pinyin": "rè zhōng",
+    "hanviet": "nhiệt",
+    "vietnamese": "to feel strongly about; to be fond of"
   },
   {
     "simplified": "人",
     "traditional": "人",
     "pinyin": "rén",
     "hanviet": "nhân",
-    "vietnamese": "Người"
+    "vietnamese": "person; people; CL:個|个[ge4],位[wei4],名[ming2]"
+  },
+  {
+    "simplified": "亻",
+    "traditional": "亻",
+    "pinyin": "rén",
+    "hanviet": "",
+    "vietnamese": "\"person\" radical in Chinese characters (Kangxi radical 9)"
+  },
+  {
+    "simplified": "仁",
+    "traditional": "仁",
+    "pinyin": "rén",
+    "hanviet": "nhân",
+    "vietnamese": "humane; kernel"
+  },
+  {
+    "simplified": "仞",
+    "traditional": "仞",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "unit of length used in ancient times, equal to 7 or 8 Chinese feet 尺[chi3]"
+  },
+  {
+    "simplified": "任",
+    "traditional": "任",
+    "pinyin": "rén",
+    "hanviet": "",
+    "vietnamese": "surname Ren"
+  },
+  {
+    "simplified": "任",
+    "traditional": "任",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "to assign; to appoint"
+  },
+  {
+    "simplified": "刃",
+    "traditional": "刃",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "edge of blade"
+  },
+  {
+    "simplified": "壬",
+    "traditional": "壬",
+    "pinyin": "rén",
+    "hanviet": "",
+    "vietnamese": "ninth of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; ninth in order"
+  },
+  {
+    "simplified": "妊",
+    "traditional": "妊",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "pregnant; pregnancy"
+  },
+  {
+    "simplified": "忍",
+    "traditional": "忍",
+    "pinyin": "rěn",
+    "hanviet": "",
+    "vietnamese": "to bear; to endure"
+  },
+  {
+    "simplified": "棯",
+    "traditional": "棯",
+    "pinyin": "rěn",
+    "hanviet": "",
+    "vietnamese": "jujube tree"
+  },
+  {
+    "simplified": "牣",
+    "traditional": "牣",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "fill up; to stuff"
+  },
+  {
+    "simplified": "稔",
+    "traditional": "稔",
+    "pinyin": "rěn",
+    "hanviet": "",
+    "vietnamese": "(literary) ripe grain; ripe; harvest; year; (literary) very familiar with; well acquainted with"
+  },
+  {
+    "simplified": "絍",
+    "traditional": "絍",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "to weave; to lay warp for weaving"
+  },
+  {
+    "simplified": "纫",
+    "traditional": "紉",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "to thread (a needle); (bound form) to sew; to stitch"
+  },
+  {
+    "simplified": "纴",
+    "traditional": "紝",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "to weave; to lay warp for weaving"
+  },
+  {
+    "simplified": "腍",
+    "traditional": "腍",
+    "pinyin": "rěn",
+    "hanviet": "",
+    "vietnamese": "be satiated; cooked"
+  },
+  {
+    "simplified": "荏",
+    "traditional": "荏",
+    "pinyin": "rěn",
+    "hanviet": "",
+    "vietnamese": "beefsteak plant (Perilla frutescens); soft"
+  },
+  {
+    "simplified": "荵",
+    "traditional": "荵",
+    "pinyin": "rěn",
+    "hanviet": "",
+    "vietnamese": "polemonium"
+  },
+  {
+    "simplified": "衽",
+    "traditional": "衽",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "(literary) overlapping part of Chinese gown; lapel"
+  },
+  {
+    "simplified": "认",
+    "traditional": "認",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "to recognize; to know"
+  },
+  {
+    "simplified": "讱",
+    "traditional": "訒",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "(literary) slow in speech"
+  },
+  {
+    "simplified": "轫",
+    "traditional": "軔",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "brake"
+  },
+  {
+    "simplified": "韧",
+    "traditional": "韌",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "annealed; pliable but strong"
+  },
+  {
+    "simplified": "饪",
+    "traditional": "飪",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "cooked food; to cook (until ready)"
+  },
+  {
+    "simplified": "鵀",
+    "traditional": "鵀",
+    "pinyin": "rèn",
+    "hanviet": "",
+    "vietnamese": "hoopoe"
+  },
+  {
+    "simplified": "仁爱",
+    "traditional": "仁愛",
+    "pinyin": "rén ài",
+    "hanviet": "nhân ái",
+    "vietnamese": "Ren'ai or Jenai District of Keelung City 基隆市[Ji1 long2 Shi4], Taiwan; Ren'ai or Jenai Township in Nantou County 南投縣|南投县["
+  },
+  {
+    "simplified": "仁爱",
+    "traditional": "仁愛",
+    "pinyin": "rén ài",
+    "hanviet": "nhân ái",
+    "vietnamese": "benevolence; charity"
+  },
+  {
+    "simplified": "任安",
+    "traditional": "任安",
+    "pinyin": "rén ān",
+    "hanviet": "",
+    "vietnamese": "Ren An (-c. 90 BC), Han Dynasty general, also called Ren Shaoqing 任少卿"
+  },
+  {
+    "simplified": "恁般",
+    "traditional": "恁般",
+    "pinyin": "rèn bān",
+    "hanviet": "",
+    "vietnamese": "(old) this way; this much"
+  },
+  {
+    "simplified": "人保",
+    "traditional": "人保",
+    "pinyin": "rén bǎo",
+    "hanviet": "nhân",
+    "vietnamese": "personal guarantee; to sign as guarantor"
+  },
+  {
+    "simplified": "任便",
+    "traditional": "任便",
+    "pinyin": "rèn biàn",
+    "hanviet": "",
+    "vietnamese": "as you see fit; to do as one likes"
+  },
+  {
+    "simplified": "人才",
+    "traditional": "人才",
+    "pinyin": "rén cái",
+    "hanviet": "nhân",
+    "vietnamese": "talent; talented person"
+  },
+  {
+    "simplified": "人潮",
+    "traditional": "人潮",
+    "pinyin": "rén cháo",
+    "hanviet": "nhân",
+    "vietnamese": "a tide of people"
+  },
+  {
+    "simplified": "人臣",
+    "traditional": "人臣",
+    "pinyin": "rén chén",
+    "hanviet": "nhân thần",
+    "vietnamese": "an official (in former times)"
+  },
+  {
+    "simplified": "壬辰",
+    "traditional": "壬辰",
+    "pinyin": "rén chén",
+    "hanviet": "",
+    "vietnamese": "twenty-ninth year I5 of the 60 year cycle, e.g. 2012 or 2072"
+  },
+  {
+    "simplified": "人称",
+    "traditional": "人稱",
+    "pinyin": "rén chēng",
+    "hanviet": "nhân",
+    "vietnamese": "person (first person, second person etc in grammar); called"
+  },
+  {
+    "simplified": "忍耻",
+    "traditional": "忍恥",
+    "pinyin": "rěn chǐ",
+    "hanviet": "",
+    "vietnamese": "to endure humiliation"
+  },
+  {
+    "simplified": "认出",
+    "traditional": "認出",
+    "pinyin": "rèn chū",
+    "hanviet": "xuất",
+    "vietnamese": "recognition; to recognize"
+  },
+  {
+    "simplified": "仁川",
+    "traditional": "仁川",
+    "pinyin": "rén chuān",
+    "hanviet": "nhân xuyên",
+    "vietnamese": "Incheon Metropolitan City in Gyeonggi Province 京畿道[Jing1 ji1 dao4], South Korea"
+  },
+  {
+    "simplified": "认床",
+    "traditional": "認床",
+    "pinyin": "rèn chuáng",
+    "hanviet": "",
+    "vietnamese": "to have difficulties sleeping in a bed other than one's own"
+  },
+  {
+    "simplified": "人次",
+    "traditional": "人次",
+    "pinyin": "rén cì",
+    "hanviet": "nhân thứ",
+    "vietnamese": "person-times; visits"
+  },
+  {
+    "simplified": "仁慈",
+    "traditional": "仁慈",
+    "pinyin": "rén cí",
+    "hanviet": "nhân",
+    "vietnamese": "benevolent; charitable"
+  },
+  {
+    "simplified": "人丛",
+    "traditional": "人叢",
+    "pinyin": "rén cóng",
+    "hanviet": "nhân",
+    "vietnamese": "crowd of people"
+  },
+  {
+    "simplified": "人从",
+    "traditional": "人從",
+    "pinyin": "rén cóng",
+    "hanviet": "nhân tùng",
+    "vietnamese": "retinue; hangers-on"
+  },
+  {
+    "simplified": "任从",
+    "traditional": "任從",
+    "pinyin": "rèn cóng",
+    "hanviet": "tùng",
+    "vietnamese": "at one's discretion"
+  },
+  {
+    "simplified": "认错",
+    "traditional": "認錯",
+    "pinyin": "rèn cùo",
+    "hanviet": "",
+    "vietnamese": "to admit an error; to acknowledge one's mistake"
+  },
+  {
+    "simplified": "人大",
+    "traditional": "人大",
+    "pinyin": "rén dà",
+    "hanviet": "nhân đại",
+    "vietnamese": "Renmin University of China (abbr. for 中國人民大學|中国人民大学[Zhong1 guo2 Ren2 min2 Da4 xue2])"
+  },
+  {
+    "simplified": "人大",
+    "traditional": "人大",
+    "pinyin": "rén dà",
+    "hanviet": "nhân đại",
+    "vietnamese": "people's congress, a legislative body within the PRC's system of government at any of various levels – national, provinc"
+  },
+  {
+    "simplified": "韧带",
+    "traditional": "韌帶",
+    "pinyin": "rèn dài",
+    "hanviet": "đới",
+    "vietnamese": "ligament"
+  },
+  {
+    "simplified": "仁丹",
+    "traditional": "仁丹",
+    "pinyin": "rén dān",
+    "hanviet": "nhân",
+    "vietnamese": "Jintan mouth refresher lozenge, produced by Morishita Jintan company from 1905"
+  },
+  {
+    "simplified": "任诞",
+    "traditional": "任誕",
+    "pinyin": "rèn dàn",
+    "hanviet": "",
+    "vietnamese": "dissipated; unruly"
+  },
+  {
+    "simplified": "人道",
+    "traditional": "人道",
+    "pinyin": "rén dào",
+    "hanviet": "nhân đạo",
+    "vietnamese": "human sympathy; humanitarianism"
+  },
+  {
+    "simplified": "仁德",
+    "traditional": "仁德",
+    "pinyin": "rén dé",
+    "hanviet": "nhân đức",
+    "vietnamese": "benevolent integrity; high mindedness"
+  },
+  {
+    "simplified": "认得",
+    "traditional": "認得",
+    "pinyin": "rèn de",
+    "hanviet": "",
+    "vietnamese": "to recognize; to remember sth (or sb) on seeing it"
+  },
+  {
+    "simplified": "仁弟",
+    "traditional": "仁弟",
+    "pinyin": "rén dì",
+    "hanviet": "nhân đệ",
+    "vietnamese": "(honorific written address to younger man) My dear young friend"
+  },
+  {
+    "simplified": "人丁",
+    "traditional": "人丁",
+    "pinyin": "rén dīng",
+    "hanviet": "nhân",
+    "vietnamese": "number of people in a family; population"
+  },
+  {
+    "simplified": "人定",
+    "traditional": "人定",
+    "pinyin": "rén dìng",
+    "hanviet": "nhân",
+    "vietnamese": "middle of the night; the dead of night"
+  },
+  {
+    "simplified": "认定",
+    "traditional": "認定",
+    "pinyin": "rèn dìng",
+    "hanviet": "",
+    "vietnamese": "to maintain (that sth is true); to determine (a fact)"
+  },
+  {
+    "simplified": "忍冬",
+    "traditional": "忍冬",
+    "pinyin": "rěn dōng",
+    "hanviet": "đông",
+    "vietnamese": "honeysuckle (Lonicera japonica)"
+  },
+  {
+    "simplified": "人盾",
+    "traditional": "人盾",
+    "pinyin": "rén dùn",
+    "hanviet": "nhân",
+    "vietnamese": "human shield"
+  },
+  {
+    "simplified": "认罚",
+    "traditional": "認罰",
+    "pinyin": "rèn fá",
+    "hanviet": "",
+    "vietnamese": "to accept punishment"
+  },
+  {
+    "simplified": "人犯",
+    "traditional": "人犯",
+    "pinyin": "rén fàn",
+    "hanviet": "nhân",
+    "vietnamese": "criminal; culprit"
+  },
+  {
+    "simplified": "人防",
+    "traditional": "人防",
+    "pinyin": "rén fáng",
+    "hanviet": "nhân",
+    "vietnamese": "civil air defence (abbr. for 人民防空[ren2 min2 fang2 kong1])"
+  },
+  {
+    "simplified": "人夫",
+    "traditional": "人夫",
+    "pinyin": "rén fū",
+    "hanviet": "nhân phu",
+    "vietnamese": "married man; husband (as a social role)"
+  },
+  {
+    "simplified": "人父",
+    "traditional": "人父",
+    "pinyin": "rén fù",
+    "hanviet": "nhân phụ",
+    "vietnamese": "father (as a social role)"
+  },
+  {
+    "simplified": "妊妇",
+    "traditional": "妊婦",
+    "pinyin": "rèn fù",
+    "hanviet": "",
+    "vietnamese": "expecting mother"
+  },
+  {
+    "simplified": "认负",
+    "traditional": "認負",
+    "pinyin": "rèn fù",
+    "hanviet": "",
+    "vietnamese": "to admit defeat"
+  },
+  {
+    "simplified": "人格",
+    "traditional": "人格",
+    "pinyin": "rén gé",
+    "hanviet": "nhân",
+    "vietnamese": "personality; integrity"
+  },
+  {
+    "simplified": "人工",
+    "traditional": "人工",
+    "pinyin": "rén gōng",
+    "hanviet": "nhân công",
+    "vietnamese": "artificial; manpower"
+  },
+  {
+    "simplified": "认购",
+    "traditional": "認購",
+    "pinyin": "rèn gòu",
+    "hanviet": "",
+    "vietnamese": "to undertake to purchase sth; to subscribe (to share issue)"
+  },
+  {
+    "simplified": "人海",
+    "traditional": "人海",
+    "pinyin": "rén hǎi",
+    "hanviet": "nhân hải",
+    "vietnamese": "a multitude; a sea of people"
+  },
+  {
+    "simplified": "人行",
+    "traditional": "人行",
+    "pinyin": "rén háng",
+    "hanviet": "nhân hành",
+    "vietnamese": "People's Bank of China (abbr. for 中國人民銀行|中国人民银行[Zhong1 guo2 Ren2 min2 Yin2 hang2])"
+  },
+  {
+    "simplified": "任何",
+    "traditional": "任何",
+    "pinyin": "rèn hé",
+    "hanviet": "",
+    "vietnamese": "any; whatever; whichever"
+  },
+  {
+    "simplified": "仁厚",
+    "traditional": "仁厚",
+    "pinyin": "rén hòu",
+    "hanviet": "nhân hậu",
+    "vietnamese": "kindhearted; tolerant"
+  },
+  {
+    "simplified": "人寰",
+    "traditional": "人寰",
+    "pinyin": "rén huán",
+    "hanviet": "nhân",
+    "vietnamese": "world; earthly world"
+  },
+  {
+    "simplified": "人皇",
+    "traditional": "人皇",
+    "pinyin": "rén huáng",
+    "hanviet": "nhân hoàng",
+    "vietnamese": "Human Sovereign, one of the three legendary sovereigns 三皇[san1 huang2]"
+  },
+  {
+    "simplified": "仁惠",
+    "traditional": "仁惠",
+    "pinyin": "rén hùi",
+    "hanviet": "nhân",
+    "vietnamese": "benevolent; merciful"
+  },
+  {
+    "simplified": "人祸",
+    "traditional": "人禍",
+    "pinyin": "rén hùo",
+    "hanviet": "nhân họa",
+    "vietnamese": "man-made disaster"
+  },
+  {
+    "simplified": "人际",
+    "traditional": "人際",
+    "pinyin": "rén jì",
+    "hanviet": "nhân",
+    "vietnamese": "human relationships; interpersonal"
+  },
+  {
+    "simplified": "人家",
+    "traditional": "人家",
+    "pinyin": "rén jiā",
+    "hanviet": "nhân gia",
+    "vietnamese": "household; dwelling"
+  },
+  {
+    "simplified": "人家",
+    "traditional": "人家",
+    "pinyin": "rén jia",
+    "hanviet": "nhân gia",
+    "vietnamese": "other people; sb else"
+  },
+  {
+    "simplified": "人间",
+    "traditional": "人間",
+    "pinyin": "rén jiān",
+    "hanviet": "nhân gian",
+    "vietnamese": "the human world; the earth"
+  },
+  {
+    "simplified": "任教",
+    "traditional": "任教",
+    "pinyin": "rèn jiào",
+    "hanviet": "giáo",
+    "vietnamese": "to hold a teaching position"
+  },
+  {
+    "simplified": "认脚",
+    "traditional": "認腳",
+    "pinyin": "rèn jiǎo",
+    "hanviet": "cước",
+    "vietnamese": "(of a shoe) designed to be worn on a specific foot – either the left or the right"
+  },
+  {
+    "simplified": "人杰",
+    "traditional": "人傑",
+    "pinyin": "rén jié",
+    "hanviet": "nhân",
+    "vietnamese": "outstanding talent; wise and able person"
+  },
+  {
+    "simplified": "韧劲",
+    "traditional": "韌勁",
+    "pinyin": "rèn jìn",
+    "hanviet": "",
+    "vietnamese": "tenacity"
+  },
+  {
+    "simplified": "人精",
+    "traditional": "人精",
+    "pinyin": "rén jīng",
+    "hanviet": "nhân",
+    "vietnamese": "sophisticate; man with extensive experience"
+  },
+  {
+    "simplified": "任咎",
+    "traditional": "任咎",
+    "pinyin": "rèn jiù",
+    "hanviet": "",
+    "vietnamese": "to take the blame"
+  },
+  {
+    "simplified": "人居",
+    "traditional": "人居",
+    "pinyin": "rén jū",
+    "hanviet": "nhân",
+    "vietnamese": "human habitat"
+  },
+  {
+    "simplified": "刃具",
+    "traditional": "刃具",
+    "pinyin": "rèn jù",
+    "hanviet": "",
+    "vietnamese": "cutting tool"
+  },
+  {
+    "simplified": "人均",
+    "traditional": "人均",
+    "pinyin": "rén jūn",
+    "hanviet": "nhân",
+    "vietnamese": "per capita; averaged per person"
+  },
+  {
+    "simplified": "忍俊",
+    "traditional": "忍俊",
+    "pinyin": "rěn jùn",
+    "hanviet": "",
+    "vietnamese": "smiling"
+  },
+  {
+    "simplified": "任课",
+    "traditional": "任課",
+    "pinyin": "rèn kè",
+    "hanviet": "",
+    "vietnamese": "to give classes; to work as a teacher"
+  },
+  {
+    "simplified": "认可",
+    "traditional": "認可",
+    "pinyin": "rèn kě",
+    "hanviet": "",
+    "vietnamese": "to approve; approval"
+  },
+  {
+    "simplified": "人孔",
+    "traditional": "人孔",
+    "pinyin": "rén kǒng",
+    "hanviet": "nhân",
+    "vietnamese": "manhole"
+  },
+  {
+    "simplified": "人口",
+    "traditional": "人口",
+    "pinyin": "rén kǒu",
+    "hanviet": "nhân khẩu",
+    "vietnamese": "population; people"
+  },
+  {
+    "simplified": "人矿",
+    "traditional": "人礦",
+    "pinyin": "rén kuàng",
+    "hanviet": "nhân",
+    "vietnamese": "(neologism, attested by 2023) (slang) the Chinese people, seen as a resource that is exploited for its value to the nati"
+  },
+  {
+    "simplified": "人类",
+    "traditional": "人類",
+    "pinyin": "rén lèi",
+    "hanviet": "nhân loại",
+    "vietnamese": "humanity; human race"
+  },
+  {
+    "simplified": "人力",
+    "traditional": "人力",
+    "pinyin": "rén lì",
+    "hanviet": "nhân lực",
+    "vietnamese": "manpower; labor power"
+  },
+  {
+    "simplified": "人链",
+    "traditional": "人鏈",
+    "pinyin": "rén liàn",
+    "hanviet": "nhân",
+    "vietnamese": "human chain"
+  },
+  {
+    "simplified": "任令",
+    "traditional": "任令",
+    "pinyin": "rèn lìng",
+    "hanviet": "",
+    "vietnamese": "to allow (sth to happen)"
+  },
+  {
+    "simplified": "认领",
+    "traditional": "認領",
+    "pinyin": "rèn lǐng",
+    "hanviet": "",
+    "vietnamese": "to claim (as one's property); to adopt (a child)"
+  },
+  {
+    "simplified": "人流",
+    "traditional": "人流",
+    "pinyin": "rén liú",
+    "hanviet": "nhân",
+    "vietnamese": "stream of people; abortion"
+  },
+  {
+    "simplified": "人龙",
+    "traditional": "人龍",
+    "pinyin": "rén lóng",
+    "hanviet": "nhân long",
+    "vietnamese": "a queue of people"
+  },
+  {
+    "simplified": "人伦",
+    "traditional": "人倫",
+    "pinyin": "rén lún",
+    "hanviet": "nhân",
+    "vietnamese": "ethical norms governing human relationships"
+  },
+  {
+    "simplified": "人马",
+    "traditional": "人馬",
+    "pinyin": "rén mǎ",
+    "hanviet": "nhân mã",
+    "vietnamese": "men and horses; troops"
+  },
+  {
+    "simplified": "人脉",
+    "traditional": "人脈",
+    "pinyin": "rén mài",
+    "hanviet": "nhân",
+    "vietnamese": "contacts; connections; network"
+  },
+  {
+    "simplified": "恁么",
+    "traditional": "恁麼",
+    "pinyin": "rèn me",
+    "hanviet": "ma",
+    "vietnamese": "(old) this way; what?"
+  },
+  {
+    "simplified": "人们",
+    "traditional": "人們",
+    "pinyin": "rén men",
+    "hanviet": "nhân",
+    "vietnamese": "people"
+  },
+  {
+    "simplified": "任免",
+    "traditional": "任免",
+    "pinyin": "rèn miǎn",
+    "hanviet": "",
+    "vietnamese": "to appoint and dismiss"
+  },
+  {
+    "simplified": "人民",
+    "traditional": "人民",
+    "pinyin": "rén mín",
+    "hanviet": "nhân dân",
+    "vietnamese": "the people"
+  },
+  {
+    "simplified": "人名",
+    "traditional": "人名",
+    "pinyin": "rén míng",
+    "hanviet": "nhân danh",
+    "vietnamese": "personal name"
+  },
+  {
+    "simplified": "人命",
+    "traditional": "人命",
+    "pinyin": "rén mìng",
+    "hanviet": "nhân mệnh",
+    "vietnamese": "human life; CL:條|条[tiao2]"
+  },
+  {
+    "simplified": "任命",
+    "traditional": "任命",
+    "pinyin": "rèn mìng",
+    "hanviet": "mệnh",
+    "vietnamese": "to appoint; (job) appointment"
+  },
+  {
+    "simplified": "认命",
+    "traditional": "認命",
+    "pinyin": "rèn mìng",
+    "hanviet": "mệnh",
+    "vietnamese": "to accept misfortunes as decreed by fate; to be resigned to sth"
+  },
+  {
+    "simplified": "认明",
+    "traditional": "認明",
+    "pinyin": "rèn míng",
+    "hanviet": "minh",
+    "vietnamese": "to identify; to authenticate"
+  },
+  {
+    "simplified": "人母",
+    "traditional": "人母",
+    "pinyin": "rén mǔ",
+    "hanviet": "nhân mẫu",
+    "vietnamese": "mother (as a social role)"
+  },
+  {
+    "simplified": "忍耐",
+    "traditional": "忍耐",
+    "pinyin": "rěn nài",
+    "hanviet": "",
+    "vietnamese": "to endure; to put up with; to exercise patience"
+  },
+  {
+    "simplified": "任内",
+    "traditional": "任內",
+    "pinyin": "rèn nèi",
+    "hanviet": "nội",
+    "vietnamese": "period in office"
+  },
+  {
+    "simplified": "人偶",
+    "traditional": "人偶",
+    "pinyin": "rén ǒu",
+    "hanviet": "nhân",
+    "vietnamese": "puppet; figure"
+  },
+  {
+    "simplified": "纫佩",
+    "traditional": "紉佩",
+    "pinyin": "rèn pèi",
+    "hanviet": "",
+    "vietnamese": "(literary) to esteem (sb's virtues) profoundly; to feel deep gratitude (for sb's kindness)"
+  },
+  {
+    "simplified": "认赔",
+    "traditional": "認賠",
+    "pinyin": "rèn péi",
+    "hanviet": "",
+    "vietnamese": "to agree to pay compensation; to accept liability"
+  },
+  {
+    "simplified": "韧皮",
+    "traditional": "韌皮",
+    "pinyin": "rèn pí",
+    "hanviet": "bì",
+    "vietnamese": "(botany) bast; phloem"
+  },
+  {
+    "simplified": "人品",
+    "traditional": "人品",
+    "pinyin": "rén pǐn",
+    "hanviet": "nhân phẩm",
+    "vietnamese": "character; moral strength; integrity; (coll.) looks; appearance; bearing"
+  },
+  {
+    "simplified": "任凭",
+    "traditional": "任憑",
+    "pinyin": "rèn píng",
+    "hanviet": "",
+    "vietnamese": "no matter what; despite"
+  },
+  {
+    "simplified": "人妻",
+    "traditional": "人妻",
+    "pinyin": "rén qī",
+    "hanviet": "nhân thê",
+    "vietnamese": "married woman; wife (as a social role)"
+  },
+  {
+    "simplified": "人气",
+    "traditional": "人氣",
+    "pinyin": "rén qì",
+    "hanviet": "nhân",
+    "vietnamese": "popularity; presence of people; liveliness"
+  },
+  {
+    "simplified": "任期",
+    "traditional": "任期",
+    "pinyin": "rèn qī",
+    "hanviet": "kỳ",
+    "vietnamese": "term of office; CL:屆|届[jie4]"
+  },
+  {
+    "simplified": "任气",
+    "traditional": "任氣",
+    "pinyin": "rèn qì",
+    "hanviet": "",
+    "vietnamese": "to act on impulse"
+  },
+  {
+    "simplified": "人墙",
+    "traditional": "人牆",
+    "pinyin": "rén qiáng",
+    "hanviet": "nhân tường",
+    "vietnamese": "human barricade; (soccer) defensive wall"
+  },
+  {
+    "simplified": "认亲",
+    "traditional": "認親",
+    "pinyin": "rèn qīn",
+    "hanviet": "",
+    "vietnamese": "to acknowledge sb as one's relative; to acknowledge kinship; (old) to visit new in-laws after a marriage"
+  },
+  {
+    "simplified": "人情",
+    "traditional": "人情",
+    "pinyin": "rén qíng",
+    "hanviet": "nhân tình",
+    "vietnamese": "human emotions; social relationship; friendship"
+  },
+  {
+    "simplified": "任情",
+    "traditional": "任情",
+    "pinyin": "rèn qíng",
+    "hanviet": "tình",
+    "vietnamese": "to let oneself go; to do as much as one pleases"
+  },
+  {
+    "simplified": "认清",
+    "traditional": "認清",
+    "pinyin": "rèn qīng",
+    "hanviet": "",
+    "vietnamese": "to see clearly; to recognize; to realize"
+  },
+  {
+    "simplified": "人球",
+    "traditional": "人球",
+    "pinyin": "rén qiú",
+    "hanviet": "nhân cầu",
+    "vietnamese": "person who is passed back and forth, with nobody willing to look after them (e.g. a child of divorced parents); (esp.) p"
+  },
+  {
+    "simplified": "人权",
+    "traditional": "人權",
+    "pinyin": "rén quán",
+    "hanviet": "nhân quyền",
+    "vietnamese": "human rights"
+  },
+  {
+    "simplified": "人群",
+    "traditional": "人群",
+    "pinyin": "rén qún",
+    "hanviet": "nhân",
+    "vietnamese": "crowd"
+  },
+  {
+    "simplified": "人儿",
+    "traditional": "人兒",
+    "pinyin": "rén r",
+    "hanviet": "nhân nhi",
+    "vietnamese": "figurine"
+  },
+  {
+    "simplified": "荏苒",
+    "traditional": "荏苒",
+    "pinyin": "rěn rǎn",
+    "hanviet": "",
+    "vietnamese": "(literary) (of time) to slip away"
+  },
+  {
+    "simplified": "忍让",
+    "traditional": "忍讓",
+    "pinyin": "rěn ràng",
+    "hanviet": "",
+    "vietnamese": "to exercise forbearance; patient and accommodating"
+  },
+  {
+    "simplified": "人人",
+    "traditional": "人人",
+    "pinyin": "rén rén",
+    "hanviet": "nhân nhân",
+    "vietnamese": "everyone; every person"
+  },
+  {
+    "simplified": "任人",
+    "traditional": "任人",
+    "pinyin": "rèn rén",
+    "hanviet": "nhân",
+    "vietnamese": "to appoint (sb to a post)"
+  },
+  {
+    "simplified": "认人",
+    "traditional": "認人",
+    "pinyin": "rèn rén",
+    "hanviet": "nhân",
+    "vietnamese": "to recognize people (of babies); to be able to tell people apart"
+  },
+  {
+    "simplified": "人肉",
+    "traditional": "人肉",
+    "pinyin": "rén ròu",
+    "hanviet": "nhân nhục",
+    "vietnamese": "to crowdsource information about sb or sth (typically as a form of vigilantism resulting in doxing) (abbr. for 人肉搜索[ren2"
+  },
+  {
+    "simplified": "人瑞",
+    "traditional": "人瑞",
+    "pinyin": "rén rùi",
+    "hanviet": "nhân",
+    "vietnamese": "very old person; venerable old person"
+  },
+  {
+    "simplified": "人蛇",
+    "traditional": "人蛇",
+    "pinyin": "rén shé",
+    "hanviet": "nhân xà",
+    "vietnamese": "illegal immigrant (esp. one smuggled across borders)"
+  },
+  {
+    "simplified": "人设",
+    "traditional": "人設",
+    "pinyin": "rén shè",
+    "hanviet": "nhân",
+    "vietnamese": "character design (in games, manga etc) (abbr. for 人物設定|人物设定[ren2 wu4 she4 ding4]); (fig.) public image; (esp. a delibera"
+  },
+  {
+    "simplified": "人参",
+    "traditional": "人參",
+    "pinyin": "rén shēn",
+    "hanviet": "nhân",
+    "vietnamese": "ginseng"
+  },
+  {
+    "simplified": "人身",
+    "traditional": "人身",
+    "pinyin": "rén shēn",
+    "hanviet": "nhân thân",
+    "vietnamese": "person; personal"
+  },
+  {
+    "simplified": "壬申",
+    "traditional": "壬申",
+    "pinyin": "rén shēn",
+    "hanviet": "",
+    "vietnamese": "ninth year I9 of the 60 year cycle, e.g. 1992 or 2052"
+  },
+  {
+    "simplified": "妊娠",
+    "traditional": "妊娠",
+    "pinyin": "rèn shēn",
+    "hanviet": "",
+    "vietnamese": "pregnancy; gestation"
+  },
+  {
+    "simplified": "人生",
+    "traditional": "人生",
+    "pinyin": "rén shēng",
+    "hanviet": "nhân sinh",
+    "vietnamese": "life (one's time on earth)"
+  },
+  {
+    "simplified": "认生",
+    "traditional": "認生",
+    "pinyin": "rèn shēng",
+    "hanviet": "sinh",
+    "vietnamese": "shy with strangers"
+  },
+  {
+    "simplified": "人世",
+    "traditional": "人世",
+    "pinyin": "rén shì",
+    "hanviet": "nhân",
+    "vietnamese": "the world; this world"
+  },
+  {
+    "simplified": "人事",
+    "traditional": "人事",
+    "pinyin": "rén shì",
+    "hanviet": "nhân",
+    "vietnamese": "personnel; human resources"
+  },
+  {
+    "simplified": "人势",
+    "traditional": "人勢",
+    "pinyin": "rén shì",
+    "hanviet": "nhân",
+    "vietnamese": "(human) penis (TCM)"
+  },
+  {
+    "simplified": "人士",
+    "traditional": "人士",
+    "pinyin": "rén shì",
+    "hanviet": "nhân",
+    "vietnamese": "person; figure"
+  },
+  {
+    "simplified": "人师",
+    "traditional": "人師",
+    "pinyin": "rén shī",
+    "hanviet": "nhân sư",
+    "vietnamese": "mentor; role model"
+  },
+  {
+    "simplified": "人氏",
+    "traditional": "人氏",
+    "pinyin": "rén shì",
+    "hanviet": "nhân",
+    "vietnamese": "native; person from a particular place"
+  },
+  {
+    "simplified": "任事",
+    "traditional": "任事",
+    "pinyin": "rèn shì",
+    "hanviet": "",
+    "vietnamese": "appointment to an important post"
   },
   {
     "simplified": "认识",
     "traditional": "認識",
     "pinyin": "rèn shi",
-    "hanviet": "nhận thức",
-    "vietnamese": "Biết, nhận ra"
+    "hanviet": "thức",
+    "vietnamese": "to know; to recognize"
+  },
+  {
+    "simplified": "人寿",
+    "traditional": "人壽",
+    "pinyin": "rén shòu",
+    "hanviet": "nhân",
+    "vietnamese": "human lifespan; life insurance (abbr. for 人壽保險|人寿保险[ren2 shou4 bao3 xian3])"
+  },
+  {
+    "simplified": "人手",
+    "traditional": "人手",
+    "pinyin": "rén shǒu",
+    "hanviet": "nhân thủ",
+    "vietnamese": "manpower; staff"
+  },
+  {
+    "simplified": "忍受",
+    "traditional": "忍受",
+    "pinyin": "rěn shòu",
+    "hanviet": "",
+    "vietnamese": "to bear; to endure"
+  },
+  {
+    "simplified": "人数",
+    "traditional": "人數",
+    "pinyin": "rén shù",
+    "hanviet": "nhân số",
+    "vietnamese": "number of people"
+  },
+  {
+    "simplified": "仁术",
+    "traditional": "仁術",
+    "pinyin": "rén shù",
+    "hanviet": "nhân thuật",
+    "vietnamese": "kindness; benevolence"
+  },
+  {
+    "simplified": "认输",
+    "traditional": "認輸",
+    "pinyin": "rèn shū",
+    "hanviet": "",
+    "vietnamese": "to concede; to admit defeat"
+  },
+  {
+    "simplified": "认怂",
+    "traditional": "認慫",
+    "pinyin": "rèn sóng",
+    "hanviet": "",
+    "vietnamese": "(coll.) to back down; to concede defeat; to lose one's nerve"
+  },
+  {
+    "simplified": "任随",
+    "traditional": "任隨",
+    "pinyin": "rèn súi",
+    "hanviet": "",
+    "vietnamese": "to allow (sb to have his head); to let things happen"
+  },
+  {
+    "simplified": "任所",
+    "traditional": "任所",
+    "pinyin": "rèn sǔo",
+    "hanviet": "sở",
+    "vietnamese": "one's office; place where one holds a post"
+  },
+  {
+    "simplified": "人体",
+    "traditional": "人體",
+    "pinyin": "rén tǐ",
+    "hanviet": "nhân thể",
+    "vietnamese": "human body"
+  },
+  {
+    "simplified": "人梯",
+    "traditional": "人梯",
+    "pinyin": "rén tī",
+    "hanviet": "nhân",
+    "vietnamese": "human ladder (formed to help sb climb a wall etc); (fig.) person who sacrifices himself for others' success"
+  },
+  {
+    "simplified": "韧体",
+    "traditional": "韌體",
+    "pinyin": "rèn tǐ",
+    "hanviet": "thể",
+    "vietnamese": "firmware"
+  },
+  {
+    "simplified": "任听",
+    "traditional": "任聽",
+    "pinyin": "rèn tīng",
+    "hanviet": "thính",
+    "vietnamese": "to allow (sb to act arbitrarily); to let sb have his head"
+  },
+  {
+    "simplified": "忍痛",
+    "traditional": "忍痛",
+    "pinyin": "rěn tòng",
+    "hanviet": "",
+    "vietnamese": "to suffer; fig. reluctantly"
+  },
+  {
+    "simplified": "认同",
+    "traditional": "認同",
+    "pinyin": "rèn tóng",
+    "hanviet": "đồng",
+    "vietnamese": "to approve of; to endorse"
+  },
+  {
+    "simplified": "人头",
+    "traditional": "人頭",
+    "pinyin": "rén tóu",
+    "hanviet": "nhân đầu",
+    "vietnamese": "person; number of people"
+  },
+  {
+    "simplified": "认头",
+    "traditional": "認頭",
+    "pinyin": "rèn tóu",
+    "hanviet": "đầu",
+    "vietnamese": "to admit defeat; to accept having lost"
+  },
+  {
+    "simplified": "人望",
+    "traditional": "人望",
+    "pinyin": "rén wàng",
+    "hanviet": "nhân",
+    "vietnamese": "prestige; esteem"
+  },
+  {
+    "simplified": "人为",
+    "traditional": "人為",
+    "pinyin": "rén wéi",
+    "hanviet": "nhân vi",
+    "vietnamese": "artificial; man-made"
+  },
+  {
+    "simplified": "认为",
+    "traditional": "認為",
+    "pinyin": "rèn wéi",
+    "hanviet": "vi",
+    "vietnamese": "to believe; to think; to consider; to feel"
+  },
+  {
+    "simplified": "人文",
+    "traditional": "人文",
+    "pinyin": "rén wén",
+    "hanviet": "nhân văn",
+    "vietnamese": "humanities; culture; humanistic"
+  },
+  {
+    "simplified": "人武",
+    "traditional": "人武",
+    "pinyin": "rén wǔ",
+    "hanviet": "nhân",
+    "vietnamese": "armed forces"
+  },
+  {
+    "simplified": "人物",
+    "traditional": "人物",
+    "pinyin": "rén wù",
+    "hanviet": "nhân",
+    "vietnamese": "person; personage; figure (esp. sb of importance); character (in a play, novel etc)"
+  },
+  {
+    "simplified": "任务",
+    "traditional": "任務",
+    "pinyin": "rèn wu",
+    "hanviet": "",
+    "vietnamese": "mission; assignment; task; duty; role; CL:項|项[xiang4]"
+  },
+  {
+    "simplified": "壬午",
+    "traditional": "壬午",
+    "pinyin": "rén wǔ",
+    "hanviet": "",
+    "vietnamese": "nineteenth year I7 of the 60 year cycle, e.g. 2002 or 2062"
+  },
+  {
+    "simplified": "任侠",
+    "traditional": "任俠",
+    "pinyin": "rèn xiá",
+    "hanviet": "",
+    "vietnamese": "chivalrous; helping the weak for the sake of justice"
+  },
+  {
+    "simplified": "人像",
+    "traditional": "人像",
+    "pinyin": "rén xiàng",
+    "hanviet": "nhân",
+    "vietnamese": "likeness of a person (sketch, photo, sculpture etc)"
+  },
+  {
+    "simplified": "人相",
+    "traditional": "人相",
+    "pinyin": "rén xiàng",
+    "hanviet": "nhân tương",
+    "vietnamese": "physiognomy"
+  },
+  {
+    "simplified": "人效",
+    "traditional": "人效",
+    "pinyin": "rén xiào",
+    "hanviet": "nhân",
+    "vietnamese": "human resource efficiency (abbr. for 人力資源效能|人力资源效能[ren2 li4 zi1 yuan2 xiao4 neng2])"
+  },
+  {
+    "simplified": "人心",
+    "traditional": "人心",
+    "pinyin": "rén xīn",
+    "hanviet": "nhân tâm",
+    "vietnamese": "popular feeling; the will of the people"
+  },
+  {
+    "simplified": "忍心",
+    "traditional": "忍心",
+    "pinyin": "rěn xīn",
+    "hanviet": "tâm",
+    "vietnamese": "to have the heart to do sth; to steel oneself to a task"
+  },
+  {
+    "simplified": "人形",
+    "traditional": "人形",
+    "pinyin": "rén xíng",
+    "hanviet": "nhân hình",
+    "vietnamese": "human form; human-shaped; humanoid"
+  },
+  {
+    "simplified": "人性",
+    "traditional": "人性",
+    "pinyin": "rén xìng",
+    "hanviet": "nhân tính",
+    "vietnamese": "human nature; humanity"
+  },
+  {
+    "simplified": "任性",
+    "traditional": "任性",
+    "pinyin": "rèn xìng",
+    "hanviet": "tính",
+    "vietnamese": "willful; headstrong"
+  },
+  {
+    "simplified": "韧性",
+    "traditional": "韌性",
+    "pinyin": "rèn xìng",
+    "hanviet": "tính",
+    "vietnamese": "toughness"
+  },
+  {
+    "simplified": "仁兄",
+    "traditional": "仁兄",
+    "pinyin": "rén xīong",
+    "hanviet": "nhân huynh",
+    "vietnamese": "(honorific written address) My dear friend"
+  },
+  {
+    "simplified": "壬戌",
+    "traditional": "壬戌",
+    "pinyin": "rén xū",
+    "hanviet": "",
+    "vietnamese": "fifty-ninth year I11 of the 60 year cycle, e.g. 1982 or 2042"
+  },
+  {
+    "simplified": "人选",
+    "traditional": "人選",
+    "pinyin": "rén xuǎn",
+    "hanviet": "nhân",
+    "vietnamese": "choice of person; candidate"
+  },
+  {
+    "simplified": "任选",
+    "traditional": "任選",
+    "pinyin": "rèn xuǎn",
+    "hanviet": "",
+    "vietnamese": "to choose freely; to pick whichever one fancies"
+  },
+  {
+    "simplified": "人烟",
+    "traditional": "人煙",
+    "pinyin": "rén yān",
+    "hanviet": "nhân",
+    "vietnamese": "sign of human habitation"
+  },
+  {
+    "simplified": "认养",
+    "traditional": "認養",
+    "pinyin": "rèn yǎng",
+    "hanviet": "",
+    "vietnamese": "to sponsor; to adopt (pledge to give sb or sth one's special attention or support)"
+  },
+  {
+    "simplified": "人妖",
+    "traditional": "人妖",
+    "pinyin": "rén yāo",
+    "hanviet": "nhân",
+    "vietnamese": "transvestite; transsexual"
+  },
+  {
+    "simplified": "人意",
+    "traditional": "人意",
+    "pinyin": "rén yì",
+    "hanviet": "nhân ý",
+    "vietnamese": "people's expectations"
+  },
+  {
+    "simplified": "仁义",
+    "traditional": "仁義",
+    "pinyin": "rén yì",
+    "hanviet": "nhân nghĩa",
+    "vietnamese": "benevolence and righteousness"
+  },
+  {
+    "simplified": "仁义",
+    "traditional": "仁義",
+    "pinyin": "rén yi",
+    "hanviet": "nhân nghĩa",
+    "vietnamese": "affable and even-tempered"
+  },
+  {
+    "simplified": "任一",
+    "traditional": "任一",
+    "pinyin": "rèn yī",
+    "hanviet": "nhất",
+    "vietnamese": "any; either"
+  },
+  {
+    "simplified": "任意",
+    "traditional": "任意",
+    "pinyin": "rèn yì",
+    "hanviet": "ý",
+    "vietnamese": "any; arbitrary"
+  },
+  {
+    "simplified": "壬寅",
+    "traditional": "壬寅",
+    "pinyin": "rén yín",
+    "hanviet": "",
+    "vietnamese": "thirty-ninth year I3 of the 60 year cycle, e.g. 1962 or 2022"
+  },
+  {
+    "simplified": "人影",
+    "traditional": "人影",
+    "pinyin": "rén yǐng",
+    "hanviet": "nhân",
+    "vietnamese": "the shadow of a human figure; a trace of a person's presence (usu. combined with a negative verb)"
+  },
+  {
+    "simplified": "任用",
+    "traditional": "任用",
+    "pinyin": "rèn yòng",
+    "hanviet": "dụng",
+    "vietnamese": "to appoint; to assign"
+  },
+  {
+    "simplified": "任由",
+    "traditional": "任由",
+    "pinyin": "rèn yóu",
+    "hanviet": "",
+    "vietnamese": "to let (sb do sth); to allow"
+  },
+  {
+    "simplified": "人鱼",
+    "traditional": "人魚",
+    "pinyin": "rén yú",
+    "hanviet": "nhân ngư",
+    "vietnamese": "mermaid; dugong"
+  },
+  {
+    "simplified": "人员",
+    "traditional": "人員",
+    "pinyin": "rén yuán",
+    "hanviet": "nhân viên",
+    "vietnamese": "staff; crew"
+  },
+  {
+    "simplified": "人猿",
+    "traditional": "人猿",
+    "pinyin": "rén yuán",
+    "hanviet": "nhân",
+    "vietnamese": "anthropoid ape"
+  },
+  {
+    "simplified": "人缘",
+    "traditional": "人緣",
+    "pinyin": "rén yuán",
+    "hanviet": "nhân duyên",
+    "vietnamese": "relations with other people"
+  },
+  {
+    "simplified": "认栽",
+    "traditional": "認栽",
+    "pinyin": "rèn zāi",
+    "hanviet": "",
+    "vietnamese": "to admit defeat"
+  },
+  {
+    "simplified": "人造",
+    "traditional": "人造",
+    "pinyin": "rén zào",
+    "hanviet": "nhân tạo",
+    "vietnamese": "man-made; artificial"
+  },
+  {
+    "simplified": "人渣",
+    "traditional": "人渣",
+    "pinyin": "rén zhā",
+    "hanviet": "nhân",
+    "vietnamese": "dregs of society; scum"
+  },
+  {
+    "simplified": "认账",
+    "traditional": "認賬",
+    "pinyin": "rèn zhàng",
+    "hanviet": "",
+    "vietnamese": "to own up to a fault; to admit the truth"
+  },
+  {
+    "simplified": "忍者",
+    "traditional": "忍者",
+    "pinyin": "rěn zhě",
+    "hanviet": "",
+    "vietnamese": "ninja"
+  },
+  {
+    "simplified": "纫针",
+    "traditional": "紉針",
+    "pinyin": "rèn zhēn",
+    "hanviet": "",
+    "vietnamese": "to thread a needle"
+  },
+  {
+    "simplified": "认真",
+    "traditional": "認真",
+    "pinyin": "rèn zhēn",
+    "hanviet": "chân",
+    "vietnamese": "conscientious; earnest"
+  },
+  {
+    "simplified": "人证",
+    "traditional": "人證",
+    "pinyin": "rén zhèng",
+    "hanviet": "nhân",
+    "vietnamese": "witness testimony"
+  },
+  {
+    "simplified": "仁政",
+    "traditional": "仁政",
+    "pinyin": "rén zhèng",
+    "hanviet": "nhân chính",
+    "vietnamese": "benevolent policy; humane government"
+  },
+  {
+    "simplified": "认证",
+    "traditional": "認證",
+    "pinyin": "rèn zhèng",
+    "hanviet": "",
+    "vietnamese": "to authenticate; to approve"
+  },
+  {
+    "simplified": "人治",
+    "traditional": "人治",
+    "pinyin": "rén zhì",
+    "hanviet": "nhân",
+    "vietnamese": "rule of man"
+  },
+  {
+    "simplified": "人质",
+    "traditional": "人質",
+    "pinyin": "rén zhì",
+    "hanviet": "nhân",
+    "vietnamese": "hostage"
+  },
+  {
+    "simplified": "任直",
+    "traditional": "任直",
+    "pinyin": "rèn zhí",
+    "hanviet": "trực",
+    "vietnamese": "Nintendo Direct (announcement presentation)"
+  },
+  {
+    "simplified": "任职",
+    "traditional": "任職",
+    "pinyin": "rèn zhí",
+    "hanviet": "",
+    "vietnamese": "to hold a post; to take office"
+  },
+  {
+    "simplified": "稔知",
+    "traditional": "稔知",
+    "pinyin": "rěn zhī",
+    "hanviet": "tri",
+    "vietnamese": "(literary) to be fully aware of"
+  },
+  {
+    "simplified": "纴织",
+    "traditional": "紝織",
+    "pinyin": "rèn zhī",
+    "hanviet": "",
+    "vietnamese": "to weave"
+  },
+  {
+    "simplified": "认知",
+    "traditional": "認知",
+    "pinyin": "rèn zhī",
+    "hanviet": "tri",
+    "vietnamese": "cognition; cognitive"
+  },
+  {
+    "simplified": "人中",
+    "traditional": "人中",
+    "pinyin": "rén zhōng",
+    "hanviet": "nhân trung",
+    "vietnamese": "philtrum; infranasal depression"
+  },
+  {
+    "simplified": "人种",
+    "traditional": "人種",
+    "pinyin": "rén zhǒng",
+    "hanviet": "nhân chủng",
+    "vietnamese": "race (of people)"
+  },
+  {
+    "simplified": "认准",
+    "traditional": "認準",
+    "pinyin": "rèn zhǔn",
+    "hanviet": "",
+    "vietnamese": "to identify clearly; to make sure of"
+  },
+  {
+    "simplified": "人子",
+    "traditional": "人子",
+    "pinyin": "rén zǐ",
+    "hanviet": "nhân tử",
+    "vietnamese": "son of man"
+  },
+  {
+    "simplified": "人资",
+    "traditional": "人資",
+    "pinyin": "rén zī",
+    "hanviet": "nhân",
+    "vietnamese": "abbr. of 人力資源|人力资源[ren2 li4 zi1 yuan2]"
+  },
+  {
+    "simplified": "壬子",
+    "traditional": "壬子",
+    "pinyin": "rén zǐ",
+    "hanviet": "tử",
+    "vietnamese": "forty-ninth year I1 of the 60 year cycle, e.g. 1972 or 2032"
+  },
+  {
+    "simplified": "认字",
+    "traditional": "認字",
+    "pinyin": "rèn zì",
+    "hanviet": "tự",
+    "vietnamese": "to learn to read; able to read; literate"
+  },
+  {
+    "simplified": "人族",
+    "traditional": "人族",
+    "pinyin": "rén zú",
+    "hanviet": "nhân tộc",
+    "vietnamese": "Hominini"
+  },
+  {
+    "simplified": "认罪",
+    "traditional": "認罪",
+    "pinyin": "rèn zùi",
+    "hanviet": "",
+    "vietnamese": "to admit guilt; to plead guilty"
+  },
+  {
+    "simplified": "认作",
+    "traditional": "認作",
+    "pinyin": "rèn zùo",
+    "hanviet": "tác",
+    "vietnamese": "to regard as; to view"
+  },
+  {
+    "simplified": "仍",
+    "traditional": "仍",
+    "pinyin": "réng",
+    "hanviet": "",
+    "vietnamese": "still; yet; to remain"
+  },
+  {
+    "simplified": "扔",
+    "traditional": "扔",
+    "pinyin": "rēng",
+    "hanviet": "",
+    "vietnamese": "to throw; to throw away"
+  },
+  {
+    "simplified": "礽",
+    "traditional": "礽",
+    "pinyin": "réng",
+    "hanviet": "",
+    "vietnamese": "blessings"
+  },
+  {
+    "simplified": "芿",
+    "traditional": "芿",
+    "pinyin": "rèng",
+    "hanviet": "",
+    "vietnamese": "weeds that regrow from cut-down roots"
+  },
+  {
+    "simplified": "陾",
+    "traditional": "陾",
+    "pinyin": "réng",
+    "hanviet": "",
+    "vietnamese": "sound of stonemason's shovel"
+  },
+  {
+    "simplified": "扔掉",
+    "traditional": "扔掉",
+    "pinyin": "rēng diào",
+    "hanviet": "",
+    "vietnamese": "to throw away; to throw out"
+  },
+  {
+    "simplified": "仍旧",
+    "traditional": "仍舊",
+    "pinyin": "réng jiù",
+    "hanviet": "cựu",
+    "vietnamese": "still (remaining); to remain (the same)"
+  },
+  {
+    "simplified": "扔弃",
+    "traditional": "扔棄",
+    "pinyin": "rēng qì",
+    "hanviet": "",
+    "vietnamese": "to abandon; to discard"
+  },
+  {
+    "simplified": "仍然",
+    "traditional": "仍然",
+    "pinyin": "réng rán",
+    "hanviet": "",
+    "vietnamese": "still; as before; yet"
+  },
+  {
+    "simplified": "扔下",
+    "traditional": "扔下",
+    "pinyin": "rēng xià",
+    "hanviet": "hạ",
+    "vietnamese": "to throw down; to drop (bomb)"
   },
   {
     "simplified": "日",
     "traditional": "日",
     "pinyin": "rì",
     "hanviet": "nhật",
-    "vietnamese": "Ngày, mặt trời"
+    "vietnamese": "(bound form) sun; day"
   },
   {
-    "simplified": "日",
-    "traditional": "日",
+    "simplified": "鈤",
+    "traditional": "鈤",
     "pinyin": "rì",
+    "hanviet": "",
+    "vietnamese": "archaic translation of element germanium Ge32 鍺|锗[zhe3]"
+  },
+  {
+    "simplified": "驲",
+    "traditional": "馹",
+    "pinyin": "rì",
+    "hanviet": "",
+    "vietnamese": "horse for relaying dispatches"
+  },
+  {
+    "simplified": "日班",
+    "traditional": "日班",
+    "pinyin": "rì bān",
     "hanviet": "nhật",
-    "vietnamese": "Ngày"
+    "vietnamese": "day shift"
+  },
+  {
+    "simplified": "日报",
+    "traditional": "日報",
+    "pinyin": "rì bào",
+    "hanviet": "nhật báo",
+    "vietnamese": "daily newspaper"
+  },
+  {
+    "simplified": "日本",
+    "traditional": "日本",
+    "pinyin": "rì běn",
+    "hanviet": "nhật",
+    "vietnamese": "Japan"
+  },
+  {
+    "simplified": "日产",
+    "traditional": "日產",
+    "pinyin": "rì chǎn",
+    "hanviet": "nhật sản",
+    "vietnamese": "Nissan, Japanese car make; also transliterated 尼桑[Ni2 sang1]"
+  },
+  {
+    "simplified": "日场",
+    "traditional": "日場",
+    "pinyin": "rì chǎng",
+    "hanviet": "nhật tràng",
+    "vietnamese": "daytime show; matinee"
+  },
+  {
+    "simplified": "日常",
+    "traditional": "日常",
+    "pinyin": "rì cháng",
+    "hanviet": "nhật thường",
+    "vietnamese": "day-to-day; daily; everyday"
+  },
+  {
+    "simplified": "日朝",
+    "traditional": "日朝",
+    "pinyin": "rì cháo",
+    "hanviet": "nhật triều",
+    "vietnamese": "Japan and Korea (esp. North Korea)"
+  },
+  {
+    "simplified": "日程",
+    "traditional": "日程",
+    "pinyin": "rì chéng",
+    "hanviet": "nhật",
+    "vietnamese": "schedule; itinerary"
+  },
+  {
+    "simplified": "日出",
+    "traditional": "日出",
+    "pinyin": "rì chū",
+    "hanviet": "nhật xuất",
+    "vietnamese": "sunrise"
+  },
+  {
+    "simplified": "日戳",
+    "traditional": "日戳",
+    "pinyin": "rì chūo",
+    "hanviet": "nhật",
+    "vietnamese": "date stamp"
+  },
+  {
+    "simplified": "日电",
+    "traditional": "日電",
+    "pinyin": "rì diàn",
+    "hanviet": "nhật điện",
+    "vietnamese": "NEC (Nippon Electronic Company); abbr. for 日電電子|日电电子"
+  },
+  {
+    "simplified": "日方",
+    "traditional": "日方",
+    "pinyin": "rì fāng",
+    "hanviet": "nhật phương",
+    "vietnamese": "the Japanese side or party (in negotiations etc)"
+  },
+  {
+    "simplified": "日怪",
+    "traditional": "日怪",
+    "pinyin": "rì guài",
+    "hanviet": "nhật",
+    "vietnamese": "(dialect) strange"
+  },
+  {
+    "simplified": "日光",
+    "traditional": "日光",
+    "pinyin": "rì guāng",
+    "hanviet": "nhật quang",
+    "vietnamese": "sunlight"
+  },
+  {
+    "simplified": "日晷",
+    "traditional": "日晷",
+    "pinyin": "rì gǔi",
+    "hanviet": "nhật",
+    "vietnamese": "sundial"
+  },
+  {
+    "simplified": "日规",
+    "traditional": "日規",
+    "pinyin": "rì gūi",
+    "hanviet": "nhật",
+    "vietnamese": "sundial"
+  },
+  {
+    "simplified": "日韩",
+    "traditional": "日韓",
+    "pinyin": "rì hán",
+    "hanviet": "nhật",
+    "vietnamese": "Japan and Korea"
+  },
+  {
+    "simplified": "日航",
+    "traditional": "日航",
+    "pinyin": "rì háng",
+    "hanviet": "nhật",
+    "vietnamese": "Japan Airlines (JAL) (abbr. for 日本航空[Ri4 ben3 Hang2 kong1])"
+  },
+  {
+    "simplified": "日后",
+    "traditional": "日後",
+    "pinyin": "rì hòu",
+    "hanviet": "nhật hậu",
+    "vietnamese": "sometime; someday (in the future)"
+  },
+  {
+    "simplified": "日化",
+    "traditional": "日化",
+    "pinyin": "rì huà",
+    "hanviet": "nhật",
+    "vietnamese": "household chemicals (cleaning products etc) and toiletries (abbr. for 日用化學製品|日用化学制品[ri4 yong4 hua4 xue2 zhi4 pin3]); (li"
+  },
+  {
+    "simplified": "日货",
+    "traditional": "日貨",
+    "pinyin": "rì hùo",
+    "hanviet": "nhật",
+    "vietnamese": "Japanese goods"
+  },
+  {
+    "simplified": "日记",
+    "traditional": "日記",
+    "pinyin": "rì jì",
+    "hanviet": "nhật",
+    "vietnamese": "diary; CL:則|则[ze2],本[ben3],篇[pian1]"
+  },
+  {
+    "simplified": "日渐",
+    "traditional": "日漸",
+    "pinyin": "rì jiàn",
+    "hanviet": "nhật",
+    "vietnamese": "to progress (or increase, change etc) day by day; more (or better etc) with each passing day"
+  },
+  {
+    "simplified": "日间",
+    "traditional": "日間",
+    "pinyin": "rì jiān",
+    "hanviet": "nhật gian",
+    "vietnamese": "daytime"
+  },
+  {
+    "simplified": "日经",
+    "traditional": "日經",
+    "pinyin": "rì jīng",
+    "hanviet": "nhật",
+    "vietnamese": "Nikkei, abbr. for Nikkei Shimbun 日本經濟新聞|日本经济新闻[Ri4 ben3 Jing1 ji4 Xin1 wen2]; abbr. for Nikkei 225 index 日經指數|日经指数[Ri4 j"
+  },
+  {
+    "simplified": "日久",
+    "traditional": "日久",
+    "pinyin": "rì jiǔ",
+    "hanviet": "nhật cửu",
+    "vietnamese": "with the passage of time; over time"
+  },
+  {
+    "simplified": "日据",
+    "traditional": "日據",
+    "pinyin": "rì jù",
+    "hanviet": "nhật",
+    "vietnamese": "(geopolitics) Japanese occupation (of Taiwan etc)"
+  },
+  {
+    "simplified": "日军",
+    "traditional": "日軍",
+    "pinyin": "rì jūn",
+    "hanviet": "nhật quân",
+    "vietnamese": "Japanese army; Japanese troops"
+  },
+  {
+    "simplified": "日刊",
+    "traditional": "日刊",
+    "pinyin": "rì kān",
+    "hanviet": "nhật",
+    "vietnamese": "daily (publication)"
+  },
+  {
+    "simplified": "日来",
+    "traditional": "日來",
+    "pinyin": "rì lái",
+    "hanviet": "nhật lai",
+    "vietnamese": "in the past few days; lately"
+  },
+  {
+    "simplified": "日历",
+    "traditional": "日曆",
+    "pinyin": "rì lì",
+    "hanviet": "nhật",
+    "vietnamese": "calendar; CL:張|张[zhang1],本[ben3]"
+  },
+  {
+    "simplified": "日立",
+    "traditional": "日立",
+    "pinyin": "rì lì",
+    "hanviet": "nhật",
+    "vietnamese": "Hitachi, Ltd."
+  },
+  {
+    "simplified": "日里",
+    "traditional": "日裡",
+    "pinyin": "rì lǐ",
+    "hanviet": "nhật lý",
+    "vietnamese": "daytime; during the day"
+  },
+  {
+    "simplified": "日料",
+    "traditional": "日料",
+    "pinyin": "rì liào",
+    "hanviet": "nhật",
+    "vietnamese": "Japanese cuisine (abbr. for 日本料理[Ri4 ben3 liao4 li3])"
+  },
+  {
+    "simplified": "日流",
+    "traditional": "日流",
+    "pinyin": "rì liú",
+    "hanviet": "nhật",
+    "vietnamese": "the spread of Japanese cultural products (anime, pop music etc) to other countries"
+  },
+  {
+    "simplified": "日落",
+    "traditional": "日落",
+    "pinyin": "rì lùo",
+    "hanviet": "nhật",
+    "vietnamese": "sundown; sunset"
+  },
+  {
+    "simplified": "日媒",
+    "traditional": "日媒",
+    "pinyin": "rì méi",
+    "hanviet": "nhật",
+    "vietnamese": "Japanese news media"
+  },
+  {
+    "simplified": "日美",
+    "traditional": "日美",
+    "pinyin": "rì měi",
+    "hanviet": "nhật mỹ",
+    "vietnamese": "Japan-US"
+  },
+  {
+    "simplified": "日冕",
+    "traditional": "日冕",
+    "pinyin": "rì miǎn",
+    "hanviet": "nhật",
+    "vietnamese": "corona"
+  },
+  {
+    "simplified": "日没",
+    "traditional": "日沒",
+    "pinyin": "rì mò",
+    "hanviet": "nhật một",
+    "vietnamese": "sunset; sundown"
+  },
+  {
+    "simplified": "日暮",
+    "traditional": "日暮",
+    "pinyin": "rì mù",
+    "hanviet": "nhật",
+    "vietnamese": "sunset"
+  },
+  {
+    "simplified": "日内",
+    "traditional": "日內",
+    "pinyin": "rì nèi",
+    "hanviet": "nhật nội",
+    "vietnamese": "in a few days; one of these days"
+  },
+  {
+    "simplified": "日抛",
+    "traditional": "日拋",
+    "pinyin": "rì pāo",
+    "hanviet": "nhật",
+    "vietnamese": "(attributive) daily disposable; intended for one-day use"
+  },
+  {
+    "simplified": "日期",
+    "traditional": "日期",
+    "pinyin": "rì qī",
+    "hanviet": "nhật kỳ",
+    "vietnamese": "date"
+  },
+  {
+    "simplified": "日前",
+    "traditional": "日前",
+    "pinyin": "rì qián",
+    "hanviet": "nhật tiền",
+    "vietnamese": "the other day; a few days ago"
+  },
+  {
+    "simplified": "日趋",
+    "traditional": "日趨",
+    "pinyin": "rì qū",
+    "hanviet": "nhật",
+    "vietnamese": "(increasing) day by day; (more critical) with every passing day"
+  },
+  {
+    "simplified": "日惹",
+    "traditional": "日惹",
+    "pinyin": "rì rě",
+    "hanviet": "nhật",
+    "vietnamese": "Yogyakarta, city of Java, Indonesia, and capital of the Special Region of Yogyakarta 日惹特區|日惹特区[Ri4 re3 Te4 qu1]"
+  },
+  {
+    "simplified": "日人",
+    "traditional": "日人",
+    "pinyin": "rì rén",
+    "hanviet": "nhật nhân",
+    "vietnamese": "Japanese person; the Japanese"
+  },
+  {
+    "simplified": "日日",
+    "traditional": "日日",
+    "pinyin": "rì rì",
+    "hanviet": "nhật nhật",
+    "vietnamese": "every day"
+  },
+  {
+    "simplified": "日神",
+    "traditional": "日神",
+    "pinyin": "rì shén",
+    "hanviet": "nhật",
+    "vietnamese": "the Sun God; Apollo"
+  },
+  {
+    "simplified": "日盛",
+    "traditional": "日盛",
+    "pinyin": "rì shèng",
+    "hanviet": "nhật",
+    "vietnamese": "more flourishing by the day"
+  },
+  {
+    "simplified": "日式",
+    "traditional": "日式",
+    "pinyin": "rì shì",
+    "hanviet": "nhật",
+    "vietnamese": "Japanese style"
+  },
+  {
+    "simplified": "日食",
+    "traditional": "日食",
+    "pinyin": "rì shí",
+    "hanviet": "nhật",
+    "vietnamese": "solar eclipse"
+  },
+  {
+    "simplified": "日头",
+    "traditional": "日頭",
+    "pinyin": "rì tóu",
+    "hanviet": "nhật đầu",
+    "vietnamese": "sun (dialect); daytime"
+  },
+  {
+    "simplified": "日文",
+    "traditional": "日文",
+    "pinyin": "rì wén",
+    "hanviet": "nhật văn",
+    "vietnamese": "Japanese (language)"
+  },
+  {
+    "simplified": "日系",
+    "traditional": "日系",
+    "pinyin": "rì xì",
+    "hanviet": "nhật",
+    "vietnamese": "(attributive) of Japanese origin"
+  },
+  {
+    "simplified": "日新",
+    "traditional": "日新",
+    "pinyin": "rì xīn",
+    "hanviet": "nhật tân",
+    "vietnamese": "in constant progress"
+  },
+  {
+    "simplified": "日薪",
+    "traditional": "日薪",
+    "pinyin": "rì xīn",
+    "hanviet": "nhật",
+    "vietnamese": "daily wage"
+  },
+  {
+    "simplified": "日夜",
+    "traditional": "日夜",
+    "pinyin": "rì yè",
+    "hanviet": "nhật",
+    "vietnamese": "day and night; around the clock"
+  },
+  {
+    "simplified": "日益",
+    "traditional": "日益",
+    "pinyin": "rì yì",
+    "hanviet": "nhật",
+    "vietnamese": "day by day; more and more"
+  },
+  {
+    "simplified": "日裔",
+    "traditional": "日裔",
+    "pinyin": "rì yì",
+    "hanviet": "nhật",
+    "vietnamese": "of Japanese descent"
+  },
+  {
+    "simplified": "日用",
+    "traditional": "日用",
+    "pinyin": "rì yòng",
+    "hanviet": "nhật dụng",
+    "vietnamese": "daily expenses; of everyday use"
+  },
+  {
+    "simplified": "日语",
+    "traditional": "日語",
+    "pinyin": "rì yǔ",
+    "hanviet": "nhật ngữ",
+    "vietnamese": "Japanese language"
+  },
+  {
+    "simplified": "日元",
+    "traditional": "日元",
+    "pinyin": "rì yuán",
+    "hanviet": "nhật",
+    "vietnamese": "yen (currency of Japan)"
+  },
+  {
+    "simplified": "日月",
+    "traditional": "日月",
+    "pinyin": "rì yuè",
+    "hanviet": "nhật nguyệt",
+    "vietnamese": "the sun and moon; day and month"
+  },
+  {
+    "simplified": "日增",
+    "traditional": "日增",
+    "pinyin": "rì zēng",
+    "hanviet": "nhật tăng",
+    "vietnamese": "increasing by the day"
+  },
+  {
+    "simplified": "日照",
+    "traditional": "日照",
+    "pinyin": "rì zhào",
+    "hanviet": "nhật",
+    "vietnamese": "sunshine"
+  },
+  {
+    "simplified": "日臻",
+    "traditional": "日臻",
+    "pinyin": "rì zhēn",
+    "hanviet": "nhật",
+    "vietnamese": "to reach day after day for"
+  },
+  {
+    "simplified": "日志",
+    "traditional": "日誌",
+    "pinyin": "rì zhì",
+    "hanviet": "nhật chí",
+    "vietnamese": "journal; log (computing)"
+  },
+  {
+    "simplified": "日至",
+    "traditional": "日至",
+    "pinyin": "rì zhì",
+    "hanviet": "nhật",
+    "vietnamese": "solstice; the winter solstice 冬至 and summer solstice 夏至"
+  },
+  {
+    "simplified": "日中",
+    "traditional": "日中",
+    "pinyin": "rì zhōng",
+    "hanviet": "nhật trung",
+    "vietnamese": "Japan-China"
+  },
+  {
+    "simplified": "日中",
+    "traditional": "日中",
+    "pinyin": "rì zhōng",
+    "hanviet": "nhật trung",
+    "vietnamese": "noon; midday"
+  },
+  {
+    "simplified": "日子",
+    "traditional": "日子",
+    "pinyin": "rì zi",
+    "hanviet": "nhật tử",
+    "vietnamese": "day; a (calendar) date"
+  },
+  {
+    "simplified": "日租",
+    "traditional": "日租",
+    "pinyin": "rì zū",
+    "hanviet": "nhật",
+    "vietnamese": "to rent by the day"
+  },
+  {
+    "simplified": "冗",
+    "traditional": "冗",
+    "pinyin": "rǒng",
+    "hanviet": "",
+    "vietnamese": "extraneous; redundant"
+  },
+  {
+    "simplified": "嬫",
+    "traditional": "嬫",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "(used in female names)"
+  },
+  {
+    "simplified": "容",
+    "traditional": "容",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "surname Rong"
+  },
+  {
+    "simplified": "容",
+    "traditional": "容",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "to hold; to contain"
+  },
+  {
+    "simplified": "戎",
+    "traditional": "戎",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "surname Rong"
+  },
+  {
+    "simplified": "戎",
+    "traditional": "戎",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "generic term for weapons (old); army (matters)"
+  },
+  {
+    "simplified": "榕",
+    "traditional": "榕",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "Rong, another name for Fuzhou 福州[Fu2 zhou1]"
+  },
+  {
+    "simplified": "榕",
+    "traditional": "榕",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "Chinese banyan (Ficus microcarpa)"
+  },
+  {
+    "simplified": "毧",
+    "traditional": "毧",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "down; felt"
+  },
+  {
+    "simplified": "氄",
+    "traditional": "氄",
+    "pinyin": "rǒng",
+    "hanviet": "",
+    "vietnamese": "down or fine hair"
+  },
+  {
+    "simplified": "溶",
+    "traditional": "溶",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "to dissolve; soluble"
+  },
+  {
+    "simplified": "熔",
+    "traditional": "熔",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "to smelt; to fuse"
+  },
+  {
+    "simplified": "狨",
+    "traditional": "狨",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "marmoset (zoology)"
+  },
+  {
+    "simplified": "绒",
+    "traditional": "絨",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "velvet; woolen"
+  },
+  {
+    "simplified": "羢",
+    "traditional": "羢",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "wool of sheep"
+  },
+  {
+    "simplified": "肜",
+    "traditional": "肜",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "surname Rong"
+  },
+  {
+    "simplified": "茸",
+    "traditional": "茸",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "(bound form) (of newly sprouted grass) soft and fine; downy"
+  },
+  {
+    "simplified": "荣",
+    "traditional": "榮",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "surname Rong"
+  },
+  {
+    "simplified": "荣",
+    "traditional": "榮",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "glory; honor"
+  },
+  {
+    "simplified": "蓉",
+    "traditional": "蓉",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "short name for Chengdu 成都[Cheng2 du1]"
+  },
+  {
+    "simplified": "蓉",
+    "traditional": "蓉",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "paste made by mashing beans or seeds etc; used in 芙蓉[fu2 rong2], lotus"
+  },
+  {
+    "simplified": "蝾",
+    "traditional": "蠑",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "salamander"
+  },
+  {
+    "simplified": "融",
+    "traditional": "融",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "to melt; to thaw"
+  },
+  {
+    "simplified": "镕",
+    "traditional": "鎔",
+    "pinyin": "róng",
+    "hanviet": "",
+    "vietnamese": "to smelt; to fuse"
+  },
+  {
+    "simplified": "冗笔",
+    "traditional": "冗筆",
+    "pinyin": "rǒng bǐ",
+    "hanviet": "bút",
+    "vietnamese": "superfluous words (in writing); superfluous strokes (in calligraphy)"
+  },
+  {
+    "simplified": "冗兵",
+    "traditional": "冗兵",
+    "pinyin": "rǒng bīng",
+    "hanviet": "binh",
+    "vietnamese": "superfluous troops"
+  },
+  {
+    "simplified": "融冰",
+    "traditional": "融冰",
+    "pinyin": "róng bīng",
+    "hanviet": "",
+    "vietnamese": "(lit. or fig.) thawing"
+  },
+  {
+    "simplified": "绒布",
+    "traditional": "絨布",
+    "pinyin": "róng bù",
+    "hanviet": "",
+    "vietnamese": "flannel"
+  },
+  {
+    "simplified": "冗长",
+    "traditional": "冗長",
+    "pinyin": "rǒng cháng",
+    "hanviet": "trưởng",
+    "vietnamese": "long and tedious; redundant"
+  },
+  {
+    "simplified": "戎车",
+    "traditional": "戎車",
+    "pinyin": "róng chē",
+    "hanviet": "xa",
+    "vietnamese": "military vehicle"
+  },
+  {
+    "simplified": "蓉城",
+    "traditional": "蓉城",
+    "pinyin": "róng chéng",
+    "hanviet": "thành",
+    "vietnamese": "nickname for Chengdu 成都[Cheng2 du1]"
+  },
+  {
+    "simplified": "冗词",
+    "traditional": "冗詞",
+    "pinyin": "rǒng cí",
+    "hanviet": "từ",
+    "vietnamese": "tautology; superfluous words"
+  },
+  {
+    "simplified": "容错",
+    "traditional": "容錯",
+    "pinyin": "róng cùo",
+    "hanviet": "",
+    "vietnamese": "(of a system) fault-tolerant"
+  },
+  {
+    "simplified": "荣登",
+    "traditional": "榮登",
+    "pinyin": "róng dēng",
+    "hanviet": "",
+    "vietnamese": "(of a list, music chart etc) to reach the top"
+  },
+  {
+    "simplified": "熔点",
+    "traditional": "熔點",
+    "pinyin": "róng diǎn",
+    "hanviet": "điểm",
+    "vietnamese": "melting point"
+  },
+  {
+    "simplified": "溶洞",
+    "traditional": "溶洞",
+    "pinyin": "róng dòng",
+    "hanviet": "",
+    "vietnamese": "(geology) solutional cave (typically, a limestone cave)"
+  },
+  {
+    "simplified": "熔断",
+    "traditional": "熔斷",
+    "pinyin": "róng duàn",
+    "hanviet": "đoạn",
+    "vietnamese": "(of fuse wire) to melt; to blow; (fig.) to halt stock trading"
+  },
+  {
+    "simplified": "冗繁",
+    "traditional": "冗繁",
+    "pinyin": "rǒng fán",
+    "hanviet": "",
+    "vietnamese": "miscellaneous"
+  },
+  {
+    "simplified": "冗费",
+    "traditional": "冗費",
+    "pinyin": "rǒng fèi",
+    "hanviet": "phí",
+    "vietnamese": "unnecessary expenses"
+  },
+  {
+    "simplified": "荣格",
+    "traditional": "榮格",
+    "pinyin": "róng gé",
+    "hanviet": "",
+    "vietnamese": "Carl Gustav Jung (1875-1961), Swiss psychiatrist"
+  },
+  {
+    "simplified": "融梗",
+    "traditional": "融梗",
+    "pinyin": "róng gěng",
+    "hanviet": "",
+    "vietnamese": "(neologism, attested by 2018) to incorporate ideas or material from sb else's creative work in one's own work"
+  },
+  {
+    "simplified": "冗官",
+    "traditional": "冗官",
+    "pinyin": "rǒng guān",
+    "hanviet": "quan",
+    "vietnamese": "redundant officials"
+  },
+  {
+    "simplified": "荣光",
+    "traditional": "榮光",
+    "pinyin": "róng guāng",
+    "hanviet": "quang",
+    "vietnamese": "glory"
+  },
+  {
+    "simplified": "荣归",
+    "traditional": "榮歸",
+    "pinyin": "róng gūi",
+    "hanviet": "",
+    "vietnamese": "to return home with honor"
+  },
+  {
+    "simplified": "戎行",
+    "traditional": "戎行",
+    "pinyin": "róng háng",
+    "hanviet": "hành",
+    "vietnamese": "troops; military affairs"
+  },
+  {
+    "simplified": "熔核",
+    "traditional": "熔核",
+    "pinyin": "róng hé",
+    "hanviet": "",
+    "vietnamese": "weld nugget"
+  },
+  {
+    "simplified": "融合",
+    "traditional": "融合",
+    "pinyin": "róng hé",
+    "hanviet": "hợp",
+    "vietnamese": "a mixture; an amalgam"
+  },
+  {
+    "simplified": "融和",
+    "traditional": "融和",
+    "pinyin": "róng hé",
+    "hanviet": "hòa",
+    "vietnamese": "warm; agreeable"
+  },
+  {
+    "simplified": "溶化",
+    "traditional": "溶化",
+    "pinyin": "róng huà",
+    "hanviet": "",
+    "vietnamese": "to melt; to dissolve (of sugar etc)"
+  },
+  {
+    "simplified": "熔化",
+    "traditional": "熔化",
+    "pinyin": "róng huà",
+    "hanviet": "",
+    "vietnamese": "to melt (of ice, metals etc)"
+  },
+  {
+    "simplified": "荣华",
+    "traditional": "榮華",
+    "pinyin": "róng huá",
+    "hanviet": "",
+    "vietnamese": "glory and splendor"
+  },
+  {
+    "simplified": "融化",
+    "traditional": "融化",
+    "pinyin": "róng huà",
+    "hanviet": "",
+    "vietnamese": "to melt; to thaw"
+  },
+  {
+    "simplified": "熔毁",
+    "traditional": "熔毀",
+    "pinyin": "róng hǔi",
+    "hanviet": "",
+    "vietnamese": "meltdown; (of nuclear fuel) to melt down"
+  },
+  {
+    "simplified": "融会",
+    "traditional": "融會",
+    "pinyin": "róng hùi",
+    "hanviet": "hội",
+    "vietnamese": "to blend; to integrate"
+  },
+  {
+    "simplified": "融汇",
+    "traditional": "融匯",
+    "pinyin": "róng hùi",
+    "hanviet": "",
+    "vietnamese": "fusion; to combine as one"
+  },
+  {
+    "simplified": "容或",
+    "traditional": "容或",
+    "pinyin": "róng hùo",
+    "hanviet": "hoặc",
+    "vietnamese": "perhaps; maybe"
+  },
+  {
+    "simplified": "荣获",
+    "traditional": "榮獲",
+    "pinyin": "róng hùo",
+    "hanviet": "",
+    "vietnamese": "be honored with"
+  },
+  {
+    "simplified": "容积",
+    "traditional": "容積",
+    "pinyin": "róng jī",
+    "hanviet": "",
+    "vietnamese": "volume; capacity"
+  },
+  {
+    "simplified": "戎机",
+    "traditional": "戎機",
+    "pinyin": "róng jī",
+    "hanviet": "cơ",
+    "vietnamese": "opportunity for a fight; war"
+  },
+  {
+    "simplified": "溶剂",
+    "traditional": "溶劑",
+    "pinyin": "róng jì",
+    "hanviet": "",
+    "vietnamese": "solvent"
+  },
+  {
+    "simplified": "戎甲",
+    "traditional": "戎甲",
+    "pinyin": "róng jiǎ",
+    "hanviet": "",
+    "vietnamese": "weapons and armor"
+  },
+  {
+    "simplified": "熔浆",
+    "traditional": "熔漿",
+    "pinyin": "róng jiāng",
+    "hanviet": "",
+    "vietnamese": "lava, magma or other molten material (metal, glass etc)"
+  },
+  {
+    "simplified": "戎羯",
+    "traditional": "戎羯",
+    "pinyin": "róng jié",
+    "hanviet": "",
+    "vietnamese": "ancient ethnic groups in northwestern China"
+  },
+  {
+    "simplified": "溶解",
+    "traditional": "溶解",
+    "pinyin": "róng jiě",
+    "hanviet": "",
+    "vietnamese": "to dissolve"
+  },
+  {
+    "simplified": "熔解",
+    "traditional": "熔解",
+    "pinyin": "róng jiě",
+    "hanviet": "",
+    "vietnamese": "fusion"
+  },
+  {
+    "simplified": "融解",
+    "traditional": "融解",
+    "pinyin": "róng jiě",
+    "hanviet": "",
+    "vietnamese": "to melt; molten"
+  },
+  {
+    "simplified": "荣景",
+    "traditional": "榮景",
+    "pinyin": "róng jǐng",
+    "hanviet": "",
+    "vietnamese": "period of prosperity"
+  },
+  {
+    "simplified": "容克",
+    "traditional": "容克",
+    "pinyin": "róng kè",
+    "hanviet": "khắc",
+    "vietnamese": "Junker (German aristocracy); Jean-Claude Juncker (1954-), Luxembourgish politician, prime minister of Luxembourg 1995-20"
+  },
+  {
+    "simplified": "荣枯",
+    "traditional": "榮枯",
+    "pinyin": "róng kū",
+    "hanviet": "",
+    "vietnamese": "flourishing and withering (of plants); (fig.) prosperity and decline"
+  },
+  {
+    "simplified": "熔炼",
+    "traditional": "熔煉",
+    "pinyin": "róng liàn",
+    "hanviet": "",
+    "vietnamese": "to smelt"
+  },
+  {
+    "simplified": "容量",
+    "traditional": "容量",
+    "pinyin": "róng liàng",
+    "hanviet": "lượng",
+    "vietnamese": "capacity; volume"
+  },
+  {
+    "simplified": "熔炉",
+    "traditional": "熔爐",
+    "pinyin": "róng lú",
+    "hanviet": "",
+    "vietnamese": "smelting furnace; forge"
+  },
+  {
+    "simplified": "融炉",
+    "traditional": "融爐",
+    "pinyin": "róng lú",
+    "hanviet": "",
+    "vietnamese": "a smelting furnace; fig. a melting pot"
+  },
+  {
+    "simplified": "戎马",
+    "traditional": "戎馬",
+    "pinyin": "róng mǎ",
+    "hanviet": "mã",
+    "vietnamese": "warhorse; armed forces; troops"
+  },
+  {
+    "simplified": "容貌",
+    "traditional": "容貌",
+    "pinyin": "róng mào",
+    "hanviet": "",
+    "vietnamese": "one's appearance; one's aspect"
+  },
+  {
+    "simplified": "绒毛",
+    "traditional": "絨毛",
+    "pinyin": "róng máo",
+    "hanviet": "",
+    "vietnamese": "fur; down (soft fur)"
+  },
+  {
+    "simplified": "茸毛",
+    "traditional": "茸毛",
+    "pinyin": "róng máo",
+    "hanviet": "",
+    "vietnamese": "fuzz"
+  },
+  {
+    "simplified": "荣美",
+    "traditional": "榮美",
+    "pinyin": "róng měi",
+    "hanviet": "mỹ",
+    "vietnamese": "glorious"
+  },
+  {
+    "simplified": "荣民",
+    "traditional": "榮民",
+    "pinyin": "róng mín",
+    "hanviet": "dân",
+    "vietnamese": "(Tw) retired soldier; veteran (abbr. for 榮譽國民|荣誉国民[rong2 yu4 guo2 min2])"
+  },
+  {
+    "simplified": "溶没",
+    "traditional": "溶沒",
+    "pinyin": "róng mò",
+    "hanviet": "một",
+    "vietnamese": "to fade away; to disappear"
+  },
+  {
+    "simplified": "容纳",
+    "traditional": "容納",
+    "pinyin": "róng nà",
+    "hanviet": "",
+    "vietnamese": "to hold; to contain"
+  },
+  {
+    "simplified": "容器",
+    "traditional": "容器",
+    "pinyin": "róng qì",
+    "hanviet": "",
+    "vietnamese": "receptacle; vessel"
+  },
+  {
+    "simplified": "融洽",
+    "traditional": "融洽",
+    "pinyin": "róng qià",
+    "hanviet": "",
+    "vietnamese": "harmonious; friendly relations"
+  },
+  {
+    "simplified": "绒球",
+    "traditional": "絨球",
+    "pinyin": "róng qiú",
+    "hanviet": "cầu",
+    "vietnamese": "pompon"
+  },
+  {
+    "simplified": "融然",
+    "traditional": "融然",
+    "pinyin": "róng rán",
+    "hanviet": "",
+    "vietnamese": "in harmony; happy together"
+  },
+  {
+    "simplified": "容让",
+    "traditional": "容讓",
+    "pinyin": "róng ràng",
+    "hanviet": "",
+    "vietnamese": "to make a concession; to be accommodating"
+  },
+  {
+    "simplified": "容忍",
+    "traditional": "容忍",
+    "pinyin": "róng rěn",
+    "hanviet": "",
+    "vietnamese": "to put up with; to tolerate"
+  },
+  {
+    "simplified": "荣任",
+    "traditional": "榮任",
+    "pinyin": "róng rèn",
+    "hanviet": "",
+    "vietnamese": "to be appointed or elevated to a post"
+  },
+  {
+    "simplified": "冗冗",
+    "traditional": "冗冗",
+    "pinyin": "rǒng rǒng",
+    "hanviet": "",
+    "vietnamese": "numerous; excessive"
+  },
+  {
+    "simplified": "熔融",
+    "traditional": "熔融",
+    "pinyin": "róng róng",
+    "hanviet": "",
+    "vietnamese": "to melt; to fuse"
+  },
+  {
+    "simplified": "融融",
+    "traditional": "融融",
+    "pinyin": "róng róng",
+    "hanviet": "",
+    "vietnamese": "in harmony; happy"
+  },
+  {
+    "simplified": "荣辱",
+    "traditional": "榮辱",
+    "pinyin": "róng rǔ",
+    "hanviet": "",
+    "vietnamese": "honor and disgrace; reputation"
+  },
+  {
+    "simplified": "融入",
+    "traditional": "融入",
+    "pinyin": "róng rù",
+    "hanviet": "",
+    "vietnamese": "to blend into; to integrate"
+  },
+  {
+    "simplified": "冗散",
+    "traditional": "冗散",
+    "pinyin": "rǒng sǎn",
+    "hanviet": "",
+    "vietnamese": "(literary) idle; unemployed; (literary) (of writing) leisurely and verbose"
+  },
+  {
+    "simplified": "容身",
+    "traditional": "容身",
+    "pinyin": "róng shēn",
+    "hanviet": "thân",
+    "vietnamese": "to find a place where one can fit in; to make one's home"
+  },
+  {
+    "simplified": "冗食",
+    "traditional": "冗食",
+    "pinyin": "rǒng shí",
+    "hanviet": "",
+    "vietnamese": "eating without working"
+  },
+  {
+    "simplified": "戎事",
+    "traditional": "戎事",
+    "pinyin": "róng shì",
+    "hanviet": "",
+    "vietnamese": "military affairs"
+  },
+  {
+    "simplified": "溶蚀",
+    "traditional": "溶蝕",
+    "pinyin": "róng shí",
+    "hanviet": "",
+    "vietnamese": "dissolving; erosion by groundwater"
+  },
+  {
+    "simplified": "荣市",
+    "traditional": "榮市",
+    "pinyin": "róng shì",
+    "hanviet": "thị",
+    "vietnamese": "Vinh, Vietnam"
+  },
+  {
+    "simplified": "容受",
+    "traditional": "容受",
+    "pinyin": "róng shòu",
+    "hanviet": "",
+    "vietnamese": "to tolerate; to accept (criticism, resignation etc)"
+  },
+  {
+    "simplified": "冗数",
+    "traditional": "冗數",
+    "pinyin": "rǒng shù",
+    "hanviet": "số",
+    "vietnamese": "redundant number"
+  },
+  {
+    "simplified": "容恕",
+    "traditional": "容恕",
+    "pinyin": "róng shù",
+    "hanviet": "",
+    "vietnamese": "to forgive; to pardon"
+  },
+  {
+    "simplified": "榕树",
+    "traditional": "榕樹",
+    "pinyin": "róng shù",
+    "hanviet": "thụ",
+    "vietnamese": "banyan"
+  },
+  {
+    "simplified": "溶栓",
+    "traditional": "溶栓",
+    "pinyin": "róng shuān",
+    "hanviet": "",
+    "vietnamese": "thrombolysis (med.)"
+  },
+  {
+    "simplified": "溶体",
+    "traditional": "溶體",
+    "pinyin": "róng tǐ",
+    "hanviet": "thể",
+    "vietnamese": "solution"
+  },
+  {
+    "simplified": "融通",
+    "traditional": "融通",
+    "pinyin": "róng tōng",
+    "hanviet": "thông",
+    "vietnamese": "to circulate; to flow (esp. capital)"
+  },
+  {
+    "simplified": "冗位",
+    "traditional": "冗位",
+    "pinyin": "rǒng wèi",
+    "hanviet": "",
+    "vietnamese": "redundant position"
+  },
+  {
+    "simplified": "荣威",
+    "traditional": "榮威",
+    "pinyin": "róng wēi",
+    "hanviet": "",
+    "vietnamese": "Roewe (brand)"
+  },
+  {
+    "simplified": "冗务",
+    "traditional": "冗務",
+    "pinyin": "rǒng wù",
+    "hanviet": "",
+    "vietnamese": "miscellaneous affairs"
+  },
+  {
+    "simplified": "容下",
+    "traditional": "容下",
+    "pinyin": "róng xià",
+    "hanviet": "hạ",
+    "vietnamese": "to hold; to admit"
+  },
+  {
+    "simplified": "容县",
+    "traditional": "容縣",
+    "pinyin": "róng xiàn",
+    "hanviet": "huyện",
+    "vietnamese": "Rong County or Rongxian, a county in Yulin City 玉林市[Yu4 lin2 Shi4], Guangxi"
+  },
+  {
+    "simplified": "绒线",
+    "traditional": "絨線",
+    "pinyin": "róng xiàn",
+    "hanviet": "tuyến",
+    "vietnamese": "wool; woolen thread"
+  },
+  {
+    "simplified": "荣县",
+    "traditional": "榮縣",
+    "pinyin": "róng xiàn",
+    "hanviet": "huyện",
+    "vietnamese": "Rong County or Rongxian, a county in Zigong City 自貢市|自贡市[Zi4 gong4 Shi4], Sichuan"
+  },
+  {
+    "simplified": "荣幸",
+    "traditional": "榮幸",
+    "pinyin": "róng xìng",
+    "hanviet": "",
+    "vietnamese": "honored (to have the privilege of ...)"
+  },
+  {
+    "simplified": "容许",
+    "traditional": "容許",
+    "pinyin": "róng xǔ",
+    "hanviet": "",
+    "vietnamese": "to permit; to allow"
+  },
+  {
+    "simplified": "溶血",
+    "traditional": "溶血",
+    "pinyin": "róng xuè",
+    "hanviet": "huyết",
+    "vietnamese": "hemolysis (breakdown of red blood cells leading to anemia)"
+  },
+  {
+    "simplified": "融雪",
+    "traditional": "融雪",
+    "pinyin": "róng xuě",
+    "hanviet": "tuyết",
+    "vietnamese": "melting snow; a thaw"
+  },
+  {
+    "simplified": "冗言",
+    "traditional": "冗言",
+    "pinyin": "rǒng yán",
+    "hanviet": "ngôn",
+    "vietnamese": "pleonasm (linguistics)"
+  },
+  {
+    "simplified": "容颜",
+    "traditional": "容顏",
+    "pinyin": "róng yán",
+    "hanviet": "",
+    "vietnamese": "mien; complexion"
+  },
+  {
+    "simplified": "熔岩",
+    "traditional": "熔岩",
+    "pinyin": "róng yán",
+    "hanviet": "nham",
+    "vietnamese": "(geology) lava"
+  },
+  {
+    "simplified": "荣耀",
+    "traditional": "榮耀",
+    "pinyin": "róng yào",
+    "hanviet": "",
+    "vietnamese": "honor; glory"
+  },
+  {
+    "simplified": "溶液",
+    "traditional": "溶液",
+    "pinyin": "róng yè",
+    "hanviet": "",
+    "vietnamese": "solution (chemistry)"
+  },
+  {
+    "simplified": "容易",
+    "traditional": "容易",
+    "pinyin": "róng yì",
+    "hanviet": "",
+    "vietnamese": "easy; straightforward; likely; liable to; apt to"
+  },
+  {
+    "simplified": "戎衣",
+    "traditional": "戎衣",
+    "pinyin": "róng yī",
+    "hanviet": "y",
+    "vietnamese": "military uniform"
+  },
+  {
+    "simplified": "冗余",
+    "traditional": "冗餘",
+    "pinyin": "rǒng yú",
+    "hanviet": "",
+    "vietnamese": "redundancy; redundant"
+  },
+  {
+    "simplified": "冗语",
+    "traditional": "冗語",
+    "pinyin": "rǒng yǔ",
+    "hanviet": "ngữ",
+    "vietnamese": "verbosity; verbose speech"
+  },
+  {
+    "simplified": "荣誉",
+    "traditional": "榮譽",
+    "pinyin": "róng yù",
+    "hanviet": "",
+    "vietnamese": "honor; credit"
+  },
+  {
+    "simplified": "冗员",
+    "traditional": "冗員",
+    "pinyin": "rǒng yuán",
+    "hanviet": "viên",
+    "vietnamese": "excess personnel; superfluous staff"
+  },
+  {
+    "simplified": "蝾螈",
+    "traditional": "蠑螈",
+    "pinyin": "róng yuán",
+    "hanviet": "",
+    "vietnamese": "salamander; newt"
+  },
+  {
+    "simplified": "冗杂",
+    "traditional": "冗雜",
+    "pinyin": "rǒng zá",
+    "hanviet": "",
+    "vietnamese": "many and varied; confused"
+  },
+  {
+    "simplified": "熔渣",
+    "traditional": "熔渣",
+    "pinyin": "róng zhā",
+    "hanviet": "",
+    "vietnamese": "slag (smelting)"
+  },
+  {
+    "simplified": "冗职",
+    "traditional": "冗職",
+    "pinyin": "rǒng zhí",
+    "hanviet": "",
+    "vietnamese": "redundant position"
+  },
+  {
+    "simplified": "容止",
+    "traditional": "容止",
+    "pinyin": "róng zhǐ",
+    "hanviet": "",
+    "vietnamese": "looks and demeanor"
+  },
+  {
+    "simplified": "溶质",
+    "traditional": "溶質",
+    "pinyin": "róng zhì",
+    "hanviet": "",
+    "vietnamese": "solute"
+  },
+  {
+    "simplified": "戎装",
+    "traditional": "戎裝",
+    "pinyin": "róng zhuāng",
+    "hanviet": "",
+    "vietnamese": "martial attire"
+  },
+  {
+    "simplified": "冗赘",
+    "traditional": "冗贅",
+    "pinyin": "rǒng zhùi",
+    "hanviet": "",
+    "vietnamese": "verbose"
+  },
+  {
+    "simplified": "融资",
+    "traditional": "融資",
+    "pinyin": "róng zī",
+    "hanviet": "",
+    "vietnamese": "financing"
+  },
+  {
+    "simplified": "荣总",
+    "traditional": "榮總",
+    "pinyin": "róng zǒng",
+    "hanviet": "tổng",
+    "vietnamese": "(Tw) Veterans General Hospital (used in the names of hospitals in Taipei, Taichung etc) (abbr. for 榮民總醫院|荣民总医院[Rong2 min"
+  },
+  {
+    "simplified": "厹",
+    "traditional": "厹",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "to trample"
+  },
+  {
+    "simplified": "揉",
+    "traditional": "揉",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "to knead; to massage"
+  },
+  {
+    "simplified": "柔",
+    "traditional": "柔",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "soft; flexible"
+  },
+  {
+    "simplified": "禸",
+    "traditional": "禸",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "trample"
+  },
+  {
+    "simplified": "糅",
+    "traditional": "糅",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "mix"
+  },
+  {
+    "simplified": "肉",
+    "traditional": "肉",
+    "pinyin": "ròu",
+    "hanviet": "nhục",
+    "vietnamese": "meat; flesh"
+  },
+  {
+    "simplified": "腬",
+    "traditional": "腬",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "greasy (Cantonese)"
+  },
+  {
+    "simplified": "葇",
+    "traditional": "葇",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "Elsholtria paltrini"
+  },
+  {
+    "simplified": "蹂",
+    "traditional": "蹂",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "trample"
+  },
+  {
+    "simplified": "鞣",
+    "traditional": "鞣",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "suede; chamois"
+  },
+  {
+    "simplified": "韖",
+    "traditional": "韖",
+    "pinyin": "róu",
+    "hanviet": "",
+    "vietnamese": "tan, soften"
+  },
+  {
+    "simplified": "肉棒",
+    "traditional": "肉棒",
+    "pinyin": "ròu bàng",
+    "hanviet": "nhục",
+    "vietnamese": "meat stick; penis"
+  },
+  {
+    "simplified": "肉饼",
+    "traditional": "肉餅",
+    "pinyin": "ròu bǐng",
+    "hanviet": "nhục",
+    "vietnamese": "meat patty"
+  },
+  {
+    "simplified": "肉搏",
+    "traditional": "肉搏",
+    "pinyin": "ròu bó",
+    "hanviet": "nhục",
+    "vietnamese": "to fight hand-to-hand"
+  },
+  {
+    "simplified": "肉偿",
+    "traditional": "肉償",
+    "pinyin": "ròu cháng",
+    "hanviet": "nhục",
+    "vietnamese": "(fig.) to use sex to pay off (a debt)"
+  },
+  {
+    "simplified": "揉搓",
+    "traditional": "揉搓",
+    "pinyin": "róu cuo",
+    "hanviet": "",
+    "vietnamese": "to rub; to torment"
+  },
+  {
+    "simplified": "肉弹",
+    "traditional": "肉彈",
+    "pinyin": "ròu dàn",
+    "hanviet": "nhục",
+    "vietnamese": "suicide attacker; suicide bomber; voluptuous woman; muscular man"
+  },
+  {
+    "simplified": "柔道",
+    "traditional": "柔道",
+    "pinyin": "róu dào",
+    "hanviet": "đạo",
+    "vietnamese": "judo"
+  },
+  {
+    "simplified": "肉垫",
+    "traditional": "肉墊",
+    "pinyin": "ròu diàn",
+    "hanviet": "nhục",
+    "vietnamese": "pad (on animal paw)"
+  },
+  {
+    "simplified": "肉丁",
+    "traditional": "肉丁",
+    "pinyin": "ròu dīng",
+    "hanviet": "nhục",
+    "vietnamese": "diced meat"
+  },
+  {
+    "simplified": "肉冻",
+    "traditional": "肉凍",
+    "pinyin": "ròu dòng",
+    "hanviet": "nhục",
+    "vietnamese": "aspic; meat jelly"
+  },
+  {
+    "simplified": "肉盾",
+    "traditional": "肉盾",
+    "pinyin": "ròu dùn",
+    "hanviet": "nhục",
+    "vietnamese": "human shield; (gaming) tank; meat shield"
+  },
+  {
+    "simplified": "肉贩",
+    "traditional": "肉販",
+    "pinyin": "ròu fàn",
+    "hanviet": "nhục",
+    "vietnamese": "butcher"
+  },
+  {
+    "simplified": "柔佛",
+    "traditional": "柔佛",
+    "pinyin": "róu fó",
+    "hanviet": "",
+    "vietnamese": "Johor (state of Malaysia at south of Malayan peninsula)"
+  },
+  {
+    "simplified": "肉脯",
+    "traditional": "肉脯",
+    "pinyin": "ròu fǔ",
+    "hanviet": "nhục",
+    "vietnamese": "dried meat"
+  },
+  {
+    "simplified": "肉干",
+    "traditional": "肉乾",
+    "pinyin": "ròu gān",
+    "hanviet": "nhục",
+    "vietnamese": "dried meat; jerky"
+  },
+  {
+    "simplified": "肉感",
+    "traditional": "肉感",
+    "pinyin": "ròu gǎn",
+    "hanviet": "nhục cảm",
+    "vietnamese": "sexiness; sexy"
+  },
+  {
+    "simplified": "肉羹",
+    "traditional": "肉羹",
+    "pinyin": "ròu gēng",
+    "hanviet": "nhục",
+    "vietnamese": "stew; bouillon"
+  },
+  {
+    "simplified": "肉冠",
+    "traditional": "肉冠",
+    "pinyin": "ròu guān",
+    "hanviet": "nhục",
+    "vietnamese": "comb (fleshy crest on a bird's head)"
+  },
+  {
+    "simplified": "肉桂",
+    "traditional": "肉桂",
+    "pinyin": "ròu gùi",
+    "hanviet": "nhục quế",
+    "vietnamese": "Chinese cinnamon (Cinnamomum cassia)"
+  },
+  {
+    "simplified": "肉果",
+    "traditional": "肉果",
+    "pinyin": "ròu gǔo",
+    "hanviet": "nhục",
+    "vietnamese": "fleshy fruit; sarcocarp; nutmeg"
+  },
+  {
+    "simplified": "揉合",
+    "traditional": "揉合",
+    "pinyin": "róu hé",
+    "hanviet": "hợp",
+    "vietnamese": "to blend; to merge; to mix together"
+  },
+  {
+    "simplified": "揉和",
+    "traditional": "揉和",
+    "pinyin": "róu hé",
+    "hanviet": "hòa",
+    "vietnamese": "to knead (clay)"
+  },
+  {
+    "simplified": "柔和",
+    "traditional": "柔和",
+    "pinyin": "róu hé",
+    "hanviet": "hòa",
+    "vietnamese": "gentle; soft"
+  },
+  {
+    "simplified": "糅合",
+    "traditional": "糅合",
+    "pinyin": "róu hé",
+    "hanviet": "hợp",
+    "vietnamese": "mix together; put together (usu. things that do not blend well together)"
+  },
+  {
+    "simplified": "柔滑",
+    "traditional": "柔滑",
+    "pinyin": "róu huá",
+    "hanviet": "",
+    "vietnamese": "soft; smooth"
+  },
+  {
+    "simplified": "肉鸡",
+    "traditional": "肉雞",
+    "pinyin": "ròu jī",
+    "hanviet": "nhục kê",
+    "vietnamese": "chicken raised for meat; broiler"
+  },
+  {
+    "simplified": "肉碱",
+    "traditional": "肉鹼",
+    "pinyin": "ròu jiǎn",
+    "hanviet": "nhục",
+    "vietnamese": "carnitine (biochemistry)"
+  },
+  {
+    "simplified": "肉酱",
+    "traditional": "肉醬",
+    "pinyin": "ròu jiàng",
+    "hanviet": "nhục",
+    "vietnamese": "minced meat sauce; (fig.) mincemeat"
+  },
+  {
+    "simplified": "肉类",
+    "traditional": "肉類",
+    "pinyin": "ròu lèi",
+    "hanviet": "nhục loại",
+    "vietnamese": "meat"
+  },
+  {
+    "simplified": "蹂躏",
+    "traditional": "蹂躪",
+    "pinyin": "róu lìn",
+    "hanviet": "",
+    "vietnamese": "to ravage; to devastate"
+  },
+  {
+    "simplified": "肉瘤",
+    "traditional": "肉瘤",
+    "pinyin": "ròu liú",
+    "hanviet": "nhục",
+    "vietnamese": "wart; sarcoma"
+  },
+  {
+    "simplified": "肉麻",
+    "traditional": "肉麻",
+    "pinyin": "ròu má",
+    "hanviet": "nhục",
+    "vietnamese": "sickening; corny"
+  },
+  {
+    "simplified": "柔曼",
+    "traditional": "柔曼",
+    "pinyin": "róu màn",
+    "hanviet": "",
+    "vietnamese": "soft; gentle"
+  },
+  {
+    "simplified": "柔媚",
+    "traditional": "柔媚",
+    "pinyin": "róu mèi",
+    "hanviet": "",
+    "vietnamese": "gentle and lovely; charming"
+  },
+  {
+    "simplified": "柔美",
+    "traditional": "柔美",
+    "pinyin": "róu měi",
+    "hanviet": "mỹ",
+    "vietnamese": "gentle and beautiful"
+  },
+  {
+    "simplified": "肉糜",
+    "traditional": "肉糜",
+    "pinyin": "ròu mí",
+    "hanviet": "nhục",
+    "vietnamese": "minced meat"
+  },
+  {
+    "simplified": "揉磨",
+    "traditional": "揉磨",
+    "pinyin": "róu mo",
+    "hanviet": "",
+    "vietnamese": "to torment; to torture"
+  },
+  {
+    "simplified": "肉末",
+    "traditional": "肉末",
+    "pinyin": "ròu mò",
+    "hanviet": "nhục",
+    "vietnamese": "ground meat"
+  },
+  {
+    "simplified": "肉沫",
+    "traditional": "肉沫",
+    "pinyin": "ròu mò",
+    "hanviet": "nhục",
+    "vietnamese": "minced pork"
+  },
+  {
+    "simplified": "柔嫩",
+    "traditional": "柔嫩",
+    "pinyin": "róu nèn",
+    "hanviet": "",
+    "vietnamese": "tender; delicate (texture)"
+  },
+  {
+    "simplified": "肉皮",
+    "traditional": "肉皮",
+    "pinyin": "ròu pí",
+    "hanviet": "nhục bì",
+    "vietnamese": "pork skin"
+  },
+  {
+    "simplified": "肉片",
+    "traditional": "肉片",
+    "pinyin": "ròu piàn",
+    "hanviet": "nhục",
+    "vietnamese": "meat slice"
+  },
+  {
+    "simplified": "肉票",
+    "traditional": "肉票",
+    "pinyin": "ròu piào",
+    "hanviet": "nhục",
+    "vietnamese": "hostage"
+  },
+  {
+    "simplified": "肉铺",
+    "traditional": "肉鋪",
+    "pinyin": "ròu pù",
+    "hanviet": "nhục",
+    "vietnamese": "butcher's shop"
+  },
+  {
+    "simplified": "柔情",
+    "traditional": "柔情",
+    "pinyin": "róu qíng",
+    "hanviet": "tình",
+    "vietnamese": "gentle feelings; tender sentiments"
+  },
+  {
+    "simplified": "柔韧",
+    "traditional": "柔韌",
+    "pinyin": "róu rèn",
+    "hanviet": "",
+    "vietnamese": "pliable and tough; supple and strong"
+  },
+  {
+    "simplified": "柔软",
+    "traditional": "柔軟",
+    "pinyin": "róu ruǎn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft"
+  },
+  {
+    "simplified": "柔弱",
+    "traditional": "柔弱",
+    "pinyin": "róu rùo",
+    "hanviet": "nhược",
+    "vietnamese": "weak; delicate"
+  },
+  {
+    "simplified": "肉商",
+    "traditional": "肉商",
+    "pinyin": "ròu shāng",
+    "hanviet": "nhục thương",
+    "vietnamese": "meat merchant; butcher"
+  },
+  {
+    "simplified": "肉身",
+    "traditional": "肉身",
+    "pinyin": "ròu shēn",
+    "hanviet": "nhục thân",
+    "vietnamese": "corporeal body"
+  },
+  {
+    "simplified": "肉食",
+    "traditional": "肉食",
+    "pinyin": "ròu shí",
+    "hanviet": "nhục",
+    "vietnamese": "carnivorous"
+  },
+  {
+    "simplified": "柔术",
+    "traditional": "柔術",
+    "pinyin": "róu shù",
+    "hanviet": "thuật",
+    "vietnamese": "jujitsu; contortion (performance art)"
+  },
+  {
+    "simplified": "柔顺",
+    "traditional": "柔順",
+    "pinyin": "róu shùn",
+    "hanviet": "",
+    "vietnamese": "gentle and agreeable; supple"
+  },
+  {
+    "simplified": "肉丝",
+    "traditional": "肉絲",
+    "pinyin": "ròu sī",
+    "hanviet": "nhục",
+    "vietnamese": "shredded meat; shredded pork"
+  },
+  {
+    "simplified": "肉松",
+    "traditional": "肉鬆",
+    "pinyin": "ròu sōng",
+    "hanviet": "nhục tùng",
+    "vietnamese": "meat floss; shredded dried pork"
+  },
+  {
+    "simplified": "肉搜",
+    "traditional": "肉搜",
+    "pinyin": "ròu sōu",
+    "hanviet": "nhục",
+    "vietnamese": "(Tw) abbr. for 人肉搜索|人肉搜索[ren2 rou4 sou1 suo3]"
+  },
+  {
+    "simplified": "鞣酸",
+    "traditional": "鞣酸",
+    "pinyin": "róu suān",
+    "hanviet": "",
+    "vietnamese": "tannic acid; tannin"
+  },
+  {
+    "simplified": "揉碎",
+    "traditional": "揉碎",
+    "pinyin": "róu sùi",
+    "hanviet": "",
+    "vietnamese": "to crush; to crumble into pieces"
+  },
+  {
+    "simplified": "肉袒",
+    "traditional": "肉袒",
+    "pinyin": "ròu tǎn",
+    "hanviet": "nhục",
+    "vietnamese": "to make a humble apology (formal writing)"
+  },
+  {
+    "simplified": "肉汤",
+    "traditional": "肉湯",
+    "pinyin": "ròu tāng",
+    "hanviet": "nhục",
+    "vietnamese": "meat soup; broth"
+  },
+  {
+    "simplified": "肉体",
+    "traditional": "肉體",
+    "pinyin": "ròu tǐ",
+    "hanviet": "nhục thể",
+    "vietnamese": "physical body"
+  },
+  {
+    "simplified": "肉条",
+    "traditional": "肉條",
+    "pinyin": "ròu tiáo",
+    "hanviet": "nhục",
+    "vietnamese": "cutlet"
+  },
+  {
+    "simplified": "肉丸",
+    "traditional": "肉丸",
+    "pinyin": "ròu wán",
+    "hanviet": "nhục",
+    "vietnamese": "meatball"
+  },
+  {
+    "simplified": "肉馅",
+    "traditional": "肉餡",
+    "pinyin": "ròu xiàn",
+    "hanviet": "nhục",
+    "vietnamese": "ground meat; mincemeat"
+  },
+  {
+    "simplified": "柔性",
+    "traditional": "柔性",
+    "pinyin": "róu xìng",
+    "hanviet": "tính",
+    "vietnamese": "flexibility"
+  },
+  {
+    "simplified": "肉刑",
+    "traditional": "肉刑",
+    "pinyin": "ròu xíng",
+    "hanviet": "nhục",
+    "vietnamese": "corporal punishment (such as castration or amputation)"
+  },
+  {
+    "simplified": "肉眼",
+    "traditional": "肉眼",
+    "pinyin": "ròu yǎn",
+    "hanviet": "nhục nhãn",
+    "vietnamese": "naked eye; layman's eyes"
+  },
+  {
+    "simplified": "肉欲",
+    "traditional": "肉慾",
+    "pinyin": "ròu yù",
+    "hanviet": "nhục",
+    "vietnamese": "carnal desire"
+  },
+  {
+    "simplified": "肉圆",
+    "traditional": "肉圓",
+    "pinyin": "ròu yuán",
+    "hanviet": "nhục viên",
+    "vietnamese": "ba-wan, dumpling made of glutinous dough, typically stuffed with minced pork, bamboo shoots etc, and served with a savor"
+  },
+  {
+    "simplified": "肉燥",
+    "traditional": "肉燥",
+    "pinyin": "ròu zào",
+    "hanviet": "nhục",
+    "vietnamese": "(Tw) minced pork stewed with soy sauce and spices (served with rice or noodles, or as a filling in buns etc); Taiwan pr."
+  },
+  {
+    "simplified": "揉制",
+    "traditional": "揉制",
+    "pinyin": "róu zhì",
+    "hanviet": "chế",
+    "vietnamese": "to knead (leather)"
+  },
+  {
+    "simplified": "肉汁",
+    "traditional": "肉汁",
+    "pinyin": "ròu zhī",
+    "hanviet": "nhục",
+    "vietnamese": "meat stock"
+  },
+  {
+    "simplified": "肉质",
+    "traditional": "肉質",
+    "pinyin": "ròu zhì",
+    "hanviet": "nhục",
+    "vietnamese": "quality of meat; succulent (botany)"
+  },
+  {
+    "simplified": "鞣制",
+    "traditional": "鞣製",
+    "pinyin": "róu zhì",
+    "hanviet": "chế",
+    "vietnamese": "to tan (leather); tanning"
+  },
+  {
+    "simplified": "鞣质",
+    "traditional": "鞣質",
+    "pinyin": "róu zhì",
+    "hanviet": "",
+    "vietnamese": "tannin"
+  },
+  {
+    "simplified": "乳",
+    "traditional": "乳",
+    "pinyin": "rǔ",
+    "hanviet": "",
+    "vietnamese": "(bound form) breast; (bound form) milk"
+  },
+  {
+    "simplified": "儒",
+    "traditional": "儒",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "scholar; Confucian"
+  },
+  {
+    "simplified": "入",
+    "traditional": "入",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "to enter; to go into; to join; to become a member of"
+  },
+  {
+    "simplified": "嗕",
+    "traditional": "嗕",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "ancient tribe of northern China"
+  },
+  {
+    "simplified": "嚅",
+    "traditional": "嚅",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "chattering"
+  },
+  {
+    "simplified": "如",
+    "traditional": "如",
+    "pinyin": "rú",
+    "hanviet": "như",
+    "vietnamese": "as; as if"
+  },
+  {
+    "simplified": "孺",
+    "traditional": "孺",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "surname Ru"
+  },
+  {
+    "simplified": "孺",
+    "traditional": "孺",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "child"
+  },
+  {
+    "simplified": "擩",
+    "traditional": "擩",
+    "pinyin": "rǔ",
+    "hanviet": "",
+    "vietnamese": "to stain; to dye"
+  },
+  {
+    "simplified": "曘",
+    "traditional": "曘",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "color of the sun; dark"
+  },
+  {
+    "simplified": "汝",
+    "traditional": "汝",
+    "pinyin": "rǔ",
+    "hanviet": "",
+    "vietnamese": "thou"
+  },
+  {
+    "simplified": "洳",
+    "traditional": "洳",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "damp; boggy"
+  },
+  {
+    "simplified": "溽",
+    "traditional": "溽",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "damp; muggy"
+  },
+  {
+    "simplified": "濡",
+    "traditional": "濡",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "dilatory; to moisten"
+  },
+  {
+    "simplified": "筎",
+    "traditional": "筎",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "thin outside skin of bamboo"
+  },
+  {
+    "simplified": "缛",
+    "traditional": "縟",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "adorned; beautiful"
+  },
+  {
+    "simplified": "茹",
+    "traditional": "茹",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "surname Ru"
+  },
+  {
+    "simplified": "茹",
+    "traditional": "茹",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "to eat; (extended meaning) to endure"
+  },
+  {
+    "simplified": "蓐",
+    "traditional": "蓐",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "mat; rushes"
+  },
+  {
+    "simplified": "蠕",
+    "traditional": "蠕",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "to squirm; to wiggle"
+  },
+  {
+    "simplified": "袽",
+    "traditional": "袽",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "old rags"
+  },
+  {
+    "simplified": "褥",
+    "traditional": "褥",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "mattress"
+  },
+  {
+    "simplified": "襦",
+    "traditional": "襦",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "jacket; short coat"
+  },
+  {
+    "simplified": "辱",
+    "traditional": "辱",
+    "pinyin": "rǔ",
+    "hanviet": "",
+    "vietnamese": "disgrace; dishonor"
+  },
+  {
+    "simplified": "鄏",
+    "traditional": "鄏",
+    "pinyin": "rù",
+    "hanviet": "",
+    "vietnamese": "place name"
+  },
+  {
+    "simplified": "醹",
+    "traditional": "醹",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "strong (of wine)"
+  },
+  {
+    "simplified": "铷",
+    "traditional": "銣",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "rubidium (chemistry)"
+  },
+  {
+    "simplified": "鴽",
+    "traditional": "鴽",
+    "pinyin": "rú",
+    "hanviet": "",
+    "vietnamese": "quail-like bird"
+  },
+  {
+    "simplified": "乳癌",
+    "traditional": "乳癌",
+    "pinyin": "rǔ ái",
+    "hanviet": "",
+    "vietnamese": "breast cancer"
+  },
+  {
+    "simplified": "乳白",
+    "traditional": "乳白",
+    "pinyin": "rǔ bái",
+    "hanviet": "bạch",
+    "vietnamese": "milky white; cream color"
+  },
+  {
+    "simplified": "蠕变",
+    "traditional": "蠕變",
+    "pinyin": "rú biàn",
+    "hanviet": "biến",
+    "vietnamese": "creep (materials science)"
+  },
+  {
+    "simplified": "入禀",
+    "traditional": "入稟",
+    "pinyin": "rù bǐng",
+    "hanviet": "",
+    "vietnamese": "(HK) to file a lawsuit; to initiate legal proceedings"
+  },
+  {
+    "simplified": "乳钵",
+    "traditional": "乳缽",
+    "pinyin": "rǔ bō",
+    "hanviet": "",
+    "vietnamese": "small mortar used for grinding medicines into a powder (TCM)"
+  },
+  {
+    "simplified": "乳哺",
+    "traditional": "乳哺",
+    "pinyin": "rǔ bǔ",
+    "hanviet": "",
+    "vietnamese": "(literary) to feed an infant breast milk"
+  },
+  {
+    "simplified": "乳部",
+    "traditional": "乳部",
+    "pinyin": "rǔ bù",
+    "hanviet": "bộ",
+    "vietnamese": "breasts"
+  },
+  {
+    "simplified": "乳草",
+    "traditional": "乳草",
+    "pinyin": "rǔ cǎo",
+    "hanviet": "thảo",
+    "vietnamese": "milkweeds (genus Asclepias)"
+  },
+  {
+    "simplified": "如草",
+    "traditional": "如草",
+    "pinyin": "rú cǎo",
+    "hanviet": "như thảo",
+    "vietnamese": "grassy"
+  },
+  {
+    "simplified": "如厕",
+    "traditional": "如廁",
+    "pinyin": "rú cè",
+    "hanviet": "như",
+    "vietnamese": "to go to the toilet"
+  },
+  {
+    "simplified": "入场",
+    "traditional": "入場",
+    "pinyin": "rù chǎng",
+    "hanviet": "tràng",
+    "vietnamese": "to enter the venue for a meeting; to enter into an examination"
+  },
+  {
+    "simplified": "如常",
+    "traditional": "如常",
+    "pinyin": "rú cháng",
+    "hanviet": "như thường",
+    "vietnamese": "as usual"
+  },
+  {
+    "simplified": "入超",
+    "traditional": "入超",
+    "pinyin": "rù chāo",
+    "hanviet": "",
+    "vietnamese": "trade deficit; import surplus"
+  },
+  {
+    "simplified": "乳齿",
+    "traditional": "乳齒",
+    "pinyin": "rǔ chǐ",
+    "hanviet": "xỉ",
+    "vietnamese": "deciduous tooth; milk tooth"
+  },
+  {
+    "simplified": "蠕虫",
+    "traditional": "蠕蟲",
+    "pinyin": "rú chóng",
+    "hanviet": "",
+    "vietnamese": "worm"
+  },
+  {
+    "simplified": "如初",
+    "traditional": "如初",
+    "pinyin": "rú chū",
+    "hanviet": "như",
+    "vietnamese": "as before; as ever"
+  },
+  {
+    "simplified": "褥疮",
+    "traditional": "褥瘡",
+    "pinyin": "rù chuāng",
+    "hanviet": "",
+    "vietnamese": "bedsore"
+  },
+  {
+    "simplified": "入春",
+    "traditional": "入春",
+    "pinyin": "rù chūn",
+    "hanviet": "xuân",
+    "vietnamese": "to enter spring; spring begins"
+  },
+  {
+    "simplified": "如此",
+    "traditional": "如此",
+    "pinyin": "rú cǐ",
+    "hanviet": "như",
+    "vietnamese": "like this; so; such"
+  },
+  {
+    "simplified": "入党",
+    "traditional": "入黨",
+    "pinyin": "rù dǎng",
+    "hanviet": "đảng",
+    "vietnamese": "to join a political party (esp. the Communist Party)"
+  },
+  {
+    "simplified": "入道",
+    "traditional": "入道",
+    "pinyin": "rù dào",
+    "hanviet": "đạo",
+    "vietnamese": "to enter the Way; to become a Daoist"
+  },
+  {
+    "simplified": "入定",
+    "traditional": "入定",
+    "pinyin": "rù dìng",
+    "hanviet": "",
+    "vietnamese": "(Buddhism) to enter a meditative state"
+  },
+  {
+    "simplified": "入冬",
+    "traditional": "入冬",
+    "pinyin": "rù dōng",
+    "hanviet": "đông",
+    "vietnamese": "winter sets in"
+  },
+  {
+    "simplified": "蠕动",
+    "traditional": "蠕動",
+    "pinyin": "rú dòng",
+    "hanviet": "động",
+    "vietnamese": "to wiggle; to squirm"
+  },
+  {
+    "simplified": "乳儿",
+    "traditional": "乳兒",
+    "pinyin": "rǔ ér",
+    "hanviet": "nhi",
+    "vietnamese": "nursing infant; child less than one year old"
+  },
+  {
+    "simplified": "乳房",
+    "traditional": "乳房",
+    "pinyin": "rǔ fáng",
+    "hanviet": "phòng",
+    "vietnamese": "breast; udder"
+  },
+  {
+    "simplified": "乳腐",
+    "traditional": "乳腐",
+    "pinyin": "rǔ fǔ",
+    "hanviet": "",
+    "vietnamese": "fermented tofu"
+  },
+  {
+    "simplified": "入伏",
+    "traditional": "入伏",
+    "pinyin": "rù fú",
+    "hanviet": "",
+    "vietnamese": "the hottest part of summer sets in"
+  },
+  {
+    "simplified": "儒艮",
+    "traditional": "儒艮",
+    "pinyin": "rú gèn",
+    "hanviet": "",
+    "vietnamese": "dugong"
+  },
+  {
+    "simplified": "乳沟",
+    "traditional": "乳溝",
+    "pinyin": "rǔ gōu",
+    "hanviet": "",
+    "vietnamese": "cleavage (hollow between a woman's breasts)"
+  },
+  {
+    "simplified": "入股",
+    "traditional": "入股",
+    "pinyin": "rù gǔ",
+    "hanviet": "",
+    "vietnamese": "to invest"
+  },
+  {
+    "simplified": "如故",
+    "traditional": "如故",
+    "pinyin": "rú gù",
+    "hanviet": "như",
+    "vietnamese": "as before; as usual"
+  },
+  {
+    "simplified": "入关",
+    "traditional": "入關",
+    "pinyin": "rù guān",
+    "hanviet": "quan",
+    "vietnamese": "to enter a pass; to go through customs"
+  },
+  {
+    "simplified": "乳光",
+    "traditional": "乳光",
+    "pinyin": "rǔ guāng",
+    "hanviet": "quang",
+    "vietnamese": "(mineralogy, physics) opalescence"
+  },
+  {
+    "simplified": "入轨",
+    "traditional": "入軌",
+    "pinyin": "rù gǔi",
+    "hanviet": "",
+    "vietnamese": "to enter orbit"
+  },
+  {
+    "simplified": "如果",
+    "traditional": "如果",
+    "pinyin": "rú gǔo",
+    "hanviet": "như",
+    "vietnamese": "if; in case; in the event that"
+  },
+  {
+    "simplified": "入行",
+    "traditional": "入行",
+    "pinyin": "rù háng",
+    "hanviet": "hành",
+    "vietnamese": "to enter a profession"
+  },
+  {
+    "simplified": "濡毫",
+    "traditional": "濡毫",
+    "pinyin": "rú háo",
+    "hanviet": "",
+    "vietnamese": "to dip the pen into ink; to write"
+  },
+  {
+    "simplified": "如何",
+    "traditional": "如何",
+    "pinyin": "rú hé",
+    "hanviet": "như",
+    "vietnamese": "how; what way"
+  },
+  {
+    "simplified": "入户",
+    "traditional": "入戶",
+    "pinyin": "rù hù",
+    "hanviet": "",
+    "vietnamese": "to enter sb's house; to obtain a residence permit"
+  },
+  {
+    "simplified": "乳化",
+    "traditional": "乳化",
+    "pinyin": "rǔ huà",
+    "hanviet": "",
+    "vietnamese": "to emulsify"
+  },
+  {
+    "simplified": "乳滑",
+    "traditional": "乳滑",
+    "pinyin": "rǔ huá",
+    "hanviet": "",
+    "vietnamese": "(Internet slang) variant of 辱華|辱华[ru3 Hua2], to insult China"
+  },
+  {
+    "simplified": "如画",
+    "traditional": "如畫",
+    "pinyin": "rú huà",
+    "hanviet": "như họa",
+    "vietnamese": "picturesque"
+  },
+  {
+    "simplified": "如花",
+    "traditional": "如花",
+    "pinyin": "rú huā",
+    "hanviet": "như hoa",
+    "vietnamese": "flowery"
+  },
+  {
+    "simplified": "蠕滑",
+    "traditional": "蠕滑",
+    "pinyin": "rú huá",
+    "hanviet": "",
+    "vietnamese": "creep (friction mechanics)"
+  },
+  {
+    "simplified": "辱华",
+    "traditional": "辱華",
+    "pinyin": "rǔ huá",
+    "hanviet": "",
+    "vietnamese": "to insult China (by criticizing its policies or boycotting its goods)"
+  },
+  {
+    "simplified": "入会",
+    "traditional": "入會",
+    "pinyin": "rù hùi",
+    "hanviet": "hội",
+    "vietnamese": "to join a society, association etc"
+  },
+  {
+    "simplified": "茹荤",
+    "traditional": "茹葷",
+    "pinyin": "rú hūn",
+    "hanviet": "",
+    "vietnamese": "to eat meat"
+  },
+  {
+    "simplified": "入伙",
+    "traditional": "入伙",
+    "pinyin": "rù hǔo",
+    "hanviet": "",
+    "vietnamese": "to join a group; to become a member"
+  },
+  {
+    "simplified": "如火",
+    "traditional": "如火",
+    "pinyin": "rú hǔo",
+    "hanviet": "như hỏa",
+    "vietnamese": "fiery"
+  },
+  {
+    "simplified": "乳剂",
+    "traditional": "乳劑",
+    "pinyin": "rǔ jì",
+    "hanviet": "",
+    "vietnamese": "emulsion"
+  },
+  {
+    "simplified": "入籍",
+    "traditional": "入籍",
+    "pinyin": "rù jí",
+    "hanviet": "",
+    "vietnamese": "to become naturalized; to become a citizen"
+  },
+  {
+    "simplified": "乳痂",
+    "traditional": "乳痂",
+    "pinyin": "rǔ jiā",
+    "hanviet": "",
+    "vietnamese": "(medicine) cradle cap"
+  },
+  {
+    "simplified": "儒家",
+    "traditional": "儒家",
+    "pinyin": "rú jiā",
+    "hanviet": "gia",
+    "vietnamese": "Confucian school, founded by Confucius 孔子[Kong3 zi3] (551-479 BC) and Mencius 孟子[Meng4 zi3] (c. 372-c. 289 BC)"
+  },
+  {
+    "simplified": "乳浆",
+    "traditional": "乳漿",
+    "pinyin": "rǔ jiāng",
+    "hanviet": "",
+    "vietnamese": "milky liquid; whey"
+  },
+  {
+    "simplified": "乳交",
+    "traditional": "乳交",
+    "pinyin": "rǔ jiāo",
+    "hanviet": "",
+    "vietnamese": "mammary intercourse"
+  },
+  {
+    "simplified": "乳胶",
+    "traditional": "乳膠",
+    "pinyin": "rǔ jiāo",
+    "hanviet": "",
+    "vietnamese": "latex"
+  },
+  {
+    "simplified": "儒教",
+    "traditional": "儒教",
+    "pinyin": "rú jiào",
+    "hanviet": "giáo",
+    "vietnamese": "Confucianism"
+  },
+  {
+    "simplified": "入教",
+    "traditional": "入教",
+    "pinyin": "rù jiào",
+    "hanviet": "giáo",
+    "vietnamese": "to join a religion"
+  },
+  {
+    "simplified": "如今",
+    "traditional": "如今",
+    "pinyin": "rú jīn",
+    "hanviet": "như kim",
+    "vietnamese": "nowadays; now"
+  },
+  {
+    "simplified": "入境",
+    "traditional": "入境",
+    "pinyin": "rù jìng",
+    "hanviet": "",
+    "vietnamese": "to enter a country"
+  },
+  {
+    "simplified": "入局",
+    "traditional": "入局",
+    "pinyin": "rù jú",
+    "hanviet": "cục",
+    "vietnamese": "to enter the game; to get involved; to walk into a scam"
+  },
+  {
+    "simplified": "入口",
+    "traditional": "入口",
+    "pinyin": "rù kǒu",
+    "hanviet": "khẩu",
+    "vietnamese": "entrance; to import"
+  },
+  {
+    "simplified": "如来",
+    "traditional": "如來",
+    "pinyin": "rú lái",
+    "hanviet": "như lai",
+    "vietnamese": "tathagata (Buddha's name for himself, having many layers of meaning - Sanskrit: thus gone, having been Brahman, gone to "
+  },
+  {
+    "simplified": "乳酪",
+    "traditional": "乳酪",
+    "pinyin": "rǔ lào",
+    "hanviet": "",
+    "vietnamese": "cheese"
+  },
+  {
+    "simplified": "入殓",
+    "traditional": "入殮",
+    "pinyin": "rù liàn",
+    "hanviet": "",
+    "vietnamese": "to put dead body in coffin"
+  },
+  {
+    "simplified": "入联",
+    "traditional": "入聯",
+    "pinyin": "rù lián",
+    "hanviet": "liên",
+    "vietnamese": "to join an alliance; admission to the United Nations"
+  },
+  {
+    "simplified": "辱骂",
+    "traditional": "辱罵",
+    "pinyin": "rǔ mà",
+    "hanviet": "",
+    "vietnamese": "to insult; to revile"
+  },
+  {
+    "simplified": "入门",
+    "traditional": "入門",
+    "pinyin": "rù mén",
+    "hanviet": "môn",
+    "vietnamese": "entrance door; to enter a door"
+  },
+  {
+    "simplified": "入盟",
+    "traditional": "入盟",
+    "pinyin": "rù méng",
+    "hanviet": "",
+    "vietnamese": "to join (e.g. union or alliance)"
+  },
+  {
+    "simplified": "入迷",
+    "traditional": "入迷",
+    "pinyin": "rù mí",
+    "hanviet": "",
+    "vietnamese": "to be fascinated; to be enchanted"
+  },
+  {
+    "simplified": "入眠",
+    "traditional": "入眠",
+    "pinyin": "rù mián",
+    "hanviet": "",
+    "vietnamese": "to fall asleep"
+  },
+  {
+    "simplified": "乳名",
+    "traditional": "乳名",
+    "pinyin": "rǔ míng",
+    "hanviet": "danh",
+    "vietnamese": "infant name; pet name for a child"
+  },
+  {
+    "simplified": "乳母",
+    "traditional": "乳母",
+    "pinyin": "rǔ mǔ",
+    "hanviet": "mẫu",
+    "vietnamese": "wet nurse"
+  },
+  {
+    "simplified": "入涅",
+    "traditional": "入涅",
+    "pinyin": "rù niè",
+    "hanviet": "",
+    "vietnamese": "to enter nirvana (Buddhism)"
+  },
+  {
+    "simplified": "乳牛",
+    "traditional": "乳牛",
+    "pinyin": "rǔ niú",
+    "hanviet": "ngưu",
+    "vietnamese": "dairy cattle"
+  },
+  {
+    "simplified": "乳品",
+    "traditional": "乳品",
+    "pinyin": "rǔ pǐn",
+    "hanviet": "phẩm",
+    "vietnamese": "dairy product"
+  },
+  {
+    "simplified": "如期",
+    "traditional": "如期",
+    "pinyin": "rú qī",
+    "hanviet": "như kỳ",
+    "vietnamese": "as scheduled; on time"
+  },
+  {
+    "simplified": "入侵",
+    "traditional": "入侵",
+    "pinyin": "rù qīn",
+    "hanviet": "",
+    "vietnamese": "to invade"
+  },
+  {
+    "simplified": "乳清",
+    "traditional": "乳清",
+    "pinyin": "rǔ qīng",
+    "hanviet": "",
+    "vietnamese": "whey"
+  },
+  {
+    "simplified": "入球",
+    "traditional": "入球",
+    "pinyin": "rù qiú",
+    "hanviet": "cầu",
+    "vietnamese": "to score a goal; goal"
+  },
+  {
+    "simplified": "濡染",
+    "traditional": "濡染",
+    "pinyin": "rú rǎn",
+    "hanviet": "",
+    "vietnamese": "to infect; to influence"
+  },
+  {
+    "simplified": "孺人",
+    "traditional": "孺人",
+    "pinyin": "rú rén",
+    "hanviet": "nhân",
+    "vietnamese": "(old) wife; mother"
+  },
+  {
+    "simplified": "濡忍",
+    "traditional": "濡忍",
+    "pinyin": "rú rěn",
+    "hanviet": "",
+    "vietnamese": "compliant; submissive"
+  },
+  {
+    "simplified": "入肉",
+    "traditional": "入肉",
+    "pinyin": "rù ròu",
+    "hanviet": "nhục",
+    "vietnamese": "to have intercourse; to fuck"
+  },
+  {
+    "simplified": "蠕蠕",
+    "traditional": "蠕蠕",
+    "pinyin": "rú rú",
+    "hanviet": "",
+    "vietnamese": "wiggling; squirming"
+  },
+  {
+    "simplified": "如若",
+    "traditional": "如若",
+    "pinyin": "rú rùo",
+    "hanviet": "như nhược",
+    "vietnamese": "if"
+  },
+  {
+    "simplified": "入神",
+    "traditional": "入神",
+    "pinyin": "rù shén",
+    "hanviet": "",
+    "vietnamese": "to be enthralled; to be entranced"
+  },
+  {
+    "simplified": "儒生",
+    "traditional": "儒生",
+    "pinyin": "rú shēng",
+    "hanviet": "sinh",
+    "vietnamese": "Confucian scholar (old)"
+  },
+  {
+    "simplified": "入圣",
+    "traditional": "入聖",
+    "pinyin": "rù shèng",
+    "hanviet": "",
+    "vietnamese": "to become an arhat (Buddhism)"
+  },
+  {
+    "simplified": "入声",
+    "traditional": "入聲",
+    "pinyin": "rù shēng",
+    "hanviet": "thanh",
+    "vietnamese": "entering tone; checked tone"
+  },
+  {
+    "simplified": "儒士",
+    "traditional": "儒士",
+    "pinyin": "rú shì",
+    "hanviet": "",
+    "vietnamese": "a Confucian scholar"
+  },
+  {
+    "simplified": "入世",
+    "traditional": "入世",
+    "pinyin": "rù shì",
+    "hanviet": "",
+    "vietnamese": "to engage with secular society; to involve oneself in human affairs"
+  },
+  {
+    "simplified": "入仕",
+    "traditional": "入仕",
+    "pinyin": "rù shì",
+    "hanviet": "",
+    "vietnamese": "(literary) to become an official"
+  },
+  {
+    "simplified": "入时",
+    "traditional": "入時",
+    "pinyin": "rù shí",
+    "hanviet": "thời",
+    "vietnamese": "fashionable"
+  },
+  {
+    "simplified": "如实",
+    "traditional": "如實",
+    "pinyin": "rú shí",
+    "hanviet": "như thực",
+    "vietnamese": "as things really are; realistic"
+  },
+  {
+    "simplified": "如是",
+    "traditional": "如是",
+    "pinyin": "rú shì",
+    "hanviet": "như thị",
+    "vietnamese": "thus"
+  },
+  {
+    "simplified": "濡湿",
+    "traditional": "濡濕",
+    "pinyin": "rú shī",
+    "hanviet": "",
+    "vietnamese": "to moisten"
+  },
+  {
+    "simplified": "入手",
+    "traditional": "入手",
+    "pinyin": "rù shǒu",
+    "hanviet": "thủ",
+    "vietnamese": "to begin (with ...) (typically used in a structure such as 從|从[cong2] + {noun} + 入手[ru4 shou3]: \"to begin with {noun}; t"
+  },
+  {
+    "simplified": "如数",
+    "traditional": "如數",
+    "pinyin": "rú shù",
+    "hanviet": "như số",
+    "vietnamese": "in the amount stipulated (by prior agreement); in full"
+  },
+  {
+    "simplified": "入睡",
+    "traditional": "入睡",
+    "pinyin": "rù shùi",
+    "hanviet": "thụy",
+    "vietnamese": "to fall asleep"
+  },
+  {
+    "simplified": "如斯",
+    "traditional": "如斯",
+    "pinyin": "rú sī",
+    "hanviet": "như",
+    "vietnamese": "(literary) in this way; so"
+  },
+  {
+    "simplified": "茹素",
+    "traditional": "茹素",
+    "pinyin": "rú sù",
+    "hanviet": "",
+    "vietnamese": "to eat a vegetarian diet"
+  },
+  {
+    "simplified": "乳酸",
+    "traditional": "乳酸",
+    "pinyin": "rǔ suān",
+    "hanviet": "",
+    "vietnamese": "lactic acid"
+  },
+  {
+    "simplified": "乳糖",
+    "traditional": "乳糖",
+    "pinyin": "rǔ táng",
+    "hanviet": "",
+    "vietnamese": "lactose"
+  },
+  {
+    "simplified": "如题",
+    "traditional": "如題",
+    "pinyin": "rú tí",
+    "hanviet": "như đề",
+    "vietnamese": "as the title suggests; as indicated in the title"
+  },
+  {
+    "simplified": "乳贴",
+    "traditional": "乳貼",
+    "pinyin": "rǔ tiē",
+    "hanviet": "",
+    "vietnamese": "pasties"
+  },
+  {
+    "simplified": "如同",
+    "traditional": "如同",
+    "pinyin": "rú tóng",
+    "hanviet": "như đồng",
+    "vietnamese": "like; as"
+  },
+  {
+    "simplified": "茹痛",
+    "traditional": "茹痛",
+    "pinyin": "rú tòng",
+    "hanviet": "",
+    "vietnamese": "to endure (suffering or sorrow)"
+  },
+  {
+    "simplified": "乳头",
+    "traditional": "乳頭",
+    "pinyin": "rǔ tóu",
+    "hanviet": "đầu",
+    "vietnamese": "nipple"
+  },
+  {
+    "simplified": "乳突",
+    "traditional": "乳突",
+    "pinyin": "rǔ tū",
+    "hanviet": "",
+    "vietnamese": "(anatomy) mastoid process"
+  },
+  {
+    "simplified": "入土",
+    "traditional": "入土",
+    "pinyin": "rù tǔ",
+    "hanviet": "thổ",
+    "vietnamese": "to bury; buried"
+  },
+  {
+    "simplified": "入团",
+    "traditional": "入團",
+    "pinyin": "rù tuán",
+    "hanviet": "",
+    "vietnamese": "to enroll in the Communist Youth League"
+  },
+  {
+    "simplified": "入托",
+    "traditional": "入托",
+    "pinyin": "rù tūo",
+    "hanviet": "",
+    "vietnamese": "(of a child) to start daycare"
+  },
+  {
+    "simplified": "入味",
+    "traditional": "入味",
+    "pinyin": "rù wèi",
+    "hanviet": "",
+    "vietnamese": "tasty; to be absorbed in sth"
+  },
+  {
+    "simplified": "入围",
+    "traditional": "入圍",
+    "pinyin": "rù wéi",
+    "hanviet": "",
+    "vietnamese": "to get past the qualifying round; to make it to the finals"
+  },
+  {
+    "simplified": "入微",
+    "traditional": "入微",
+    "pinyin": "rù wēi",
+    "hanviet": "",
+    "vietnamese": "down to the smallest detail; thoroughgoing; fine and detailed"
+  },
+  {
+    "simplified": "入伍",
+    "traditional": "入伍",
+    "pinyin": "rù wǔ",
+    "hanviet": "",
+    "vietnamese": "to enter the army; to enlist"
+  },
+  {
+    "simplified": "入席",
+    "traditional": "入席",
+    "pinyin": "rù xí",
+    "hanviet": "",
+    "vietnamese": "to take one's seat"
+  },
+  {
+    "simplified": "入息",
+    "traditional": "入息",
+    "pinyin": "rù xī",
+    "hanviet": "",
+    "vietnamese": "income (Hong Kong)"
+  },
+  {
+    "simplified": "入戏",
+    "traditional": "入戲",
+    "pinyin": "rù xì",
+    "hanviet": "",
+    "vietnamese": "(of an actor) to inhabit one's role; to become the character"
+  },
+  {
+    "simplified": "入夏",
+    "traditional": "入夏",
+    "pinyin": "rù xià",
+    "hanviet": "hạ",
+    "vietnamese": "summer sets in"
+  },
+  {
+    "simplified": "如下",
+    "traditional": "如下",
+    "pinyin": "rú xià",
+    "hanviet": "như hạ",
+    "vietnamese": "as follows"
+  },
+  {
+    "simplified": "乳腺",
+    "traditional": "乳腺",
+    "pinyin": "rǔ xiàn",
+    "hanviet": "",
+    "vietnamese": "mammary gland"
+  },
+  {
+    "simplified": "乳香",
+    "traditional": "乳香",
+    "pinyin": "rǔ xiāng",
+    "hanviet": "",
+    "vietnamese": "frankincense"
+  },
+  {
+    "simplified": "如许",
+    "traditional": "如許",
+    "pinyin": "rú xǔ",
+    "hanviet": "như",
+    "vietnamese": "(literary) like this; such (as this)"
+  },
+  {
+    "simplified": "入选",
+    "traditional": "入選",
+    "pinyin": "rù xuǎn",
+    "hanviet": "",
+    "vietnamese": "to be included among those selected for"
+  },
+  {
+    "simplified": "儒学",
+    "traditional": "儒學",
+    "pinyin": "rú xué",
+    "hanviet": "học",
+    "vietnamese": "Confucianism"
+  },
+  {
+    "simplified": "入学",
+    "traditional": "入學",
+    "pinyin": "rù xué",
+    "hanviet": "học",
+    "vietnamese": "to enter a school or college; to go to school for the first time as a child"
+  },
+  {
+    "simplified": "乳牙",
+    "traditional": "乳牙",
+    "pinyin": "rǔ yá",
+    "hanviet": "",
+    "vietnamese": "(dentistry) deciduous tooth; baby tooth; milk tooth"
+  },
+  {
+    "simplified": "儒雅",
+    "traditional": "儒雅",
+    "pinyin": "rú yǎ",
+    "hanviet": "",
+    "vietnamese": "scholarly; refined"
+  },
+  {
+    "simplified": "乳燕",
+    "traditional": "乳燕",
+    "pinyin": "rǔ yàn",
+    "hanviet": "",
+    "vietnamese": "baby swallow"
+  },
+  {
+    "simplified": "入眼",
+    "traditional": "入眼",
+    "pinyin": "rù yǎn",
+    "hanviet": "nhãn",
+    "vietnamese": "to appear before one's eyes; pleasing to the eye; nice to look at"
+  },
+  {
+    "simplified": "入药",
+    "traditional": "入藥",
+    "pinyin": "rù yào",
+    "hanviet": "",
+    "vietnamese": "to use in medicine"
+  },
+  {
+    "simplified": "乳业",
+    "traditional": "乳業",
+    "pinyin": "rǔ yè",
+    "hanviet": "nghiệp",
+    "vietnamese": "dairy industry; dairy farming"
+  },
+  {
+    "simplified": "乳液",
+    "traditional": "乳液",
+    "pinyin": "rǔ yè",
+    "hanviet": "",
+    "vietnamese": "lotion; (chemistry) emulsion"
+  },
+  {
+    "simplified": "入夜",
+    "traditional": "入夜",
+    "pinyin": "rù yè",
+    "hanviet": "",
+    "vietnamese": "at nightfall"
+  },
+  {
+    "simplified": "如一",
+    "traditional": "如一",
+    "pinyin": "rú yī",
+    "hanviet": "như nhất",
+    "vietnamese": "consistent; the same"
+  },
+  {
+    "simplified": "如意",
+    "traditional": "如意",
+    "pinyin": "rú yì",
+    "hanviet": "như ý",
+    "vietnamese": "as one wants; according to one's wishes; ruyi scepter, a symbol of power and good fortune"
+  },
+  {
+    "simplified": "入狱",
+    "traditional": "入獄",
+    "pinyin": "rù yù",
+    "hanviet": "",
+    "vietnamese": "to go to jail; to be sent to prison"
+  },
+  {
+    "simplified": "茹鱼",
+    "traditional": "茹魚",
+    "pinyin": "rú yú",
+    "hanviet": "ngư",
+    "vietnamese": "putrid fish"
+  },
+  {
+    "simplified": "入园",
+    "traditional": "入園",
+    "pinyin": "rù yuán",
+    "hanviet": "viên",
+    "vietnamese": "to enter a park or other place for public recreation (typically, one whose name ends in 園|园: a zoo 動物園|动物园[dong4 wu4 yua"
+  },
+  {
+    "simplified": "入院",
+    "traditional": "入院",
+    "pinyin": "rù yuàn",
+    "hanviet": "viện",
+    "vietnamese": "to enter hospital; to be hospitalized"
+  },
+  {
+    "simplified": "如愿",
+    "traditional": "如願",
+    "pinyin": "rú yuàn",
+    "hanviet": "như",
+    "vietnamese": "to have one's wishes fulfilled"
+  },
+  {
+    "simplified": "入月",
+    "traditional": "入月",
+    "pinyin": "rù yuè",
+    "hanviet": "nguyệt",
+    "vietnamese": "(of women) beginning of menstrual cycle; full-term gestation"
+  },
+  {
+    "simplified": "乳晕",
+    "traditional": "乳暈",
+    "pinyin": "rǔ yùn",
+    "hanviet": "",
+    "vietnamese": "mammary areola"
+  },
+  {
+    "simplified": "如云",
+    "traditional": "如雲",
+    "pinyin": "rú yún",
+    "hanviet": "như vân",
+    "vietnamese": "like the clouds in the sky (i.e. numerous)"
+  },
+  {
+    "simplified": "乳罩",
+    "traditional": "乳罩",
+    "pinyin": "rǔ zhào",
+    "hanviet": "",
+    "vietnamese": "bra"
+  },
+  {
+    "simplified": "儒者",
+    "traditional": "儒者",
+    "pinyin": "rú zhě",
+    "hanviet": "",
+    "vietnamese": "Confucian scholar"
+  },
+  {
+    "simplified": "乳汁",
+    "traditional": "乳汁",
+    "pinyin": "rǔ zhī",
+    "hanviet": "",
+    "vietnamese": "milk; (botany) latex"
+  },
+  {
+    "simplified": "乳脂",
+    "traditional": "乳脂",
+    "pinyin": "rǔ zhī",
+    "hanviet": "",
+    "vietnamese": "cream; milk fat"
+  },
+  {
+    "simplified": "入职",
+    "traditional": "入職",
+    "pinyin": "rù zhí",
+    "hanviet": "",
+    "vietnamese": "to commence employment; to enter a company"
+  },
+  {
+    "simplified": "乳猪",
+    "traditional": "乳豬",
+    "pinyin": "rǔ zhū",
+    "hanviet": "trư",
+    "vietnamese": "suckling pig"
+  },
+  {
+    "simplified": "入主",
+    "traditional": "入主",
+    "pinyin": "rù zhǔ",
+    "hanviet": "chủ",
+    "vietnamese": "to invade and take control of (a territory); to take the helm at (an organization); (of a company) to take control of (a"
+  },
+  {
+    "simplified": "入住",
+    "traditional": "入住",
+    "pinyin": "rù zhù",
+    "hanviet": "",
+    "vietnamese": "to check in (at a hotel etc); to move into (a house)"
+  },
+  {
+    "simplified": "入赘",
+    "traditional": "入贅",
+    "pinyin": "rù zhùi",
+    "hanviet": "",
+    "vietnamese": "to go and live with one's wife's family, in effect becoming a member of her family"
+  },
+  {
+    "simplified": "孺子",
+    "traditional": "孺子",
+    "pinyin": "rú zǐ",
+    "hanviet": "tử",
+    "vietnamese": "(literary) child"
+  },
+  {
+    "simplified": "褥子",
+    "traditional": "褥子",
+    "pinyin": "rù zi",
+    "hanviet": "tử",
+    "vietnamese": "cotton-padded mattress; CL:床[chuang2]"
+  },
+  {
+    "simplified": "入罪",
+    "traditional": "入罪",
+    "pinyin": "rù zùi",
+    "hanviet": "",
+    "vietnamese": "to criminalize (an activity)"
+  },
+  {
+    "simplified": "入樽",
+    "traditional": "入樽",
+    "pinyin": "rù zūn",
+    "hanviet": "",
+    "vietnamese": "slam dunk"
+  },
+  {
+    "simplified": "入座",
+    "traditional": "入座",
+    "pinyin": "rù zùo",
+    "hanviet": "",
+    "vietnamese": "to take one's seat"
+  },
+  {
+    "simplified": "挼",
+    "traditional": "挼",
+    "pinyin": "ruá",
+    "hanviet": "",
+    "vietnamese": "(dialect) (of paper or cloth) wrinkled; crumpled; (dialect) (of clothes) worn out"
+  },
+  {
+    "simplified": "堧",
+    "traditional": "堧",
+    "pinyin": "ruán",
+    "hanviet": "",
+    "vietnamese": "adjoin"
+  },
+  {
+    "simplified": "壖",
+    "traditional": "壖",
+    "pinyin": "ruán",
+    "hanviet": "",
+    "vietnamese": "land on water edge or under wall"
+  },
+  {
+    "simplified": "撋",
+    "traditional": "撋",
+    "pinyin": "ruán",
+    "hanviet": "",
+    "vietnamese": "to rub between the hands"
+  },
+  {
+    "simplified": "朊",
+    "traditional": "朊",
+    "pinyin": "ruǎn",
+    "hanviet": "",
+    "vietnamese": "protein"
+  },
+  {
+    "simplified": "瓀",
+    "traditional": "瓀",
+    "pinyin": "ruǎn",
+    "hanviet": "",
+    "vietnamese": "opaque; white quartz"
+  },
+  {
+    "simplified": "碝",
+    "traditional": "碝",
+    "pinyin": "ruǎn",
+    "hanviet": "",
+    "vietnamese": "jade-like stone"
+  },
+  {
+    "simplified": "緛",
+    "traditional": "緛",
+    "pinyin": "ruǎn",
+    "hanviet": "",
+    "vietnamese": "(archaic) to shorten"
+  },
+  {
+    "simplified": "软",
+    "traditional": "軟",
+    "pinyin": "ruǎn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft; flexible"
+  },
+  {
+    "simplified": "阮",
+    "traditional": "阮",
+    "pinyin": "ruǎn",
+    "hanviet": "",
+    "vietnamese": "surname Ruan; small state during the Shang Dynasty (1600–1046 BC) located in the southeast of present-day Gansu Province"
+  },
+  {
+    "simplified": "阮",
+    "traditional": "阮",
+    "pinyin": "ruǎn",
+    "hanviet": "",
+    "vietnamese": "ruan, a four-stringed Chinese lute"
+  },
+  {
+    "simplified": "阮安",
+    "traditional": "阮安",
+    "pinyin": "ruǎn ān",
+    "hanviet": "",
+    "vietnamese": "Nguyen An (1381-1453), aka Ruan An, Vietnamese architect and engineer, principal designer of the Forbidden City"
+  },
+  {
+    "simplified": "软包",
+    "traditional": "軟包",
+    "pinyin": "ruǎn bāo",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft (bread) roll"
+  },
+  {
+    "simplified": "软尺",
+    "traditional": "軟尺",
+    "pinyin": "ruǎn chǐ",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft measuring tape (non-retractable type used for body measurements etc)"
+  },
+  {
+    "simplified": "软碟",
+    "traditional": "軟碟",
+    "pinyin": "ruǎn dié",
+    "hanviet": "nhuyễn",
+    "vietnamese": "floppy disk"
+  },
+  {
+    "simplified": "软腭",
+    "traditional": "軟齶",
+    "pinyin": "ruǎn è",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft palate"
+  },
+  {
+    "simplified": "软膏",
+    "traditional": "軟膏",
+    "pinyin": "ruǎn gāo",
+    "hanviet": "nhuyễn",
+    "vietnamese": "ointment; paste"
+  },
+  {
+    "simplified": "软骨",
+    "traditional": "軟骨",
+    "pinyin": "ruǎn gǔ",
+    "hanviet": "nhuyễn cốt",
+    "vietnamese": "cartilage"
+  },
+  {
+    "simplified": "软管",
+    "traditional": "軟管",
+    "pinyin": "ruǎn guǎn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "hose; flexible tube"
+  },
+  {
+    "simplified": "软焊",
+    "traditional": "軟焊",
+    "pinyin": "ruǎn hàn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "to solder"
+  },
+  {
+    "simplified": "软化",
+    "traditional": "軟化",
+    "pinyin": "ruǎn huà",
+    "hanviet": "nhuyễn",
+    "vietnamese": "to soften"
+  },
+  {
+    "simplified": "软和",
+    "traditional": "軟和",
+    "pinyin": "ruǎn huo",
+    "hanviet": "nhuyễn hòa",
+    "vietnamese": "(coll.) pleasantly soft; comfy"
+  },
+  {
+    "simplified": "软件",
+    "traditional": "軟件",
+    "pinyin": "ruǎn jiàn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "software"
+  },
+  {
+    "simplified": "软禁",
+    "traditional": "軟禁",
+    "pinyin": "ruǎn jìn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "to place under house arrest"
+  },
+  {
+    "simplified": "软烂",
+    "traditional": "軟爛",
+    "pinyin": "ruǎn làn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "(of food etc) soft; pulpy; (Tw) (of a person) lacking drive; shiftless; lazy"
+  },
+  {
+    "simplified": "软肋",
+    "traditional": "軟肋",
+    "pinyin": "ruǎn lèi",
+    "hanviet": "nhuyễn",
+    "vietnamese": "(anatomy) costal cartilage; (fig.) weak spot; weak link; vulnerability"
+  },
+  {
+    "simplified": "软毛",
+    "traditional": "軟毛",
+    "pinyin": "ruǎn máo",
+    "hanviet": "nhuyễn",
+    "vietnamese": "fur"
+  },
+  {
+    "simplified": "软木",
+    "traditional": "軟木",
+    "pinyin": "ruǎn mù",
+    "hanviet": "nhuyễn mộc",
+    "vietnamese": "cork"
+  },
+  {
+    "simplified": "软呢",
+    "traditional": "軟呢",
+    "pinyin": "ruǎn ní",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft, pliable wool fabric"
+  },
+  {
+    "simplified": "软泥",
+    "traditional": "軟泥",
+    "pinyin": "ruǎn ní",
+    "hanviet": "nhuyễn nê",
+    "vietnamese": "soft mud; silt"
+  },
+  {
+    "simplified": "软糯",
+    "traditional": "軟糯",
+    "pinyin": "ruǎn nùo",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft and chewy (mouthfeel); (of a voice) tender; coaxing; clinging"
+  },
+  {
+    "simplified": "软盘",
+    "traditional": "軟盤",
+    "pinyin": "ruǎn pán",
+    "hanviet": "nhuyễn bàn",
+    "vietnamese": "floppy disk"
+  },
+  {
+    "simplified": "软片",
+    "traditional": "軟片",
+    "pinyin": "ruǎn piàn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "(photographic) film"
+  },
+  {
+    "simplified": "软弱",
+    "traditional": "軟弱",
+    "pinyin": "ruǎn rùo",
+    "hanviet": "nhuyễn nhược",
+    "vietnamese": "weak; feeble"
+  },
+  {
+    "simplified": "软水",
+    "traditional": "軟水",
+    "pinyin": "ruǎn shǔi",
+    "hanviet": "nhuyễn thủy",
+    "vietnamese": "soft water (cf. 硬水[ying4 shui3], hard water)"
+  },
+  {
+    "simplified": "软糖",
+    "traditional": "軟糖",
+    "pinyin": "ruǎn táng",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft candy (gummi candy, gumdrop, jellybean etc)"
+  },
+  {
+    "simplified": "软体",
+    "traditional": "軟體",
+    "pinyin": "ruǎn tǐ",
+    "hanviet": "nhuyễn thể",
+    "vietnamese": "(of an animal) soft-bodied; (Tw) software"
+  },
+  {
+    "simplified": "软梯",
+    "traditional": "軟梯",
+    "pinyin": "ruǎn tī",
+    "hanviet": "nhuyễn",
+    "vietnamese": "rope ladder"
+  },
+  {
+    "simplified": "软文",
+    "traditional": "軟文",
+    "pinyin": "ruǎn wén",
+    "hanviet": "nhuyễn văn",
+    "vietnamese": "advertorial"
+  },
+  {
+    "simplified": "软卧",
+    "traditional": "軟臥",
+    "pinyin": "ruǎn wò",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft sleeper (a type of sleeper train ticket class with a softer bunk)"
+  },
+  {
+    "simplified": "软席",
+    "traditional": "軟席",
+    "pinyin": "ruǎn xí",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft seat (= first class in PRC trains)"
+  },
+  {
+    "simplified": "软饮",
+    "traditional": "軟飲",
+    "pinyin": "ruǎn yǐn",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft drink"
+  },
+  {
+    "simplified": "软玉",
+    "traditional": "軟玉",
+    "pinyin": "ruǎn yù",
+    "hanviet": "nhuyễn ngọc",
+    "vietnamese": "nephrite; Ca(Mg,Fe)3(SiO3)4"
+  },
+  {
+    "simplified": "阮元",
+    "traditional": "阮元",
+    "pinyin": "ruǎn yuán",
+    "hanviet": "",
+    "vietnamese": "scholar-official in the Qing dynasty (1764-1849)"
+  },
+  {
+    "simplified": "软坐",
+    "traditional": "軟坐",
+    "pinyin": "ruǎn zùo",
+    "hanviet": "nhuyễn tọa",
+    "vietnamese": "soft seat (= first class in PRC trains)"
+  },
+  {
+    "simplified": "软座",
+    "traditional": "軟座",
+    "pinyin": "ruǎn zùo",
+    "hanviet": "nhuyễn",
+    "vietnamese": "soft seat (on trains or boats)"
+  },
+  {
+    "simplified": "枘",
+    "traditional": "枘",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "tenon; tool handle"
+  },
+  {
+    "simplified": "汭",
+    "traditional": "汭",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "river-bend"
+  },
+  {
+    "simplified": "瑞",
+    "traditional": "瑞",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "lucky; auspicious"
+  },
+  {
+    "simplified": "睿",
+    "traditional": "睿",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "astute; perspicacious"
+  },
+  {
+    "simplified": "緌",
+    "traditional": "緌",
+    "pinyin": "rúi",
+    "hanviet": "",
+    "vietnamese": "strings of cap"
+  },
+  {
+    "simplified": "繠",
+    "traditional": "繠",
+    "pinyin": "rǔi",
+    "hanviet": "",
+    "vietnamese": "dangle; hang loosely"
+  },
+  {
+    "simplified": "芮",
+    "traditional": "芮",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "surname Rui"
+  },
+  {
+    "simplified": "芮",
+    "traditional": "芮",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "small"
+  },
+  {
+    "simplified": "蕊",
+    "traditional": "蕊",
+    "pinyin": "rǔi",
+    "hanviet": "",
+    "vietnamese": "stamen; pistil"
+  },
+  {
+    "simplified": "蕤",
+    "traditional": "蕤",
+    "pinyin": "rúi",
+    "hanviet": "",
+    "vietnamese": "fringe; overladen with flowers"
+  },
+  {
+    "simplified": "蚋",
+    "traditional": "蚋",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "(mosquito); Simulia lugubris"
+  },
+  {
+    "simplified": "锐",
+    "traditional": "銳",
+    "pinyin": "rùi",
+    "hanviet": "",
+    "vietnamese": "acute"
+  },
+  {
+    "simplified": "锐步",
+    "traditional": "銳步",
+    "pinyin": "rùi bù",
+    "hanviet": "",
+    "vietnamese": "Reebok (sportswear manufacturer)"
+  },
+  {
+    "simplified": "瑞典",
+    "traditional": "瑞典",
+    "pinyin": "rùi diǎn",
+    "hanviet": "",
+    "vietnamese": "Sweden"
+  },
+  {
+    "simplified": "瑞尔",
+    "traditional": "瑞爾",
+    "pinyin": "rùi ěr",
+    "hanviet": "",
+    "vietnamese": "riel (Cambodian currency)"
+  },
+  {
+    "simplified": "瑞芳",
+    "traditional": "瑞芳",
+    "pinyin": "rùi fāng",
+    "hanviet": "",
+    "vietnamese": "Ruifang or Juifang town in New Taipei City 新北市[Xin1 bei3 shi4], Taiwan"
+  },
+  {
+    "simplified": "锐化",
+    "traditional": "銳化",
+    "pinyin": "rùi huà",
+    "hanviet": "",
+    "vietnamese": "to sharpen"
+  },
+  {
+    "simplified": "锐减",
+    "traditional": "銳減",
+    "pinyin": "rùi jiǎn",
+    "hanviet": "giảm",
+    "vietnamese": "steep decline"
+  },
+  {
+    "simplified": "锐角",
+    "traditional": "銳角",
+    "pinyin": "rùi jiǎo",
+    "hanviet": "giác",
+    "vietnamese": "acute angle"
+  },
+  {
+    "simplified": "锐进",
+    "traditional": "銳進",
+    "pinyin": "rùi jìn",
+    "hanviet": "tiến",
+    "vietnamese": "to advance; to rush forward"
+  },
+  {
+    "simplified": "瑞朗",
+    "traditional": "瑞朗",
+    "pinyin": "rùi lǎng",
+    "hanviet": "",
+    "vietnamese": "Swiss franc"
+  },
+  {
+    "simplified": "锐利",
+    "traditional": "銳利",
+    "pinyin": "rùi lì",
+    "hanviet": "lợi",
+    "vietnamese": "sharp; keen"
+  },
+  {
+    "simplified": "锐敏",
+    "traditional": "銳敏",
+    "pinyin": "rùi mǐn",
+    "hanviet": "",
+    "vietnamese": "acute; astute"
+  },
+  {
+    "simplified": "锐评",
+    "traditional": "銳評",
+    "pinyin": "rùi píng",
+    "hanviet": "",
+    "vietnamese": "(neologism) incisive commentary (abbr. for 銳利評論|锐利评论[rui4 li4 ping2 lun4])"
+  },
+  {
+    "simplified": "瑞气",
+    "traditional": "瑞氣",
+    "pinyin": "rùi qì",
+    "hanviet": "",
+    "vietnamese": "propitious vapours"
+  },
+  {
+    "simplified": "锐气",
+    "traditional": "銳氣",
+    "pinyin": "rùi qì",
+    "hanviet": "",
+    "vietnamese": "acute spirit; dash"
+  },
+  {
+    "simplified": "瑞萨",
+    "traditional": "瑞薩",
+    "pinyin": "rùi sà",
+    "hanviet": "",
+    "vietnamese": "Renesas Electronics (Japanese microchip company)"
+  },
+  {
+    "simplified": "瑞色",
+    "traditional": "瑞色",
+    "pinyin": "rùi sè",
+    "hanviet": "",
+    "vietnamese": "lovely color"
+  },
+  {
+    "simplified": "瑞士",
+    "traditional": "瑞士",
+    "pinyin": "rùi shì",
+    "hanviet": "",
+    "vietnamese": "Switzerland"
+  },
+  {
+    "simplified": "瑞狮",
+    "traditional": "瑞獅",
+    "pinyin": "rùi shī",
+    "hanviet": "sư",
+    "vietnamese": "Rui Shi, Auspicious Lions of Chinese mythology"
+  },
+  {
+    "simplified": "芮氏",
+    "traditional": "芮氏",
+    "pinyin": "rùi shì",
+    "hanviet": "",
+    "vietnamese": "(Tw) (seismology) Richter (scale)"
+  },
+  {
+    "simplified": "瑞兽",
+    "traditional": "瑞獸",
+    "pinyin": "rùi shòu",
+    "hanviet": "",
+    "vietnamese": "auspicious animal (such as the dragon)"
+  },
+  {
+    "simplified": "瑞穗",
+    "traditional": "瑞穗",
+    "pinyin": "rùi sùi",
+    "hanviet": "",
+    "vietnamese": "Ruisui or Juisui township in Hualien County 花蓮縣|花莲县[Hua1 lian2 Xian4], east Taiwan"
+  },
+  {
+    "simplified": "瑞香",
+    "traditional": "瑞香",
+    "pinyin": "rùi xiāng",
+    "hanviet": "",
+    "vietnamese": "winter daphne"
+  },
+  {
+    "simplified": "瑞雪",
+    "traditional": "瑞雪",
+    "pinyin": "rùi xuě",
+    "hanviet": "tuyết",
+    "vietnamese": "timely snow"
+  },
+  {
+    "simplified": "瑞亚",
+    "traditional": "瑞亞",
+    "pinyin": "rùi yà",
+    "hanviet": "",
+    "vietnamese": "Rhea (Titaness of Greek mythology)"
+  },
+  {
+    "simplified": "锐意",
+    "traditional": "銳意",
+    "pinyin": "rùi yì",
+    "hanviet": "ý",
+    "vietnamese": "acute determination; dauntless"
+  },
+  {
+    "simplified": "枘凿",
+    "traditional": "枘鑿",
+    "pinyin": "rùi záo",
+    "hanviet": "",
+    "vietnamese": "incompatible (abbr. for 方枘圓鑿|方枘圆凿[fang1 rui4 yuan2 zao2]); (literary) compatible (lit. \"mortise and tenon\")"
+  },
+  {
+    "simplified": "睿智",
+    "traditional": "睿智",
+    "pinyin": "rùi zhì",
+    "hanviet": "trí",
+    "vietnamese": "wise and farsighted"
+  },
+  {
+    "simplified": "锐志",
+    "traditional": "銳志",
+    "pinyin": "rùi zhì",
+    "hanviet": "chí",
+    "vietnamese": "firm determination"
+  },
+  {
+    "simplified": "润",
+    "traditional": "潤",
+    "pinyin": "rùn",
+    "hanviet": "",
+    "vietnamese": "moist; glossy; sleek; to moisten; to lubricate"
+  },
+  {
+    "simplified": "犉",
+    "traditional": "犉",
+    "pinyin": "rún",
+    "hanviet": "",
+    "vietnamese": "ox"
+  },
+  {
+    "simplified": "闰",
+    "traditional": "閏",
+    "pinyin": "rùn",
+    "hanviet": "",
+    "vietnamese": "intercalary; an extra day or month inserted into the lunar or solar calendar (such as February 29)"
+  },
+  {
+    "simplified": "润笔",
+    "traditional": "潤筆",
+    "pinyin": "rùn bǐ",
+    "hanviet": "bút",
+    "vietnamese": "remuneration for literary or artistic work"
+  },
+  {
+    "simplified": "润饼",
+    "traditional": "潤餅",
+    "pinyin": "rùn bǐng",
+    "hanviet": "",
+    "vietnamese": "soft mixed vegetable and meat roll-up"
+  },
+  {
+    "simplified": "润肠",
+    "traditional": "潤腸",
+    "pinyin": "rùn cháng",
+    "hanviet": "",
+    "vietnamese": "to ease constipation (TCM)"
+  },
+  {
+    "simplified": "润肺",
+    "traditional": "潤肺",
+    "pinyin": "rùn fèi",
+    "hanviet": "phế",
+    "vietnamese": "to moisten the lungs; to make expectoration easy (medicine)"
+  },
+  {
+    "simplified": "润格",
+    "traditional": "潤格",
+    "pinyin": "rùn gé",
+    "hanviet": "",
+    "vietnamese": "(old) scale of fees charged by a painter or calligrapher"
+  },
+  {
+    "simplified": "润滑",
+    "traditional": "潤滑",
+    "pinyin": "rùn huá",
+    "hanviet": "",
+    "vietnamese": "smooth; oily"
+  },
+  {
+    "simplified": "闰年",
+    "traditional": "閏年",
+    "pinyin": "rùn nián",
+    "hanviet": "niên",
+    "vietnamese": "leap year; (lunar calendar) year with a thirteen intercalary month"
+  },
+  {
+    "simplified": "润色",
+    "traditional": "潤色",
+    "pinyin": "rùn sè",
+    "hanviet": "",
+    "vietnamese": "to polish (a piece of writing); to add a few finishing touches to (a piece of writing, painting etc)"
+  },
+  {
+    "simplified": "润湿",
+    "traditional": "潤濕",
+    "pinyin": "rùn shī",
+    "hanviet": "",
+    "vietnamese": "to moisten (e.g. of rain); to wet"
+  },
+  {
+    "simplified": "润饰",
+    "traditional": "潤飾",
+    "pinyin": "rùn shì",
+    "hanviet": "",
+    "vietnamese": "to adorn; to embellish"
+  },
+  {
+    "simplified": "润学",
+    "traditional": "潤學",
+    "pinyin": "rùn xué",
+    "hanviet": "học",
+    "vietnamese": "(neologism) (slang) study of how to flee from adverse conditions in China by emigrating"
+  },
+  {
+    "simplified": "闰月",
+    "traditional": "閏月",
+    "pinyin": "rùn yuè",
+    "hanviet": "nguyệt",
+    "vietnamese": "intercalary month in the lunar calendar; leap month"
+  },
+  {
+    "simplified": "润泽",
+    "traditional": "潤澤",
+    "pinyin": "rùn zé",
+    "hanviet": "",
+    "vietnamese": "moist"
+  },
+  {
+    "simplified": "润资",
+    "traditional": "潤資",
+    "pinyin": "rùn zī",
+    "hanviet": "",
+    "vietnamese": "remuneration for literary or artistic work"
+  },
+  {
+    "simplified": "偌",
+    "traditional": "偌",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "so; such"
+  },
+  {
+    "simplified": "弱",
+    "traditional": "弱",
+    "pinyin": "rùo",
+    "hanviet": "nhược",
+    "vietnamese": "weak; feeble; young"
+  },
+  {
+    "simplified": "挼",
+    "traditional": "挼",
+    "pinyin": "rúo",
+    "hanviet": "",
+    "vietnamese": "to rub; to crumple"
+  },
+  {
+    "simplified": "捼",
+    "traditional": "捼",
+    "pinyin": "rúo",
+    "hanviet": "",
+    "vietnamese": "to rub; to crumple"
+  },
+  {
+    "simplified": "爇",
+    "traditional": "爇",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "burn; heat"
+  },
+  {
+    "simplified": "箬",
+    "traditional": "箬",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "(bamboo); skin of bamboo"
+  },
+  {
+    "simplified": "篛",
+    "traditional": "篛",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "cuticle of bamboo plant"
+  },
+  {
+    "simplified": "若",
+    "traditional": "若",
+    "pinyin": "rùo",
+    "hanviet": "nhược",
+    "vietnamese": "to seem; like"
+  },
+  {
+    "simplified": "蒻",
+    "traditional": "蒻",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "young rush (Typha japonica), a kind of cattail"
+  },
+  {
+    "simplified": "鄀",
+    "traditional": "鄀",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "place name"
+  },
+  {
+    "simplified": "鶸",
+    "traditional": "鶸",
+    "pinyin": "rùo",
+    "hanviet": "",
+    "vietnamese": "siskin"
+  },
+  {
+    "simplified": "弱爆",
+    "traditional": "弱爆",
+    "pinyin": "rùo bào",
+    "hanviet": "nhược",
+    "vietnamese": "(slang) weak; pathetic"
+  },
+  {
+    "simplified": "弱侧",
+    "traditional": "弱側",
+    "pinyin": "rùo cè",
+    "hanviet": "nhược",
+    "vietnamese": "weak side; off side (sports)"
+  },
+  {
+    "simplified": "若虫",
+    "traditional": "若蟲",
+    "pinyin": "rùo chóng",
+    "hanviet": "nhược",
+    "vietnamese": "(entomology) nymph"
+  },
+  {
+    "simplified": "偌大",
+    "traditional": "偌大",
+    "pinyin": "rùo dà",
+    "hanviet": "đại",
+    "vietnamese": "so big; such a big"
+  },
+  {
+    "simplified": "弱点",
+    "traditional": "弱點",
+    "pinyin": "rùo diǎn",
+    "hanviet": "nhược điểm",
+    "vietnamese": "weak point; failing"
+  },
+  {
+    "simplified": "若非",
+    "traditional": "若非",
+    "pinyin": "rùo fēi",
+    "hanviet": "nhược phi",
+    "vietnamese": "were it not for; if not for"
+  },
+  {
+    "simplified": "若干",
+    "traditional": "若干",
+    "pinyin": "rùo gān",
+    "hanviet": "nhược",
+    "vietnamese": "a certain number or amount; how many?"
+  },
+  {
+    "simplified": "若果",
+    "traditional": "若果",
+    "pinyin": "rùo gǔo",
+    "hanviet": "nhược",
+    "vietnamese": "(literary) if; supposing that"
+  },
+  {
+    "simplified": "若翰",
+    "traditional": "若翰",
+    "pinyin": "rùo hàn",
+    "hanviet": "nhược",
+    "vietnamese": "John (less common form of 若望[Ruo4 wang4] or 約翰|约翰[Yue1 han4])"
+  },
+  {
+    "simplified": "弱化",
+    "traditional": "弱化",
+    "pinyin": "rùo huà",
+    "hanviet": "nhược",
+    "vietnamese": "weaken; make weaker"
+  },
+  {
+    "simplified": "弱碱",
+    "traditional": "弱鹼",
+    "pinyin": "rùo jiǎn",
+    "hanviet": "nhược",
+    "vietnamese": "weak base (alkali)"
+  },
+  {
+    "simplified": "弱旅",
+    "traditional": "弱旅",
+    "pinyin": "rùo lu:3",
+    "hanviet": "nhược",
+    "vietnamese": "(sports) weak team; underdog (team)"
+  },
+  {
+    "simplified": "弱脉",
+    "traditional": "弱脈",
+    "pinyin": "rùo mài",
+    "hanviet": "nhược",
+    "vietnamese": "weak pulse"
+  },
+  {
+    "simplified": "若然",
+    "traditional": "若然",
+    "pinyin": "rùo rán",
+    "hanviet": "nhược",
+    "vietnamese": "if; if so"
+  },
+  {
+    "simplified": "若瑟",
+    "traditional": "若瑟",
+    "pinyin": "rùo sè",
+    "hanviet": "nhược",
+    "vietnamese": "Joseph (biblical name)"
+  },
+  {
+    "simplified": "弱势",
+    "traditional": "弱勢",
+    "pinyin": "rùo shì",
+    "hanviet": "nhược",
+    "vietnamese": "vulnerable; weak"
+  },
+  {
+    "simplified": "弱视",
+    "traditional": "弱視",
+    "pinyin": "rùo shì",
+    "hanviet": "nhược thị",
+    "vietnamese": "amblyopia"
+  },
+  {
+    "simplified": "若是",
+    "traditional": "若是",
+    "pinyin": "rùo shì",
+    "hanviet": "nhược thị",
+    "vietnamese": "if"
+  },
+  {
+    "simplified": "弱酸",
+    "traditional": "弱酸",
+    "pinyin": "rùo suān",
+    "hanviet": "nhược",
+    "vietnamese": "weak acid"
+  },
+  {
+    "simplified": "弱听",
+    "traditional": "弱聽",
+    "pinyin": "rùo tīng",
+    "hanviet": "nhược thính",
+    "vietnamese": "hard of hearing; hearing-impaired"
+  },
+  {
+    "simplified": "若望",
+    "traditional": "若望",
+    "pinyin": "rùo wàng",
+    "hanviet": "nhược",
+    "vietnamese": "John; Saint John"
+  },
+  {
+    "simplified": "弱项",
+    "traditional": "弱項",
+    "pinyin": "rùo xiàng",
+    "hanviet": "nhược",
+    "vietnamese": "one's weak area"
+  },
+  {
+    "simplified": "弱小",
+    "traditional": "弱小",
+    "pinyin": "rùo xiǎo",
+    "hanviet": "nhược tiểu",
+    "vietnamese": "small and weak; puny; the small and weak; children; women and children"
+  },
+  {
+    "simplified": "弱智",
+    "traditional": "弱智",
+    "pinyin": "rùo zhì",
+    "hanviet": "nhược trí",
+    "vietnamese": "weak-minded; mentally deficient"
   }
 ]

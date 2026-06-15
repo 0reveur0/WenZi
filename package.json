@@ -9,7 +9,8 @@
     "astro": "astro",
     "import-dictionary": "bun run scripts/import-dictionary.ts",
     "split-dictionary": "bun run scripts/split-dictionary.ts",
-    "download-data": "npx tsx scripts/download-resources.ts"
+    "download-data": "npx tsx scripts/download-resources.ts",
+    "import-data": "node scripts/import-vocab.js"
   },
   "dependencies": {
     "@astrojs/node": "^9",

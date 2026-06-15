@@ -2,93 +2,109 @@
   "chunks": {
     "a": {
       "file": "a.json",
-      "count": 1
+      "count": 629
     },
     "b": {
       "file": "b.json",
-      "count": 13
+      "count": 3726
     },
     "c": {
       "file": "c.json",
-      "count": 17
+      "count": 4313
     },
     "d": {
       "file": "d.json",
-      "count": 21
+      "count": 3989
     },
     "e": {
       "file": "e.json",
-      "count": 3
+      "count": 371
     },
     "f": {
       "file": "f.json",
-      "count": 11
+      "count": 2470
     },
     "g": {
       "file": "g.json",
-      "count": 17
+      "count": 3141
     },
     "h": {
       "file": "h.json",
-      "count": 21
+      "count": 3519
+    },
+    "i": {
+      "file": "i.json",
+      "count": 1
     },
     "j": {
       "file": "j.json",
-      "count": 17
+      "count": 5228
     },
     "k": {
       "file": "k.json",
-      "count": 10
+      "count": 1799
     },
     "l": {
       "file": "l.json",
-      "count": 14
+      "count": 3653
     },
     "m": {
       "file": "m.json",
-      "count": 18
+      "count": 2574
     },
     "n": {
       "file": "n.json",
-      "count": 10
+      "count": 1425
+    },
+    "o": {
+      "file": "o.json",
+      "count": 79
     },
     "p": {
       "file": "p.json",
-      "count": 3
+      "count": 1886
     },
     "q": {
       "file": "q.json",
-      "count": 5
+      "count": 2876
     },
     "r": {
       "file": "r.json",
-      "count": 5
+      "count": 1088
     },
     "s": {
       "file": "s.json",
-      "count": 15
+      "count": 5617
     },
     "t": {
       "file": "t.json",
-      "count": 6
+      "count": 3117
+    },
+    "u": {
+      "file": "u.json",
+      "count": 2
+    },
+    "v": {
+      "file": "v.json",
+      "count": 1
     },
     "w": {
       "file": "w.json",
-      "count": 4
+      "count": 2157
     },
     "x": {
       "file": "x.json",
-      "count": 17
+      "count": 4079
     },
     "y": {
       "file": "y.json",
-      "count": 9
+      "count": 5277
     },
     "z": {
       "file": "z.json",
-      "count": 15
+      "count": 5665
     }
   },
-  "total": 252,
-  "generatedAt": "2026-06-15T09:27:02.075Z"
+  "total": 68682,
+  "generatedAt": "2026-06-15T10:20:44.847Z"
 }
