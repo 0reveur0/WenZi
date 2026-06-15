@@ -1,45 +1,59 @@
 [
   {
-    "simplified": "南",
-    "traditional": "南",
-    "pinyin": "nán",
-    "hanviet": "nam",
-    "vietnamese": "Nam"
+    "simplified": "哪",
+    "traditional": "哪",
+    "pinyin": "nǎ",
+    "hanviet": "na",
+    "vietnamese": "Nào"
   },
   {
-    "simplified": "难",
-    "traditional": "難",
-    "pinyin": "nán",
-    "hanviet": "nan",
-    "vietnamese": "Khó"
+    "simplified": "拿",
+    "traditional": "拿",
+    "pinyin": "ná",
+    "hanviet": "nã",
+    "vietnamese": "Cầm, lấy"
+  },
+  {
+    "simplified": "那",
+    "traditional": "那",
+    "pinyin": "nà",
+    "hanviet": "na",
+    "vietnamese": "Kia, đó"
+  },
+  {
+    "simplified": "奶",
+    "traditional": "奶奶",
+    "pinyin": "nǎi nai",
+    "hanviet": "nãi nãi",
+    "vietnamese": "Bà nội"
   },
   {
     "simplified": "难过",
     "traditional": "難過",
     "pinyin": "nán guò",
     "hanviet": "nan quá",
-    "vietnamese": "Buồn, khó chịu"
+    "vietnamese": "Buồn"
   },
   {
-    "simplified": "脑",
-    "traditional": "腦",
-    "pinyin": "nǎo",
-    "hanviet": "não",
-    "vietnamese": "Não"
+    "simplified": "呢",
+    "traditional": "呢",
+    "pinyin": "ne",
+    "hanviet": "ni",
+    "vietnamese": "(trợ từ)"
   },
   {
     "simplified": "能",
     "traditional": "能",
     "pinyin": "néng",
     "hanviet": "năng",
-    "vietnamese": "Có thể, có năng lực"
+    "vietnamese": "Có thể"
   },
   {
     "simplified": "你",
     "traditional": "你",
     "pinyin": "nǐ",
     "hanviet": "nễ",
-    "vietnamese": "Bạn, mày"
+    "vietnamese": "Bạn, anh"
   },
   {
     "simplified": "年",
@@ -49,45 +63,10 @@
     "vietnamese": "Năm"
   },
   {
-    "simplified": "鸟",
-    "traditional": "鳥",
-    "pinyin": "niǎo",
-    "hanviet": "điểu",
-    "vietnamese": "Chim"
-  },
-  {
-    "simplified": "牛",
-    "traditional": "牛",
-    "pinyin": "niú",
-    "hanviet": "ngưu",
-    "vietnamese": "Bò"
-  },
-  {
-    "simplified": "牛奶",
-    "traditional": "牛奶",
-    "pinyin": "niú nǎi",
-    "hanviet": "ngưu nãi",
-    "vietnamese": "Sữa bò"
-  },
-  {
     "simplified": "女儿",
     "traditional": "女兒",
     "pinyin": "nǚ ér",
     "hanviet": "nữ nhi",
     "vietnamese": "Con gái"
-  },
-  {
-    "simplified": "努力",
-    "traditional": "努力",
-    "pinyin": "nǔ lì",
-    "hanviet": "nỗ lực",
-    "vietnamese": "Cố gắng, nỗ lực"
-  },
-  {
-    "simplified": "暖",
-    "traditional": "暖",
-    "pinyin": "nuǎn",
-    "hanviet": "noãn",
-    "vietnamese": "Ấm"
   }
 ]

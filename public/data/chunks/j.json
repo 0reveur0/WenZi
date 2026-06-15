@@ -1,10 +1,17 @@
 [
   {
-    "simplified": "鸡",
-    "traditional": "雞",
+    "simplified": "几",
+    "traditional": "幾",
+    "pinyin": "jǐ",
+    "hanviet": "kỷ",
+    "vietnamese": "Mấy, bao nhiêu"
+  },
+  {
+    "simplified": "机",
+    "traditional": "機",
     "pinyin": "jī",
-    "hanviet": "kê",
-    "vietnamese": "Gà"
+    "hanviet": "cơ",
+    "vietnamese": "Máy"
   },
   {
     "simplified": "机场",
@@ -14,6 +21,13 @@
     "vietnamese": "Sân bay"
   },
   {
+    "simplified": "鸡蛋",
+    "traditional": "雞蛋",
+    "pinyin": "jī dàn",
+    "hanviet": "kê đản",
+    "vietnamese": "Trứng gà"
+  },
+  {
     "simplified": "机会",
     "traditional": "機會",
     "pinyin": "jī huì",
@@ -21,46 +35,25 @@
     "vietnamese": "Cơ hội"
   },
   {
-    "simplified": "技术",
-    "traditional": "技術",
-    "pinyin": "jì shù",
-    "hanviet": "kỹ thuật",
-    "vietnamese": "Kỹ thuật, công nghệ"
+    "simplified": "家",
+    "traditional": "家",
+    "pinyin": "jiā",
+    "hanviet": "gia",
+    "vietnamese": "Nhà, gia đình"
   },
   {
-    "simplified": "假",
-    "traditional": "假",
-    "pinyin": "jiǎ",
-    "hanviet": "giả",
-    "vietnamese": "Giả"
+    "simplified": "叫",
+    "traditional": "叫",
+    "pinyin": "jiào",
+    "hanviet": "khiếu",
+    "vietnamese": "Gọi, tên là"
   },
   {
-    "simplified": "家庭",
-    "traditional": "家庭",
-    "pinyin": "jiā tíng",
-    "hanviet": "gia đình",
-    "vietnamese": "Gia đình"
-  },
-  {
-    "simplified": "健康",
-    "traditional": "健康",
-    "pinyin": "jiàn kāng",
-    "hanviet": "kiến khang",
-    "vietnamese": "Sức khỏe, khỏe mạnh"
-  },
-  {
-    "simplified": "饺子",
-    "traditional": "餃子",
-    "pinyin": "jiǎo zi",
-    "hanviet": "giảo tử",
-    "vietnamese": "Sủi cảo"
-  },
-  {
-    "simplified": "结果",
-    "traditional": "結果",
-    "pinyin": "jié guǒ",
-    "hanviet": "kết quả",
-    "vietnamese": "Kết quả"
+    "simplified": "借",
+    "traditional": "借",
+    "pinyin": "jiè",
+    "hanviet": "tá",
+    "vietnamese": "Mượn"
   },
   {
     "simplified": "姐姐",
@@ -70,11 +63,18 @@
     "vietnamese": "Chị gái"
   },
   {
-    "simplified": "近",
-    "traditional": "近",
-    "pinyin": "jìn",
-    "hanviet": "cận",
-    "vietnamese": "Gần"
+    "simplified": "解决",
+    "traditional": "解決",
+    "pinyin": "jiě jué",
+    "hanviet": "giải quyết",
+    "vietnamese": "Giải quyết"
+  },
+  {
+    "simplified": "节课",
+    "traditional": "節課",
+    "pinyin": "jié kè",
+    "hanviet": "tiết khóa",
+    "vietnamese": "Tiết học"
   },
   {
     "simplified": "今天",
@@ -84,18 +84,18 @@
     "vietnamese": "Hôm nay"
   },
   {
-    "simplified": "经济",
-    "traditional": "經濟",
-    "pinyin": "jīng jì",
-    "hanviet": "kinh tế",
-    "vietnamese": "Kinh tế"
+    "simplified": "经常",
+    "traditional": "經常",
+    "pinyin": "jīng cháng",
+    "hanviet": "kinh thường",
+    "vietnamese": "Thường xuyên"
   },
   {
-    "simplified": "旧",
-    "traditional": "舊",
-    "pinyin": "jiù",
-    "hanviet": "cựu",
-    "vietnamese": "Cũ"
+    "simplified": "经过",
+    "traditional": "經過",
+    "pinyin": "jīng guò",
+    "hanviet": "kinh quá",
+    "vietnamese": "Đi qua"
   },
   {
     "simplified": "九",
@@ -105,11 +105,11 @@
     "vietnamese": "Chín"
   },
   {
-    "simplified": "酒",
-    "traditional": "酒",
-    "pinyin": "jiǔ",
-    "hanviet": "tửu",
-    "vietnamese": "Rượu"
+    "simplified": "旧",
+    "traditional": "舊",
+    "pinyin": "jiù",
+    "hanviet": "cựu",
+    "vietnamese": "Cũ"
   },
   {
     "simplified": "决定",

@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "import-dictionary": "bun run scripts/import-dictionary.ts",
-    "split-dictionary": "bun run scripts/split-dictionary.ts"
+    "split-dictionary": "bun run scripts/split-dictionary.ts",
+    "download-data": "npx tsx scripts/download-resources.ts"
   },
   "dependencies": {
     "@astrojs/node": "^9",

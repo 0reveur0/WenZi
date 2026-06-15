@@ -1,51 +1,79 @@
 [
   {
-    "simplified": "法国",
-    "traditional": "法國",
-    "pinyin": "fǎ guó",
-    "hanviet": "pháp quốc",
-    "vietnamese": "Pháp"
+    "simplified": "发烧",
+    "traditional": "發燒",
+    "pinyin": "fā shāo",
+    "hanviet": "phát thiêu",
+    "vietnamese": "Sốt"
   },
   {
-    "simplified": "发展",
-    "traditional": "發展",
-    "pinyin": "fā zhǎn",
-    "hanviet": "phát triển",
-    "vietnamese": "Phát triển"
+    "simplified": "发现",
+    "traditional": "發現",
+    "pinyin": "fā xiàn",
+    "hanviet": "phát hiện",
+    "vietnamese": "Phát hiện"
   },
   {
-    "simplified": "饭店",
-    "traditional": "飯店",
-    "pinyin": "fàn diàn",
-    "hanviet": "phạn điếm",
-    "vietnamese": "Nhà hàng, khách sạn"
+    "simplified": "放",
+    "traditional": "放",
+    "pinyin": "fàng",
+    "hanviet": "phóng",
+    "vietnamese": "Đặt, thả"
   },
   {
-    "simplified": "方法",
-    "traditional": "方法",
-    "pinyin": "fāng fǎ",
-    "hanviet": "phương pháp",
-    "vietnamese": "Phương pháp, cách"
+    "simplified": "方便",
+    "traditional": "方便",
+    "pinyin": "fāng biàn",
+    "hanviet": "phương tiện",
+    "vietnamese": "Tiện lợi"
   },
   {
-    "simplified": "飞机",
-    "traditional": "飛機",
-    "pinyin": "fēi jī",
-    "hanviet": "phi cơ",
-    "vietnamese": "Máy bay"
+    "simplified": "房间",
+    "traditional": "房間",
+    "pinyin": "fáng jiān",
+    "hanviet": "phòng gian",
+    "vietnamese": "Phòng"
   },
   {
-    "simplified": "风",
-    "traditional": "風",
-    "pinyin": "fēng",
-    "hanviet": "phong",
-    "vietnamese": "Gió"
+    "simplified": "放学",
+    "traditional": "放學",
+    "pinyin": "fàng xué",
+    "hanviet": "phóng học",
+    "vietnamese": "Tan học"
   },
   {
-    "simplified": "风景",
-    "traditional": "風景",
-    "pinyin": "fēng jǐng",
-    "hanviet": "phong cảnh",
-    "vietnamese": "Phong cảnh"
+    "simplified": "飞",
+    "traditional": "飛",
+    "pinyin": "fēi",
+    "hanviet": "phi",
+    "vietnamese": "Bay"
+  },
+  {
+    "simplified": "分",
+    "traditional": "分",
+    "pinyin": "fēn",
+    "hanviet": "phân",
+    "vietnamese": "Phút, chia"
+  },
+  {
+    "simplified": "分钟",
+    "traditional": "分鐘",
+    "pinyin": "fēn zhōng",
+    "hanviet": "phân chung",
+    "vietnamese": "Phút"
+  },
+  {
+    "simplified": "附近",
+    "traditional": "附近",
+    "pinyin": "fù jìn",
+    "hanviet": "phụ cận",
+    "vietnamese": "Gần đây"
+  },
+  {
+    "simplified": "服务员",
+    "traditional": "服務員",
+    "pinyin": "fú wù yuán",
+    "hanviet": "phục vụ viên",
+    "vietnamese": "Nhân viên phục vụ"
   }
 ]

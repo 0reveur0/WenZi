@@ -14,31 +14,24 @@
     "vietnamese": "Người"
   },
   {
+    "simplified": "认识",
+    "traditional": "認識",
+    "pinyin": "rèn shi",
+    "hanviet": "nhận thức",
+    "vietnamese": "Biết, nhận ra"
+  },
+  {
     "simplified": "日",
     "traditional": "日",
     "pinyin": "rì",
     "hanviet": "nhật",
-    "vietnamese": "Ngày, Nhật Bản"
+    "vietnamese": "Ngày, mặt trời"
   },
   {
-    "simplified": "日本",
-    "traditional": "日本",
-    "pinyin": "rì běn",
-    "hanviet": "nhật bản",
-    "vietnamese": "Nhật Bản"
-  },
-  {
-    "simplified": "容易",
-    "traditional": "容易",
-    "pinyin": "róng yì",
-    "hanviet": "dung dị",
-    "vietnamese": "Dễ"
-  },
-  {
-    "simplified": "肉",
-    "traditional": "肉",
-    "pinyin": "ròu",
-    "hanviet": "nhục",
-    "vietnamese": "Thịt"
+    "simplified": "日",
+    "traditional": "日",
+    "pinyin": "rì",
+    "hanviet": "nhật",
+    "vietnamese": "Ngày"
   }
 ]

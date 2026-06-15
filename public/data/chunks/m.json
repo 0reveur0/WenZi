@@ -1,5 +1,12 @@
 [
   {
+    "simplified": "吗",
+    "traditional": "嗎",
+    "pinyin": "ma",
+    "hanviet": "ma",
+    "vietnamese": "(trợ từ hỏi)"
+  },
+  {
     "simplified": "马",
     "traditional": "馬",
     "pinyin": "mǎ",
@@ -14,11 +21,11 @@
     "vietnamese": "Mẹ"
   },
   {
-    "simplified": "卖",
-    "traditional": "賣",
-    "pinyin": "mài",
-    "hanviet": "mại",
-    "vietnamese": "Bán"
+    "simplified": "马上",
+    "traditional": "馬上",
+    "pinyin": "mǎ shàng",
+    "hanviet": "mã thượng",
+    "vietnamese": "Ngay lập tức"
   },
   {
     "simplified": "买",
@@ -28,18 +35,11 @@
     "vietnamese": "Mua"
   },
   {
-    "simplified": "慢",
-    "traditional": "慢",
-    "pinyin": "màn",
-    "hanviet": "mạn",
-    "vietnamese": "Chậm"
-  },
-  {
-    "simplified": "忙",
-    "traditional": "忙",
-    "pinyin": "máng",
-    "hanviet": "mang",
-    "vietnamese": "Bận"
+    "simplified": "满意",
+    "traditional": "滿意",
+    "pinyin": "mǎn yì",
+    "hanviet": "mãn ý",
+    "vietnamese": "Hài lòng"
   },
   {
     "simplified": "猫",
@@ -56,20 +56,6 @@
     "vietnamese": "Không sao"
   },
   {
-    "simplified": "美国",
-    "traditional": "美國",
-    "pinyin": "měi guó",
-    "hanviet": "mỹ quốc",
-    "vietnamese": "Mỹ, Hoa Kỳ"
-  },
-  {
-    "simplified": "美丽",
-    "traditional": "美麗",
-    "pinyin": "měi lì",
-    "hanviet": "mỹ lệ",
-    "vietnamese": "Đẹp"
-  },
-  {
     "simplified": "妹妹",
     "traditional": "妹妹",
     "pinyin": "mèi mei",
@@ -77,11 +63,25 @@
     "vietnamese": "Em gái"
   },
   {
-    "simplified": "们",
-    "traditional": "們",
+    "simplified": "没有",
+    "traditional": "沒有",
+    "pinyin": "méi yǒu",
+    "hanviet": "vô hữu",
+    "vietnamese": "Không có"
+  },
+  {
+    "simplified": " men",
+    "traditional": "門",
     "pinyin": "men",
     "hanviet": "môn",
-    "vietnamese": "Số nhiều (hậu tố)"
+    "vietnamese": "Cửa"
+  },
+  {
+    "simplified": "门",
+    "traditional": "門",
+    "pinyin": "mén",
+    "hanviet": "môn",
+    "vietnamese": "Cửa"
   },
   {
     "simplified": "米饭",
@@ -91,25 +91,25 @@
     "vietnamese": "Cơm"
   },
   {
-    "simplified": "米饭",
-    "traditional": "米飯",
-    "pinyin": "mǐ fàn",
-    "hanviet": "mễ phạn",
-    "vietnamese": "Cơm"
-  },
-  {
-    "simplified": "面包",
-    "traditional": "麵包",
-    "pinyin": "miàn bāo",
-    "hanviet": "m diện bao",
-    "vietnamese": "Bánh mì"
+    "simplified": "面",
+    "traditional": "面",
+    "pinyin": "miàn",
+    "hanviet": "mịch",
+    "vietnamese": "Mặt"
   },
   {
     "simplified": "面条",
     "traditional": "麵條",
     "pinyin": "miàn tiáo",
-    "hanviet": "m diện điều",
+    "hanviet": "mịch điều",
     "vietnamese": "Mì sợi"
+  },
+  {
+    "simplified": "明白",
+    "traditional": "明白",
+    "pinyin": "míng bai",
+    "hanviet": "minh bạch",
+    "vietnamese": "Hiểu rõ"
   },
   {
     "simplified": "明天",

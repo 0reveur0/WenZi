@@ -4,7 +4,21 @@
     "traditional": "來",
     "pinyin": "lái",
     "hanviet": "lai",
-    "vietnamese": "Đến, tới"
+    "vietnamese": "Đến"
+  },
+  {
+    "simplified": "老",
+    "traditional": "老",
+    "pinyin": "lǎo",
+    "hanviet": "lão",
+    "vietnamese": "Già, cũ"
+  },
+  {
+    "simplified": "老",
+    "traditional": "老",
+    "pinyin": "lǎo",
+    "hanviet": "lão",
+    "vietnamese": "Già"
   },
   {
     "simplified": "老师",
@@ -12,6 +26,13 @@
     "pinyin": "lǎo shī",
     "hanviet": "lão sư",
     "vietnamese": "Giáo viên"
+  },
+  {
+    "simplified": "了",
+    "traditional": "了",
+    "pinyin": "le",
+    "hanviet": "liễu",
+    "vietnamese": "Đã (trợ từ)"
   },
   {
     "simplified": "累",
@@ -35,18 +56,25 @@
     "vietnamese": "Trong, bên trong"
   },
   {
-    "simplified": "历史",
-    "traditional": "歷史",
-    "pinyin": "lì shǐ",
-    "hanviet": "lịch sử",
-    "vietnamese": "Lịch sử"
+    "simplified": "礼貌",
+    "traditional": "禮貌",
+    "pinyin": "lǐ mào",
+    "hanviet": "lễ mạo",
+    "vietnamese": "Lịch sự"
   },
   {
-    "simplified": "凉",
-    "traditional": "涼",
-    "pinyin": "liáng",
-    "hanviet": "lương",
-    "vietnamese": "Mát"
+    "simplified": "两",
+    "traditional": "兩",
+    "pinyin": "liǎng",
+    "hanviet": "lưỡng",
+    "vietnamese": "Hai"
+  },
+  {
+    "simplified": "亮",
+    "traditional": "亮",
+    "pinyin": "liàng",
+    "hanviet": "lượng",
+    "vietnamese": "Sáng"
   },
   {
     "simplified": "六",
@@ -56,10 +84,17 @@
     "vietnamese": "Sáu"
   },
   {
-    "simplified": "旅行",
-    "traditional": "旅行",
-    "pinyin": "lǚ xíng",
-    "hanviet": "lữ hành",
-    "vietnamese": "Du lịch"
+    "simplified": "绿",
+    "traditional": "綠",
+    "pinyin": "lǜ",
+    "hanviet": "lục",
+    "vietnamese": "Xanh lá"
+  },
+  {
+    "simplified": "路",
+    "traditional": "路",
+    "pinyin": "lù",
+    "hanviet": "lộ",
+    "vietnamese": "Đường"
   }
 ]

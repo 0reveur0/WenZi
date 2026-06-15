@@ -1,10 +1,10 @@
 [
   {
-    "simplified": "八",
-    "traditional": "八",
-    "pinyin": "bā",
-    "hanviet": "bát",
-    "vietnamese": "Tám"
+    "simplified": "把",
+    "traditional": "把",
+    "pinyin": "bǎ",
+    "hanviet": "bả",
+    "vietnamese": "Cầm, giữ (trợ từ)"
   },
   {
     "simplified": "爸爸",
@@ -14,18 +14,32 @@
     "vietnamese": "Bố, cha"
   },
   {
-    "simplified": "百",
-    "traditional": "百",
-    "pinyin": "bǎi",
-    "hanviet": "bách",
-    "vietnamese": "Trăm"
+    "simplified": "半",
+    "traditional": "半",
+    "pinyin": "bàn",
+    "hanviet": "bán",
+    "vietnamese": "Nửa"
   },
   {
-    "simplified": "白色",
-    "traditional": "白色",
-    "pinyin": "bái sè",
-    "hanviet": "bạch sắc",
-    "vietnamese": "Màu trắng"
+    "simplified": "搬",
+    "traditional": "搬",
+    "pinyin": "bān",
+    "hanviet": "ban",
+    "vietnamese": "Chuyển nhà"
+  },
+  {
+    "simplified": "班",
+    "traditional": "班",
+    "pinyin": "bān",
+    "hanviet": "ban",
+    "vietnamese": "Lớp, ca làm việc"
+  },
+  {
+    "simplified": "办法",
+    "traditional": "辦法",
+    "pinyin": "bàn fǎ",
+    "hanviet": "biện pháp",
+    "vietnamese": "Cách, phương pháp"
   },
   {
     "simplified": "帮助",
@@ -35,38 +49,45 @@
     "vietnamese": "Giúp đỡ"
   },
   {
-    "simplified": "薄",
-    "traditional": "薄",
-    "pinyin": "báo",
-    "hanviet": "bác",
-    "vietnamese": "Mỏng"
+    "simplified": "北京",
+    "traditional": "北京",
+    "pinyin": "běi jīng",
+    "hanviet": "bắc kinh",
+    "vietnamese": "Bắc Kinh"
   },
   {
-    "simplified": "包子",
-    "traditional": "包子",
-    "pinyin": "bāo zi",
-    "hanviet": "bao tử",
-    "vietnamese": "Bánh bao"
+    "simplified": "杯子",
+    "traditional": "杯子",
+    "pinyin": "bēi zi",
+    "hanviet": "bôi tử",
+    "vietnamese": "Cái cốc, ly"
   },
   {
-    "simplified": "北",
-    "traditional": "北",
-    "pinyin": "běi",
-    "hanviet": "bắc",
-    "vietnamese": "Bắc"
+    "simplified": "别",
+    "traditional": "別",
+    "pinyin": "bié",
+    "hanviet": "biệt",
+    "vietnamese": "Đừng"
   },
   {
-    "simplified": "病",
-    "traditional": "病",
-    "pinyin": "bìng",
-    "hanviet": "bệnh",
-    "vietnamese": "Bệnh, ốm"
+    "simplified": "宾馆",
+    "traditional": "賓館",
+    "pinyin": "bīn guǎn",
+    "hanviet": "tân quán",
+    "vietnamese": "Khách sạn"
   },
   {
-    "simplified": "不",
-    "traditional": "不",
-    "pinyin": "bù",
-    "hanviet": "bất",
-    "vietnamese": "Không, chẳng"
+    "simplified": "冰箱",
+    "traditional": "冰箱",
+    "pinyin": "bīng xiāng",
+    "hanviet": "băng tường",
+    "vietnamese": "Tủ lạnh"
+  },
+  {
+    "simplified": "不但",
+    "traditional": "不但",
+    "pinyin": "bú dàn",
+    "hanviet": "bất đãn",
+    "vietnamese": "Không những"
   }
 ]

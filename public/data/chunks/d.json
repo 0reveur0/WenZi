@@ -7,11 +7,60 @@
     "vietnamese": "To, lớn"
   },
   {
-    "simplified": "蛋",
-    "traditional": "蛋",
-    "pinyin": "dàn",
-    "hanviet": "đản",
-    "vietnamese": "Trứng"
+    "simplified": "打",
+    "traditional": "打",
+    "pinyin": "dǎ",
+    "hanviet": "đả",
+    "vietnamese": "Đánh"
+  },
+  {
+    "simplified": "打车",
+    "traditional": "打車",
+    "pinyin": "dǎ chē",
+    "hanviet": "đả xa",
+    "vietnamese": "Bắt xe"
+  },
+  {
+    "simplified": "大家",
+    "traditional": "大家",
+    "pinyin": "dà jiā",
+    "hanviet": "đại gia",
+    "vietnamese": "Mọi người"
+  },
+  {
+    "simplified": "打扫",
+    "traditional": "打掃",
+    "pinyin": "dǎ sǎo",
+    "hanviet": "đả tảo",
+    "vietnamese": "Dọn dẹp"
+  },
+  {
+    "simplified": "答题",
+    "traditional": "答題",
+    "pinyin": "dá tí",
+    "hanviet": "đáp đề",
+    "vietnamese": "Trả lời"
+  },
+  {
+    "simplified": "带",
+    "traditional": "帶",
+    "pinyin": "dài",
+    "hanviet": "đái",
+    "vietnamese": "Mang, đem"
+  },
+  {
+    "simplified": "蛋糕",
+    "traditional": "蛋糕",
+    "pinyin": "dàn gāo",
+    "hanviet": "đản cao",
+    "vietnamese": "Bánh ngọt"
+  },
+  {
+    "simplified": "得",
+    "traditional": "得",
+    "pinyin": "de",
+    "hanviet": "đắc",
+    "vietnamese": "Được (trợ từ)"
   },
   {
     "simplified": "弟弟",
@@ -21,32 +70,39 @@
     "vietnamese": "Em trai"
   },
   {
+    "simplified": "地点",
+    "traditional": "地點",
+    "pinyin": "dì diǎn",
+    "hanviet": "địa điểm",
+    "vietnamese": "Địa điểm"
+  },
+  {
     "simplified": "地铁",
     "traditional": "地鐵",
     "pinyin": "dì tiě",
     "hanviet": "địa thiết",
-    "vietnamese": "Tàu điện ngầm, metro"
+    "vietnamese": "Tàu điện ngầm"
   },
   {
-    "simplified": "电话",
-    "traditional": "電話",
-    "pinyin": "diàn huà",
-    "hanviet": "điện thoại",
-    "vietnamese": "Điện thoại"
+    "simplified": "地图",
+    "traditional": "地圖",
+    "pinyin": "dì tú",
+    "hanviet": "địa đồ",
+    "vietnamese": "Bản đồ"
   },
   {
-    "simplified": "电脑",
-    "traditional": "電腦",
-    "pinyin": "diàn nǎo",
-    "hanviet": "điện não",
-    "vietnamese": "Máy tính"
+    "simplified": "第一",
+    "traditional": "第一",
+    "pinyin": "dì yī",
+    "hanviet": "đệ nhất",
+    "vietnamese": "Thứ nhất"
   },
   {
-    "simplified": "东",
-    "traditional": "東",
-    "pinyin": "dōng",
-    "hanviet": "đông",
-    "vietnamese": "Đông"
+    "simplified": "懂",
+    "traditional": "懂",
+    "pinyin": "dǒng",
+    "hanviet": "đổng",
+    "vietnamese": "Hiểu"
   },
   {
     "simplified": "动物",
@@ -54,6 +110,13 @@
     "pinyin": "dòng wù",
     "hanviet": "động vật",
     "vietnamese": "Động vật"
+  },
+  {
+    "simplified": "都",
+    "traditional": "都",
+    "pinyin": "dōu",
+    "hanviet": "đô",
+    "vietnamese": "Đều, cả"
   },
   {
     "simplified": "短",
@@ -67,21 +130,14 @@
     "traditional": "對",
     "pinyin": "duì",
     "hanviet": "đối",
-    "vietnamese": "Đúng"
+    "vietnamese": "Đúng, phải"
   },
   {
     "simplified": "对",
     "traditional": "對",
     "pinyin": "duì",
     "hanviet": "đối",
-    "vietnamese": "Đúng, phải"
-  },
-  {
-    "simplified": "对不起",
-    "traditional": "對不起",
-    "pinyin": "duì bu qǐ",
-    "hanviet": "đối bất khởi",
-    "vietnamese": "Xin lỗi"
+    "vietnamese": "Đúng"
   },
   {
     "simplified": "多",

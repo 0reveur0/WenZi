@@ -1,10 +1,10 @@
 [
   {
-    "simplified": "咖啡",
-    "traditional": "咖啡",
-    "pinyin": "kā fēi",
-    "hanviet": "ca phi",
-    "vietnamese": "Cà phê"
+    "simplified": "开",
+    "traditional": "開",
+    "pinyin": "kāi",
+    "hanviet": "khai",
+    "vietnamese": "Mở"
   },
   {
     "simplified": "看",
@@ -14,32 +14,46 @@
     "vietnamese": "Nhìn, xem"
   },
   {
-    "simplified": "渴",
-    "traditional": "渴",
-    "pinyin": "kě",
-    "hanviet": "khát",
-    "vietnamese": "Khát"
+    "simplified": "看见",
+    "traditional": "看見",
+    "pinyin": "kàn jiàn",
+    "hanviet": "khán kiến",
+    "vietnamese": "Nhìn thấy"
   },
   {
-    "simplified": "科学",
-    "traditional": "科學",
-    "pinyin": "kē xué",
-    "hanviet": "khoa học",
-    "vietnamese": "Khoa học"
+    "simplified": "可爱",
+    "traditional": "可愛",
+    "pinyin": "kě ài",
+    "hanviet": "khả ái",
+    "vietnamese": "Dễ thương"
+  },
+  {
+    "simplified": "可是",
+    "traditional": "可是",
+    "pinyin": "kě shì",
+    "hanviet": "khả thị",
+    "vietnamese": "Nhưng mà"
   },
   {
     "simplified": "可以",
     "traditional": "可以",
     "pinyin": "kě yǐ",
     "hanviet": "khả dĩ",
-    "vietnamese": "Có thể, được phép"
+    "vietnamese": "Có thể"
+  },
+  {
+    "simplified": "哭",
+    "traditional": "哭",
+    "pinyin": "kū",
+    "hanviet": "khốc",
+    "vietnamese": "Khóc"
   },
   {
     "simplified": "块",
     "traditional": "塊",
     "pinyin": "kuài",
     "hanviet": "khối",
-    "vietnamese": "Miếng, tệ"
+    "vietnamese": "Miếng, khối"
   },
   {
     "simplified": "快",
@@ -49,17 +63,10 @@
     "vietnamese": "Nhanh"
   },
   {
-    "simplified": "宽",
-    "traditional": "寬",
-    "pinyin": "kuān",
-    "hanviet": "khoan",
-    "vietnamese": "Rộng"
-  },
-  {
-    "simplified": "困",
-    "traditional": "困",
-    "pinyin": "kùn",
-    "hanviet": "khốn",
-    "vietnamese": "Buồn ngủ"
+    "simplified": "快乐",
+    "traditional": "快樂",
+    "pinyin": "kuài lè",
+    "hanviet": "khoái lạc",
+    "vietnamese": "Vui vẻ"
   }
 ]

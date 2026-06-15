@@ -1,12 +1,5 @@
 [
   {
-    "simplified": "干",
-    "traditional": "幹",
-    "pinyin": "gān",
-    "hanviet": "can",
-    "vietnamese": "Khô"
-  },
-  {
     "simplified": "干净",
     "traditional": "乾淨",
     "pinyin": "gān jìng",
@@ -14,18 +7,25 @@
     "vietnamese": "Sạch sẽ"
   },
   {
-    "simplified": "高",
-    "traditional": "高",
-    "pinyin": "gāo",
-    "hanviet": "cao",
-    "vietnamese": "Cao"
+    "simplified": "告诉",
+    "traditional": "告訴",
+    "pinyin": "gào su",
+    "hanviet": "cáo tố",
+    "vietnamese": "Cho biết, nói"
   },
   {
     "simplified": "高兴",
     "traditional": "高興",
     "pinyin": "gāo xìng",
     "hanviet": "cao hứng",
-    "vietnamese": "Vui mừng, phấn khởi"
+    "vietnamese": "Vui vẻ"
+  },
+  {
+    "simplified": "个",
+    "traditional": "個",
+    "pinyin": "gè",
+    "hanviet": "cá",
+    "vietnamese": "Cái (lượng từ)"
   },
   {
     "simplified": "哥哥",
@@ -35,18 +35,25 @@
     "vietnamese": "Anh trai"
   },
   {
-    "simplified": "公司",
-    "traditional": "公司",
-    "pinyin": "gōng sī",
-    "hanviet": "công ty",
-    "vietnamese": "Công ty"
+    "simplified": "公共汽车",
+    "traditional": "公共汽車",
+    "pinyin": "gōng gòng qì chē",
+    "hanviet": "công cộng khí xa",
+    "vietnamese": "Xe buýt"
+  },
+  {
+    "simplified": "公园",
+    "traditional": "公園",
+    "pinyin": "gōng yuán",
+    "hanviet": "công viên",
+    "vietnamese": "Công viên"
   },
   {
     "simplified": "工作",
     "traditional": "工作",
     "pinyin": "gōng zuò",
     "hanviet": "công tác",
-    "vietnamese": "Công việc, làm việc"
+    "vietnamese": "Công việc"
   },
   {
     "simplified": "狗",
@@ -56,6 +63,41 @@
     "vietnamese": "Chó"
   },
   {
+    "simplified": "故事",
+    "traditional": "故事",
+    "pinyin": "gù shi",
+    "hanviet": "cố sự",
+    "vietnamese": "Câu chuyện"
+  },
+  {
+    "simplified": "关",
+    "traditional": "關",
+    "pinyin": "guān",
+    "hanviet": "quan",
+    "vietnamese": "Đóng"
+  },
+  {
+    "simplified": "关机",
+    "traditional": "關機",
+    "pinyin": "guān jī",
+    "hanviet": "quan cơ",
+    "vietnamese": "Tắt máy"
+  },
+  {
+    "simplified": "关心",
+    "traditional": "關心",
+    "pinyin": "guān xīn",
+    "hanviet": "quan tâm",
+    "vietnamese": "Quan tâm"
+  },
+  {
+    "simplified": "关于",
+    "traditional": "關於",
+    "pinyin": "guān yú",
+    "hanviet": "quan ư",
+    "vietnamese": "Về"
+  },
+  {
     "simplified": "贵",
     "traditional": "貴",
     "pinyin": "guì",
@@ -63,10 +105,17 @@
     "vietnamese": "Đắt"
   },
   {
-    "simplified": "国家",
-    "traditional": "國家",
-    "pinyin": "guó jiā",
-    "hanviet": "quốc gia",
-    "vietnamese": "Quốc gia, đất nước"
+    "simplified": "过",
+    "traditional": "過",
+    "pinyin": "guò",
+    "hanviet": "quá",
+    "vietnamese": "Qua, trải qua"
+  },
+  {
+    "simplified": "过",
+    "traditional": "過",
+    "pinyin": "guò",
+    "hanvey": "quá",
+    "vietnamese": "Qua"
   }
 ]

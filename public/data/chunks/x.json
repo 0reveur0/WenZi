@@ -1,24 +1,17 @@
 [
   {
-    "simplified": "西",
-    "traditional": "西",
-    "pinyin": "xī",
-    "hanviet": "tây",
-    "vietnamese": "Tây"
-  },
-  {
-    "simplified": "希望",
-    "traditional": "希望",
-    "pinyin": "xī wàng",
-    "hanviet": "hy vọng",
-    "vietnamese": "Hy vọng, mong muốn"
+    "simplified": "喜欢",
+    "traditional": "喜歡",
+    "pinyin": "xǐ huan",
+    "hanviet": "hỷ hoan",
+    "vietnamese": "Thích"
   },
   {
     "simplified": "下",
     "traditional": "下",
     "pinyin": "xià",
     "hanviet": "hạ",
-    "vietnamese": "Dưới, xuống"
+    "vietnamese": "Xuống, dưới"
   },
   {
     "simplified": "下午",
@@ -28,39 +21,32 @@
     "vietnamese": "Buổi chiều"
   },
   {
-    "simplified": "下雪",
-    "traditional": "下雪",
-    "pinyin": "xià xuě",
-    "hanviet": "hạ tuyết",
-    "vietnamese": "Tuyết rơi"
-  },
-  {
     "simplified": "下雨",
     "traditional": "下雨",
     "pinyin": "xià yǔ",
     "hanviet": "hạ vũ",
-    "vietnamese": "Mưa, trời mưa"
+    "vietnamese": "Trời mưa"
   },
   {
-    "simplified": "闲",
-    "traditional": "閒",
-    "pinyin": "xián",
-    "hanviet": "nhàn",
-    "vietnamese": "Rảnh"
+    "simplified": "先生",
+    "traditional": "先生",
+    "pinyin": "xiān sheng",
+    "hanviet": "tiên sinh",
+    "vietnamese": "Ông, ngài"
+  },
+  {
+    "simplified": "现在",
+    "traditional": "現在",
+    "pinyin": "xiàn zài",
+    "hanviet": "hiện tại",
+    "vietnamese": "Bây giờ"
   },
   {
     "simplified": "想",
     "traditional": "想",
     "pinyin": "xiǎng",
     "hanviet": "tưởng",
-    "vietnamese": "Muốn, nghĩ, nhớ"
-  },
-  {
-    "simplified": "香蕉",
-    "traditional": "香蕉",
-    "pinyin": "xiāng jiāo",
-    "hanviet": "hương tiêu",
-    "vietnamese": "Chuối"
+    "vietnamese": "Muốn, nghĩ"
   },
   {
     "simplified": "小",
@@ -70,6 +56,27 @@
     "vietnamese": "Nhỏ, bé"
   },
   {
+    "simplified": "小姐",
+    "traditional": "小姐",
+    "pinyin": "xiǎo jie",
+    "hanviet": "tiểu tỷ",
+    "vietnamese": "Cô, tiểu thư"
+  },
+  {
+    "simplified": "些",
+    "traditional": "些",
+    "pinyin": "xiē",
+    "hanviet": "ta",
+    "vietnamese": "Vài, một ít"
+  },
+  {
+    "simplified": "写",
+    "traditional": "寫",
+    "pinyin": "xiě",
+    "hanviet": "tả",
+    "vietnamese": "Viết"
+  },
+  {
     "simplified": "谢谢",
     "traditional": "謝謝",
     "pinyin": "xiè xie",
@@ -77,25 +84,11 @@
     "vietnamese": "Cảm ơn"
   },
   {
-    "simplified": "心",
-    "traditional": "心",
-    "pinyin": "xīn",
-    "hanviet": "tâm",
-    "vietnamese": "Tim, lòng, tâm"
-  },
-  {
-    "simplified": "新",
-    "traditional": "新",
-    "pinyin": "xīn",
-    "hanviet": "tân",
-    "vietnamese": "Mới"
-  },
-  {
-    "simplified": "幸福",
-    "traditional": "幸福",
-    "pinyin": "xìng fú",
-    "hanviet": "hạnh phúc",
-    "vietnamese": "Hạnh phúc"
+    "simplified": "姓",
+    "traditional": "姓",
+    "pinyin": "xìng",
+    "hanviet": "tánh",
+    "vietnamese": "Họ"
   },
   {
     "simplified": "星期",
@@ -107,7 +100,7 @@
   {
     "simplified": "学生",
     "traditional": "學生",
-    "pinyin": "xué shēng",
+    "pinyin": "xué sheng",
     "hanviet": "học sinh",
     "vietnamese": "Học sinh"
   },
@@ -116,7 +109,7 @@
     "traditional": "學習",
     "pinyin": "xué xí",
     "hanviet": "học tập",
-    "vietnamese": "Học tập"
+    "vietnamese": "Học"
   },
   {
     "simplified": "学校",

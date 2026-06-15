@@ -4,7 +4,28 @@
     "traditional": "菜",
     "pinyin": "cài",
     "hanviet": "thài",
-    "vietnamese": "Rau, món ăn"
+    "vietnamese": "Món ăn, rau"
+  },
+  {
+    "simplified": "餐厅",
+    "traditional": "餐廳",
+    "pinyin": "cān tīng",
+    "hanviet": "thinh thính",
+    "vietnamese": "Nhà hàng"
+  },
+  {
+    "simplified": "草",
+    "traditional": "草",
+    "pinyin": "cǎo",
+    "hanviet": "thảo",
+    "vietnamese": "Cỏ"
+  },
+  {
+    "simplified": "层",
+    "traditional": "層",
+    "pinyin": "céng",
+    "hanviet": "tằng",
+    "vietnamese": "Tầng"
   },
   {
     "simplified": "茶",
@@ -14,11 +35,11 @@
     "vietnamese": "Trà"
   },
   {
-    "simplified": "茶",
-    "traditional": "茶",
-    "pinyin": "chá",
-    "hanviet": "trà",
-    "vietnamese": "Trà"
+    "simplified": "差不多",
+    "traditional": "差不多",
+    "pinyin": "chà bu duō",
+    "hanviet": "sai bất đa",
+    "vietnamese": "Gần như"
   },
   {
     "simplified": "长",
@@ -28,52 +49,73 @@
     "vietnamese": "Dài"
   },
   {
-    "simplified": "成功",
-    "traditional": "成功",
-    "pinyin": "chéng gōng",
-    "hanviet": "thành công",
-    "vietnamese": "Thành công"
+    "simplified": "城市",
+    "traditional": "城市",
+    "pinyin": "chéng shì",
+    "hanviet": "thành thị",
+    "vietnamese": "Thành phố"
   },
   {
-    "simplified": "吃",
-    "traditional": "吃",
-    "pinyin": "chī",
-    "hanviet": "xực",
-    "vietnamese": "Ăn"
+    "simplified": "迟到",
+    "traditional": "遲到",
+    "pinyin": "chí dào",
+    "hanviet": "trì đáo",
+    "vietnamese": "Đến muộn"
   },
   {
-    "simplified": "丑",
-    "traditional": "醜",
-    "pinyin": "chǒu",
-    "hanviet": "xú",
-    "vietnamese": "Xấu"
+    "simplified": "吃饭",
+    "traditional": "吃飯",
+    "pinyin": "chī fàn",
+    "hanviet": "xực phạn",
+    "vietnamese": "Ăn cơm"
   },
   {
-    "simplified": "出发",
-    "traditional": "出發",
-    "pinyin": "chū fā",
-    "hanviet": "xuất phát",
-    "vietnamese": "Xuất phát, lên đường"
+    "simplified": "出",
+    "traditional": "出",
+    "pinyin": "chū",
+    "hanviet": "xuất",
+    "vietnamese": "Ra, đi ra"
+  },
+  {
+    "simplified": "除了",
+    "traditional": "除了",
+    "pinyin": "chú le",
+    "hanviet": "trừ liễu",
+    "vietnamese": "Ngoài ra"
+  },
+  {
+    "simplified": "船",
+    "traditional": "船",
+    "pinyin": "chuán",
+    "hanviet": "thuyền",
+    "vietnamese": "Thuyền, tàu"
+  },
+  {
+    "simplified": "春",
+    "traditional": "春",
+    "pinyin": "chūn",
+    "hanviet": "xuân",
+    "vietnamese": "Mùa xuân"
+  },
+  {
+    "simplified": "次",
+    "traditional": "次",
+    "pinyin": "cì",
+    "hanviet": "thứ",
+    "vietnamese": "Lần"
+  },
+  {
+    "simplified": "词语",
+    "traditional": "詞語",
+    "pinyin": "cí yǔ",
+    "hanviet": "từ ngữ",
+    "vietnamese": "Từ ngữ"
   },
   {
     "simplified": "聪明",
     "traditional": "聰明",
-    "pinyin": "cōng míng",
+    "pinyin": "cōng ming",
     "hanviet": "thông minh",
     "vietnamese": "Thông minh"
-  },
-  {
-    "simplified": "错",
-    "traditional": "錯",
-    "pinyin": "cuò",
-    "hanviet": "thác",
-    "vietnamese": "Sai"
-  },
-  {
-    "simplified": "错",
-    "traditional": "錯",
-    "pinyin": "cuò",
-    "hanviet": "thác",
-    "vietnamese": "Sai, lỗi"
   }
 ]

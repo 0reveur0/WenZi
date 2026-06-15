@@ -1,52 +1,45 @@
 [
   {
-    "simplified": "海",
-    "traditional": "海",
-    "pinyin": "hǎi",
-    "hanviet": "hải",
-    "vietnamese": "Biển"
+    "simplified": "还",
+    "traditional": "還",
+    "pinyin": "hái",
+    "hanviet": "hoàn",
+    "vietnamese": "Còn, vẫn"
   },
   {
-    "simplified": "害怕",
-    "traditional": "害怕",
-    "pinyin": "hài pà",
-    "hanviet": "báo sợ",
-    "vietnamese": "Sợ hãi"
+    "simplified": "还是",
+    "traditional": "還是",
+    "pinyin": "hái shì",
+    "hanviet": "hoàn thị",
+    "vietnamese": "Hay là"
   },
   {
-    "simplified": "韩国",
-    "traditional": "韓國",
-    "pinyin": "hán guó",
-    "hanviet": "hàn quốc",
-    "vietnamese": "Hàn Quốc"
+    "simplified": "孩子",
+    "traditional": "孩子",
+    "pinyin": "hái zi",
+    "hanviet": "hài tử",
+    "vietnamese": "Trẻ con"
   },
   {
-    "simplified": "汉语",
-    "traditional": "漢語",
-    "pinyin": "hàn yǔ",
-    "hanviet": "hán ngữ",
-    "vietnamese": "Tiếng Trung"
+    "simplified": "号",
+    "traditional": "號",
+    "pinyin": "hào",
+    "hanviet": "hiệu",
+    "vietnamese": "Ngày, số"
   },
   {
-    "simplified": "好",
-    "traditional": "好",
-    "pinyin": "hǎo",
-    "hanviet": "hảo",
-    "vietnamese": "Tốt, hay"
+    "simplified": "好吃",
+    "traditional": "好吃",
+    "pinyin": "hǎo chī",
+    "hanviet": "hảo xực",
+    "vietnamese": "Ngon"
   },
   {
-    "simplified": "好",
-    "traditional": "好",
-    "pinyin": "hǎo",
-    "hanviet": "hảo",
-    "vietnamese": "Tốt"
-  },
-  {
-    "simplified": "河",
-    "traditional": "河",
+    "simplified": "和",
+    "traditional": "和",
     "pinyin": "hé",
-    "hanviet": "hà",
-    "vietnamese": "Sông"
+    "hanviet": "hòa",
+    "vietnamese": "Và, với"
   },
   {
     "simplified": "喝",
@@ -56,32 +49,46 @@
     "vietnamese": "Uống"
   },
   {
-    "simplified": "黑色",
-    "traditional": "黑色",
-    "pinyin": "hēi sè",
-    "hanviet": "hắc sắc",
-    "vietnamese": "Màu đen"
+    "simplified": "黑",
+    "traditional": "黑",
+    "pinyin": "hēi",
+    "hanviet": "hắc",
+    "vietnamese": "Đen"
   },
   {
-    "simplified": "红色",
-    "traditional": "紅色",
-    "pinyin": "hóng sè",
-    "hanviet": "hồng sắc",
+    "simplified": "黑板",
+    "traditional": "黑板",
+    "pinyin": "hēi bǎn",
+    "hanviet": "hắc bản",
+    "vietnamese": "Bảng đen"
+  },
+  {
+    "simplified": "很",
+    "traditional": "很",
+    "pinyin": "hěn",
+    "hanviet": "ngận",
+    "vietnamese": "Rất"
+  },
+  {
+    "simplified": "红",
+    "traditional": "紅",
+    "pinyin": "hóng",
+    "hanviet": "hồng",
     "vietnamese": "Màu đỏ"
   },
   {
-    "simplified": "厚",
-    "traditional": "厚",
-    "pinyin": "hòu",
-    "hanviet": "hầu",
-    "vietnamese": "Dày"
+    "simplified": "红",
+    "traditional": "紅",
+    "pinyin": "hóng",
+    "hanviet": "hồng",
+    "vietnamese": "Đỏ"
   },
   {
-    "simplified": "后",
-    "traditional": "後",
-    "pinyin": "hòu",
-    "hanviet": "hậu",
-    "vietnamese": "Sau, sau đó"
+    "simplified": "画",
+    "traditional": "畫",
+    "pinyin": "huà",
+    "hanviet": "họa",
+    "vietnamese": "Vẽ"
   },
   {
     "simplified": "花",
@@ -91,38 +98,52 @@
     "vietnamese": "Hoa"
   },
   {
+    "simplified": "花儿",
+    "traditional": "花兒",
+    "pinyin": "huā er",
+    "hanviet": "hoa nhi",
+    "vietnamese": "Hoa"
+  },
+  {
     "simplified": "坏",
     "traditional": "壞",
     "pinyin": "huài",
     "hanviet": "hoại",
-    "vietnamese": "Xấu, hỏng"
+    "vietnamese": "Hỏng, xấu"
   },
   {
-    "simplified": "环境",
-    "traditional": "環境",
-    "pinyin": "huán jìng",
-    "hanviet": "hoàn cảnh",
-    "vietnamese": "Môi trường"
+    "simplified": "换",
+    "traditional": "換",
+    "pinyin": "huàn",
+    "hanviet": "hoán",
+    "vietnamese": "Đổi"
+  },
+  {
+    "simplified": "还",
+    "traditional": "還",
+    "pinyin": "huán",
+    "hanviet": "hoàn",
+    "vietnamese": "Trả lại"
+  },
+  {
+    "simplified": "欢迎",
+    "traditional": "歡迎",
+    "pinyin": "huān yíng",
+    "hanviet": "hoan nghênh",
+    "vietnamese": "Chào mừng"
+  },
+  {
+    "simplified": "黄",
+    "traditional": "黃",
+    "pinyin": "huáng",
+    "hanviet": "hoàng",
+    "vietnamese": "Vàng"
   },
   {
     "simplified": "会",
     "traditional": "會",
     "pinyin": "huì",
     "hanviet": "hội",
-    "vietnamese": "Biết, có thể"
-  },
-  {
-    "simplified": "火",
-    "traditional": "火",
-    "pinyin": "huǒ",
-    "hanviet": "hỏa",
-    "vietnamese": "Lửa"
-  },
-  {
-    "simplified": "火车站",
-    "traditional": "火車站",
-    "pinyin": "huǒ chē zhàn",
-    "hanviet": "hỏa xa trạm",
-    "vietnamese": "Nhà ga tàu hỏa"
+    "vietnamese": "Biết, sẽ"
   }
 ]

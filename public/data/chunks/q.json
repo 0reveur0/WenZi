@@ -7,13 +7,6 @@
     "vietnamese": "Bảy"
   },
   {
-    "simplified": "汽车",
-    "traditional": "汽車",
-    "pinyin": "qì chē",
-    "hanviet": "khí xa",
-    "vietnamese": "Xe hơi, ô tô"
-  },
-  {
     "simplified": "前",
     "traditional": "前",
     "pinyin": "qián",
@@ -28,31 +21,17 @@
     "vietnamese": "Tiền"
   },
   {
-    "simplified": "千",
-    "traditional": "千",
-    "pinyin": "qiān",
-    "hanviet": "thiên",
-    "vietnamese": "Nghìn"
-  },
-  {
     "simplified": "请",
     "traditional": "請",
     "pinyin": "qǐng",
     "hanviet": "thỉnh",
-    "vietnamese": "Xin, mời"
-  },
-  {
-    "simplified": "轻",
-    "traditional": "輕",
-    "pinyin": "qīng",
-    "hanviet": "khinh",
-    "vietnamese": "Nhẹ"
+    "vietnamese": "Mời, xin"
   },
   {
     "simplified": "去",
     "traditional": "去",
     "pinyin": "qù",
     "hanviet": "khứ",
-    "vietnamese": "Đi, rời đi"
+    "vietnamese": "Đi"
   }
 ]

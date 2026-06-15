@@ -1,52 +1,52 @@
 [
   {
+    "simplified": "再",
+    "traditional": "再",
+    "pinyin": "zài",
+    "hanviet": "tái",
+    "vietnamese": "Lại, nữa"
+  },
+  {
     "simplified": "在",
     "traditional": "在",
     "pinyin": "zài",
     "hanviet": "tại",
-    "vietnamese": "Ở, tại, đang"
+    "vietnamese": "Ở, tại"
   },
   {
-    "simplified": "脏",
-    "traditional": "髒",
-    "pinyin": "zāng",
-    "hanviet": "tạng",
-    "vietnamese": "Bẩn"
+    "simplified": "再见",
+    "traditional": "再見",
+    "pinyin": "zài jiàn",
+    "hanviet": "tái kiến",
+    "vietnamese": "Tạm biệt"
   },
   {
-    "simplified": "早",
-    "traditional": "早",
-    "pinyin": "zǎo",
-    "hanviet": "tảo",
-    "vietnamese": "Sớm"
+    "simplified": "怎么",
+    "traditional": "怎麼",
+    "pinyin": "zěn me",
+    "hanviet": "chẩm ma",
+    "vietnamese": "Như thế nào"
   },
   {
-    "simplified": "窄",
-    "traditional": "窄",
-    "pinyin": "zhǎi",
-    "hanviet": "tiệp",
-    "vietnamese": "Hẹp"
+    "simplified": "怎么样",
+    "traditional": "怎麼樣",
+    "pinyin": "zěn me yàng",
+    "hanviet": "chẩm ma dạng",
+    "vietnamese": "Thế nào"
   },
   {
-    "simplified": "真",
-    "traditional": "真",
-    "pinyin": "zhēn",
-    "hanviet": "chân",
-    "vietnamese": "Thật"
+    "simplified": "站",
+    "traditional": "站",
+    "pinyin": "zhàn",
+    "hanviet": "trạm",
+    "vietnamese": "Đứng, ga"
   },
   {
-    "simplified": "政治",
-    "traditional": "政治",
-    "pinyin": "zhèng zhì",
-    "hanviet": "chánh trị",
-    "vietnamese": "Chính trị"
-  },
-  {
-    "simplified": "重",
-    "traditional": "重",
-    "pinyin": "zhòng",
-    "hanviet": "trọng",
-    "vietnamese": "Nặng"
+    "simplified": "这",
+    "traditional": "這",
+    "pinyin": "zhè",
+    "hanviet": "giá",
+    "vietnamese": "Đây, này"
   },
   {
     "simplified": "中国",
@@ -56,53 +56,46 @@
     "vietnamese": "Trung Quốc"
   },
   {
-    "simplified": "中间",
-    "traditional": "中間",
-    "pinyin": "zhōng jiān",
-    "hanviet": "trung gian",
-    "vietnamese": "Ở giữa, trung gian"
+    "simplified": "中午",
+    "traditional": "中午",
+    "pinyin": "zhōng wǔ",
+    "hanviet": "trung ngọ",
+    "vietnamese": "Buổi trưa"
   },
   {
-    "simplified": "中文",
-    "traditional": "中文",
-    "pinyin": "zhōng wén",
-    "hanviet": "trung văn",
-    "vietnamese": "Tiếng Trung, chữ Hán"
+    "simplified": "住",
+    "traditional": "住",
+    "pinyin": "zhù",
+    "hanviet": "trụ",
+    "vietnamese": "Ở, sống"
   },
   {
-    "simplified": "重要",
-    "traditional": "重要",
-    "pinyin": "zhòng yào",
-    "hanviet": "trọng yếu",
-    "vietnamese": "Quan trọng"
+    "simplified": "桌子",
+    "traditional": "桌子",
+    "pinyin": "zhuō zi",
+    "hanviet": "trác tử",
+    "vietnamese": "Cái bàn"
   },
   {
-    "simplified": "猪",
-    "traditional": "豬",
-    "pinyin": "zhū",
-    "hanviet": "trư",
-    "vietnamese": "Lợn, heo"
+    "simplified": "字",
+    "traditional": "字",
+    "pinyin": "zì",
+    "hanviet": "tự",
+    "vietnamese": "Chữ"
   },
   {
-    "simplified": "自行车",
-    "traditional": "自行車",
-    "pinyin": "zì xíng chē",
-    "hanviet": "tự hành xa",
-    "vietnamese": "Xe đạp"
+    "simplified": "做",
+    "traditional": "做",
+    "pinyin": "zuò",
+    "hanviet": "tác",
+    "vietnamese": "Làm"
   },
   {
-    "simplified": "嘴",
-    "traditional": "嘴",
-    "pinyin": "zuǐ",
-    "hanviet": "tủy",
-    "vietnamese": "Miệng"
-  },
-  {
-    "simplified": "左",
-    "traditional": "左",
-    "pinyin": "zuǒ",
-    "hanviet": "tả",
-    "vietnamese": "Trái"
+    "simplified": "坐",
+    "traditional": "坐",
+    "pinyin": "zuò",
+    "hanviet": "tọa",
+    "vietnamese": "Ngồi"
   },
   {
     "simplified": "昨天",

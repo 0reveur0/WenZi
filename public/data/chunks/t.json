@@ -14,52 +14,31 @@
     "vietnamese": "Cô ấy, bà ấy"
   },
   {
-    "simplified": "它",
-    "traditional": "它",
-    "pinyin": "tā",
-    "hanviet": "tha",
-    "vietnamese": "Nó (vật)"
+    "simplified": "太",
+    "traditional": "太",
+    "pinyin": "tài",
+    "hanviet": "thái",
+    "vietnamese": "Quá, quá mức"
   },
   {
-    "simplified": "太阳",
-    "traditional": "太陽",
-    "pinyin": "tài yáng",
-    "hanviet": "thái dương",
-    "vietnamese": "Mặt trời"
+    "simplified": "天",
+    "traditional": "天",
+    "pinyin": "tiān",
+    "hanviet": "thiên",
+    "vietnamese": "Trời, ngày"
   },
   {
-    "simplified": "糖",
-    "traditional": "糖",
-    "pinyin": "táng",
-    "hanviet": "đường",
-    "vietnamese": "Đường"
+    "simplified": "听",
+    "traditional": "聽",
+    "pinyin": "tīng",
+    "hanviet": "thính",
+    "vietnamese": "Nghe"
   },
   {
-    "simplified": "汤",
-    "traditional": "湯",
-    "pinyin": "tāng",
-    "hanviet": "thang",
-    "vietnamese": "Canh, súp"
-  },
-  {
-    "simplified": "天空",
-    "traditional": "天空",
-    "pinyin": "tiān kōng",
-    "hanviet": "thiên không",
-    "vietnamese": "Bầu trời"
-  },
-  {
-    "simplified": "天气",
-    "traditional": "天氣",
-    "pinyin": "tiān qì",
-    "hanviet": "thiên khí",
-    "vietnamese": "Thời tiết"
-  },
-  {
-    "simplified": "图书馆",
-    "traditional": "圖書館",
-    "pinyin": "tú shū guǎn",
-    "hanviet": "đồ thư quán",
-    "vietnamese": "Thư viện"
+    "simplified": "同学",
+    "traditional": "同學",
+    "pinyin": "tóng xué",
+    "hanviet": "đồng học",
+    "vietnamese": "Bạn học"
   }
 ]
