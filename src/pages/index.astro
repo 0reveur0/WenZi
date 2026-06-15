@@ -1,0 +1,208 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SearchBox from '@/components/SearchBox.astro';
+import ThemeToggle from '@/components/ThemeToggle.astro';
+---
+
+<BaseLayout>
+  <div class="page">
+    <!-- ── Header ── -->
+    <header class="header">
+      <div class="header-inner container">
+        <a href="/" class="brand" aria-label="WenZi — Trang chủ">
+          <img src="/favicon.png" alt="" width="28" height="28" />
+          <span class="brand-name">WenZi</span>
+          <span class="brand-han" aria-hidden="true">文字</span>
+        </a>
+        <ThemeToggle />
+      </div>
+    </header>
+
+    <!-- ── Hero ── -->
+    <main class="hero">
+      <div class="container hero-inner">
+
+        <div class="logo-wrap" aria-hidden="true">
+          <img
+            src="/favicon.png"
+            alt="WenZi logo"
+            width="96"
+            height="96"
+            class="logo"
+          />
+        </div>
+
+        <h1 class="app-name">
+          WenZi
+          <span class="app-name-han" lang="zh">文字</span>
+        </h1>
+
+        <p class="app-desc">Từ điển Hán Việt đơn giản và hiệu quả.</p>
+
+        <div class="search-area">
+          <SearchBox />
+        </div>
+
+        <div class="badges" aria-hidden="true">
+          <span class="badge">汉字</span>
+          <span class="badge">Hán Việt</span>
+          <span class="badge">Pinyin</span>
+          <span class="badge">Nghĩa</span>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+      <div class="container">
+        <p>WenZi © 2026 &mdash; MIT License</p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── Header ── */
+  .header {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--color-surface) 85%, transparent);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .brand img {
+    border-radius: 6px;
+  }
+
+  .brand-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-han {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 5rem;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .logo-wrap {
+    position: relative;
+  }
+
+  .logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    box-shadow: var(--shadow-md),
+                0 0 0 1px color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .app-name {
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--color-text);
+    display: flex;
+    align-items: baseline;
+    gap: 0.35em;
+  }
+
+  .app-name-han {
+    font-size: 0.55em;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .app-desc {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 340px;
+    line-height: 1.5;
+  }
+
+  .search-area {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* Badges */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .badge {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: 1.25rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+</style>

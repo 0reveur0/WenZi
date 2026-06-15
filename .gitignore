@@ -1,0 +1,33 @@
+# Build output
+dist/
+.output/
+
+# Dependencies
+node_modules/
+
+# Astro cache
+.astro/
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
+src/data/*.sqlite
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Bun
+bun.lockb

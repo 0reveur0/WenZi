@@ -1,0 +1,111 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'WenZi — Từ điển Hán Việt',
+  description = 'Từ điển Hán Việt đơn giản và hiệu quả.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{title}</title>
+    <style is:global>
+      /* ── Thiết kế token ── */
+      :root {
+        --color-bg:          #f9f7f4;
+        --color-surface:     #ffffff;
+        --color-border:      #e8e2d9;
+        --color-text:        #1a1614;
+        --color-text-muted:  #7a6f67;
+        --color-primary:     #c0392b;
+        --color-primary-dim: #fdf1f0;
+        --color-focus:       #c0392b;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.05);
+        --shadow-md: 0 4px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.06);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          --color-bg:          #0f0d0c;
+          --color-surface:     #1c1917;
+          --color-border:      #2c2825;
+          --color-text:        #f0ede8;
+          --color-text-muted:  #8a8078;
+          --color-primary:     #e05a4f;
+          --color-primary-dim: #2a1210;
+          --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+          --shadow-md: 0 4px 16px rgba(0,0,0,.4);
+        }
+      }
+
+      [data-theme='dark'] {
+        --color-bg:          #0f0d0c;
+        --color-surface:     #1c1917;
+        --color-border:      #2c2825;
+        --color-text:        #f0ede8;
+        --color-text-muted:  #8a8078;
+        --color-primary:     #e05a4f;
+        --color-primary-dim: #2a1210;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+        --shadow-md: 0 4px 16px rgba(0,0,0,.4);
+      }
+
+      /* ── Reset ── */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: var(--font-sans);
+        background: var(--color-bg);
+        color: var(--color-text);
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      main { flex: 1; }
+
+      a { color: var(--color-primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      img, svg { display: block; max-width: 100%; }
+
+      ::selection {
+        background: var(--color-primary);
+        color: #fff;
+      }
+    </style>
+    <!-- Inline script để tránh flash khi load trang -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('wz-theme');
+        if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

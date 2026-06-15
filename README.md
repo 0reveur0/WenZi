@@ -1,51 +1,50 @@
-<p align="center">
-  <img src="/favicon.png" width="250" alt="WenZi Logo">
-</p>
+# WenZi 文字
 
-# WenZi - Từ điển Hán Việt
+> Từ điển Hán Việt đơn giản và hiệu quả.
 
-WenZi là một ứng dụng từ điển Hán Việt đơn giản, giúp bạn tra cứu từ vựng tiếng Trung một cách nhanh chóng và dễ dàng.
+## Công nghệ
 
-## Tính năng chính
+- [Astro](https://astro.build/) — framework web
+- [Bun](https://bun.sh/) — runtime & package manager
+- [TypeScript](https://www.typescriptlang.org/) — ngôn ngữ chính
+- [SQLite](https://www.sqlite.org/) qua `bun:sqlite` — cơ sở dữ liệu
 
-*   Tra cứu từ Hán Việt và nghĩa tiếng Việt.
-*   Hiển thị pinyin và chữ phồn thể.
-*   Giao diện song ngữ (tiếng Anh/tiếng Việt).
+## Yêu cầu
 
-## Hướng dẫn cài đặt
+- [Bun](https://bun.sh/) >= 1.0
 
-1.  Clone a repository:
-
-    ```bash
-    git clone https://github.com/your-username/wenzi.git
-    ```
-
-2.  Di chuyển vào thư mục dự án:
-
-    ```bash
-    cd wenzi
-    ```
-
-3.  Cài đặt dependencies:
-
-    ```bash
-    npm install
-    ```
-
-## Hướng dẫn chạy local
-
-Để chạy dự án trên máy của bạn, sử dụng lệnh sau:
+## Cài đặt
 
 ```bash
-npm run dev
+bun install
 ```
 
-Ứng dụng sẽ có sẵn tại `http://localhost:5173`.
+## Chạy local
 
-## Cách đóng góp
+```bash
+bun run dev
+```
 
-Chúng tôi hoan nghênh mọi đóng góp! Vui lòng tạo một Pull Request để đóng góp vào dự án.
+Ứng dụng chạy tại `http://localhost:5000`.
+
+## Build
+
+```bash
+bun run build
+```
+
+## Cấu trúc thư mục
+
+```
+src/
+├── components/   # Các component UI tái sử dụng (Astro, TS)
+├── layouts/      # Layout dùng chung (BaseLayout, v.v.)
+├── pages/        # Các trang — mỗi file là một route
+├── lib/          # Tiện ích, kết nối DB, helper
+└── data/         # File SQLite và dữ liệu tĩnh
+public/           # Tài sản tĩnh (ảnh, font, favicon)
+```
 
 ## Giấy phép
 
-Dự án này được cấp phép theo Giấy phép MIT. Xem chi tiết trong file `LICENSE`.
+MIT
