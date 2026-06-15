@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
+import StrokeOrder from '@/components/StrokeOrder.astro';
 import sampleData from '@/data/sample_dictionary.json';
 
 export function getStaticPaths() {
@@ -53,6 +54,9 @@ const pageTitle = `${simplified} — WenZi`;
           <span class="meaning-label">Nghĩa tiếng Việt</span>
           <p class="meaning-text">{vietnamese}</p>
         </div>
+
+        <!-- Stroke order animation -->
+        <StrokeOrder simplified={simplified} />
 
         <!-- Actions -->
         <div class="actions">
