@@ -1,0 +1,453 @@
+---
+/**
+ * TopicVocabulary — Từ vựng theo chủ đề
+ * Click vào ô → tự kích hoạt tìm kiếm trên trang chủ.
+ * Tất cả render + pagination xử lý client-side để tránh inflate build.
+ */
+---
+
+<div class="tv-card" id="tv-section">
+
+  <!-- Header -->
+  <div class="tv-header">
+    <div class="tv-title-group">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      <h2 class="tv-title">Từ vựng theo chủ đề</h2>
+    </div>
+
+    <div class="tv-nav-wrap">
+      <span class="tv-page-indicator" id="tv-page-indicator">1 / 2</span>
+      <button class="tv-nav-btn" id="tv-prev" aria-label="Trang trước" title="Trang trước" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <button class="tv-nav-btn" id="tv-next" aria-label="Trang sau" title="Trang sau" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Grid container — filled by JS -->
+  <div class="tv-grid" id="tv-grid" role="list" aria-label="Danh sách chủ đề"></div>
+
+</div>
+
+<!-- ─────────────────── STYLES ─────────────────────────────────────────── -->
+<style>
+  .tv-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Header */
+  .tv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+    gap: .75rem;
+  }
+  .tv-title-group {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    color: var(--color-text-muted);
+  }
+  .tv-title {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  /* Nav */
+  .tv-nav-wrap {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    background: #f1f5f9;
+    border-radius: 999px;
+    padding: .2rem .2rem .2rem .6rem;
+  }
+  .tv-page-indicator {
+    font-size: .7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    padding-right: .15rem;
+  }
+  .tv-nav-btn {
+    width: 26px; height: 26px;
+    border: none;
+    background: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    transition: background .15s, color .15s, box-shadow .15s;
+    flex-shrink: 0;
+  }
+  .tv-nav-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(43,76,126,.3);
+  }
+  .tv-nav-btn:disabled { opacity: .35; cursor: default; pointer-events: none; }
+
+  /* Grid layout */
+  .tv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+    animation: tvFadeIn .2s ease;
+  }
+  @keyframes tvFadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Topic item — shared */
+  :global(.tv-item) {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    background: #f8fafc;
+    border: 1.5px solid transparent;
+    border-radius: 14px;
+    padding: .75rem .9rem;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, transform .12s, box-shadow .15s;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  :global(.tv-item:hover) {
+    background: var(--color-primary-dim);
+    border-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+    box-shadow: 0 2px 12px rgba(43,76,126,.1);
+    transform: translateY(-1px);
+  }
+  :global(.tv-item:active) { transform: scale(.97); }
+
+  /* Featured (col-span-2) */
+  :global(.tv-item--featured) {
+    grid-column: 1 / -1;
+    padding: 1rem 1.1rem;
+    background: linear-gradient(135deg, #f0f4f9 0%, #e8eef8 100%);
+    border-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  }
+  :global(.tv-item--featured:hover) {
+    background: linear-gradient(135deg, #e5ecf7 0%, #dce6f5 100%);
+    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  }
+
+  /* Icon box */
+  :global(.tv-icon) {
+    width: 40px; height: 40px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  :global(.tv-item--featured .tv-icon) { width: 48px; height: 48px; border-radius: 14px; }
+
+  /* Text */
+  :global(.tv-text) {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    min-width: 0;
+    flex: 1;
+  }
+  :global(.tv-name) {
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+  :global(.tv-item--featured .tv-name) { font-size: 1rem; }
+  :global(.tv-sub) {
+    font-size: .72rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  :global(.tv-count) {
+    font-size: .7rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+    padding: .1rem .45rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Hanzi badge on featured */
+  :global(.tv-hanzi-badge) {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    opacity: .12;
+    position: absolute;
+    right: .9rem;
+    bottom: -.15rem;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Responsive — narrow screens */
+  @media (max-width: 400px) {
+    .tv-card { padding: 1.1rem; }
+    .tv-grid { gap: .45rem; }
+    :global(.tv-item) { padding: .6rem .7rem; gap: .55rem; }
+    :global(.tv-icon) { width: 34px; height: 34px; border-radius: 9px; }
+    :global(.tv-name) { font-size: .82rem; }
+  }
+</style>
+
+<!-- ─────────────────── SCRIPT ─────────────────────────────────────────── -->
+<script>
+  // ── Topic data ───────────────────────────────────────────────────────────
+  interface Topic {
+    name:      string;
+    sub:       string;   // short subtitle / Chinese translation
+    hanzi:     string;   // representative character
+    query:     string;   // what to search for
+    count:     number;   // approx word count (display only)
+    iconBg:    string;
+    iconColor: string;
+    svgInner:  string;   // SVG inner HTML (paths, circles, etc.)
+  }
+
+  const TOPICS: Topic[] = [
+    // ── Page 1 ──────────────────────────────────────────────────────────
+    {
+      name: 'Kiến trúc', sub: '建筑 · Công trình', hanzi: '楼', query: '建筑',
+      count: 286, iconBg: '#ede9fe', iconColor: '#5b21b6',
+      svgInner: `<path d="M3 21h18M5 21V9l7-5 7 5v12" stroke-width="1.8" fill="none"/>
+        <path d="M9 21v-4h6v4" stroke-width="1.8" fill="none"/>
+        <path d="M9 13h2M13 13h2" stroke-width="1.8" fill="none"/>`,
+    },
+    {
+      name: 'Âm nhạc', sub: '音乐 · Giai điệu', hanzi: '乐', query: '音乐',
+      count: 198, iconBg: '#fce7f3', iconColor: '#9d174d',
+      svgInner: `<path d="M9 18V5l12-2v13" stroke-width="1.8" fill="none"/>
+        <circle cx="6" cy="18" r="3" fill="currentColor" opacity=".9"/>
+        <circle cx="18" cy="16" r="3" fill="currentColor" opacity=".9"/>
+        <line x1="9" y1="5" x2="21" y2="3" stroke-width="1.8"/>`,
+    },
+    {
+      name: 'Thể thao', sub: '运动 · Vận động', hanzi: '球', query: '运动',
+      count: 342, iconBg: '#dcfce7', iconColor: '#15803d',
+      svgInner: `<circle cx="12" cy="12" r="9" stroke-width="1.8" fill="none"/>
+        <path d="M12 3a15 15 0 0 1 0 18M3 12a15 15 0 0 1 18 0" stroke-width="1.8" fill="none"/>
+        <path d="M5.6 5.6a15 15 0 0 1 12.8 12.8M18.4 5.6a15 15 0 0 0-12.8 12.8" stroke-width="1.4" fill="none" opacity=".5"/>`,
+    },
+    {
+      name: 'Vận chuyển', sub: '交通 · Di chuyển', hanzi: '车', query: '交通',
+      count: 412, iconBg: '#fef3c7', iconColor: '#b45309',
+      svgInner: `<rect x="2" y="9" width="20" height="10" rx="2.5" stroke-width="1.8" fill="none"/>
+        <path d="M5 9V7a1 1 0 0 1 .9-.99L12 5.5l6.1.51A1 1 0 0 1 19 7v2" stroke-width="1.8" fill="none"/>
+        <circle cx="7" cy="19" r="2" fill="currentColor"/>
+        <circle cx="17" cy="19" r="2" fill="currentColor"/>
+        <path d="M7 13h10" stroke-width="1.5" opacity=".5"/>`,
+    },
+    {
+      name: 'Gia đình', sub: '家庭 · Thân tộc', hanzi: '家', query: '家庭',
+      count: 238, iconBg: '#fff7ed', iconColor: '#c2410c',
+      svgInner: `<path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke-width="1.8" fill="none"/>
+        <path d="M9 21V13h6v8" stroke-width="1.8" fill="none"/>
+        <circle cx="12" cy="9" r="1.5" fill="currentColor"/>`,
+    },
+    {
+      name: 'Ẩm thực', sub: '食物 · Ăn uống', hanzi: '食', query: '食物',
+      count: 317, iconBg: '#ecfdf5', iconColor: '#065f46',
+      svgInner: `<path d="M18 8h1a4 4 0 0 1 0 8h-1" stroke-width="1.8" fill="none"/>
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" stroke-width="1.8" fill="none"/>
+        <line x1="6"  y1="1" x2="6"  y2="5" stroke-width="1.8"/>
+        <line x1="10" y1="1" x2="10" y2="5" stroke-width="1.8"/>
+        <line x1="14" y1="1" x2="14" y2="5" stroke-width="1.8"/>`,
+    },
+    {
+      name: 'Thiên nhiên', sub: '自然 · Môi trường', hanzi: '山', query: '自然',
+      count: 259, iconBg: '#f0fdf4', iconColor: '#166534',
+      svgInner: `<path d="M3 20h18" stroke-width="1.8" fill="none"/>
+        <path d="M5 20 11 8l4 6 3-4 4 10" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+        <circle cx="17" cy="8" r="2.5" fill="currentColor" opacity=".8"/>`,
+    },
+
+    // ── Page 2 ──────────────────────────────────────────────────────────
+    {
+      name: 'Hàng không', sub: '航空 · Bay lượn', hanzi: '飞', query: '飞机',
+      count: 173, iconBg: '#e0f2fe', iconColor: '#0369a1',
+      svgInner: `<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 3.5c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" stroke-width="1.5" fill="none"/>`,
+    },
+    {
+      name: 'Giáo dục', sub: '教育 · Học tập', hanzi: '学', query: '学习',
+      count: 501, iconBg: '#eff6ff', iconColor: '#1d4ed8',
+      svgInner: `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke-width="1.8" fill="none"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke-width="1.8" fill="none"/>`,
+    },
+    {
+      name: 'Kinh doanh', sub: '商业 · Tài chính', hanzi: '商', query: '商业',
+      count: 388, iconBg: '#fefce8', iconColor: '#a16207',
+      svgInner: `<line x1="18" y1="20" x2="18" y2="10" stroke-width="2"/>
+        <line x1="12" y1="20" x2="12" y2="4"  stroke-width="2"/>
+        <line x1="6"  y1="20" x2="6"  y2="14" stroke-width="2"/>
+        <path d="M2 20h20" stroke-width="1.8"/>
+        <path d="M8 9l4-5 5 3" stroke-width="1.5" fill="none" stroke-linejoin="round"/>`,
+    },
+    {
+      name: 'Sức khỏe', sub: '健康 · Y tế', hanzi: '康', query: '健康',
+      count: 274, iconBg: '#fff1f2', iconColor: '#be123c',
+      svgInner: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.8" fill="none"/>
+        <path d="M9 12h6M12 9v6" stroke-width="1.8"/>`,
+    },
+    {
+      name: 'Thời trang', sub: '服装 · May mặc', hanzi: '衣', query: '服装',
+      count: 192, iconBg: '#f5f3ff', iconColor: '#6d28d9',
+      svgInner: `<path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" stroke-width="1.8" fill="none"/>`,
+    },
+    {
+      name: 'Kỹ thuật', sub: '技术 · Công nghệ', hanzi: '技', query: '技术',
+      count: 445, iconBg: '#f1f5f9', iconColor: '#334155',
+      svgInner: `<circle cx="12" cy="12" r="3" stroke-width="1.8" fill="none"/>
+        <path d="M19.07 4.93a10 10 0 0 1 2.12 3.44l-2.88 1.11A7 7 0 0 0 17 8.15M4.93 4.93a10 10 0 0 0-2.12 3.44l2.88 1.11A7 7 0 0 1 7 8.15M4.93 19.07a10 10 0 0 0 3.44 2.12l1.11-2.88A7 7 0 0 1 8.15 17M19.07 19.07a10 10 0 0 1-3.44 2.12l-1.11-2.88A7 7 0 0 0 15.85 17" stroke-width="1.5" fill="none"/>`,
+    },
+    {
+      name: 'Nghệ thuật', sub: '艺术 · Sáng tạo', hanzi: '艺', query: '艺术',
+      count: 165, iconBg: '#fdf4ff', iconColor: '#86198f',
+      svgInner: `<circle cx="13.5" cy="6.5" r="2.5" fill="currentColor" opacity=".85"/>
+        <circle cx="17.5" cy="10.5" r="2.5" fill="currentColor" opacity=".6"/>
+        <circle cx="8.5"  cy="7.5"  r="2.5" fill="currentColor" opacity=".7"/>
+        <circle cx="6.5"  cy="12.5" r="2.5" fill="currentColor" opacity=".5"/>
+        <path d="M12 22a10 10 0 0 1-8.95-5.55 10 10 0 0 0 15.9-9.9A10 10 0 0 1 12 22z" fill="currentColor" opacity=".2" stroke-width="0"/>`,
+    },
+  ];
+
+  const PAGE_SIZE = 7; // 1 featured + 6 regular
+  const totalPages = Math.ceil(TOPICS.length / PAGE_SIZE);
+  let currentPage = 0;
+
+  // ── Render ───────────────────────────────────────────────────────────────
+  function renderPage(page: number) {
+    const grid = document.getElementById('tv-grid')!;
+    const indicator = document.getElementById('tv-page-indicator')!;
+    const prevBtn   = document.getElementById('tv-prev') as HTMLButtonElement;
+    const nextBtn   = document.getElementById('tv-next') as HTMLButtonElement;
+
+    const start  = page * PAGE_SIZE;
+    const topics = TOPICS.slice(start, start + PAGE_SIZE);
+
+    // Animate out → update → animate in
+    grid.style.opacity = '0';
+    grid.style.transform = 'translateY(4px)';
+
+    requestAnimationFrame(() => {
+      grid.innerHTML = '';
+
+      topics.forEach((t, i) => {
+        const isFeatured = i === 0;
+        const div = document.createElement('div');
+        div.className = 'tv-item' + (isFeatured ? ' tv-item--featured' : '');
+        div.setAttribute('role', 'listitem');
+        div.setAttribute('tabindex', '0');
+        div.setAttribute('aria-label', `${t.name} — ${t.sub}`);
+        div.dataset.query = t.query;
+
+        div.innerHTML = `
+          <div class="tv-icon" style="background:${t.iconBg};color:${t.iconColor}">
+            <svg width="20" height="20" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              ${t.svgInner}
+            </svg>
+          </div>
+          <div class="tv-text">
+            <span class="tv-name">${t.name}</span>
+            <span class="tv-sub">${t.sub}</span>
+          </div>
+          ${isFeatured
+            ? `<span class="tv-count">~${t.count.toLocaleString()} từ</span>
+               <span class="tv-hanzi-badge" aria-hidden="true" lang="zh">${t.hanzi}</span>`
+            : `<span class="tv-count">${t.count}</span>`
+          }
+        `;
+
+        div.addEventListener('click', () => triggerSearch(t.query, t.name));
+        div.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            triggerSearch(t.query, t.name);
+          }
+        });
+
+        grid.appendChild(div);
+      });
+
+      indicator.textContent = `${page + 1} / ${totalPages}`;
+      prevBtn.disabled = page === 0;
+      nextBtn.disabled = page === totalPages - 1;
+
+      // Animate in
+      requestAnimationFrame(() => {
+        grid.style.transition = 'opacity .2s ease, transform .2s ease';
+        grid.style.opacity    = '1';
+        grid.style.transform  = 'translateY(0)';
+      });
+    });
+  }
+
+  // ── Trigger search on the homepage ───────────────────────────────────────
+  function triggerSearch(query: string, label: string) {
+    const input = document.getElementById('search-input') as HTMLInputElement | null;
+    if (!input) return;
+
+    // Set value + fire input event (homepage search listens to 'input')
+    input.value = query;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+
+    // Update clear button visibility
+    const clearBtn = document.getElementById('search-clear') as HTMLButtonElement | null;
+    if (clearBtn) clearBtn.hidden = false;
+
+    // Scroll search bar into view smoothly
+    const hero = document.querySelector<HTMLElement>('.hero');
+    hero?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Focus input
+    setTimeout(() => input.focus(), 300);
+  }
+
+  // ── Pagination buttons ────────────────────────────────────────────────────
+  document.getElementById('tv-prev')?.addEventListener('click', () => {
+    if (currentPage > 0) renderPage(--currentPage);
+  });
+  document.getElementById('tv-next')?.addEventListener('click', () => {
+    if (currentPage < totalPages - 1) renderPage(++currentPage);
+  });
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+  renderPage(0);
+</script>
