@@ -1,0 +1,186 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+
+export const prerender = true;
+---
+
+<BaseLayout title="Yêu thích — WenZi">
+  <div class="page">
+    <Header />
+
+    <main class="fav-main container">
+      <div class="fav-header">
+        <h1 class="fav-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+            fill="currentColor" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Từ yêu thích
+        </h1>
+        <button class="btn-clear" id="clear-btn" type="button" hidden>Xóa tất cả</button>
+      </div>
+
+      <div id="fav-grid"  class="results-grid"></div>
+      <div id="fav-empty" class="empty-state">
+        <span class="empty-icon">☆</span>
+        <p class="empty-title">Chưa có từ yêu thích</p>
+        <p class="empty-sub">Nhấn vào biểu tượng <strong>★</strong> trên trang chi tiết để lưu từ vào đây.</p>
+        <a href="/" class="btn-home">Tìm từ ngay</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>WenZi © 2026 &mdash; MIT License</p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { display: flex; flex-direction: column; min-height: 100dvh; }
+
+  .container {
+    max-width: 860px; margin: 0 auto;
+    padding: 0 1.25rem; width: 100%;
+  }
+
+  .fav-main {
+    flex: 1;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .fav-header {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem; gap: 1rem;
+  }
+
+  .fav-title {
+    display: flex; align-items: center; gap: .5rem;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .btn-clear {
+    background: none; border: 1.5px solid var(--color-border);
+    color: var(--color-text-muted); border-radius: var(--radius-sm);
+    padding: .4rem .9rem; font-size: .82rem; cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-clear:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+  /* Results grid (same pattern as index) */
+  .results-grid {
+    display: grid; gap: .75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 560px) { .results-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 760px) { .results-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Cards */
+  :global(.entry-card) {
+    display: flex; align-items: stretch;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    overflow: hidden; text-decoration: none; color: inherit;
+    transition: box-shadow .15s, transform .15s;
+    animation: fadeIn .18s ease;
+  }
+  :global(.entry-card:hover) {
+    box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; } }
+  :global(.card-accent) {
+    background: var(--color-primary);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 1rem 1.1rem; min-width: 82px; gap: .15rem;
+  }
+  :global(.card-simplified) { font-size: 2rem; color: #fff; line-height: 1; font-weight: 400; }
+  :global(.card-traditional) { font-size: .72rem; color: rgba(255,255,255,.6); }
+  :global(.card-body) {
+    flex: 1; padding: .85rem 1rem;
+    display: flex; flex-direction: column; gap: .25rem; justify-content: center;
+  }
+  :global(.card-vietnamese) { font-size: 1rem; font-weight: 600; color: var(--color-text); }
+  :global(.card-pinyin) { font-size: .85rem; font-style: italic; color: var(--color-primary); }
+
+  /* Empty state */
+  .empty-state {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    padding: 4rem 1rem; gap: .75rem;
+  }
+  .empty-icon { font-size: 3.5rem; color: var(--color-border); line-height: 1; }
+  .empty-title { font-size: 1.2rem; font-weight: 600; color: var(--color-text); }
+  .empty-sub { font-size: .9rem; color: var(--color-text-muted); max-width: 320px; line-height: 1.6; }
+  .btn-home {
+    margin-top: .5rem;
+    background: var(--color-primary); color: #fff;
+    padding: .65rem 1.4rem; border-radius: var(--radius-sm);
+    font-size: .9rem; font-weight: 600; text-decoration: none;
+    transition: opacity .15s;
+  }
+  .btn-home:hover { opacity: .85; text-decoration: none; }
+
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: 1.25rem 0; text-align: center;
+    font-size: .8rem; color: var(--color-text-muted);
+  }
+</style>
+
+<script>
+  import { getFavorites, clearFavorites } from '@/lib/storage';
+  import type { StoredEntry } from '@/lib/storage';
+
+  const grid     = document.getElementById('fav-grid')!;
+  const emptyEl  = document.getElementById('fav-empty')!;
+  const clearBtn = document.getElementById('clear-btn') as HTMLButtonElement;
+
+  function makeCard(e: StoredEntry): HTMLAnchorElement {
+    const showTrad = e.traditional && e.traditional !== e.simplified;
+    const a = document.createElement('a');
+    a.href = `/word/${e.id}`;
+    a.className = 'entry-card';
+    a.innerHTML = `
+      <div class="card-accent">
+        <span class="card-simplified">${e.simplified}</span>
+        ${showTrad ? `<span class="card-traditional">${e.traditional}</span>` : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-vietnamese">${e.vietnamese}</div>
+        ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
+      </div>`;
+    return a;
+  }
+
+  function render() {
+    const favs = getFavorites();
+    grid.innerHTML = '';
+
+    if (favs.length === 0) {
+      emptyEl.style.display = '';
+      clearBtn.hidden = true;
+    } else {
+      emptyEl.style.display = 'none';
+      clearBtn.hidden = false;
+      favs.forEach(e => grid.appendChild(makeCard(e)));
+    }
+  }
+
+  clearBtn.addEventListener('click', () => {
+    if (confirm('Xóa toàn bộ danh sách yêu thích?')) {
+      clearFavorites();
+      render();
+    }
+  });
+
+  render();
+</script>

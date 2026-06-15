@@ -1,11 +1,6 @@
 /**
  * Kết nối SQLite sử dụng sql.js (WebAssembly SQLite).
  * Tương thích Node.js / Bun — không cần binary native.
- *
- * Bảng dictionary gồm:
- *   simplified, traditional, pinyin (có dấu), pinyin_plain (không dấu), vietnamese
- *
- * pinyin_plain cho phép tìm "xue" khớp với "xué shēng".
  */
 
 import initSqlJs, { type Database } from 'sql.js';
@@ -21,15 +16,12 @@ export async function getDb(): Promise<Database> {
 
   const SQL = await initSqlJs();
 
-  if (existsSync(DB_PATH)) {
-    _db = new SQL.Database(readFileSync(DB_PATH));
-  } else {
-    _db = new SQL.Database();
-  }
+  _db = existsSync(DB_PATH)
+    ? new SQL.Database(readFileSync(DB_PATH))
+    : new SQL.Database();
 
   initSchema(_db);
-  const seeded = seedIfEmpty(_db);
-  if (seeded) persistDb(_db);
+  if (seedIfEmpty(_db)) persistDb(_db);
 
   return _db;
 }
@@ -52,15 +44,8 @@ function initSchema(db: Database): void {
   `);
 }
 
-/**
- * Loại bỏ dấu thanh khỏi chuỗi pinyin để tìm kiếm không dấu.
- * "xué shēng" → "xue sheng"
- */
 function removeTones(s: string): string {
-  return s
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
 const SAMPLE_DATA: readonly [string, string, string, string][] = [
@@ -87,18 +72,36 @@ const SAMPLE_DATA: readonly [string, string, string, string][] = [
 ];
 
 function seedIfEmpty(db: Database): boolean {
-  const res = db.exec('SELECT COUNT(*) as cnt FROM dictionary');
-  const count = (res[0]?.values[0]?.[0] as number) ?? 0;
+  const count = (db.exec('SELECT COUNT(*) FROM dictionary')[0]?.values[0]?.[0] as number) ?? 0;
   if (count > 0) return false;
-
   for (const [s, t, p, v] of SAMPLE_DATA) {
     db.run(
-      `INSERT INTO dictionary (simplified, traditional, pinyin, pinyin_plain, vietnamese)
-       VALUES (?, ?, ?, ?, ?)`,
+      'INSERT INTO dictionary (simplified, traditional, pinyin, pinyin_plain, vietnamese) VALUES (?,?,?,?,?)',
       [s, t, p, removeTones(p), v]
     );
   }
   return true;
+}
+
+// ── Truy vấn ─────────────────────────────────────────────────────────────
+export interface DictEntry {
+  id: number;
+  simplified: string;
+  traditional: string | null;
+  pinyin: string | null;
+  vietnamese: string;
+}
+
+export async function getEntryById(id: number): Promise<DictEntry | null> {
+  const db = await getDb();
+  const stmt = db.prepare(
+    'SELECT id, simplified, traditional, pinyin, vietnamese FROM dictionary WHERE id = $id'
+  );
+  stmt.bind({ $id: id });
+  const ok    = stmt.step();
+  const entry = ok ? (stmt.getAsObject() as DictEntry) : null;
+  stmt.free();
+  return entry;
 }
 
 export function closeDb(): void {

@@ -1,0 +1,88 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  backHref?: string;   // nếu có → hiển thị nút quay lại thay logo
+}
+
+const { backHref } = Astro.props;
+---
+
+<header class="header">
+  <div class="header-inner">
+    {backHref ? (
+      <a href={backHref} class="back-btn" aria-label="Quay lại">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        <span>Quay lại</span>
+      </a>
+    ) : (
+      <a href="/" class="brand" aria-label="WenZi — Trang chủ">
+        <img src="/favicon.png" alt="" width="28" height="28" />
+        <span class="brand-name">WenZi</span>
+        <span class="brand-han" aria-hidden="true">文字</span>
+      </a>
+    )}
+
+    <nav class="nav">
+      <a href="/favorites" class="nav-link" aria-label="Từ yêu thích">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span class="nav-label">Yêu thích</span>
+      </a>
+    </nav>
+
+    <ThemeToggle />
+  </div>
+</header>
+
+<style>
+  .header {
+    border-bottom: 1px solid var(--color-border);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  }
+  .header-inner {
+    display: flex; align-items: center;
+    gap: .75rem; height: 56px;
+    max-width: 860px; margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 8px;
+    text-decoration: none; color: var(--color-text);
+    margin-right: auto;
+  }
+  .brand img { border-radius: 6px; }
+  .brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; }
+  .brand-han  { font-size: .9rem; color: var(--color-text-muted); }
+
+  .back-btn {
+    display: flex; align-items: center; gap: 6px;
+    color: var(--color-text-muted); text-decoration: none;
+    font-size: .9rem; font-weight: 500;
+    margin-right: auto;
+    transition: color .15s;
+  }
+  .back-btn:hover { color: var(--color-primary); text-decoration: none; }
+
+  .nav { display: flex; align-items: center; }
+  .nav-link {
+    display: flex; align-items: center; gap: 5px;
+    color: var(--color-text-muted); font-size: .85rem;
+    text-decoration: none; padding: .35rem .7rem;
+    border-radius: var(--radius-sm);
+    transition: color .15s, background .15s;
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+    text-decoration: none;
+  }
+  @media (max-width: 400px) { .nav-label { display: none; } }
+</style>

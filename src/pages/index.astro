@@ -1,39 +1,27 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import ThemeToggle from '@/components/ThemeToggle.astro';
+import Header from '@/components/Header.astro';
 
 export const prerender = true;
 ---
 
 <BaseLayout>
   <div class="page">
-
-    <!-- ── Header ── -->
-    <header class="header">
-      <div class="header-inner container">
-        <a href="/" class="brand" aria-label="WenZi — Trang chủ">
-          <img src="/favicon.png" alt="" width="28" height="28" />
-          <span class="brand-name">WenZi</span>
-          <span class="brand-han" aria-hidden="true">文字</span>
-        </a>
-        <ThemeToggle />
-      </div>
-    </header>
+    <Header />
 
     <!-- ── Hero ── -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="logo-wrap" aria-hidden="true">
-          <img src="/favicon.png" alt="WenZi logo" width="88" height="88" class="logo" />
+          <img src="/favicon.png" alt="WenZi logo" width="80" height="80" class="logo" />
         </div>
         <h1 class="app-name">
-          WenZi
-          <span class="app-name-han" lang="zh">文字</span>
+          WenZi <span class="app-name-han" lang="zh">文字</span>
         </h1>
         <p class="app-desc">Từ điển Hán Việt đơn giản và hiệu quả.</p>
 
-        <!-- Search -->
-        <div class="search-area">
+        <!-- ── Search box ── -->
+        <div class="search-area" role="search">
           <div class="search-wrapper" id="search-wrapper">
             <span class="search-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -57,20 +45,40 @@ export const prerender = true;
             <kbd class="search-hint" id="search-hint" aria-hidden="true">↵</kbd>
           </div>
           <p class="search-caption">
-            Tìm theo chữ Hán <span class="sep">·</span> pinyin <span class="sep">·</span> Hán Việt <span class="sep">·</span> nghĩa tiếng Việt
+            Tìm theo chữ Hán <span class="sep">·</span> pinyin
+            <span class="sep">·</span> Hán Việt <span class="sep">·</span> nghĩa tiếng Việt
+            <span class="sep">·</span> <kbd class="kbd">↑↓</kbd> để điều hướng
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ── Results ── -->
-    <main class="results-section container" id="results-section" aria-live="polite">
-      <div id="results" class="results-grid" role="list"></div>
-      <div id="empty-state"  class="state-msg hidden"></div>
-      <div id="error-state"  class="state-msg error hidden"></div>
+    <!-- ── Kết quả / Lịch sử ── -->
+    <main class="main-area container" aria-live="polite">
+
+      <!-- Results (shown when searching) -->
+      <section id="search-section" class="hidden">
+        <div id="results" class="results-grid" role="list"></div>
+        <div id="empty-state"  class="state-msg hidden"></div>
+        <div id="error-state"  class="state-msg error hidden"></div>
+      </section>
+
+      <!-- History (shown when idle) -->
+      <section id="history-section">
+        <div class="section-header" id="history-header" style="display:none">
+          <h2 class="section-title">Lịch sử tra cứu</h2>
+          <button class="btn-secondary" id="clear-history-btn" type="button">Xóa</button>
+        </div>
+        <div id="history-grid" class="results-grid" role="list"></div>
+        <div id="history-empty" class="empty-state hidden">
+          <span class="empty-icon">🔍</span>
+          <p class="empty-title">Bắt đầu tìm kiếm</p>
+          <p class="empty-sub">Nhập từ khóa vào ô tìm kiếm để tra cứu từ điển.</p>
+        </div>
+      </section>
+
     </main>
 
-    <!-- ── Footer ── -->
     <footer class="footer">
       <div class="container">
         <p>WenZi © 2026 &mdash; MIT License</p>
@@ -84,50 +92,29 @@ export const prerender = true;
   .page { display: flex; flex-direction: column; min-height: 100dvh; }
 
   .container {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 1.25rem;
+    width: 100%; max-width: 860px;
+    margin: 0 auto; padding: 0 1.25rem;
   }
-
-  /* Header */
-  .header {
-    border-bottom: 1px solid var(--color-border);
-    position: sticky; top: 0; z-index: 10;
-    backdrop-filter: blur(12px);
-    background: color-mix(in srgb, var(--color-surface) 85%, transparent);
-  }
-  .header-inner {
-    display: flex; align-items: center;
-    justify-content: space-between; height: 56px;
-  }
-  .brand {
-    display: flex; align-items: center; gap: 8px;
-    text-decoration: none; color: var(--color-text);
-  }
-  .brand img { border-radius: 6px; }
-  .brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; }
-  .brand-han  { font-size: .9rem; color: var(--color-text-muted); }
 
   /* Hero */
-  .hero { padding: 3rem 0 2rem; }
+  .hero { padding: 2.5rem 0 1.75rem; }
   .hero-inner {
     display: flex; flex-direction: column;
-    align-items: center; text-align: center; gap: 1.1rem;
+    align-items: center; text-align: center; gap: 1rem;
   }
-  .logo { border-radius: 20px; box-shadow: var(--shadow-md); }
+  .logo { border-radius: 18px; box-shadow: var(--shadow-md); }
   .app-name {
-    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    font-size: clamp(2rem, 7vw, 3rem);
     font-weight: 800; letter-spacing: -.04em; line-height: 1;
     display: flex; align-items: baseline; gap: .35em;
   }
   .app-name-han { font-size: .52em; font-weight: 400; color: var(--color-text-muted); }
-  .app-desc { font-size: 1rem; color: var(--color-text-muted); max-width: 320px; }
+  .app-desc { font-size: .95rem; color: var(--color-text-muted); }
 
   /* Search */
-  .search-area { width: 100%; max-width: 560px; margin: .4rem auto 0; }
+  .search-area { width: 100%; max-width: 580px; margin: .3rem auto 0; }
   .search-wrapper {
-    position: relative; display: flex; align-items: center;
+    display: flex; align-items: center;
     background: var(--color-surface);
     border: 1.5px solid var(--color-border);
     border-radius: 999px;
@@ -142,8 +129,7 @@ export const prerender = true;
   .search-icon {
     display: flex; align-items: center;
     padding: 0 12px 0 18px;
-    color: var(--color-text-muted);
-    pointer-events: none; flex-shrink: 0;
+    color: var(--color-text-muted); pointer-events: none; flex-shrink: 0;
   }
   .search-input {
     flex: 1; border: none; outline: none;
@@ -154,111 +140,123 @@ export const prerender = true;
   .search-input::placeholder { color: var(--color-text-muted); opacity: .7; }
   .search-input::-webkit-search-cancel-button { display: none; }
 
-  /* Spinner */
   .search-spinner {
-    display: none; width: 18px; height: 18px;
-    border: 2px solid var(--color-border);
-    border-top-color: var(--color-primary);
-    border-radius: 50%; margin-right: 14px; flex-shrink: 0;
+    display: none; width: 18px; height: 18px; flex-shrink: 0;
+    border: 2px solid var(--color-border); border-top-color: var(--color-primary);
+    border-radius: 50%; margin-right: 14px;
   }
-  .search-spinner.active {
-    display: block;
-    animation: spin .7s linear infinite;
-  }
+  .search-spinner.active { display: block; animation: spin .7s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
   .search-hint {
     display: flex; align-items: center; justify-content: center;
     margin-right: 14px; padding: 3px 7px;
-    border: 1px solid var(--color-border);
-    border-radius: 6px; background: var(--color-bg);
-    color: var(--color-text-muted);
-    font-family: var(--font-mono); font-size: .78rem;
-    flex-shrink: 0; transition: opacity .2s;
+    border: 1px solid var(--color-border); border-radius: 6px;
+    background: var(--color-bg); color: var(--color-text-muted);
+    font-family: var(--font-mono); font-size: .78rem; flex-shrink: 0;
+    transition: opacity .2s;
   }
   .search-wrapper:focus-within .search-hint { opacity: 0; pointer-events: none; }
 
   .search-caption {
     margin-top: 9px; text-align: center;
-    font-size: .78rem; color: var(--color-text-muted);
+    font-size: .75rem; color: var(--color-text-muted);
   }
   .sep { margin: 0 4px; opacity: .4; }
-
-  /* Results */
-  .results-section {
-    flex: 1;
-    padding-top: 1.75rem;
-    padding-bottom: 3rem;
+  .kbd {
+    display: inline; padding: 1px 5px; border: 1px solid var(--color-border);
+    border-radius: 4px; font-family: var(--font-mono); font-size: .72rem;
+    background: var(--color-bg); color: var(--color-text-muted);
   }
+
+  /* Main area */
+  .main-area { flex: 1; padding-top: 1.5rem; padding-bottom: 4rem; }
+
+  /* Results grid */
   .results-grid {
-    display: grid;
-    gap: .75rem;
+    display: grid; gap: .75rem;
     grid-template-columns: 1fr;
   }
+  @media (min-width: 560px) { .results-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 760px) { .results-grid { grid-template-columns: repeat(3, 1fr); } }
 
-  /* Card (rendered by JS) */
+  /* Cards (rendered by JS) */
   :global(.entry-card) {
     display: flex; align-items: stretch;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    transition: box-shadow .15s, transform .15s;
+    overflow: hidden; text-decoration: none; color: inherit;
+    transition: box-shadow .15s, transform .15s, outline .1s;
     animation: fadeIn .18s ease;
+    position: relative;
   }
   :global(.entry-card:hover) {
+    box-shadow: var(--shadow-md); transform: translateY(-1px);
+    text-decoration: none;
+  }
+  :global(.entry-card.focused) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 0px;
     box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
   }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; } }
 
   :global(.card-accent) {
     background: var(--color-primary);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 1.1rem 1.25rem;
-    min-width: 88px; gap: .2rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 1rem 1.1rem; min-width: 82px; gap: .15rem;
   }
-  :global(.card-simplified) {
-    font-size: 2.2rem; line-height: 1;
-    color: #fff; font-weight: 400;
+  :global(.card-simplified) { font-size: 2rem; color: #fff; line-height: 1; font-weight: 400; }
+  :global(.card-traditional) { font-size: .72rem; color: rgba(255,255,255,.6); }
+  :global(.card-body) {
+    flex: 1; padding: .85rem 1rem;
+    display: flex; flex-direction: column; gap: .25rem; justify-content: center;
   }
-  :global(.card-traditional) {
-    font-size: .75rem; color: rgba(255,255,255,.65);
+  :global(.card-vietnamese) { font-size: 1rem; font-weight: 600; color: var(--color-text); }
+  :global(.card-pinyin) { font-size: .85rem; font-style: italic; color: var(--color-primary); }
+  :global(.card-fav) {
+    position: absolute; top: 7px; right: 8px;
+    font-size: .75rem; color: var(--color-primary); line-height: 1;
   }
 
-  :global(.card-body) {
-    flex: 1; padding: .9rem 1.1rem;
-    display: flex; flex-direction: column; gap: .3rem;
-    justify-content: center;
+  /* Section header */
+  .section-header {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 1rem; gap: 1rem;
   }
-  :global(.card-vietnamese) {
-    font-size: 1.05rem; font-weight: 600;
-    color: var(--color-text);
+  .section-title {
+    font-size: 1rem; font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase; letter-spacing: .05em;
   }
-  :global(.card-pinyin) {
-    font-size: .88rem; font-style: italic;
-    color: var(--color-primary); opacity: .9;
+  .btn-secondary {
+    background: none; border: 1.5px solid var(--color-border);
+    color: var(--color-text-muted); border-radius: var(--radius-sm);
+    padding: .3rem .75rem; font-size: .8rem; cursor: pointer;
+    transition: all .15s;
   }
+  .btn-secondary:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
   /* State messages */
   .state-msg {
     text-align: center; padding: 2.5rem 1rem;
-    color: var(--color-text-muted); font-size: .95rem;
-    line-height: 1.7;
+    color: var(--color-text-muted); font-size: .95rem; line-height: 1.7;
   }
   .state-msg.error { color: var(--color-primary); }
-  .hidden { display: none !important; }
 
-  /* Responsive */
-  @media (min-width: 560px) {
-    .results-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Empty state */
+  .empty-state {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    padding: 3rem 1rem; gap: .6rem;
   }
-  @media (min-width: 760px) {
-    .results-grid { grid-template-columns: repeat(3, 1fr); }
-    :global(.card-accent) { min-width: 80px; }
-  }
+  .empty-icon { font-size: 3rem; line-height: 1; }
+  .empty-title { font-size: 1.1rem; font-weight: 600; color: var(--color-text); }
+  .empty-sub { font-size: .88rem; color: var(--color-text-muted); max-width: 300px; line-height: 1.6; }
+
+  .hidden { display: none !important; }
 
   .footer {
     border-top: 1px solid var(--color-border);
@@ -269,69 +267,142 @@ export const prerender = true;
 
 <!-- ═══════════════════════ Client Script ═══════════════════════ -->
 <script>
-  const input    = document.getElementById('search-input')    as HTMLInputElement;
-  const results  = document.getElementById('results')         as HTMLDivElement;
-  const spinner  = document.getElementById('search-spinner')  as HTMLSpanElement;
-  const hint     = document.getElementById('search-hint')     as HTMLElement;
-  const empty    = document.getElementById('empty-state')     as HTMLDivElement;
-  const errorEl  = document.getElementById('error-state')     as HTMLDivElement;
+  import { getHistory, addToHistory, clearHistory, isFavorite } from '@/lib/storage';
+  import type { StoredEntry } from '@/lib/storage';
 
+  // ── DOM refs ──────────────────────────────────────────────────────────────
+  const input          = document.getElementById('search-input')    as HTMLInputElement;
+  const spinner        = document.getElementById('search-spinner')  as HTMLSpanElement;
+  const hint           = document.getElementById('search-hint')     as HTMLElement;
+  const searchSection  = document.getElementById('search-section')  as HTMLElement;
+  const results        = document.getElementById('results')          as HTMLDivElement;
+  const emptyEl        = document.getElementById('empty-state')     as HTMLDivElement;
+  const errorEl        = document.getElementById('error-state')     as HTMLDivElement;
+  const historySection = document.getElementById('history-section') as HTMLElement;
+  const historyHeader  = document.getElementById('history-header')  as HTMLElement;
+  const historyGrid    = document.getElementById('history-grid')    as HTMLDivElement;
+  const historyEmpty   = document.getElementById('history-empty')   as HTMLDivElement;
+  const clearHistBtn   = document.getElementById('clear-history-btn') as HTMLButtonElement;
+
+  // ── State ─────────────────────────────────────────────────────────────────
   let debounceTimer: ReturnType<typeof setTimeout> | null = null;
   let lastQuery = '';
+  let focusedIdx = -1;
+  let currentResults: { id: number; simplified: string; traditional: string | null; pinyin: string | null; vietnamese: string }[] = [];
 
+  // ── Card factory ─────────────────────────────────────────────────────────
+  function makeCard(e: StoredEntry & { id: number }, withFavBadge = true): HTMLAnchorElement {
+    const showTrad = e.traditional && e.traditional !== e.simplified;
+    const faved    = withFavBadge && isFavorite(e.id);
+
+    const a = document.createElement('a');
+    a.href  = `/word/${e.id}`;
+    a.className = 'entry-card';
+    a.setAttribute('role', 'listitem');
+    a.innerHTML = `
+      <div class="card-accent">
+        <span class="card-simplified">${e.simplified}</span>
+        ${showTrad ? `<span class="card-traditional">${e.traditional}</span>` : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-vietnamese">${e.vietnamese}</div>
+        ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
+      </div>
+      ${faved ? '<span class="card-fav" aria-hidden="true">★</span>' : ''}
+    `;
+    return a;
+  }
+
+  // ── Keyboard navigation trong kết quả tìm kiếm ───────────────────────────
+  function getCards(): HTMLAnchorElement[] {
+    return Array.from(results.querySelectorAll<HTMLAnchorElement>('.entry-card'));
+  }
+
+  function setFocus(idx: number) {
+    const cards = getCards();
+    cards[focusedIdx]?.classList.remove('focused');
+    focusedIdx = Math.max(-1, Math.min(idx, cards.length - 1));
+    if (focusedIdx >= 0) {
+      cards[focusedIdx].classList.add('focused');
+      cards[focusedIdx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  input.addEventListener('keydown', (e) => {
+    const cards = getCards();
+    if (!cards.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setFocus(focusedIdx + 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setFocus(focusedIdx <= 0 ? -1 : focusedIdx - 1);
+    } else if (e.key === 'Enter' && focusedIdx >= 0) {
+      e.preventDefault();
+      cards[focusedIdx].click();
+    } else if (e.key === 'Escape') {
+      setFocus(-1);
+    }
+  });
+
+  // ── Loading state ─────────────────────────────────────────────────────────
   function setLoading(on: boolean) {
     spinner.classList.toggle('active', on);
-    hint.style.display = on ? 'none' : '';
+    hint.style.opacity = on ? '0' : '';
   }
 
-  function hideStates() {
-    empty.classList.add('hidden');
-    errorEl.classList.add('hidden');
+  // ── UI: show/hide sections ─────────────────────────────────────────────────
+  function showSearchUI() {
+    searchSection.classList.remove('hidden');
+    historySection.style.display = 'none';
   }
 
-  function renderCards(entries: {
-    simplified: string;
-    traditional: string | null;
-    pinyin: string | null;
-    vietnamese: string;
-  }[]) {
-    results.innerHTML = '';
-    entries.forEach(e => {
-      const showTraditional = e.traditional && e.traditional !== e.simplified;
-
-      const card = document.createElement('div');
-      card.className = 'entry-card';
-      card.setAttribute('role', 'listitem');
-      card.innerHTML = `
-        <div class="card-accent">
-          <span class="card-simplified">${e.simplified}</span>
-          ${showTraditional ? `<span class="card-traditional">${e.traditional}</span>` : ''}
-        </div>
-        <div class="card-body">
-          <div class="card-vietnamese">${e.vietnamese}</div>
-          ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
-        </div>
-      `;
-      results.appendChild(card);
-    });
+  function showHistoryUI() {
+    searchSection.classList.add('hidden');
+    historySection.style.display = '';
+    renderHistory();
   }
 
+  // ── Lịch sử ──────────────────────────────────────────────────────────────
+  function renderHistory() {
+    historyGrid.innerHTML = '';
+    const h = getHistory();
+
+    if (h.length === 0) {
+      historyHeader.style.display = 'none';
+      historyEmpty.classList.remove('hidden');
+    } else {
+      historyHeader.style.display = '';
+      historyEmpty.classList.add('hidden');
+      h.forEach(e => historyGrid.appendChild(makeCard(e)));
+    }
+  }
+
+  clearHistBtn.addEventListener('click', () => {
+    clearHistory();
+    renderHistory();
+  });
+
+  // ── Tìm kiếm ─────────────────────────────────────────────────────────────
   async function doSearch(q: string) {
     if (q === lastQuery) return;
     lastQuery = q;
+    focusedIdx = -1;
 
-    hideStates();
-
-    if (q.trim() === '') {
-      results.innerHTML = '';
+    if (!q.trim()) {
+      showHistoryUI();
       setLoading(false);
       return;
     }
 
+    showSearchUI();
+    emptyEl.classList.add('hidden');
+    errorEl.classList.add('hidden');
     setLoading(true);
 
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+      const res  = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const data = await res.json();
@@ -343,12 +414,14 @@ export const prerender = true;
         return;
       }
 
+      currentResults = data;
+      results.innerHTML = '';
+
       if (data.length === 0) {
-        results.innerHTML = '';
-        empty.innerHTML = `Không tìm thấy kết quả cho <strong>"${q}"</strong>`;
-        empty.classList.remove('hidden');
+        emptyEl.innerHTML = `Không tìm thấy kết quả cho <strong>"${q}"</strong>`;
+        emptyEl.classList.remove('hidden');
       } else {
-        renderCards(data);
+        data.forEach((e: typeof data[0]) => results.appendChild(makeCard(e)));
       }
     } catch {
       results.innerHTML = '';
@@ -359,17 +432,20 @@ export const prerender = true;
     }
   }
 
+  // ── Input events ──────────────────────────────────────────────────────────
   input.addEventListener('input', () => {
     if (debounceTimer) clearTimeout(debounceTimer);
     const q = input.value;
 
-    if (q.trim() === '') {
-      // Xóa ngay lập tức khi input rỗng
+    if (!q.trim()) {
       if (debounceTimer) clearTimeout(debounceTimer);
       doSearch('');
       return;
     }
-
     debounceTimer = setTimeout(() => doSearch(q), 300);
   });
+
+  // ── Init ─────────────────────────────────────────────────────────────────
+  showHistoryUI();
+  input.focus();
 </script>
