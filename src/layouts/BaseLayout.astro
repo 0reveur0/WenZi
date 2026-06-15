@@ -20,18 +20,17 @@ const {
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
     <style is:global>
-      /* ── Thiết kế token ── */
       :root {
-        --color-bg:          #f9f7f4;
+        --color-bg:          #f0f4f9;
         --color-surface:     #ffffff;
-        --color-border:      #e8e2d9;
-        --color-text:        #1a1614;
-        --color-text-muted:  #7a6f67;
-        --color-primary:     #c0392b;
-        --color-primary-dim: #fdf1f0;
-        --color-focus:       #c0392b;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.05);
-        --shadow-md: 0 4px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.06);
+        --color-border:      #e2e8f0;
+        --color-text:        #0f172a;
+        --color-text-muted:  #64748b;
+        --color-primary:     #2b4c7e;
+        --color-primary-dim: #eef2f8;
+        --color-primary-hover: #1e3a63;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+        --shadow-md: 0 4px 20px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.05);
         --radius-sm: 8px;
         --radius-md: 14px;
         --radius-lg: 20px;
@@ -41,33 +40,33 @@ const {
 
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme='light']) {
-          --color-bg:          #0f0d0c;
-          --color-surface:     #1c1917;
-          --color-border:      #2c2825;
-          --color-text:        #f0ede8;
-          --color-text-muted:  #8a8078;
-          --color-primary:     #e05a4f;
-          --color-primary-dim: #2a1210;
-          --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
-          --shadow-md: 0 4px 16px rgba(0,0,0,.4);
+          --color-bg:          #0d1520;
+          --color-surface:     #1a2332;
+          --color-border:      #263348;
+          --color-text:        #e8edf5;
+          --color-text-muted:  #7f98b8;
+          --color-primary:     #5b8ad4;
+          --color-primary-dim: #1a2840;
+          --color-primary-hover: #7ba4e0;
+          --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
+          --shadow-md: 0 4px 20px rgba(0,0,0,.5);
         }
       }
 
       [data-theme='dark'] {
-        --color-bg:          #0f0d0c;
-        --color-surface:     #1c1917;
-        --color-border:      #2c2825;
-        --color-text:        #f0ede8;
-        --color-text-muted:  #8a8078;
-        --color-primary:     #e05a4f;
-        --color-primary-dim: #2a1210;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
-        --shadow-md: 0 4px 16px rgba(0,0,0,.4);
+        --color-bg:          #0d1520;
+        --color-surface:     #1a2332;
+        --color-border:      #263348;
+        --color-text:        #e8edf5;
+        --color-text-muted:  #7f98b8;
+        --color-primary:     #5b8ad4;
+        --color-primary-dim: #1a2840;
+        --color-primary-hover: #7ba4e0;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
+        --shadow-md: 0 4px 20px rgba(0,0,0,.5);
       }
 
-      /* ── Reset ── */
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
       html { scroll-behavior: smooth; }
 
       body {
@@ -83,10 +82,8 @@ const {
       }
 
       main { flex: 1; }
-
       a { color: var(--color-primary); text-decoration: none; }
       a:hover { text-decoration: underline; }
-
       img, svg { display: block; max-width: 100%; }
 
       ::selection {
@@ -94,7 +91,9 @@ const {
         color: #fff;
       }
     </style>
-    <!-- Inline script để tránh flash khi load trang -->
+    <style is:global>
+      @import '../styles/global.css';
+    </style>
     <script is:inline>
       (function () {
         const stored = localStorage.getItem('wz-theme');

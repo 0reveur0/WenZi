@@ -7,20 +7,15 @@ export const prerender = true;
 
 <BaseLayout>
   <div class="page">
-    <Header />
+    <Header activePage="home" />
 
-    <!-- ── Hero ── -->
+    <!-- ── Search Hero ── -->
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="logo-wrap" aria-hidden="true">
-          <img src="/favicon.svg" alt="WenZi logo" width="80" height="80" class="logo" />
-        </div>
-        <h1 class="app-name">
-          WenZi <span class="app-name-han" lang="zh">文字</span>
-        </h1>
-        <p class="app-desc">Từ điển Hán Việt đơn giản và hiệu quả.</p>
+      <div class="hero-inner">
+        <h1 class="hero-title">Tra cứu Hán Việt</h1>
+        <p class="hero-sub">Tìm kiếm chữ Hán, pinyin, Hán Việt hoặc nghĩa tiếng Việt</p>
 
-        <!-- ── Search box ── -->
+        <!-- Search bar -->
         <div class="search-area" role="search">
           <div class="search-wrapper" id="search-wrapper">
             <span class="search-icon" aria-hidden="true">
@@ -42,86 +37,154 @@ export const prerender = true;
               aria-autocomplete="list"
             />
             <span class="search-spinner" id="search-spinner" aria-hidden="true"></span>
-            <kbd class="search-hint" id="search-hint" aria-hidden="true">↵</kbd>
+            <button class="search-clear" id="search-clear" type="button" aria-label="Xóa" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
           </div>
-          <p class="search-caption">
-            Tìm theo chữ Hán <span class="sep">·</span> pinyin
-            <span class="sep">·</span> Hán Việt <span class="sep">·</span> nghĩa tiếng Việt
-            <span class="sep">·</span> <kbd class="kbd">↑↓</kbd> để điều hướng
-          </p>
+
+          <!-- Filter tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="Loại tìm kiếm">
+            <button class="filter-tab filter-tab--active" role="tab" aria-selected="true" data-tab="vocab">Từ vựng</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-tab="hanzi">Hán tự</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-tab="example">Ví dụ</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-tab="grammar">Ngữ pháp</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-tab="idiom">Thành ngữ</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Kết quả / Lịch sử ── -->
-    <main class="main-area container" aria-live="polite">
+    <!-- ── Main content ── -->
+    <main class="main-area" aria-live="polite">
+      <div class="container">
 
-      <!-- Results (shown when searching) -->
-      <section id="search-section" class="hidden">
-        <div id="results" class="results-grid" role="list"></div>
-        <div id="empty-state"  class="state-msg hidden"></div>
-        <div id="error-state"  class="state-msg error hidden"></div>
-      </section>
+        <!-- Search results (shown when searching) -->
+        <section id="search-section" class="hidden">
+          <div class="section-hdr">
+            <span class="section-label" id="results-label">Kết quả tìm kiếm</span>
+          </div>
+          <div id="results" class="results-grid" role="list"></div>
+          <div id="empty-state" class="state-msg hidden"></div>
+          <div id="error-state" class="state-msg error hidden"></div>
+        </section>
 
-      <!-- History (shown when idle) -->
-      <section id="history-section">
-        <div class="section-header" id="history-header" style="display:none">
-          <h2 class="section-title">Lịch sử tra cứu</h2>
-          <button class="btn-secondary" id="clear-history-btn" type="button">Xóa</button>
-        </div>
-        <div id="history-grid" class="results-grid" role="list"></div>
-        <div id="history-empty" class="empty-state hidden">
-          <span class="empty-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.35-4.35"/>
-            </svg>
-          </span>
-          <p class="empty-title">Bắt đầu tìm kiếm</p>
-          <p class="empty-sub">Nhập từ khóa vào ô tìm kiếm để tra cứu từ điển.</p>
-        </div>
-      </section>
+        <!-- Idle dashboard (shown when not searching) -->
+        <section id="history-section">
+          <!-- History card -->
+          <div class="dash-card" id="history-card">
+            <div class="dash-card-header" id="history-header" style="display:none">
+              <h2 class="dash-card-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+                Lịch sử tra cứu
+              </h2>
+              <button class="btn-sm" id="clear-history-btn" type="button">Xóa tất cả</button>
+            </div>
+            <div id="history-grid" class="results-grid" role="list"></div>
+            <div id="history-empty" class="empty-state hidden">
+              <div class="empty-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.35-4.35"/>
+                </svg>
+              </div>
+              <p class="empty-title">Bắt đầu tìm kiếm</p>
+              <p class="empty-sub">Nhập từ khóa vào ô tìm kiếm để tra cứu từ điển.</p>
+            </div>
+          </div>
 
+          <!-- Tips grid -->
+          <div class="tips-grid">
+            <!-- Tip 1 -->
+            <div class="tip-card">
+              <div class="tip-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                </svg>
+              </div>
+              <h3 class="tip-title">Mẹo tìm kiếm</h3>
+              <p class="tip-body">Nhập trực tiếp chữ Hán (好), pinyin (hao) hoặc nghĩa tiếng Việt (tốt) để tra cứu nhanh.</p>
+            </div>
+            <!-- Tip 2 -->
+            <div class="tip-card">
+              <div class="tip-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <h3 class="tip-title">Lưu từ yêu thích</h3>
+              <p class="tip-body">Nhấn biểu tượng ★ trên trang chi tiết để lưu từ vào danh sách yêu thích của bạn.</p>
+            </div>
+            <!-- Tip 3 -->
+            <div class="tip-card">
+              <div class="tip-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                </svg>
+              </div>
+              <h3 class="tip-title">Nghe phát âm</h3>
+              <p class="tip-body">Mỗi trang từ đều có nút phát âm tiếng Trung chuẩn giúp bạn học cách đọc chính xác.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <p>WenZi © 2026 &mdash; MIT License</p>
-      </div>
+      <p>WenZi © 2026 &mdash; MIT License</p>
     </footer>
   </div>
 </BaseLayout>
 
-<!-- ═══════════════════════ Styles ═══════════════════════ -->
 <style>
   .page { display: flex; flex-direction: column; min-height: 100dvh; }
 
-  .container {
-    width: 100%; max-width: 860px;
-    margin: 0 auto; padding: 0 1.25rem;
-  }
-
   /* Hero */
-  .hero { padding: 2.5rem 0 1.75rem; }
+  .hero {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2.5rem 1.5rem 0;
+  }
   .hero-inner {
-    display: flex; flex-direction: column;
-    align-items: center; text-align: center; gap: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
   }
-  .logo { border-radius: 50%; width: 80px; height: 80px; box-shadow: var(--shadow-md); aspect-ratio: 1 / 1; object-fit: contain; }
-  .app-name {
-    font-size: clamp(2rem, 7vw, 3rem);
-    font-weight: 800; letter-spacing: -.04em; line-height: 1;
-    display: flex; align-items: baseline; gap: .35em;
+  .hero-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    color: var(--color-text);
   }
-  .app-name-han { font-size: .52em; font-weight: 400; color: var(--color-text-muted); }
-  .app-desc { font-size: .95rem; color: var(--color-text-muted); }
+  .hero-sub {
+    font-size: .9rem;
+    color: var(--color-text-muted);
+    margin-top: -.5rem;
+  }
 
   /* Search */
-  .search-area { width: 100%; max-width: 580px; margin: .3rem auto 0; }
+  .search-area { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
   .search-wrapper {
-    display: flex; align-items: center;
-    background: var(--color-surface);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg);
     border: 1.5px solid var(--color-border);
     border-radius: 999px;
     box-shadow: var(--shadow-md);
@@ -133,151 +196,284 @@ export const prerender = true;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent), var(--shadow-md);
   }
   .search-icon {
-    display: flex; align-items: center;
-    padding: 0 12px 0 18px;
-    color: var(--color-text-muted); pointer-events: none; flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 12px 0 20px;
+    color: var(--color-text-muted);
+    pointer-events: none;
+    flex-shrink: 0;
   }
   .search-input {
-    flex: 1; border: none; outline: none;
-    background: transparent; color: var(--color-text);
-    font-size: 1rem; font-family: var(--font-sans);
-    padding: 15px 0; min-width: 0;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    padding: 14px 0;
+    min-width: 0;
   }
   .search-input::placeholder { color: var(--color-text-muted); opacity: .7; }
   .search-input::-webkit-search-cancel-button { display: none; }
-
   .search-spinner {
-    display: none; width: 18px; height: 18px; flex-shrink: 0;
-    border: 2px solid var(--color-border); border-top-color: var(--color-primary);
-    border-radius: 50%; margin-right: 14px;
+    display: none;
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    border: 2.5px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    margin-right: 16px;
+    animation: spin .7s linear infinite;
   }
-  .search-spinner.active { display: block; animation: spin .7s linear infinite; }
+  .search-spinner.active { display: block; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  .search-hint {
+  .search-clear {
     display: flex; align-items: center; justify-content: center;
-    margin-right: 14px; padding: 3px 7px;
-    border: 1px solid var(--color-border); border-radius: 6px;
-    background: var(--color-bg); color: var(--color-text-muted);
-    font-family: var(--font-mono); font-size: .78rem; flex-shrink: 0;
-    transition: opacity .2s;
+    width: 28px; height: 28px; margin-right: 10px;
+    border-radius: 50%; border: none; background: var(--color-border);
+    color: var(--color-text-muted); cursor: pointer; flex-shrink: 0;
+    transition: background .15s, color .15s;
   }
-  .search-wrapper:focus-within .search-hint { opacity: 0; pointer-events: none; }
+  .search-clear:hover { background: var(--color-primary); color: #fff; }
 
-  .search-caption {
-    margin-top: 9px; text-align: center;
-    font-size: .75rem; color: var(--color-text-muted);
+  /* Filter tabs */
+  .filter-tabs {
+    display: flex;
+    gap: .4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1rem;
   }
-  .sep { margin: 0 4px; opacity: .4; }
-  .kbd {
-    display: inline; padding: 1px 5px; border: 1px solid var(--color-border);
-    border-radius: 4px; font-family: var(--font-mono); font-size: .72rem;
-    background: var(--color-bg); color: var(--color-text-muted);
+  .filter-tab {
+    padding: .4rem 1rem;
+    border-radius: 999px;
+    font-size: .82rem;
+    font-weight: 500;
+    border: 1.5px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all .2s;
   }
+  .filter-tab:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+  }
+  .filter-tab--active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+  }
+  .filter-tab--active:hover { background: var(--color-primary-hover); }
 
-  /* Main area */
-  .main-area { flex: 1; padding-top: 1.5rem; padding-bottom: 4rem; }
+  /* Main */
+  .main-area { flex: 1; padding: 1.75rem 1.5rem 4rem; }
+  .container { max-width: 1120px; margin: 0 auto; }
+
+  /* Section header */
+  .section-hdr { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+  .section-label {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--color-text-muted);
+  }
 
   /* Results grid */
-  .results-grid {
-    display: grid; gap: .75rem;
-    grid-template-columns: 1fr;
-  }
+  .results-grid { display: grid; gap: .75rem; grid-template-columns: 1fr; }
   @media (min-width: 560px) { .results-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 760px) { .results-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 820px) { .results-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1080px) { .results-grid { grid-template-columns: repeat(4, 1fr); } }
 
-  /* Cards (rendered by JS) */
-  :global(.entry-card) {
-    display: flex; align-items: stretch;
+  /* Dashboard card */
+  .dash-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: 20px;
     box-shadow: var(--shadow-sm);
-    overflow: hidden; text-decoration: none; color: inherit;
-    transition: box-shadow .15s, transform .15s, outline .1s;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .dash-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+  }
+  .dash-card-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .btn-sm {
+    background: none;
+    border: 1.5px solid var(--color-border);
+    color: var(--color-text-muted);
+    border-radius: 8px;
+    padding: .3rem .75rem;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-sm:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 560px) { .tips-grid { grid-template-columns: repeat(3, 1fr); } }
+  .tip-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+  }
+  .tip-icon {
+    width: 40px; height: 40px;
+    background: var(--color-primary-dim);
+    color: var(--color-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tip-title { font-size: .95rem; font-weight: 700; color: var(--color-text); }
+  .tip-body { font-size: .84rem; color: var(--color-text-muted); line-height: 1.6; }
+
+  /* Entry cards (JS-rendered) */
+  :global(.entry-card) {
+    display: flex;
+    align-items: stretch;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow .15s, transform .15s;
     animation: fadeIn .18s ease;
     position: relative;
   }
   :global(.entry-card:hover) {
-    box-shadow: var(--shadow-md); transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
     text-decoration: none;
   }
   :global(.entry-card.focused) {
-    outline: 2px solid var(--color-primary);
+    outline: 2.5px solid var(--color-primary);
     outline-offset: 0px;
     box-shadow: var(--shadow-md);
   }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
   :global(.card-accent) {
     background: var(--color-primary);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 1rem 1.1rem; min-width: 82px; gap: .15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem .9rem;
+    min-width: 70px;
+    gap: .2rem;
   }
-  :global(.card-simplified) { font-size: 2rem; color: #fff; line-height: 1; font-weight: 400; }
-  :global(.card-traditional) { font-size: .72rem; color: rgba(255,255,255,.6); }
+  :global(.card-simplified) {
+    font-size: 1.9rem;
+    color: #fff;
+    line-height: 1;
+    font-weight: 400;
+  }
+  :global(.card-traditional) {
+    font-size: .65rem;
+    color: rgba(255,255,255,.65);
+    letter-spacing: .03em;
+  }
   :global(.card-body) {
-    flex: 1; padding: .85rem 1rem;
-    display: flex; flex-direction: column; gap: .25rem; justify-content: center;
+    flex: 1;
+    padding: .75rem .9rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    justify-content: center;
+    min-width: 0;
   }
-  :global(.card-vietnamese) { font-size: 1rem; font-weight: 600; color: var(--color-text); }
-  :global(.card-pinyin) { font-size: .85rem; font-style: italic; color: var(--color-primary); }
-  :global(.card-fav) {
-    position: absolute; top: 7px; right: 8px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--color-primary); line-height: 1;
+  :global(.card-vietnamese) {
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  :global(.card-fav svg) { width: 12px; height: 12px; }
-
-  /* Section header */
-  .section-header {
-    display: flex; align-items: center;
-    justify-content: space-between; margin-bottom: 1rem; gap: 1rem;
+  :global(.card-pinyin) {
+    font-size: .8rem;
+    font-style: italic;
+    color: var(--color-primary);
   }
-  .section-title {
-    font-size: 1rem; font-weight: 600;
+  :global(.card-hanviet) {
+    font-size: .75rem;
     color: var(--color-text-muted);
-    text-transform: uppercase; letter-spacing: .05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .btn-secondary {
-    background: none; border: 1.5px solid var(--color-border);
-    color: var(--color-text-muted); border-radius: var(--radius-sm);
-    padding: .3rem .75rem; font-size: .8rem; cursor: pointer;
-    transition: all .15s;
+  :global(.card-fav) {
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    color: #f59e0b;
+    line-height: 1;
   }
-  .btn-secondary:hover { border-color: var(--color-primary); color: var(--color-primary); }
+  :global(.card-fav svg) { width: 11px; height: 11px; }
 
   /* State messages */
   .state-msg {
-    text-align: center; padding: 2.5rem 1rem;
-    color: var(--color-text-muted); font-size: .95rem; line-height: 1.7;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--color-text-muted);
+    font-size: .95rem;
+    line-height: 1.7;
   }
-  .state-msg.error { color: var(--color-primary); }
+  .state-msg.error { color: #dc2626; }
 
   /* Empty state */
   .empty-state {
-    display: flex; flex-direction: column;
-    align-items: center; text-align: center;
-    padding: 3rem 1rem; gap: .6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    gap: .6rem;
   }
-  .empty-icon {
-    display: flex; align-items: center; justify-content: center;
-    color: var(--color-border); line-height: 1;
-  }
-  .empty-icon svg { width: 48px; height: 48px; }
-  .empty-title { font-size: 1.1rem; font-weight: 600; color: var(--color-text); }
-  .empty-sub { font-size: .88rem; color: var(--color-text-muted); max-width: 300px; line-height: 1.6; }
+  .empty-icon { color: var(--color-border); }
+  .empty-title { font-size: 1.05rem; font-weight: 600; color: var(--color-text); }
+  .empty-sub { font-size: .85rem; color: var(--color-text-muted); max-width: 300px; line-height: 1.6; }
 
   .hidden { display: none !important; }
 
+  /* Footer */
   .footer {
     border-top: 1px solid var(--color-border);
-    padding: 1.25rem 0; text-align: center;
-    font-size: .8rem; color: var(--color-text-muted);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    font-size: .78rem;
+    color: var(--color-text-muted);
   }
 </style>
 
-<!-- ═══════════════════════ Client Script ═══════════════════════ -->
 <script>
   import { getHistory, addToHistory, clearHistory, isFavorite } from '@/lib/storage';
   import { search, preloadCommonChunks, type DictEntry } from '@/lib/searchService';
@@ -286,7 +482,7 @@ export const prerender = true;
   // ── DOM refs ──────────────────────────────────────────────────────────────
   const input          = document.getElementById('search-input')    as HTMLInputElement;
   const spinner        = document.getElementById('search-spinner')  as HTMLSpanElement;
-  const hint           = document.getElementById('search-hint')     as HTMLElement;
+  const clearBtn       = document.getElementById('search-clear')    as HTMLButtonElement;
   const searchSection  = document.getElementById('search-section')  as HTMLElement;
   const results        = document.getElementById('results')          as HTMLDivElement;
   const emptyEl        = document.getElementById('empty-state')     as HTMLDivElement;
@@ -296,6 +492,19 @@ export const prerender = true;
   const historyGrid    = document.getElementById('history-grid')    as HTMLDivElement;
   const historyEmpty   = document.getElementById('history-empty')   as HTMLDivElement;
   const clearHistBtn   = document.getElementById('clear-history-btn') as HTMLButtonElement;
+  const resultsLabel   = document.getElementById('results-label')   as HTMLElement;
+
+  // ── Filter tabs ──────────────────────────────────────────────────────────
+  document.querySelectorAll<HTMLButtonElement>('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => {
+        t.classList.remove('filter-tab--active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('filter-tab--active');
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
 
   // ── State ─────────────────────────────────────────────────────────────────
   let debounceTimer: ReturnType<typeof setTimeout> | null = null;
@@ -323,8 +532,7 @@ export const prerender = true;
         ${e.hanviet ? `<div class="card-hanviet">${e.hanviet}</div>` : ''}
       </div>
       ${faved ? `<span class="card-fav" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-          fill="currentColor" stroke="none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
         </svg>
       </span>` : ''}
@@ -332,12 +540,7 @@ export const prerender = true;
     return a;
   }
 
-  // ── Style for hanviet ─────────────────────────────────────────────────────
-  const style = document.createElement('style');
-  style.textContent = `.card-hanviet { font-size: .78rem; color: var(--color-text-muted); }`;
-  document.head.appendChild(style);
-
-  // ── Keyboard navigation trong kết quả tìm kiếm ───────────────────────────
+  // ── Keyboard navigation ───────────────────────────────────────────────────
   function getCards(): HTMLAnchorElement[] {
     return Array.from(results.querySelectorAll<HTMLAnchorElement>('.entry-card'));
   }
@@ -355,25 +558,15 @@ export const prerender = true;
   input.addEventListener('keydown', (e) => {
     const cards = getCards();
     if (!cards.length) return;
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setFocus(focusedIdx + 1);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setFocus(focusedIdx <= 0 ? -1 : focusedIdx - 1);
-    } else if (e.key === 'Enter' && focusedIdx >= 0) {
-      e.preventDefault();
-      cards[focusedIdx].click();
-    } else if (e.key === 'Escape') {
-      setFocus(-1);
-    }
+    if (e.key === 'ArrowDown') { e.preventDefault(); setFocus(focusedIdx + 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setFocus(focusedIdx <= 0 ? -1 : focusedIdx - 1); }
+    else if (e.key === 'Enter' && focusedIdx >= 0) { e.preventDefault(); cards[focusedIdx].click(); }
+    else if (e.key === 'Escape') { setFocus(-1); }
   });
 
   // ── Loading state ─────────────────────────────────────────────────────────
   function setLoading(on: boolean) {
     spinner.classList.toggle('active', on);
-    hint.style.opacity = on ? '0' : '';
   }
 
   // ── UI: show/hide sections ─────────────────────────────────────────────────
@@ -381,18 +574,24 @@ export const prerender = true;
     searchSection.classList.remove('hidden');
     historySection.style.display = 'none';
   }
-
   function showHistoryUI() {
     searchSection.classList.add('hidden');
     historySection.style.display = '';
     renderHistory();
   }
 
+  // ── Clear button ──────────────────────────────────────────────────────────
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.hidden = true;
+    doSearch('');
+    input.focus();
+  });
+
   // ── Lịch sử ──────────────────────────────────────────────────────────────
   function renderHistory() {
     historyGrid.innerHTML = '';
     const h = getHistory();
-
     if (h.length === 0) {
       historyHeader.style.display = 'none';
       historyEmpty.classList.remove('hidden');
@@ -408,7 +607,7 @@ export const prerender = true;
     renderHistory();
   });
 
-  // ── Tìm kiếm (Client-side) ────────────────────────────────────────────────
+  // ── Tìm kiếm ─────────────────────────────────────────────────────────────
   async function doSearch(q: string) {
     if (q === lastQuery) return;
     lastQuery = q;
@@ -430,6 +629,8 @@ export const prerender = true;
       currentResults = data;
       results.innerHTML = '';
 
+      if (resultsLabel) resultsLabel.textContent = `${data.length} kết quả cho "${q}"`;
+
       if (data.length === 0) {
         emptyEl.innerHTML = `Không tìm thấy kết quả cho <strong>"${q}"</strong>`;
         emptyEl.classList.remove('hidden');
@@ -448,19 +649,14 @@ export const prerender = true;
 
   // ── Input events ──────────────────────────────────────────────────────────
   input.addEventListener('input', () => {
-    if (debounceTimer) clearTimeout(debounceTimer);
     const q = input.value;
-
-    if (!q.trim()) {
-      if (debounceTimer) clearTimeout(debounceTimer);
-      doSearch('');
-      return;
-    }
+    clearBtn.hidden = !q;
+    if (debounceTimer) clearTimeout(debounceTimer);
+    if (!q.trim()) { doSearch(''); return; }
     debounceTimer = setTimeout(() => doSearch(q), 300);
   });
 
   // ── Init ─────────────────────────────────────────────────────────────────
-  // Preload common chunks in background
   preloadCommonChunks().catch(() => {});
   showHistoryUI();
   input.focus();

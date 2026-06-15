@@ -2,17 +2,19 @@
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
-  backHref?: string;   // nếu có → hiển thị nút quay lại thay logo
+  backHref?: string;
+  activePage?: 'home' | 'favorites';
 }
 
-const { backHref } = Astro.props;
+const { backHref, activePage = 'home' } = Astro.props;
 ---
 
 <header class="header">
   <div class="header-inner">
+    <!-- Left: Logo or Back -->
     {backHref ? (
       <a href={backHref} class="back-btn" aria-label="Quay lại">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M19 12H5M12 5l-7 7 7 7"/>
         </svg>
@@ -20,63 +22,111 @@ const { backHref } = Astro.props;
       </a>
     ) : (
       <a href="/" class="brand" aria-label="WenZi — Trang chủ">
-        <img src="/favicon.svg" alt="" width="28" height="28" class="brand-logo" />
+        <img src="/favicon.png" alt="" width="32" height="32" class="brand-logo" />
         <span class="brand-name">WenZi</span>
-        <span class="brand-han" aria-hidden="true">文字</span>
       </a>
     )}
 
+    <!-- Center: Nav -->
     <nav class="nav">
-      <a href="/favorites" class="nav-link" aria-label="Từ yêu thích">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <a href="/" class={`nav-link ${activePage === 'home' ? 'nav-link--active' : ''}`}>
+        Trang chủ
+      </a>
+      <a href="/favorites" class={`nav-link ${activePage === 'favorites' ? 'nav-link--active' : ''}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="nav-icon">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
         </svg>
-        <span class="nav-label">Yêu thích</span>
+        Yêu thích
       </a>
     </nav>
 
-    <ThemeToggle />
+    <!-- Right: Controls -->
+    <div class="controls">
+      <ThemeToggle />
+    </div>
   </div>
 </header>
 
 <style>
   .header {
+    background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
-    position: sticky; top: 0; z-index: 10;
-    backdrop-filter: blur(12px);
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 8px rgba(0,0,0,.05);
   }
+
   .header-inner {
-    display: flex; align-items: center;
-    gap: .75rem; height: 56px;
-    max-width: 860px; margin: 0 auto;
-    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    gap: 1rem;
   }
+
+  /* Brand */
   .brand {
-    display: flex; align-items: center; gap: 8px;
-    text-decoration: none; color: var(--color-text);
-    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    flex-shrink: 0;
   }
-  .brand-logo { border-radius: 50%; width: 28px; height: 28px; flex-shrink: 0; }
-  .brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; }
-  .brand-han  { font-size: .9rem; color: var(--color-text-muted); }
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .brand-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -.02em;
+    color: var(--color-text);
+  }
 
+  /* Back button */
   .back-btn {
-    display: flex; align-items: center; gap: 6px;
-    color: var(--color-text-muted); text-decoration: none;
-    font-size: .9rem; font-weight: 500;
-    margin-right: auto;
-    transition: color .15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: .35rem .75rem;
+    border-radius: 8px;
+    transition: color .15s, background .15s;
   }
-  .back-btn:hover { color: var(--color-primary); text-decoration: none; }
+  .back-btn:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+    text-decoration: none;
+  }
 
-  .nav { display: flex; align-items: center; }
+  /* Nav */
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    margin: 0 auto;
+  }
   .nav-link {
-    display: flex; align-items: center; gap: 5px;
-    color: var(--color-text-muted); font-size: .85rem;
-    text-decoration: none; padding: .35rem .7rem;
-    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .4rem .9rem;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
     transition: color .15s, background .15s;
   }
   .nav-link:hover {
@@ -84,5 +134,26 @@ const { backHref } = Astro.props;
     background: var(--color-primary-dim);
     text-decoration: none;
   }
-  @media (max-width: 400px) { .nav-label { display: none; } }
+  .nav-link--active {
+    background: var(--color-primary);
+    color: #fff !important;
+  }
+  .nav-link--active:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
+  }
+  .nav-icon { flex-shrink: 0; }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  @media (max-width: 480px) {
+    .nav-link span { display: none; }
+  }
 </style>

@@ -3,8 +3,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import sampleData from '@/data/sample_dictionary.json';
 
-// Pre-generate static pages for all entries in sample data
-// In production with larger datasets, you'd limit this or use client-side only
 export function getStaticPaths() {
   return sampleData.map((entry, index) => ({
     params: { id: String(index) },
@@ -28,198 +26,279 @@ const pageTitle = `${simplified} — WenZi`;
   <div class="page">
     <Header backHref="/" />
 
-    <main class="detail container">
+    <main class="detail">
+      <div class="container">
 
-      <!-- Chữ lớn + phiên âm -->
-      <section class="char-section">
-        <div class="char-display">
-          <span class="char-main" lang="zh">{simplified}</span>
-          {showTraditional && (
-            <span class="char-trad" lang="zh" title="Phồn thể">{traditional}</span>
-          )}
+        <!-- Character card -->
+        <div class="char-card">
+          <div class="char-card-inner">
+            <div class="char-display">
+              <span class="char-main" lang="zh">{simplified}</span>
+              {showTraditional && (
+                <div class="char-trad-wrap">
+                  <span class="char-trad-label">Phồn thể</span>
+                  <span class="char-trad" lang="zh">{traditional}</span>
+                </div>
+              )}
+            </div>
+            <div class="char-meta">
+              {pinyin && <p class="char-pinyin">{pinyin}</p>}
+              {hanviet && <p class="char-hanviet">Hán Việt: <strong>{hanviet}</strong></p>}
+            </div>
+          </div>
         </div>
 
-        {pinyin && (
-          <p class="pinyin">{pinyin}</p>
-        )}
+        <!-- Meaning card -->
+        <div class="meaning-card">
+          <span class="meaning-label">Nghĩa tiếng Việt</span>
+          <p class="meaning-text">{vietnamese}</p>
+        </div>
 
-        {hanviet && (
-          <p class="hanviet">Hán Việt: {hanviet}</p>
-        )}
-      </section>
+        <!-- Actions -->
+        <div class="actions">
+          <button class="action-btn" id="speak-btn" type="button" aria-label="Phát âm">
+            <span class="action-btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+            </span>
+            <span id="speak-label">Phát âm</span>
+          </button>
 
-      <!-- Nghĩa -->
-      <section class="meaning-section">
-        <span class="label">Nghĩa tiếng Việt</span>
-        <p class="meaning">{vietnamese}</p>
-      </section>
+          <button class="action-btn action-btn--fav" id="fav-btn" type="button" aria-label="Yêu thích">
+            <span class="action-btn-icon">
+              <svg id="fav-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </span>
+            <span id="fav-label">Yêu thích</span>
+          </button>
+        </div>
 
-      <!-- Hành động -->
-      <div class="actions">
-        <button class="btn btn-speak" id="speak-btn" type="button" aria-label="Phát âm">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-          </svg>
-          <span id="speak-label">Phát âm</span>
-        </button>
+        <!-- Info pills -->
+        <div class="info-pills">
+          {pinyin && (
+            <div class="pill">
+              <span class="pill-label">Pinyin</span>
+              <span class="pill-value">{pinyin}</span>
+            </div>
+          )}
+          {hanviet && (
+            <div class="pill">
+              <span class="pill-label">Hán Việt</span>
+              <span class="pill-value">{hanviet}</span>
+            </div>
+          )}
+          {showTraditional && (
+            <div class="pill">
+              <span class="pill-label">Phồn thể</span>
+              <span class="pill-value" lang="zh">{traditional}</span>
+            </div>
+          )}
+          <div class="pill">
+            <span class="pill-label">Giản thể</span>
+            <span class="pill-value" lang="zh">{simplified}</span>
+          </div>
+        </div>
 
-        <button class="btn btn-fav" id="fav-btn" type="button" aria-label="Yêu thích">
-          <svg id="fav-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          <span id="fav-label">Yêu thích</span>
-        </button>
       </div>
-
-      <!-- Dữ liệu truyền sang client -->
-      <div id="entry-data"
-        data-id={id}
-        data-simplified={simplified}
-        data-traditional={traditional ?? ''}
-        data-pinyin={pinyin ?? ''}
-        data-hanviet={hanviet ?? ''}
-        data-vietnamese={vietnamese}
-        hidden
-      ></div>
-
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <p>WenZi © 2026 &mdash; MIT License</p>
-      </div>
+      <p>WenZi © 2026 &mdash; MIT License</p>
     </footer>
   </div>
+
+  <!-- Data bridge for client script -->
+  <div id="entry-data"
+    data-id={id}
+    data-simplified={simplified}
+    data-traditional={traditional ?? ''}
+    data-pinyin={pinyin ?? ''}
+    data-hanviet={hanviet ?? ''}
+    data-vietnamese={vietnamese}
+    hidden
+  ></div>
 </BaseLayout>
 
 <style>
   .page { display: flex; flex-direction: column; min-height: 100dvh; }
 
+  .detail { flex: 1; padding: 2rem 1.5rem 4rem; }
   .container {
-    max-width: 680px; margin: 0 auto;
-    padding: 0 1.25rem; width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
-  /* Detail layout */
-  .detail {
-    flex: 1;
-    display: flex; flex-direction: column;
-    gap: 2rem;
-    padding-top: 3rem;
-    padding-bottom: 4rem;
+  /* Character card */
+  .char-card {
+    background: var(--color-primary);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--color-primary) 35%, transparent);
   }
-
-  /* Chữ lớn */
-  .char-section {
-    display: flex; flex-direction: column;
-    align-items: center; text-align: center;
-    gap: .75rem;
+  .char-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
-
   .char-display {
-    display: flex; align-items: flex-end; gap: 1.25rem;
-    flex-wrap: wrap; justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-
   .char-main {
-    font-size: clamp(5rem, 20vw, 9rem);
+    font-size: clamp(4.5rem, 18vw, 8rem);
     line-height: 1;
-    color: var(--color-primary);
+    color: #fff;
     font-weight: 300;
     letter-spacing: -.02em;
-    text-shadow: 0 2px 16px color-mix(in srgb, var(--color-primary) 20%, transparent);
+    text-shadow: 0 4px 24px rgba(0,0,0,.2);
   }
-
+  .char-trad-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .25rem;
+    padding-bottom: .75rem;
+  }
+  .char-trad-label {
+    font-size: .65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: rgba(255,255,255,.55);
+  }
   .char-trad {
-    font-size: clamp(1.6rem, 6vw, 2.4rem);
-    color: var(--color-text-muted);
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    color: rgba(255,255,255,.75);
     font-weight: 300;
-    padding-bottom: .5rem;
   }
-  .char-trad::before {
-    content: '(';
-    color: var(--color-border);
-    margin-right: .1em;
-  }
-  .char-trad::after {
-    content: ')';
-    color: var(--color-border);
-    margin-left: .1em;
-  }
-
-  .pinyin {
-    font-size: 1.5rem;
+  .char-meta { display: flex; flex-direction: column; gap: .35rem; }
+  .char-pinyin {
+    font-size: 1.4rem;
     font-style: italic;
-    color: var(--color-text-muted);
+    color: rgba(255,255,255,.9);
     letter-spacing: .02em;
   }
-
-  .hanviet {
-    font-size: 1.1rem;
-    color: var(--color-text-muted);
+  .char-hanviet {
+    font-size: 1rem;
+    color: rgba(255,255,255,.7);
   }
+  .char-hanviet strong { color: rgba(255,255,255,.9); font-weight: 600; }
 
-  /* Nghĩa */
-  .meaning-section {
+  /* Meaning card */
+  .meaning-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.25rem 1.5rem;
-    display: flex; flex-direction: column; gap: .4rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
   }
-
-  .label {
-    font-size: .72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: .07em;
+  .meaning-label {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
     color: var(--color-text-muted);
   }
-
-  .meaning {
-    font-size: 1.3rem; font-weight: 600;
-    color: var(--color-text); line-height: 1.4;
+  .meaning-text {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.45;
   }
 
-  /* Buttons */
-  .actions {
-    display: flex; gap: .75rem; flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 7px;
-    padding: .65rem 1.2rem;
-    border-radius: var(--radius-sm);
-    font-size: .9rem; font-weight: 500;
+  /* Actions */
+  .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: .65rem 1.25rem;
+    border-radius: 12px;
+    font-size: .9rem;
+    font-weight: 500;
     cursor: pointer;
     border: 1.5px solid var(--color-border);
     background: var(--color-surface);
     color: var(--color-text-muted);
+    box-shadow: var(--shadow-sm);
     transition: all .15s;
   }
-  .btn:hover { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-primary-dim); }
-  .btn:active { transform: scale(.97); }
-
-  .btn-fav.active {
-    background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+  .action-btn:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
+    background: var(--color-primary-dim);
   }
-  .btn-fav.active #fav-icon { fill: var(--color-primary); }
+  .action-btn:active { transform: scale(.97); }
+  .action-btn-icon { display: flex; align-items: center; }
 
-  .btn-speak.speaking {
+  .action-btn--fav.active {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #d97706;
+  }
+  .action-btn--fav.active #fav-icon { fill: #f59e0b; stroke: #f59e0b; }
+
+  .action-btn.speaking {
     border-color: var(--color-primary);
     color: var(--color-primary);
     animation: pulse 1s ease infinite;
   }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
+
+  /* Info pills */
+  .info-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+  }
+  .pill {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    padding: .65rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    min-width: 90px;
+  }
+  .pill-label {
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--color-text-muted);
+  }
+  .pill-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: .01em;
+  }
 
   .footer {
     border-top: 1px solid var(--color-border);
-    padding: 1.25rem 0; text-align: center;
-    font-size: .8rem; color: var(--color-text-muted);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    font-size: .78rem;
+    color: var(--color-text-muted);
   }
 </style>
 
@@ -227,8 +306,7 @@ const pageTitle = `${simplified} — WenZi`;
   import { addToHistory, isFavorite, toggleFavorite } from '@/lib/storage';
   import type { StoredEntry } from '@/lib/storage';
 
-  // ── Đọc dữ liệu từ DOM ──────────────────────────────────────────────────
-  const el  = document.getElementById('entry-data')!;
+  const el = document.getElementById('entry-data')!;
   const entry: StoredEntry = {
     id:          Number(el.dataset.id),
     simplified:  el.dataset.simplified!,
@@ -238,10 +316,8 @@ const pageTitle = `${simplified} — WenZi`;
     vietnamese:  el.dataset.vietnamese!,
   };
 
-  // ── Lưu lịch sử ─────────────────────────────────────────────────────────
   addToHistory(entry);
 
-  // ── Nút yêu thích ───────────────────────────────────────────────────────
   const favBtn   = document.getElementById('fav-btn')!;
   const favLabel = document.getElementById('fav-label')!;
   const favIcon  = document.getElementById('fav-icon')!;
@@ -251,41 +327,26 @@ const pageTitle = `${simplified} — WenZi`;
     favLabel.textContent = active ? 'Đã lưu' : 'Yêu thích';
     favIcon.setAttribute('fill', active ? 'currentColor' : 'none');
   }
-
   updateFavUI(isFavorite(entry.id));
-
   favBtn.addEventListener('click', () => {
-    const nowFaved = toggleFavorite(entry);
-    updateFavUI(nowFaved);
+    updateFavUI(toggleFavorite(entry));
   });
 
-  // ── Phát âm (Web Speech API) ─────────────────────────────────────────────
   const speakBtn   = document.getElementById('speak-btn')!;
   const speakLabel = document.getElementById('speak-label')!;
 
   function speak(text: string) {
-    if (!('speechSynthesis' in window)) {
-      alert('Trình duyệt của bạn không hỗ trợ tính năng phát âm.');
-      return;
-    }
-
+    if (!('speechSynthesis' in window)) { alert('Trình duyệt không hỗ trợ phát âm.'); return; }
     window.speechSynthesis.cancel();
-
-    const utt  = new SpeechSynthesisUtterance(text);
-    utt.lang   = 'zh-CN';
-    utt.rate   = 0.85;
-    utt.pitch  = 1;
-
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = 'zh-CN'; utt.rate = 0.85; utt.pitch = 1;
     speakBtn.classList.add('speaking');
     speakLabel.textContent = 'Đang phát...';
-
     utt.onend = utt.onerror = () => {
       speakBtn.classList.remove('speaking');
       speakLabel.textContent = 'Phát âm';
     };
-
     window.speechSynthesis.speak(utt);
   }
-
   speakBtn.addEventListener('click', () => speak(entry.simplified));
 </script>
