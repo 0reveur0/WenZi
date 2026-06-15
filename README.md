@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/favicon.png" width="500" alt="WenZi Logo">
+  <img src="/favicon.png" width="250" alt="WenZi Logo">
 </p>
 
 # WenZi - Từ điển Hán Việt
