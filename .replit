@@ -1,4 +1,4 @@
-modules = ["nodejs-20"]
+modules = ["nodejs-20", "bun-1.3"]
 [agent]
 expertMode = true
 stack = "BEST_EFFORT_FALLBACK"
