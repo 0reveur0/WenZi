@@ -4,10 +4,12 @@
 
 ## Công nghệ
 
-- [Astro](https://astro.build/) — framework web
+- [Astro](https://astro.build/) v5 — web framework, SSR mode
 - [Bun](https://bun.sh/) — runtime & package manager
 - [TypeScript](https://www.typescriptlang.org/) — ngôn ngữ chính
-- [SQLite](https://www.sqlite.org/) qua `bun:sqlite` — cơ sở dữ liệu
+- [sql.js](https://sql.js.org/) — SQLite biên dịch sang WebAssembly (không cần binary native)
+
+> **Ghi chú SQLite:** `bun:sqlite` không hoạt động qua Vite SSR của Astro (Vite dùng Node ESM loader riêng cho server-side code). `sql.js` là lựa chọn tương thích nhất — SQLite thuần WASM, không cần biên dịch native.
 
 ## Yêu cầu
 
@@ -27,22 +29,50 @@ bun run dev
 
 Ứng dụng chạy tại `http://localhost:5000`.
 
-## Build
+## Build production
 
 ```bash
 bun run build
+```
+
+> Lưu ý: Production build yêu cầu cài thêm Astro SSR adapter (ví dụ `@astrojs/node`).
+
+## API
+
+```
+GET /api/search?q=<keyword>
+```
+
+Tìm kiếm theo: chữ Hán giản thể / phồn thể · pinyin · nghĩa tiếng Việt
+
+```json
+[
+  {
+    "simplified": "学生",
+    "traditional": "學生",
+    "pinyin": "xué shēng",
+    "vietnamese": "Học sinh"
+  }
+]
 ```
 
 ## Cấu trúc thư mục
 
 ```
 src/
-├── components/   # Các component UI tái sử dụng (Astro, TS)
-├── layouts/      # Layout dùng chung (BaseLayout, v.v.)
-├── pages/        # Các trang — mỗi file là một route
-├── lib/          # Tiện ích, kết nối DB, helper
-└── data/         # File SQLite và dữ liệu tĩnh
-public/           # Tài sản tĩnh (ảnh, font, favicon)
+├── components/   # Component UI tái sử dụng
+│   └── ThemeToggle.astro
+├── layouts/      # Layout dùng chung
+│   └── BaseLayout.astro
+├── pages/        # Mỗi file = một route
+│   ├── index.astro
+│   └── api/
+│       └── search.ts
+├── lib/          # Tiện ích, kết nối DB
+│   ├── db.ts     # SQLite singleton (sql.js)
+│   └── schema.ts # Định nghĩa kiểu TypeScript
+└── data/         # File wenzi.db (tự tạo khi chạy)
+public/           # Tài sản tĩnh
 ```
 
 ## Giấy phép

@@ -1,0 +1,176 @@
+Tiếp tục phát triển dự án WenZi dựa trên code hiện có.
+
+## Mục tiêu
+
+Thay thế dữ liệu mẫu bằng dữ liệu từ điển thực tế và xây dựng hệ thống import dữ liệu ổn định.
+
+Tiếp tục sử dụng:
+
+* Astro
+* Bun
+* TypeScript
+* SQLite
+
+Không sử dụng dịch vụ bên thứ ba.
+
+---
+
+## Import dữ liệu từ điển
+
+Xây dựng hệ thống import dữ liệu từ file.
+
+Hỗ trợ:
+
+```text
+CSV
+JSON
+CC-CEDICT format
+```
+
+Tạo thư mục:
+
+```text
+data/imports/
+```
+
+Để chứa dữ liệu gốc.
+
+---
+
+## Database
+
+Mở rộng bảng `dictionary`.
+
+Cấu trúc mới:
+
+```sql
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+simplified TEXT NOT NULL,
+traditional TEXT,
+pinyin TEXT,
+vietnamese TEXT NOT NULL,
+hsk_level INTEGER,
+created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+```
+
+Yêu cầu:
+
+* Tự động migration nếu database cũ chưa có cột mới.
+* Không làm mất dữ liệu hiện có.
+
+---
+
+## Import Script
+
+Tạo script:
+
+```bash
+bun run import-dictionary
+```
+
+Chức năng:
+
+* Đọc dữ liệu từ thư mục import.
+* Chuyển đổi về format chuẩn.
+* Làm sạch dữ liệu.
+* Loại bỏ bản ghi trùng lặp.
+* Import vào SQLite.
+
+Yêu cầu:
+
+* Hiển thị tiến trình import.
+* Hiển thị số lượng:
+
+  * Tổng số bản ghi
+  * Bản ghi đã import
+  * Bản ghi bị bỏ qua
+
+---
+
+## Tối ưu tìm kiếm
+
+Thêm index cho:
+
+* simplified
+* traditional
+* pinyin
+* vietnamese
+
+Đảm bảo tìm kiếm nhanh với:
+
+* 50.000+
+* 100.000+
+* 200.000+ từ
+
+---
+
+## Cải thiện API tìm kiếm
+
+Bổ sung:
+
+### Sắp xếp kết quả ưu tiên:
+
+1. Khớp chính xác giản thể
+2. Khớp chính xác phồn thể
+3. Khớp chính xác pinyin
+4. Khớp chính xác tiếng Việt
+5. Khớp chứa một phần
+
+Ví dụ:
+
+Tìm:
+
+```text
+中国
+```
+
+Phải trả kết quả chính xác lên đầu.
+
+---
+
+## Giới hạn kết quả
+
+Mặc định:
+
+```text
+20 kết quả
+```
+
+Hỗ trợ:
+
+```text
+GET /api/search?q=中国&limit=50
+```
+
+Giới hạn tối đa:
+
+```text
+100 kết quả
+```
+
+---
+
+## Chất lượng dữ liệu
+
+Trong quá trình import:
+
+* Loại bỏ khoảng trắng thừa.
+* Chuẩn hóa pinyin.
+* Bỏ bản ghi thiếu giản thể hoặc nghĩa tiếng Việt.
+* Tránh import dữ liệu trùng lặp.
+
+---
+
+## Yêu cầu code
+
+* Không thêm ORM.
+* Tiếp tục sử dụng SQLite trực tiếp.
+* Không thêm package không cần thiết.
+* Ưu tiên hiệu năng và tính đơn giản.
+* Nếu sửa file, luôn cung cấp nội dung hoàn chỉnh của file.
+
+Sau khi hoàn thành:
+
+1. Giải thích quy trình import dữ liệu.
+2. Giải thích chiến lược tối ưu tìm kiếm.
+3. Ước tính hiệu năng khi xử lý khoảng 100.000 từ.
