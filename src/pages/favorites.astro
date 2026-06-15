@@ -23,9 +23,21 @@ export const prerender = true;
 
       <div id="fav-grid"  class="results-grid"></div>
       <div id="fav-empty" class="empty-state">
-        <span class="empty-icon">☆</span>
+        <span class="empty-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </span>
         <p class="empty-title">Chưa có từ yêu thích</p>
-        <p class="empty-sub">Nhấn vào biểu tượng <strong>★</strong> trên trang chi tiết để lưu từ vào đây.</p>
+        <p class="empty-sub">Nhấn vào biểu tượng
+          <strong>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align: text-bottom;">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </strong>
+          trên trang chi tiết để lưu từ vào đây.
+        </p>
         <a href="/" class="btn-home">Tìm từ ngay</a>
       </div>
     </main>
@@ -118,9 +130,14 @@ export const prerender = true;
     align-items: center; text-align: center;
     padding: 4rem 1rem; gap: .75rem;
   }
-  .empty-icon { font-size: 3.5rem; color: var(--color-border); line-height: 1; }
+  .empty-icon {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--color-border); line-height: 1;
+  }
+  .empty-icon svg { width: 56px; height: 56px; }
   .empty-title { font-size: 1.2rem; font-weight: 600; color: var(--color-text); }
   .empty-sub { font-size: .9rem; color: var(--color-text-muted); max-width: 320px; line-height: 1.6; }
+  .empty-sub strong { display: inline-flex; align-items: center; color: var(--color-primary); }
   .btn-home {
     margin-top: .5rem;
     background: var(--color-primary); color: #fff;
