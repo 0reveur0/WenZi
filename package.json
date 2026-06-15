@@ -1,12 +1,13 @@
 {
   "name": "wenzi",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "dev": "astro dev --host 0.0.0.0 --port 5000",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "import-dictionary": "bun run scripts/import-dictionary.ts"
   },
   "dependencies": {
     "@astrojs/node": "^9",
