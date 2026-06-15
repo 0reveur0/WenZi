@@ -511,6 +511,9 @@ export const prerender = true;
   let lastQuery = '';
   let focusedIdx = -1;
   let currentResults: (DictEntry & { _score: number })[] = [];
+  // Race-condition guard: every search invocation claims a unique ID.
+  // If a newer search starts before this one finishes, its results are discarded.
+  let searchGeneration = 0;
 
   // ── Card factory ─────────────────────────────────────────────────────────
   function makeCard(e: DictEntry, withFavBadge = true): HTMLAnchorElement {
@@ -614,10 +617,17 @@ export const prerender = true;
     focusedIdx = -1;
 
     if (!q.trim()) {
+      // Bump generation so any in-flight request is silently dropped
+      searchGeneration++;
+      results.innerHTML = '';
+      currentResults = [];
       showHistoryUI();
       setLoading(false);
       return;
     }
+
+    // Claim this generation; save it locally so the closure can check it later
+    const myGen = ++searchGeneration;
 
     showSearchUI();
     emptyEl.classList.add('hidden');
@@ -626,6 +636,10 @@ export const prerender = true;
 
     try {
       const data = await search(q);
+
+      // Another search started after this one — throw away these stale results
+      if (myGen !== searchGeneration) return;
+
       currentResults = data;
       results.innerHTML = '';
 
@@ -638,12 +652,14 @@ export const prerender = true;
         data.forEach(e => results.appendChild(makeCard(e)));
       }
     } catch (err) {
+      if (myGen !== searchGeneration) return;
       console.error('Search error:', err);
       results.innerHTML = '';
       errorEl.textContent = 'Lỗi tìm kiếm. Vui lòng thử lại.';
       errorEl.classList.remove('hidden');
     } finally {
-      setLoading(false);
+      // Only stop the spinner if we are still the active search
+      if (myGen === searchGeneration) setLoading(false);
     }
   }
 
@@ -652,7 +668,18 @@ export const prerender = true;
     const q = input.value;
     clearBtn.hidden = !q;
     if (debounceTimer) clearTimeout(debounceTimer);
-    if (!q.trim()) { doSearch(''); return; }
+
+    if (!q.trim()) {
+      // Clear immediately — no debounce needed, and bump gen to cancel in-flight
+      lastQuery = '';
+      searchGeneration++;
+      results.innerHTML = '';
+      currentResults = [];
+      setLoading(false);
+      showHistoryUI();
+      return;
+    }
+
     debounceTimer = setTimeout(() => doSearch(q), 300);
   });
 
