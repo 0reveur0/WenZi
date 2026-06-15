@@ -1,0 +1,22 @@
+Dựa trên thanh Navbar của ứng dụng Hanzii trong ảnh image_a1cc5e.png, hãy thiết kế lại khu vực góc phải của thanh Header cho ứng dụng WenZi để tích hợp hệ thống Đăng ký / Đăng nhập tài khoản. Hệ thống này sẽ kiểm soát việc lưu trữ dữ liệu (Lịch sử/Từ vựng đã lưu) của người dùng.
+
+Yêu cầu chi tiết về giao diện và logic bằng React + Tailwind CSS (KHÔNG tạo ảnh, chỉ cung cấp code):
+
+### 1. Thiết kế cụm nút Tài khoản trên Header (Giống góc phải image_a1cc5e.png)
+- **Khi CHƯA Đăng nhập:**
+  + Hiển thị nút "Đăng nhập" dạng viên thuốc, nền màu xanh navy trầm (`bg-[#2b4c7e] text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-[#1e3559] transition-colors`).
+  + Ngay bên cạnh là nút "Đăng ký" dạng chữ phẳng (`text-gray-600 hover:text-gray-900 text-sm font-medium px-3 py-2`).
+- **Khi ĐÃ Đăng nhập:**
+  + Ẩn cụm nút Đăng ký/Đăng nhập đi. Thay thế bằng một Avatar hình tròn nhỏ và tên tài khoản (ví dụ: "Chào, Nguyễn Văn A") kèm theo một nút "Đăng xuất" nhỏ gọn.
+
+### 2. Xây dựng Modal Đăng ký / Đăng nhập (Popup)
+- Khi click vào "Đăng nhập" hoặc "Đăng ký", hiển thị một hộp thoại Modal căn giữa màn hình, nền trắng (`bg-white rounded-2xl shadow-xl p-6 w-80`).
+- Modal có các ô input nhập: Email/Tên tài khoản, Mật khẩu được thiết kế bo góc sạch sẽ (`border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-teal-500`).
+
+### 3. Logic xử lý dữ liệu (Mock Auth với LocalStorage)
+- Tạo một State `user` toàn cục (hoặc dùng Context API) để quản lý trạng thái đăng nhập.
+- Khi người dùng Đăng ký: Lưu thông tin tài khoản vào `localStorage.setItem('users', ...)`.
+- Khi người dùng Đăng nhập: Kiểm tra thông tin, nếu khớp thì set trạng thái đăng nhập và lưu `currentUser` vào `localStorage`.
+- **Ràng buộc dữ liệu với Thẻ Lịch sử:** Cập nhật lại logic của Thẻ Lịch sử tìm kiếm. Nếu `currentUser` bằng null (chưa đăng nhập), phần Lịch sử tìm kiếm sẽ hiển thị thông báo bằng chữ kèm icon SVG: "Vui lòng đăng nhập để lưu và xem lịch sử tra cứu của bạn". Chỉ khi đăng nhập thành công thì mới hiển thị danh sách từ hoặc trạng thái "Chưa có dữ liệu".
+
+Hãy viết lại mã nguồn cho Component Header và bổ sung logic quản lý tài khoản giả lập này một cách mượt mà nhất bằng Tailwind CSS nền sáng!

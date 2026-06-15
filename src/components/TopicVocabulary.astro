@@ -1,35 +1,24 @@
 ---
 /**
  * TopicVocabulary — Từ vựng theo chủ đề
- * Click vào ô → tự kích hoạt tìm kiếm trên trang chủ.
- * Tất cả render + pagination xử lý client-side để tránh inflate build.
+ * Redesigned card with featured hero row, vibrant icons, pill nav.
  */
 ---
 
 <div class="tv-card" id="tv-section">
 
-  <!-- Header -->
+  <!-- ── Header ── -->
   <div class="tv-header">
-    <div class="tv-title-group">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="3" y="3" width="7" height="7" rx="1"/>
-        <rect x="14" y="3" width="7" height="7" rx="1"/>
-        <rect x="3" y="14" width="7" height="7" rx="1"/>
-        <rect x="14" y="14" width="7" height="7" rx="1"/>
-      </svg>
-      <h2 class="tv-title">Từ vựng theo chủ đề</h2>
-    </div>
-
-    <div class="tv-nav-wrap">
-      <span class="tv-page-indicator" id="tv-page-indicator">1 / 2</span>
-      <button class="tv-nav-btn" id="tv-prev" aria-label="Trang trước" title="Trang trước" type="button">
+    <h2 class="tv-title">Từ vựng theo chủ đề</h2>
+    <div class="tv-nav-pill">
+      <button class="tv-nav-btn" id="tv-prev" aria-label="Trang trước" type="button">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 18l-6-6 6-6"/>
         </svg>
       </button>
-      <button class="tv-nav-btn" id="tv-next" aria-label="Trang sau" title="Trang sau" type="button">
+      <span class="tv-page-dot-wrap" id="tv-dots"></span>
+      <button class="tv-nav-btn" id="tv-next" aria-label="Trang sau" type="button">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M9 18l6-6-6-6"/>
@@ -38,19 +27,19 @@
     </div>
   </div>
 
-  <!-- Grid container — filled by JS -->
+  <!-- ── Grid — filled by JS ── -->
   <div class="tv-grid" id="tv-grid" role="list" aria-label="Danh sách chủ đề"></div>
 
 </div>
 
-<!-- ─────────────────── STYLES ─────────────────────────────────────────── -->
+<!-- ──────────────────── STYLES ──────────────────── -->
 <style>
   .tv-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 20px;
+    border-radius: 22px;
     box-shadow: var(--shadow-sm);
-    padding: 1.5rem;
+    padding: 1.4rem 1.5rem 1.5rem;
     margin-bottom: 1.25rem;
   }
 
@@ -62,12 +51,6 @@
     margin-bottom: 1.1rem;
     gap: .75rem;
   }
-  .tv-title-group {
-    display: flex;
-    align-items: center;
-    gap: .45rem;
-    color: var(--color-text-muted);
-  }
   .tv-title {
     font-size: .95rem;
     font-weight: 700;
@@ -75,107 +58,110 @@
     white-space: nowrap;
   }
 
-  /* Nav */
-  .tv-nav-wrap {
+  /* Nav pill */
+  .tv-nav-pill {
     display: flex;
     align-items: center;
-    gap: .3rem;
+    gap: .25rem;
     background: #f1f5f9;
     border-radius: 999px;
-    padding: .2rem .2rem .2rem .6rem;
-  }
-  .tv-page-indicator {
-    font-size: .7rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    white-space: nowrap;
-    padding-right: .15rem;
+    padding: .22rem .28rem;
   }
   .tv-nav-btn {
-    width: 26px; height: 26px;
+    width: 28px; height: 28px;
     border: none;
     background: #fff;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer;
     color: var(--color-text-muted);
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
     transition: background .15s, color .15s, box-shadow .15s;
     flex-shrink: 0;
   }
   .tv-nav-btn:hover {
     background: var(--color-primary);
     color: #fff;
-    box-shadow: 0 2px 8px rgba(43,76,126,.3);
+    box-shadow: 0 2px 8px rgba(43,76,126,.25);
   }
-  .tv-nav-btn:disabled { opacity: .35; cursor: default; pointer-events: none; }
+  .tv-nav-btn:disabled { opacity: .3; cursor: default; pointer-events: none; }
 
-  /* Grid layout */
+  .tv-page-dot-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 .3rem;
+  }
+
+  /* Grid */
   .tv-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .6rem;
-    animation: tvFadeIn .2s ease;
   }
-  @keyframes tvFadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Topic item — shared */
+  /* ─── Topic item — shared ─── */
   :global(.tv-item) {
     display: flex;
     align-items: center;
-    gap: .75rem;
+    gap: .7rem;
     background: #f8fafc;
     border: 1.5px solid transparent;
     border-radius: 14px;
-    padding: .75rem .9rem;
+    padding: .7rem .85rem;
     cursor: pointer;
     transition: background .15s, border-color .15s, transform .12s, box-shadow .15s;
-    text-decoration: none;
     color: inherit;
     position: relative;
     overflow: hidden;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    animation: tvItemIn .18s ease both;
   }
   :global(.tv-item:hover) {
     background: var(--color-primary-dim);
     border-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
-    box-shadow: 0 2px 12px rgba(43,76,126,.1);
+    box-shadow: 0 2px 12px rgba(43,76,126,.09);
     transform: translateY(-1px);
   }
   :global(.tv-item:active) { transform: scale(.97); }
+  @keyframes tvItemIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Featured (col-span-2) */
+  /* Featured row — col-span-2 */
   :global(.tv-item--featured) {
     grid-column: 1 / -1;
-    padding: 1rem 1.1rem;
+    padding: .9rem 1rem;
     background: linear-gradient(135deg, #f0f4f9 0%, #e8eef8 100%);
     border-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+    gap: .9rem;
   }
   :global(.tv-item--featured:hover) {
     background: linear-gradient(135deg, #e5ecf7 0%, #dce6f5 100%);
-    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    border-color: color-mix(in srgb, var(--color-primary) 38%, transparent);
   }
 
   /* Icon box */
   :global(.tv-icon) {
-    width: 40px; height: 40px;
+    width: 38px; height: 38px;
     border-radius: 11px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
-  :global(.tv-item--featured .tv-icon) { width: 48px; height: 48px; border-radius: 14px; }
+  :global(.tv-item--featured .tv-icon) {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+  }
 
-  /* Text */
+  /* Text block */
   :global(.tv-text) {
     display: flex;
     flex-direction: column;
-    gap: .15rem;
+    gap: .12rem;
     min-width: 0;
     flex: 1;
   }
   :global(.tv-name) {
-    font-size: .88rem;
+    font-size: .87rem;
     font-weight: 700;
     color: var(--color-text);
     white-space: nowrap;
@@ -183,40 +169,60 @@
     text-overflow: ellipsis;
     line-height: 1.2;
   }
-  :global(.tv-item--featured .tv-name) { font-size: 1rem; }
+  :global(.tv-item--featured .tv-name) { font-size: .98rem; }
   :global(.tv-sub) {
-    font-size: .72rem;
+    font-size: .7rem;
     color: var(--color-text-muted);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  /* Count badge */
   :global(.tv-count) {
-    font-size: .7rem;
+    font-size: .68rem;
     font-weight: 600;
     color: var(--color-primary);
     background: var(--color-primary-dim);
-    padding: .1rem .45rem;
+    padding: .12rem .5rem;
     border-radius: 999px;
     white-space: nowrap;
     flex-shrink: 0;
+    line-height: 1.5;
+  }
+  :global(.tv-item--featured .tv-count) {
+    font-size: .72rem;
+    padding: .15rem .6rem;
   }
 
-  /* Hanzi badge on featured */
+  /* Decorative hanzi on featured */
   :global(.tv-hanzi-badge) {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 300;
     color: var(--color-primary);
-    opacity: .12;
+    opacity: .1;
     position: absolute;
     right: .9rem;
-    bottom: -.15rem;
+    bottom: -.2rem;
     line-height: 1;
     pointer-events: none;
     user-select: none;
   }
 
-  /* Responsive — narrow screens */
+  /* Page indicator dots */
+  :global(.tv-dot) {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: background .2s, transform .2s;
+    display: inline-block;
+  }
+  :global(.tv-dot--active) {
+    background: var(--color-primary);
+    transform: scale(1.3);
+  }
+
+  /* Responsive */
   @media (max-width: 400px) {
     .tv-card { padding: 1.1rem; }
     .tv-grid { gap: .45rem; }
@@ -226,18 +232,17 @@
   }
 </style>
 
-<!-- ─────────────────── SCRIPT ─────────────────────────────────────────── -->
+<!-- ──────────────────── SCRIPT ──────────────────── -->
 <script>
-  // ── Topic data ───────────────────────────────────────────────────────────
   interface Topic {
     name:      string;
-    sub:       string;   // short subtitle / Chinese translation
-    hanzi:     string;   // representative character
-    query:     string;   // what to search for
-    count:     number;   // approx word count (display only)
+    sub:       string;
+    hanzi:     string;
+    query:     string;
+    count:     number;
     iconBg:    string;
     iconColor: string;
-    svgInner:  string;   // SVG inner HTML (paths, circles, etc.)
+    svgInner:  string;
   }
 
   const TOPICS: Topic[] = [
@@ -344,27 +349,37 @@
         <circle cx="6.5"  cy="12.5" r="2.5" fill="currentColor" opacity=".5"/>
         <path d="M12 22a10 10 0 0 1-8.95-5.55 10 10 0 0 0 15.9-9.9A10 10 0 0 1 12 22z" fill="currentColor" opacity=".2" stroke-width="0"/>`,
     },
+    {
+      name: 'Toán học', sub: '数学 · Tính toán', hanzi: '数', query: '数学',
+      count: 312, iconBg: '#f0fdf4', iconColor: '#15803d',
+      svgInner: `<path d="M9 4v16M15 4v16" stroke-width="2" fill="none"/>
+        <path d="M4 9h16M4 15h16" stroke-width="2" fill="none"/>
+        <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="15" r="1.5" fill="currentColor"/>`,
+    },
   ];
 
-  const PAGE_SIZE = 7; // 1 featured + 6 regular
+  const PAGE_SIZE  = 7; // 1 featured + 6 regular
   const totalPages = Math.ceil(TOPICS.length / PAGE_SIZE);
-  let currentPage = 0;
+  let currentPage  = 0;
 
-  // ── Render ───────────────────────────────────────────────────────────────
-  function renderPage(page: number) {
-    const grid = document.getElementById('tv-grid')!;
-    const indicator = document.getElementById('tv-page-indicator')!;
-    const prevBtn   = document.getElementById('tv-prev') as HTMLButtonElement;
-    const nextBtn   = document.getElementById('tv-next') as HTMLButtonElement;
+  // ── Render page ───────────────────────────────────────────────────────────
+  function renderPage(page: number, direction: 'next' | 'prev' | 'init' = 'init') {
+    const grid    = document.getElementById('tv-grid')!;
+    const prevBtn = document.getElementById('tv-prev') as HTMLButtonElement;
+    const nextBtn = document.getElementById('tv-next') as HTMLButtonElement;
+    const dotsEl  = document.getElementById('tv-dots')!;
 
     const start  = page * PAGE_SIZE;
     const topics = TOPICS.slice(start, start + PAGE_SIZE);
 
-    // Animate out → update → animate in
-    grid.style.opacity = '0';
-    grid.style.transform = 'translateY(4px)';
+    // Slide-out animation
+    const slideOut = direction === 'next' ? '-8px' : '8px';
+    grid.style.transition = 'opacity .15s ease, transform .15s ease';
+    grid.style.opacity    = '0';
+    grid.style.transform  = `translateX(${slideOut})`;
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       grid.innerHTML = '';
 
       topics.forEach((t, i) => {
@@ -374,13 +389,13 @@
         div.setAttribute('role', 'listitem');
         div.setAttribute('tabindex', '0');
         div.setAttribute('aria-label', `${t.name} — ${t.sub}`);
+        div.style.animationDelay = `${i * 22}ms`;
         div.dataset.query = t.query;
 
         div.innerHTML = `
           <div class="tv-icon" style="background:${t.iconBg};color:${t.iconColor}">
-            <svg width="20" height="20" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
+            <svg width="${isFeatured ? 22 : 19}" height="${isFeatured ? 22 : 19}" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               ${t.svgInner}
             </svg>
           </div>
@@ -395,59 +410,64 @@
           }
         `;
 
-        div.addEventListener('click', () => triggerSearch(t.query, t.name));
-        div.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            triggerSearch(t.query, t.name);
-          }
+        div.addEventListener('click', () => triggerSearch(t.query));
+        div.addEventListener('keydown', (e: KeyboardEvent) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerSearch(t.query); }
         });
 
         grid.appendChild(div);
       });
 
-      indicator.textContent = `${page + 1} / ${totalPages}`;
+      // Update dots
+      dotsEl.innerHTML = '';
+      for (let p = 0; p < totalPages; p++) {
+        const dot = document.createElement('span');
+        dot.className = 'tv-dot' + (p === page ? ' tv-dot--active' : '');
+        dot.setAttribute('aria-hidden', 'true');
+        dotsEl.appendChild(dot);
+      }
+
       prevBtn.disabled = page === 0;
       nextBtn.disabled = page === totalPages - 1;
 
-      // Animate in
+      // Slide-in animation
+      const slideIn = direction === 'next' ? '8px' : '-8px';
+      grid.style.transition = 'none';
+      grid.style.transform  = `translateX(${slideIn})`;
+      grid.style.opacity    = '0';
+
       requestAnimationFrame(() => {
         grid.style.transition = 'opacity .2s ease, transform .2s ease';
         grid.style.opacity    = '1';
-        grid.style.transform  = 'translateY(0)';
+        grid.style.transform  = 'translateX(0)';
       });
-    });
+    }, direction === 'init' ? 0 : 130);
   }
 
-  // ── Trigger search on the homepage ───────────────────────────────────────
-  function triggerSearch(query: string, label: string) {
-    const input = document.getElementById('search-input') as HTMLInputElement | null;
+  // ── Trigger search ────────────────────────────────────────────────────────
+  function triggerSearch(query: string) {
+    const input    = document.getElementById('search-input') as HTMLInputElement | null;
+    const clearBtn = document.getElementById('search-clear') as HTMLButtonElement | null;
     if (!input) return;
 
-    // Set value + fire input event (homepage search listens to 'input')
     input.value = query;
     input.dispatchEvent(new Event('input', { bubbles: true }));
-
-    // Update clear button visibility
-    const clearBtn = document.getElementById('search-clear') as HTMLButtonElement | null;
     if (clearBtn) clearBtn.hidden = false;
 
-    // Scroll search bar into view smoothly
-    const hero = document.querySelector<HTMLElement>('.hero');
-    hero?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelector<HTMLElement>('.hero')
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Focus input
     setTimeout(() => input.focus(), 300);
   }
 
-  // ── Pagination buttons ────────────────────────────────────────────────────
+  // ── Pagination ────────────────────────────────────────────────────────────
   document.getElementById('tv-prev')?.addEventListener('click', () => {
-    if (currentPage > 0) renderPage(--currentPage);
+    if (currentPage > 0) { renderPage(--currentPage, 'prev'); }
   });
   document.getElementById('tv-next')?.addEventListener('click', () => {
-    if (currentPage < totalPages - 1) renderPage(++currentPage);
+    if (currentPage < totalPages - 1) { renderPage(++currentPage, 'next'); }
   });
 
   // ── Init ──────────────────────────────────────────────────────────────────
-  renderPage(0);
+  renderPage(0, 'init');
 </script>
