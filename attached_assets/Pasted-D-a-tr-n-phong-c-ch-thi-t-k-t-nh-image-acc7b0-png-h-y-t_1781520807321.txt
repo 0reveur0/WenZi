@@ -1,0 +1,23 @@
+Dựa trên phong cách thiết kế từ ảnh image_acc7b0.png, hãy thiết kế và viết code cho tôi một Component mới có tên là `TopicVocabulary.jsx` (Từ vựng theo chủ đề) để đặt vào trang chủ của ứng dụng WenZi.
+
+Yêu cầu chi tiết về giao diện và code (KHÔNG tạo ảnh, chỉ cung cấp code):
+
+### 1. Cấu trúc Layout Tổng thể (Card Container)
+- Toàn bộ block phải nằm trong một thẻ Card lớn màu trắng (`bg-white`), bo góc lớn (`rounded-3xl`), đổ bóng nhẹ (`shadow-sm`) và có lớp padding rộng rãi (`p-6`).
+- **Phần Header của block:** 
+  + Bên trái: Tiêu đề "Từ vựng theo chủ đề" viết đậm (`text-lg font-bold text-gray-800`).
+  + Bên phải: Cụm nút mũi tên điều hướng qua lại `<` và `>` được bọc trong một khối bo tròn nhỏ màu xám nhạt (`bg-gray-100 rounded-full px-3 py-1 flex gap-2`). Sử dụng mã nhúng SVG cho hai nút mũi tên này.
+
+### 2. Bố cục các ô chủ đề (Grid Layout)
+- Các ô chủ đề bên dưới sẽ được chia theo dạng lưới 2 cột (`grid grid-cols-2 gap-3 mt-4`).
+- **Ô chủ đề lớn đầu tiên (Ví dụ: Kiến trúc):** Sẽ chiếm trọn chiều ngang hoặc nổi bật hơn (`col-span-2 bg-gray-50 rounded-2xl p-4 flex items-center gap-4 hover:bg-gray-100 transition-colors cursor-pointer`). Hiển thị tên chủ đề đậm hơn và có thêm dòng phụ "Tổng cộng: 888" màu xám nhạt.
+- **Các ô chủ đề còn lại (Âm nhạc, Sở thích, Không gian...):** Thiết kế kích thước bằng nhau (`bg-gray-50 rounded-2xl p-3 flex items-center gap-3 hover:bg-gray-100 transition-colors cursor-pointer`).
+
+### 3. Hệ thống Icon Code Nhúng (SVG Icons)
+- Tuyệt đối không dùng emoji text cho các hình icon (như tòa nhà, nốt nhạc, quả bóng, máy bay...).
+- Hãy tự viết hoặc nhúng các đoạn mã SVG hình học tinh tế, có màu sắc tươi sáng, trực quan tương ứng với từng chủ đề trong ảnh `image_acc7b0.png` (Ví dụ: hình nốt nhạc cho Âm nhạc, quả bóng cho Thể thao, máy bay cho Vận chuyển hàng không, bảng vẽ cho Toán học...).
+
+### 4. Logic tương tác (Interaction)
+- Khi người dùng click vào một ô chủ đề (ví dụ: click vào "Thể thao"), ứng dụng sẽ tự động kích hoạt hàm tìm kiếm hoặc lọc ra danh sách các từ vựng thuộc bộ từ vựng của chủ đề đó và hiển thị ngay lên danh sách kết quả.
+
+Hãy cung cấp toàn bộ mã nguồn sạch sẽ, chi tiết của component `TopicVocabulary.jsx` này bằng React + Tailwind CSS để tôi tích hợp vào WenZi ngay lập tức!
