@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
+import SearchWidgets from '@/components/SearchWidgets.astro';
 import TopicVocabulary from '@/components/TopicVocabulary.astro';
 
 export const prerender = true;
@@ -99,6 +100,9 @@ export const prerender = true;
               <p class="empty-sub">Nhập từ khóa vào ô tìm kiếm để tra cứu từ điển.</p>
             </div>
           </div>
+
+          <!-- Hot keywords + Query history -->
+          <SearchWidgets />
 
           <!-- Topic vocabulary -->
           <TopicVocabulary />

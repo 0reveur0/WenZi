@@ -1,7 +1,7 @@
 ---
 /**
  * SearchWidgets — Từ khóa hot + Lịch sử tìm kiếm
- * Đặt trong #history-section nên tự ẩn khi đang search, hiện khi idle.
+ * Redesigned: clean pill tags, illustrated SVG empty state, auto-save to localStorage.
  */
 
 const HOT_KEYWORDS = [
@@ -15,30 +15,27 @@ const HOT_KEYWORDS = [
   { word: '关心', note: 'quan tâm' },
   { word: '报道', note: 'đưa tin' },
   { word: '记者', note: 'phóng viên' },
-  { word: '朋友', note: 'bạn bè' },
-  { word: '快乐', note: 'vui vẻ' },
 ];
 ---
 
 <div class="sw-grid">
 
-  <!-- ── Card 1: Từ khóa hot ─────────────────────────────────────────────── -->
+  <!-- ── Card 1: Từ khóa hot ───────────────────────────────────────────── -->
   <div class="sw-card">
-    <div class="sw-card-header">
-      <div class="sw-title-group">
-        <span class="sw-fire-icon" aria-hidden="true">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+    <div class="sw-header">
+      <div class="sw-title-row">
+        <span class="sw-icon sw-icon--fire" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2c0 0-4 4-4 8a4 4 0 0 0 8 0c0-1-.3-2-.8-2.9C15 8.9 15 11 13 12c0-2-1-4-1-4z"/>
-            <path d="M12 22a6 6 0 0 0 6-6c0-3-2-4.5-3-5.5 0 1.5-1 3-2 3.5C12.3 13.2 10 14 9 16a4 4 0 0 0 3 4z"/>
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
           </svg>
         </span>
         <h2 class="sw-title">Từ khóa hot</h2>
       </div>
-      <span class="sw-badge">{HOT_KEYWORDS.length}</span>
+      <span class="sw-count-badge">{HOT_KEYWORDS.length}</span>
     </div>
 
-    <div class="sw-tags" role="list" aria-label="Danh sách từ khóa hot">
+    <div class="sw-tags-wrap" role="list" aria-label="Danh sách từ khóa hot">
       {HOT_KEYWORDS.map(k => (
         <button
           class="sw-tag sw-tag--hot"
@@ -49,17 +46,18 @@ const HOT_KEYWORDS = [
           aria-label={`${k.word} — ${k.note}`}
         >
           <span class="sw-tag-zh" lang="zh">{k.word}</span>
+          <span class="sw-tag-sep" aria-hidden="true">·</span>
           <span class="sw-tag-vi">{k.note}</span>
         </button>
       ))}
     </div>
   </div>
 
-  <!-- ── Card 2: Lịch sử tìm kiếm ──────────────────────────────────────── -->
+  <!-- ── Card 2: Lịch sử tìm kiếm ─────────────────────────────────────── -->
   <div class="sw-card">
-    <div class="sw-card-header">
-      <div class="sw-title-group">
-        <span class="sw-clock-icon" aria-hidden="true">
+    <div class="sw-header">
+      <div class="sw-title-row">
+        <span class="sw-icon sw-icon--clock" aria-hidden="true">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
@@ -68,37 +66,62 @@ const HOT_KEYWORDS = [
         </span>
         <h2 class="sw-title">Lịch sử</h2>
       </div>
-      <button class="sw-clear-btn" id="sw-clear-hist" type="button"
-        title="Xóa lịch sử" aria-label="Xóa lịch sử tìm kiếm" hidden>
-        Xóa tất cả
-      </button>
+      <button
+        class="sw-clear-btn"
+        id="sw-clear-hist"
+        type="button"
+        aria-label="Xóa lịch sử tìm kiếm"
+        hidden
+      >Xóa tất cả</button>
     </div>
 
-    <!-- Tags populated by JS -->
-    <div class="sw-tags" id="sw-hist-tags" role="list"
-      aria-label="Lịch sử tìm kiếm" aria-live="polite"></div>
+    <!-- Tags — filled by JS -->
+    <div
+      class="sw-tags-wrap"
+      id="sw-hist-tags"
+      role="list"
+      aria-label="Lịch sử tìm kiếm"
+      aria-live="polite"
+    ></div>
 
-    <!-- Empty state (shown when no history) -->
+    <!-- Empty state — SVG illustration, no <img> -->
     <div class="sw-empty" id="sw-hist-empty">
-      <div class="sw-empty-icon" aria-hidden="true">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8" opacity=".5"/>
-          <path d="m21 21-4.35-4.35" opacity=".5"/>
-          <path d="M11 8v3l2 2" stroke-width="1.6"/>
-          <circle cx="11" cy="11" r="1" fill="currentColor" opacity="0"/>
+      <div class="sw-empty-art" aria-hidden="true">
+        <!-- Outer clock ring -->
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Shadow / glow disc -->
+          <circle cx="28" cy="30" r="18" fill="#e2e8f0" opacity=".55"/>
+          <!-- Main clock face -->
+          <circle cx="28" cy="27" r="17" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Tick marks -->
+          <line x1="28" y1="12" x2="28" y2="15" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="28" y1="39" x2="28" y2="42" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="11" y1="27" x2="14" y2="27" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="42" y1="27" x2="45" y2="27" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Hour hand -->
+          <line x1="28" y1="27" x2="28" y2="19" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+          <!-- Minute hand -->
+          <line x1="28" y1="27" x2="35" y2="27" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+          <!-- Center dot -->
+          <circle cx="28" cy="27" r="2" fill="#64748b"/>
+          <!-- Arrow: history / back-in-time arc -->
+          <path d="M16 20 A14 14 0 0 0 15 27" stroke="#94a3b8" stroke-width="1.4"
+            stroke-linecap="round" fill="none"/>
+          <polyline points="13.5,18.5 16,20 18,17.5" stroke="#94a3b8"
+            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
       </div>
-      <p class="sw-empty-text">Chưa có lịch sử</p>
+      <p class="sw-empty-title">Chưa có dữ liệu</p>
       <p class="sw-empty-sub">Tìm kiếm để lưu tự động</p>
     </div>
   </div>
 
 </div>
 
-<!-- ─────────────────── STYLES ─────────────────────────────────────────── -->
+<!-- ──────────────────────── STYLES ──────────────────────────────────── -->
 <style>
-  /* 2-column grid: stack on mobile, side-by-side on tablet+ */
+  /* 2-col grid: stack on mobile, side-by-side on ≥600px */
   .sw-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -109,131 +132,151 @@ const HOT_KEYWORDS = [
     .sw-grid { grid-template-columns: 1fr 1fr; }
   }
 
-  /* Card */
+  /* Card shell */
   .sw-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 20px;
+    border-radius: 22px;
     box-shadow: var(--shadow-sm);
-    padding: 1.25rem 1.4rem 1.4rem;
+    padding: 1.3rem 1.4rem 1.4rem;
     display: flex;
     flex-direction: column;
-    gap: .9rem;
-    min-height: 170px;
+    gap: 1rem;
+    min-height: 180px;
   }
 
-  /* Header */
-  .sw-card-header {
+  /* Header row */
+  .sw-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: .5rem;
   }
-  .sw-title-group {
+  .sw-title-row {
     display: flex;
     align-items: center;
     gap: .4rem;
   }
-  .sw-fire-icon  { color: #ef4444; display: flex; align-items: center; }
-  .sw-clock-icon { color: var(--color-text-muted); display: flex; align-items: center; }
+  .sw-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .sw-icon--fire  { color: #f97316; }
+  .sw-icon--clock { color: var(--color-text-muted); }
   .sw-title {
     font-size: .93rem;
     font-weight: 700;
     color: var(--color-text);
   }
-  .sw-badge {
+
+  /* Count badge */
+  .sw-count-badge {
     font-size: .68rem;
     font-weight: 700;
     background: var(--color-primary);
     color: #fff;
     border-radius: 999px;
-    padding: .1rem .45rem;
+    padding: .1rem .48rem;
     min-width: 20px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
+    flex-shrink: 0;
   }
+
+  /* Clear button */
   .sw-clear-btn {
     font-size: .72rem;
     font-weight: 500;
     color: var(--color-text-muted);
     background: none;
     border: 1.5px solid var(--color-border);
-    border-radius: 6px;
-    padding: .2rem .55rem;
+    border-radius: 8px;
+    padding: .2rem .6rem;
     cursor: pointer;
     transition: color .15s, border-color .15s;
     white-space: nowrap;
+    flex-shrink: 0;
   }
   .sw-clear-btn:hover { color: #ef4444; border-color: #ef4444; }
 
   /* Tags wrapper */
-  .sw-tags {
+  .sw-tags-wrap {
     display: flex;
     flex-wrap: wrap;
     gap: .45rem;
+    align-content: flex-start;
   }
 
-  /* Tag base */
+  /* Tag — shared base */
   :global(.sw-tag) {
     display: inline-flex;
     align-items: center;
-    gap: .3rem;
-    padding: .35rem .75rem;
+    gap: .28rem;
+    padding: .38rem .82rem;
     border-radius: 999px;
-    font-size: .82rem;
-    font-weight: 500;
-    cursor: pointer;
     border: 1.5px solid transparent;
-    transition: all .15s;
-    line-height: 1.2;
+    font-size: .82rem;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s, transform .1s;
+    line-height: 1.25;
     white-space: nowrap;
     -webkit-tap-highlight-color: transparent;
   }
-  :global(.sw-tag:active) { transform: scale(.94); }
+  :global(.sw-tag:active) { transform: scale(.93); }
 
   /* Hot keyword tag */
   :global(.sw-tag--hot) {
     background: #f1f5f9;
     color: var(--color-text);
-    border-color: transparent;
   }
   :global(.sw-tag--hot:hover) {
     background: var(--color-primary-dim);
-    border-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+    border-color: color-mix(in srgb, var(--color-primary) 28%, transparent);
     color: var(--color-primary);
   }
   :global(.sw-tag-zh) {
     font-weight: 600;
     letter-spacing: .02em;
   }
-  :global(.sw-tag-vi) {
+  :global(.sw-tag-sep) {
+    color: var(--color-border);
     font-size: .72rem;
+    line-height: 1;
+  }
+  :global(.sw-tag-vi) {
+    font-size: .73rem;
     color: var(--color-text-muted);
     font-style: italic;
   }
-  :global(.sw-tag--hot:hover .sw-tag-vi) { color: color-mix(in srgb, var(--color-primary) 70%, transparent); }
+  :global(.sw-tag--hot:hover .sw-tag-sep),
+  :global(.sw-tag--hot:hover .sw-tag-vi) {
+    color: color-mix(in srgb, var(--color-primary) 65%, transparent);
+  }
 
   /* History tag */
   :global(.sw-tag--hist) {
     background: #f8fafc;
     color: var(--color-text);
     border-color: var(--color-border);
-    gap: .4rem;
+    gap: .42rem;
   }
   :global(.sw-tag--hist:hover) {
     background: var(--color-primary-dim);
     border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
     color: var(--color-primary);
   }
+
+  /* Remove ×  button inside history tag */
   :global(.sw-tag-remove) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 14px; height: 14px;
+    width: 15px; height: 15px;
     border-radius: 50%;
     border: none;
-    background: var(--color-border);
-    color: var(--color-text-muted);
+    background: #e2e8f0;
+    color: #94a3b8;
     cursor: pointer;
     font-size: 10px;
     line-height: 1;
@@ -250,39 +293,42 @@ const HOT_KEYWORDS = [
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .2rem;
-    padding: .5rem 1rem 1rem;
+    gap: .15rem;
+    padding: .4rem 1rem 1.1rem;
     text-align: center;
   }
-  .sw-empty-icon { color: var(--color-border); margin-bottom: .25rem; }
-  .sw-empty-text {
+  .sw-empty-art {
+    margin-bottom: .4rem;
+    filter: drop-shadow(0 2px 6px rgba(100,116,139,.12));
+  }
+  .sw-empty-title {
     font-size: .83rem;
     font-weight: 600;
     color: var(--color-text-muted);
   }
   .sw-empty-sub {
-    font-size: .73rem;
+    font-size: .72rem;
     color: var(--color-border);
+    margin-top: .1rem;
   }
 </style>
 
-<!-- ─────────────────── SCRIPT ──────────────────────────────────────────── -->
+<!-- ──────────────────────── SCRIPT ──────────────────────────────────── -->
 <script>
-  const QHIST_KEY  = 'wz-qhistory';
-  const MAX_QHIST  = 10;
-  const MIN_QLEN   = 2;
+  const QHIST_KEY = 'wz-qhistory';
+  const MAX_QHIST = 10;
+  const MIN_QLEN  = 2;
 
-  // ── Storage helpers ─────────────────────────────────────────────────────
+  // ── Storage helpers ───────────────────────────────────────────────────────
   function loadQHist(): string[] {
     try { return JSON.parse(localStorage.getItem(QHIST_KEY) ?? '[]'); }
     catch { return []; }
   }
-  function saveQHist(arr: string[]): void {
+  function saveQHist(arr: string[]) {
     try { localStorage.setItem(QHIST_KEY, JSON.stringify(arr)); }
     catch { /* quota / private mode */ }
   }
-
-  function addQuery(q: string): void {
+  function addQuery(q: string) {
     q = q.trim();
     if (q.length < MIN_QLEN) return;
     const arr = loadQHist().filter(x => x !== q);
@@ -290,60 +336,60 @@ const HOT_KEYWORDS = [
     saveQHist(arr.slice(0, MAX_QHIST));
     renderHistory();
   }
-
-  function removeQuery(q: string): void {
+  function removeQuery(q: string) {
     saveQHist(loadQHist().filter(x => x !== q));
     renderHistory();
   }
-
-  function clearQHist(): void {
+  function clearQHist() {
     localStorage.removeItem(QHIST_KEY);
     renderHistory();
   }
 
-  // ── Trigger search ───────────────────────────────────────────────────────
-  function triggerSearch(q: string): void {
-    const input = document.getElementById('search-input') as HTMLInputElement | null;
+  // ── Trigger search ────────────────────────────────────────────────────────
+  function triggerSearch(q: string) {
+    const input    = document.getElementById('search-input') as HTMLInputElement | null;
+    const clearBtn = document.getElementById('search-clear') as HTMLButtonElement | null;
     if (!input) return;
     input.value = q;
     input.dispatchEvent(new Event('input', { bubbles: true }));
-    const clearBtn = document.getElementById('search-clear') as HTMLButtonElement | null;
     if (clearBtn) clearBtn.hidden = false;
     document.querySelector<HTMLElement>('.hero')
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setTimeout(() => input.focus(), 280);
   }
 
-  // ── Render history tags ──────────────────────────────────────────────────
-  function renderHistory(): void {
-    const tagsEl  = document.getElementById('sw-hist-tags')!;
-    const emptyEl = document.getElementById('sw-hist-empty')!;
+  // ── Render history ────────────────────────────────────────────────────────
+  function renderHistory() {
+    const tagsEl   = document.getElementById('sw-hist-tags')!;
+    const emptyEl  = document.getElementById('sw-hist-empty')!;
     const clearBtn = document.getElementById('sw-clear-hist') as HTMLButtonElement;
-
-    const hist = loadQHist();
+    const hist     = loadQHist();
 
     if (hist.length === 0) {
-      tagsEl.innerHTML  = '';
+      tagsEl.innerHTML     = '';
       emptyEl.style.display = '';
-      clearBtn.hidden   = true;
+      clearBtn.hidden      = true;
       return;
     }
 
     emptyEl.style.display = 'none';
-    clearBtn.hidden = false;
+    clearBtn.hidden       = false;
+    tagsEl.innerHTML      = '';
 
-    tagsEl.innerHTML = '';
     hist.forEach(q => {
       const btn = document.createElement('button');
-      btn.type = 'button';
+      btn.type      = 'button';
       btn.className = 'sw-tag sw-tag--hist';
       btn.setAttribute('role', 'listitem');
       btn.setAttribute('data-query', q);
       btn.setAttribute('aria-label', `Tìm lại: ${q}`);
       btn.innerHTML = `
         <span lang="auto">${q}</span>
-        <span class="sw-tag-remove" data-remove="${q}" aria-label="Xóa ${q}" title="Xóa">
-          <svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <span class="sw-tag-remove" data-remove="${q}"
+          aria-label="Xóa ${q}" title="Xóa" role="button">
+          <svg width="8" height="8" viewBox="0 0 10 10" fill="none"
+            stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" aria-hidden="true">
             <path d="M2 2l6 6M8 2l-6 6"/>
           </svg>
         </span>
@@ -352,7 +398,7 @@ const HOT_KEYWORDS = [
     });
   }
 
-  // ── Wire up hot keyword tags (rendered server-side) ──────────────────────
+  // ── Wire hot keyword tags (server-rendered) ───────────────────────────────
   document.querySelectorAll<HTMLButtonElement>('.sw-tag--hot').forEach(btn => {
     btn.addEventListener('click', () => {
       const q = btn.dataset.query ?? '';
@@ -360,27 +406,24 @@ const HOT_KEYWORDS = [
     });
   });
 
-  // ── Wire up history tag container (event delegation) ────────────────────
+  // ── Wire history container (event delegation) ─────────────────────────────
   document.getElementById('sw-hist-tags')?.addEventListener('click', e => {
-    const removeTarget = (e.target as Element).closest<HTMLElement>('[data-remove]');
-    if (removeTarget) {
+    const removeEl = (e.target as Element).closest<HTMLElement>('[data-remove]');
+    if (removeEl) {
       e.stopPropagation();
-      removeQuery(removeTarget.dataset.remove ?? '');
+      removeQuery(removeEl.dataset.remove ?? '');
       return;
     }
     const tagBtn = (e.target as Element).closest<HTMLButtonElement>('[data-query]');
     if (tagBtn?.dataset.query) triggerSearch(tagBtn.dataset.query);
   });
 
-  // ── Clear all ────────────────────────────────────────────────────────────
-  document.getElementById('sw-clear-hist')?.addEventListener('click', () => {
-    clearQHist();
-  });
+  // ── Clear all button ──────────────────────────────────────────────────────
+  document.getElementById('sw-clear-hist')?.addEventListener('click', clearQHist);
 
-  // ── Auto-save queries when user searches ─────────────────────────────────
-  // Debounce: save after 1.4s of inactivity (not on every keystroke)
+  // ── Auto-save typed queries after 1.4 s of inactivity ────────────────────
   let saveTimer: ReturnType<typeof setTimeout> | null = null;
-  document.getElementById('search-input')?.addEventListener('input', (e) => {
+  document.getElementById('search-input')?.addEventListener('input', e => {
     const q = (e.target as HTMLInputElement).value.trim();
     if (saveTimer) clearTimeout(saveTimer);
     if (q.length >= MIN_QLEN) {
@@ -388,6 +431,6 @@ const HOT_KEYWORDS = [
     }
   });
 
-  // ── Init ─────────────────────────────────────────────────────────────────
+  // ── Init ──────────────────────────────────────────────────────────────────
   renderHistory();
 </script>
