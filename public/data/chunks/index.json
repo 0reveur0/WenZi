@@ -1,0 +1,94 @@
+{
+  "chunks": {
+    "a": {
+      "file": "a.json",
+      "count": 4
+    },
+    "b": {
+      "file": "b.json",
+      "count": 10
+    },
+    "c": {
+      "file": "c.json",
+      "count": 11
+    },
+    "d": {
+      "file": "d.json",
+      "count": 13
+    },
+    "e": {
+      "file": "e.json",
+      "count": 4
+    },
+    "f": {
+      "file": "f.json",
+      "count": 7
+    },
+    "g": {
+      "file": "g.json",
+      "count": 10
+    },
+    "h": {
+      "file": "h.json",
+      "count": 18
+    },
+    "j": {
+      "file": "j.json",
+      "count": 17
+    },
+    "k": {
+      "file": "k.json",
+      "count": 9
+    },
+    "l": {
+      "file": "l.json",
+      "count": 9
+    },
+    "m": {
+      "file": "m.json",
+      "count": 18
+    },
+    "n": {
+      "file": "n.json",
+      "count": 13
+    },
+    "p": {
+      "file": "p.json",
+      "count": 4
+    },
+    "q": {
+      "file": "q.json",
+      "count": 8
+    },
+    "r": {
+      "file": "r.json",
+      "count": 6
+    },
+    "s": {
+      "file": "s.json",
+      "count": 20
+    },
+    "t": {
+      "file": "t.json",
+      "count": 9
+    },
+    "w": {
+      "file": "w.json",
+      "count": 11
+    },
+    "x": {
+      "file": "x.json",
+      "count": 18
+    },
+    "y": {
+      "file": "y.json",
+      "count": 24
+    },
+    "z": {
+      "file": "z.json",
+      "count": 16
+    }
+  },
+  "total": 259,
+  "generatedAt": "2026-06-15T08:55:33.276Z"
+}

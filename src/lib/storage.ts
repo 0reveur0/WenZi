@@ -8,6 +8,7 @@ export interface StoredEntry {
   simplified: string;
   traditional: string | null;
   pinyin: string | null;
+  hanviet: string | null;
   vietnamese: string;
 }
 
@@ -26,7 +27,14 @@ function save(key: string, data: unknown): void {
 }
 
 function slim(e: StoredEntry): StoredEntry {
-  return { id: e.id, simplified: e.simplified, traditional: e.traditional ?? null, pinyin: e.pinyin ?? null, vietnamese: e.vietnamese };
+  return {
+    id: e.id,
+    simplified: e.simplified,
+    traditional: e.traditional ?? null,
+    pinyin: e.pinyin ?? null,
+    hanviet: e.hanviet ?? null,
+    vietnamese: e.vietnamese
+  };
 }
 
 // ── Lịch sử ──────────────────────────────────────────────────────────────

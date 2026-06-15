@@ -110,6 +110,7 @@ export const prerender = true;
   }
   :global(.card-vietnamese) { font-size: 1rem; font-weight: 600; color: var(--color-text); }
   :global(.card-pinyin) { font-size: .85rem; font-style: italic; color: var(--color-primary); }
+  :global(.card-hanviet) { font-size: .78rem; color: var(--color-text-muted); }
 
   /* Empty state */
   .empty-state {
@@ -157,6 +158,7 @@ export const prerender = true;
       <div class="card-body">
         <div class="card-vietnamese">${e.vietnamese}</div>
         ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
+        ${e.hanviet ? `<div class="card-hanviet">${e.hanviet}</div>` : ''}
       </div>`;
     return a;
   }

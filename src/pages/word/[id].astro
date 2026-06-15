@@ -1,20 +1,27 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
-import { getEntryById } from '@/lib/db';
+import sampleData from '@/data/sample_dictionary.json';
 
-export const prerender = false;
+// Pre-generate static pages for all entries in sample data
+// In production with larger datasets, you'd limit this or use client-side only
+export function getStaticPaths() {
+  return sampleData.map((entry, index) => ({
+    params: { id: String(index) },
+    props: {
+      id: index,
+      simplified: entry.simplified,
+      traditional: entry.traditional,
+      pinyin: entry.pinyin,
+      hanviet: entry.hanviet,
+      vietnamese: entry.vietnamese
+    }
+  }));
+}
 
-const { id } = Astro.params;
-const numId  = Number(id);
-
-if (!numId || isNaN(numId)) return Astro.redirect('/');
-
-const entry = await getEntryById(numId);
-if (!entry) return Astro.redirect('/');
-
-const showTraditional = entry.traditional && entry.traditional !== entry.simplified;
-const pageTitle       = `${entry.simplified} — WenZi`;
+const { id, simplified, traditional, pinyin, hanviet, vietnamese } = Astro.props;
+const showTraditional = traditional && traditional !== simplified;
+const pageTitle = `${simplified} — WenZi`;
 ---
 
 <BaseLayout title={pageTitle}>
@@ -26,21 +33,25 @@ const pageTitle       = `${entry.simplified} — WenZi`;
       <!-- Chữ lớn + phiên âm -->
       <section class="char-section">
         <div class="char-display">
-          <span class="char-main" lang="zh">{entry.simplified}</span>
+          <span class="char-main" lang="zh">{simplified}</span>
           {showTraditional && (
-            <span class="char-trad" lang="zh" title="Phồn thể">{entry.traditional}</span>
+            <span class="char-trad" lang="zh" title="Phồn thể">{traditional}</span>
           )}
         </div>
 
-        {entry.pinyin && (
-          <p class="pinyin">{entry.pinyin}</p>
+        {pinyin && (
+          <p class="pinyin">{pinyin}</p>
+        )}
+
+        {hanviet && (
+          <p class="hanviet">Hán Việt: {hanviet}</p>
         )}
       </section>
 
       <!-- Nghĩa -->
       <section class="meaning-section">
         <span class="label">Nghĩa tiếng Việt</span>
-        <p class="meaning">{entry.vietnamese}</p>
+        <p class="meaning">{vietnamese}</p>
       </section>
 
       <!-- Hành động -->
@@ -66,11 +77,12 @@ const pageTitle       = `${entry.simplified} — WenZi`;
 
       <!-- Dữ liệu truyền sang client -->
       <div id="entry-data"
-        data-id={entry.id}
-        data-simplified={entry.simplified}
-        data-traditional={entry.traditional ?? ''}
-        data-pinyin={entry.pinyin ?? ''}
-        data-vietnamese={entry.vietnamese}
+        data-id={id}
+        data-simplified={simplified}
+        data-traditional={traditional ?? ''}
+        data-pinyin={pinyin ?? ''}
+        data-hanviet={hanviet ?? ''}
+        data-vietnamese={vietnamese}
         hidden
       ></div>
 
@@ -146,6 +158,11 @@ const pageTitle       = `${entry.simplified} — WenZi`;
     letter-spacing: .02em;
   }
 
+  .hanviet {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+  }
+
   /* Nghĩa */
   .meaning-section {
     background: var(--color-surface);
@@ -217,6 +234,7 @@ const pageTitle       = `${entry.simplified} — WenZi`;
     simplified:  el.dataset.simplified!,
     traditional: el.dataset.traditional || null,
     pinyin:      el.dataset.pinyin      || null,
+    hanviet:     el.dataset.hanviet     || null,
     vietnamese:  el.dataset.vietnamese!,
   };
 

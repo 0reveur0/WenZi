@@ -268,6 +268,7 @@ export const prerender = true;
 <!-- ═══════════════════════ Client Script ═══════════════════════ -->
 <script>
   import { getHistory, addToHistory, clearHistory, isFavorite } from '@/lib/storage';
+  import { search, preloadCommonChunks, type DictEntry } from '@/lib/searchService';
   import type { StoredEntry } from '@/lib/storage';
 
   // ── DOM refs ──────────────────────────────────────────────────────────────
@@ -288,10 +289,10 @@ export const prerender = true;
   let debounceTimer: ReturnType<typeof setTimeout> | null = null;
   let lastQuery = '';
   let focusedIdx = -1;
-  let currentResults: { id: number; simplified: string; traditional: string | null; pinyin: string | null; vietnamese: string }[] = [];
+  let currentResults: (DictEntry & { _score: number })[] = [];
 
   // ── Card factory ─────────────────────────────────────────────────────────
-  function makeCard(e: StoredEntry & { id: number }, withFavBadge = true): HTMLAnchorElement {
+  function makeCard(e: DictEntry, withFavBadge = true): HTMLAnchorElement {
     const showTrad = e.traditional && e.traditional !== e.simplified;
     const faved    = withFavBadge && isFavorite(e.id);
 
@@ -307,11 +308,17 @@ export const prerender = true;
       <div class="card-body">
         <div class="card-vietnamese">${e.vietnamese}</div>
         ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
+        ${e.hanviet ? `<div class="card-hanviet">${e.hanviet}</div>` : ''}
       </div>
       ${faved ? '<span class="card-fav" aria-hidden="true">★</span>' : ''}
     `;
     return a;
   }
+
+  // ── Style for hanviet ─────────────────────────────────────────────────────
+  const style = document.createElement('style');
+  style.textContent = `.card-hanviet { font-size: .78rem; color: var(--color-text-muted); }`;
+  document.head.appendChild(style);
 
   // ── Keyboard navigation trong kết quả tìm kiếm ───────────────────────────
   function getCards(): HTMLAnchorElement[] {
@@ -375,7 +382,7 @@ export const prerender = true;
     } else {
       historyHeader.style.display = '';
       historyEmpty.classList.add('hidden');
-      h.forEach(e => historyGrid.appendChild(makeCard(e)));
+      h.forEach(e => historyGrid.appendChild(makeCard(e as unknown as DictEntry)));
     }
   }
 
@@ -384,7 +391,7 @@ export const prerender = true;
     renderHistory();
   });
 
-  // ── Tìm kiếm ─────────────────────────────────────────────────────────────
+  // ── Tìm kiếm (Client-side) ────────────────────────────────────────────────
   async function doSearch(q: string) {
     if (q === lastQuery) return;
     lastQuery = q;
@@ -402,18 +409,7 @@ export const prerender = true;
     setLoading(true);
 
     try {
-      const res  = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const data = await res.json();
-
-      if (data.error) {
-        results.innerHTML = '';
-        errorEl.textContent = data.error;
-        errorEl.classList.remove('hidden');
-        return;
-      }
-
+      const data = await search(q);
       currentResults = data;
       results.innerHTML = '';
 
@@ -421,11 +417,12 @@ export const prerender = true;
         emptyEl.innerHTML = `Không tìm thấy kết quả cho <strong>"${q}"</strong>`;
         emptyEl.classList.remove('hidden');
       } else {
-        data.forEach((e: typeof data[0]) => results.appendChild(makeCard(e)));
+        data.forEach(e => results.appendChild(makeCard(e)));
       }
-    } catch {
+    } catch (err) {
+      console.error('Search error:', err);
       results.innerHTML = '';
-      errorEl.textContent = 'Không thể kết nối đến máy chủ. Vui lòng thử lại.';
+      errorEl.textContent = 'Lỗi tìm kiếm. Vui lòng thử lại.';
       errorEl.classList.remove('hidden');
     } finally {
       setLoading(false);
@@ -446,6 +443,8 @@ export const prerender = true;
   });
 
   // ── Init ─────────────────────────────────────────────────────────────────
+  // Preload common chunks in background
+  preloadCommonChunks().catch(() => {});
   showHistoryUI();
   input.focus();
 </script>
