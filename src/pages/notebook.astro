@@ -1,0 +1,1350 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+export const prerender = true;
+
+const HSK_BOOKS = [
+  { id: 'hsk1', label: 'HSK 1', count: 150, color: '#22c55e' },
+  { id: 'hsk2', label: 'HSK 2', count: 150, color: '#84cc16' },
+  { id: 'hsk3', label: 'HSK 3', count: 300, color: '#eab308' },
+  { id: 'hsk4', label: 'HSK 4', count: 600, color: '#f97316' },
+  { id: 'hsk5', label: 'HSK 5', count: 1300, color: '#ef4444' },
+  { id: 'hsk6', label: 'HSK 6', count: 2500, color: '#dc2626' },
+  { id: 'hsk79', label: 'HSK 7–9', count: 5000, color: '#9333ea' },
+];
+const TOCFL_BOOKS = [
+  { id: 'tocfl1', label: 'TOCFL 1', count: 500, color: '#0ea5e9' },
+  { id: 'tocfl2', label: 'TOCFL 2', count: 1000, color: '#2563eb' },
+  { id: 'tocfl3', label: 'TOCFL 3', count: 2000, color: '#4f46e5' },
+  { id: 'tocfl4', label: 'TOCFL 4', count: 3000, color: '#7c3aed' },
+];
+---
+
+<BaseLayout title="Sổ tay — WenZi">
+<div class="page">
+  <Header activePage="notebook" />
+
+  <main class="nb-main">
+    <div class="nb-container">
+
+      <!-- ── Tab Switcher ─────────────────────────────────────────────── -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab tab--active" id="tab-notebooks" role="tab"
+          aria-selected="true" aria-controls="view-notebooks" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+          Sổ tay
+        </button>
+        <button class="tab" id="tab-ai" role="tab"
+          aria-selected="false" aria-controls="view-ai" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/>
+          </svg>
+          Bài học AI
+        </button>
+      </div>
+
+      <!-- ══ VIEW: SỔ TAY ══════════════════════════════════════════════ -->
+      <div id="view-notebooks" class="nb-layout" role="tabpanel">
+
+        <!-- Sidebar -->
+        <aside class="nb-sidebar">
+          <div class="srs-card">
+            <div class="srs-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+              </svg>
+              <span class="srs-title">Lặp lại ngắt quãng</span>
+            </div>
+
+            <div class="srs-levels" id="srs-levels">
+              <!-- Rendered by JS -->
+            </div>
+
+            <button class="srs-review-btn" id="srs-review-btn" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                <path d="M16 16h5v5"/>
+              </svg>
+              Ôn tập ngay — <span id="srs-due-count">0</span> từ
+            </button>
+
+            <div class="srs-tip">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4M12 8h.01"/>
+              </svg>
+              Ôn luyện đều đặn mỗi ngày để ghi nhớ lâu hơn.
+            </div>
+          </div>
+
+          <!-- Quick stats -->
+          <div class="sidebar-stats" id="sidebar-stats">
+            <div class="stat-item">
+              <span class="stat-num" id="stat-total">0</span>
+              <span class="stat-label">Tổng từ</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" id="stat-notebooks">0</span>
+              <span class="stat-label">Sổ tay</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" id="stat-streak">0</span>
+              <span class="stat-label">Ngày liên tiếp</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="nb-content">
+
+          <!-- Section: Cá nhân -->
+          <section class="nb-section">
+            <div class="section-hdr">
+              <div class="section-hdr-left">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/>
+                </svg>
+                <h2 class="section-title">Cá nhân</h2>
+              </div>
+              <button class="btn-create" id="btn-create-nb" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Tạo sổ tay
+              </button>
+            </div>
+
+            <div class="personal-grid" id="personal-grid">
+              <!-- Rendered by JS -->
+            </div>
+            <div class="empty-personal hidden" id="empty-personal">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/>
+                <path d="M12 10v6M9 13h6"/>
+              </svg>
+              <p>Bạn chưa có sổ tay nào.</p>
+              <p class="empty-sub">Nhấn "Tạo sổ tay" để bắt đầu!</p>
+            </div>
+          </section>
+
+          <!-- Section: Miễn phí -->
+          <section class="nb-section">
+            <div class="section-hdr">
+              <div class="section-hdr-left">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <h2 class="section-title">Miễn phí</h2>
+              </div>
+            </div>
+
+            <p class="subsection-label">HSK (Hán ngữ tiêu chuẩn)</p>
+            <div class="books-grid">
+              {HSK_BOOKS.map(b => (
+                <button class="book-card" type="button"
+                  data-book-id={b.id} data-book-label={b.label} data-book-count={b.count}
+                  style={`--book-color: ${b.color}`}>
+                  <div class="book-icon-wrap" style={`background: color-mix(in srgb, ${b.color} 12%, transparent)`}>
+                    <span class="book-hz" lang="zh" style={`color: ${b.color}`}>字</span>
+                  </div>
+                  <span class="book-name">{b.label}</span>
+                  <span class="book-count">{b.count.toLocaleString()} từ</span>
+                </button>
+              ))}
+            </div>
+
+            <p class="subsection-label" style="margin-top:1.25rem">TOCFL (Tiêu chuẩn Đài Loan)</p>
+            <div class="books-grid">
+              {TOCFL_BOOKS.map(b => (
+                <button class="book-card" type="button"
+                  data-book-id={b.id} data-book-label={b.label} data-book-count={b.count}
+                  style={`--book-color: ${b.color}`}>
+                  <div class="book-icon-wrap" style={`background: color-mix(in srgb, ${b.color} 12%, transparent)`}>
+                    <span class="book-hz" lang="zh" style={`color: ${b.color}`}>字</span>
+                  </div>
+                  <span class="book-name">{b.label}</span>
+                  <span class="book-count">{b.count.toLocaleString()} từ</span>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <!-- Section: Cao cấp -->
+          <section class="nb-section">
+            <div class="section-hdr">
+              <div class="section-hdr-left">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.892 9.007a1 1 0 0 1-.947.685H5.857a1 1 0 0 1-.946-.685L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/>
+                  <path d="M5 21h14"/>
+                </svg>
+                <h2 class="section-title">Cao cấp <span class="crown-badge">👑</span></h2>
+              </div>
+              <span class="premium-tag">Sắp ra mắt</span>
+            </div>
+            <div class="premium-empty">
+              <div class="premium-empty-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <p class="premium-empty-title">Nội dung cao cấp</p>
+              <p class="premium-empty-sub">Bộ từ vựng theo ngành nghề, HSK chuyên sâu và nhiều tính năng học tập nâng cao sẽ sớm được mở khóa.</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- ══ VIEW: CHI TIẾT SỔ TAY ════════════════════════════════════ -->
+      <div id="view-detail" class="nb-layout hidden" role="tabpanel">
+        <aside class="nb-sidebar">
+          <!-- Study tools -->
+          <div class="study-card">
+            <h3 class="study-title">Ôn tập</h3>
+
+            <div class="tool-search-wrap">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              <input type="search" id="word-search" class="tool-search"
+                placeholder="Tìm trong sổ tay..." autocomplete="off"/>
+            </div>
+
+            <button class="tool-btn" id="btn-flashcard" type="button">
+              <span class="tool-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="M12 9v6M9 12h6"/>
+                </svg>
+              </span>
+              <div class="tool-text">
+                <span class="tool-name">Flashcard</span>
+                <span class="tool-desc">Lật thẻ ôn từ</span>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+
+            <button class="tool-btn" id="btn-write" type="button">
+              <span class="tool-icon tool-icon--write">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"/>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                </svg>
+              </span>
+              <div class="tool-text">
+                <span class="tool-name">Luyện viết</span>
+                <span class="tool-desc">Thứ tự nét bút</span>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+
+            <div class="tool-progress">
+              <div class="progress-row">
+                <span>Đã học</span>
+                <span id="detail-learned">0 / 0 từ</span>
+              </div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="detail-progress-bar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="nb-content">
+          <!-- Detail header -->
+          <div class="detail-header">
+            <button class="btn-back" id="btn-back-detail" type="button">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              Quay lại
+            </button>
+            <div class="detail-title-row">
+              <h1 class="detail-title" id="detail-title">Sổ tay</h1>
+              <button class="btn-icon-sm" id="btn-edit-name" type="button" title="Đổi tên">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="detail-meta" id="detail-meta">
+              <span id="detail-count-badge">0 từ</span>
+              <span class="dot">·</span>
+              <span id="detail-date">—</span>
+            </div>
+          </div>
+
+          <!-- Word grid -->
+          <div class="word-grid" id="word-grid"></div>
+          <div class="empty-words hidden" id="empty-words">
+            <p>Sổ tay trống. Thêm từ từ trang chi tiết từ điển.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VIEW: BÀI HỌC AI ══════════════════════════════════════════ -->
+      <div id="view-ai" class="nb-layout hidden" role="tabpanel">
+
+        <aside class="nb-sidebar">
+          <div class="ai-form-card">
+            <div class="ai-form-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/>
+              </svg>
+              Tạo bài học thông minh
+            </div>
+
+            <label class="ai-label">Cấp độ của bạn</label>
+            <select class="ai-select" id="ai-level">
+              <option value="beginner">Sơ cấp (HSK 1–2)</option>
+              <option value="elementary">Cơ bản (HSK 3–4)</option>
+              <option value="intermediate" selected>Trung cấp (HSK 4–5)</option>
+              <option value="advanced">Cao cấp (HSK 6+)</option>
+            </select>
+
+            <label class="ai-label">Chủ đề muốn học</label>
+            <input type="text" id="ai-topic" class="ai-input"
+              placeholder="Ví dụ: Ăn uống, Du lịch, Công nghệ..."
+              maxlength="60"/>
+
+            <button class="ai-generate-btn" id="ai-generate-btn" type="button">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/>
+              </svg>
+              Tạo bài học
+            </button>
+
+            <div class="ai-suggestions">
+              <p class="ai-suggestions-title">Gợi ý cho bạn</p>
+              <div class="ai-suggest-tags">
+                {['Du lịch', 'Ẩm thực', 'Công nghệ', 'Gia đình', 'Kinh doanh', 'Sức khỏe'].map(s => (
+                  <button class="ai-suggest-tag" data-topic={s} type="button">{s}</button>
+                ))}
+              </div>
+            </div>
+
+            <div class="ai-history-section">
+              <p class="ai-suggestions-title">Lịch sử</p>
+              <div id="ai-lesson-history" class="ai-hist-list">
+                <p class="ai-hist-empty">Chưa có bài học nào.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="nb-content">
+          <div class="roadmap-header">
+            <h2 class="roadmap-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+              Học theo lộ trình 🎯
+            </h2>
+            <p class="roadmap-sub">Lộ trình học tiếng Trung từ cơ bản đến nâng cao, được cá nhân hóa theo mục tiêu của bạn.</p>
+          </div>
+
+          <div class="roadmap-grid" id="roadmap-grid">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="ai-lesson-result hidden" id="ai-lesson-result">
+            <div class="lesson-result-header">
+              <h3 class="lesson-result-title" id="lesson-result-title">Bài học mới</h3>
+              <button class="btn-icon-sm" id="btn-close-lesson" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M18 6 6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <div class="lesson-words" id="lesson-words"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Create Notebook Modal ────────────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-create">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 class="modal-title" id="modal-title">Tạo sổ tay mới</h2>
+      <input type="text" id="modal-name" class="modal-input"
+        placeholder="Tên sổ tay (ví dụ: Du lịch Trung Quốc)" maxlength="40"/>
+      <div class="modal-footer">
+        <button class="modal-btn modal-btn--cancel" id="modal-cancel" type="button">Hủy</button>
+        <button class="modal-btn modal-btn--confirm" id="modal-confirm" type="button">Tạo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Flashcard Modal ───────────────────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-fc">
+    <div class="modal modal--wide" role="dialog" aria-modal="true">
+      <div class="fc-card" id="fc-card">
+        <div class="fc-front" id="fc-front">
+          <span class="fc-hanzi" id="fc-hanzi" lang="zh">—</span>
+        </div>
+        <div class="fc-back hidden" id="fc-back">
+          <span class="fc-pinyin" id="fc-pinyin">—</span>
+          <span class="fc-meaning" id="fc-meaning">—</span>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="fc-btn" id="fc-flip" type="button">Lật thẻ</button>
+        <button class="fc-btn fc-btn--prev" id="fc-prev" type="button">◀</button>
+        <span class="fc-counter" id="fc-counter">1 / 1</span>
+        <button class="fc-btn fc-btn--next" id="fc-next" type="button">▶</button>
+        <button class="fc-btn fc-btn--close" id="fc-close" type="button">✕ Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>WenZi © 2026 — MIT License</p>
+  </footer>
+</div>
+</BaseLayout>
+
+<style>
+  .page { display: flex; flex-direction: column; min-height: 100dvh; }
+
+  /* Main */
+  .nb-main { flex: 1; padding: 1.5rem; background: var(--color-bg); }
+  .nb-container { max-width: 1120px; margin: 0 auto; }
+
+  /* Tabs */
+  .tab-bar {
+    display: flex; gap: .4rem;
+    margin-bottom: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: .3rem;
+    width: fit-content;
+    box-shadow: var(--shadow-sm);
+  }
+  .tab {
+    display: flex; align-items: center; gap: .45rem;
+    padding: .5rem 1.1rem;
+    border-radius: 9px;
+    border: none; background: transparent;
+    font-size: .875rem; font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all .18s;
+  }
+  .tab:hover { background: var(--color-bg); color: var(--color-text); }
+  .tab--active {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(43,76,126,.25);
+  }
+
+  /* 2-column layout */
+  .nb-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .nb-layout { grid-template-columns: 1fr; }
+  }
+
+  /* Sidebar cards */
+  .nb-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+  .srs-card, .study-card, .ai-form-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.25rem;
+    display: flex; flex-direction: column; gap: .85rem;
+  }
+  .srs-header { display: flex; align-items: center; gap: .5rem; color: var(--color-text-muted); }
+  .srs-title { font-size: .88rem; font-weight: 700; color: var(--color-text); }
+
+  /* SRS Levels */
+  .srs-levels { display: flex; flex-direction: column; gap: .35rem; }
+  :global(.srs-level-row) {
+    display: flex; align-items: center; gap: .6rem;
+  }
+  :global(.srs-level-label) {
+    font-size: .75rem; font-weight: 600; color: var(--color-text-muted);
+    width: 44px; flex-shrink: 0;
+  }
+  :global(.srs-level-bar-wrap) {
+    flex: 1; height: 6px;
+    background: var(--color-border); border-radius: 999px; overflow: hidden;
+  }
+  :global(.srs-level-bar-fill) { height: 100%; border-radius: 999px; transition: width .4s ease; }
+  :global(.srs-level-count) {
+    font-size: .75rem; font-weight: 700;
+    color: var(--color-text); min-width: 24px; text-align: right;
+  }
+
+  .srs-review-btn {
+    display: flex; align-items: center; justify-content: center; gap: .5rem;
+    background: linear-gradient(135deg, #2b4c7e 0%, #1e3a63 100%);
+    color: #fff; border: none; border-radius: 12px;
+    padding: .75rem 1rem;
+    font-size: .875rem; font-weight: 700; cursor: pointer;
+    transition: opacity .15s, transform .12s;
+    box-shadow: 0 4px 14px rgba(43,76,126,.35);
+  }
+  .srs-review-btn:hover { opacity: .9; transform: translateY(-1px); }
+  .srs-review-btn:disabled { opacity: .4; cursor: default; transform: none; }
+
+  .srs-tip {
+    display: flex; align-items: flex-start; gap: .4rem;
+    font-size: .73rem; color: var(--color-text-muted); line-height: 1.5;
+  }
+  .srs-tip svg { flex-shrink: 0; margin-top: 1px; }
+
+  /* Sidebar stats */
+  .sidebar-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: .9rem .7rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat-item { display: flex; flex-direction: column; align-items: center; gap: .15rem; }
+  .stat-num { font-size: 1.25rem; font-weight: 800; color: var(--color-primary); }
+  .stat-label { font-size: .68rem; color: var(--color-text-muted); font-weight: 500; }
+
+  /* Content */
+  .nb-content { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  /* Section */
+  .nb-section {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.25rem 1.4rem;
+  }
+  .section-hdr {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem; gap: .75rem;
+  }
+  .section-hdr-left { display: flex; align-items: center; gap: .45rem; }
+  .section-title { font-size: .95rem; font-weight: 700; color: var(--color-text); }
+  .crown-badge { font-size: .9rem; }
+  .subsection-label { font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--color-text-muted); margin-bottom: .6rem; }
+
+  .btn-create {
+    display: flex; align-items: center; gap: .4rem;
+    background: var(--color-primary); color: #fff;
+    border: none; border-radius: 9px; padding: .4rem .9rem;
+    font-size: .82rem; font-weight: 600; cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-create:hover { background: var(--color-primary-hover); }
+
+  /* Personal notebooks grid */
+  .personal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: .7rem; }
+  :global(.personal-nb-card) {
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: 14px; padding: 1rem;
+    cursor: pointer; transition: all .15s;
+    display: flex; flex-direction: column; gap: .4rem;
+    text-align: left;
+  }
+  :global(.personal-nb-card:hover) {
+    border-color: var(--color-primary);
+    background: var(--color-primary-dim);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  :global(.nb-card-icon) {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--color-primary-dim);
+    color: var(--color-primary);
+    display: flex; align-items: center; justify-content: center;
+  }
+  :global(.nb-card-name) { font-size: .88rem; font-weight: 700; color: var(--color-text); }
+  :global(.nb-card-count) { font-size: .73rem; color: var(--color-text-muted); }
+
+  .empty-personal {
+    display: flex; flex-direction: column; align-items: center;
+    gap: .5rem; padding: 1.5rem 1rem; text-align: center;
+    color: var(--color-text-muted); font-size: .85rem;
+  }
+  .empty-personal svg { color: var(--color-border); }
+  .empty-sub { font-size: .75rem; }
+
+  /* Books grid */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: .65rem;
+  }
+  .book-card {
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: 14px;
+    padding: .9rem .75rem;
+    cursor: pointer;
+    transition: all .15s;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    text-align: center;
+  }
+  .book-card:hover {
+    border-color: var(--book-color, var(--color-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-surface);
+  }
+  .book-icon-wrap {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .book-hz { font-size: 1.4rem; font-weight: 500; line-height: 1; }
+  .book-name { font-size: .82rem; font-weight: 700; color: var(--color-text); }
+  .book-count { font-size: .7rem; color: var(--color-text-muted); }
+
+  /* Premium empty */
+  .premium-tag {
+    font-size: .7rem; font-weight: 600;
+    background: #fef9c3; color: #a16207;
+    border: 1px solid #fde68a; border-radius: 999px;
+    padding: .15rem .55rem;
+  }
+  .premium-empty {
+    display: flex; flex-direction: column; align-items: center;
+    gap: .6rem; padding: 2rem 1rem; text-align: center;
+  }
+  .premium-empty-icon { color: var(--color-border); }
+  .premium-empty-title { font-size: .95rem; font-weight: 700; color: var(--color-text-muted); }
+  .premium-empty-sub { font-size: .8rem; color: var(--color-text-muted); max-width: 340px; line-height: 1.6; }
+
+  /* Detail view */
+  .detail-header { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: .4rem; }
+  .btn-back {
+    display: inline-flex; align-items: center; gap: .4rem;
+    color: var(--color-text-muted); font-size: .85rem; font-weight: 500;
+    background: none; border: none; cursor: pointer; padding: 0;
+    transition: color .15s;
+  }
+  .btn-back:hover { color: var(--color-primary); }
+  .detail-title-row { display: flex; align-items: center; gap: .5rem; }
+  .detail-title { font-size: 1.4rem; font-weight: 800; color: var(--color-text); }
+  .btn-icon-sm {
+    width: 28px; height: 28px; border-radius: 7px;
+    border: 1.5px solid var(--color-border);
+    background: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--color-text-muted); transition: all .15s;
+  }
+  .btn-icon-sm:hover { border-color: var(--color-primary); color: var(--color-primary); }
+  .detail-meta { display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--color-text-muted); }
+  .dot { color: var(--color-border); }
+  #detail-count-badge {
+    background: var(--color-primary-dim); color: var(--color-primary);
+    padding: .1rem .5rem; border-radius: 999px; font-weight: 600; font-size: .75rem;
+  }
+
+  /* Word grid */
+  .word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: .75rem;
+  }
+  :global(.word-card) {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow .15s, transform .15s;
+  }
+  :global(.word-card:hover) { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  :global(.word-card-img) {
+    width: 100%; height: 72px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; font-weight: 300; color: #fff;
+  }
+  :global(.word-card-body) { padding: .7rem .8rem; display: flex; flex-direction: column; gap: .2rem; }
+  :global(.wc-hanzi) { font-size: 1.2rem; font-weight: 600; color: var(--color-text); line-height: 1.1; }
+  :global(.wc-trad) { font-size: .7rem; color: var(--color-text-muted); }
+  :global(.wc-pinyin) { font-size: .78rem; font-style: italic; color: var(--color-primary); }
+  :global(.wc-meaning) { font-size: .8rem; color: var(--color-text); }
+  :global(.wc-actions) {
+    display: flex; gap: .4rem; margin-top: .4rem;
+  }
+  :global(.wc-btn) {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: .25rem;
+    padding: .3rem .4rem; border-radius: 7px; border: 1px solid var(--color-border);
+    font-size: .7rem; font-weight: 500; color: var(--color-text-muted);
+    background: none; cursor: pointer; transition: all .15s;
+  }
+  :global(.wc-btn:hover) { border-color: var(--color-primary); color: var(--color-primary); }
+
+  .empty-words {
+    text-align: center; padding: 2rem; color: var(--color-text-muted); font-size: .88rem;
+  }
+
+  /* Study tools sidebar */
+  .study-title { font-size: .95rem; font-weight: 700; color: var(--color-text); }
+  .tool-search-wrap {
+    display: flex; align-items: center; gap: .5rem;
+    border: 1.5px solid var(--color-border); border-radius: 10px;
+    padding: .5rem .7rem; background: var(--color-bg);
+    transition: border-color .15s;
+  }
+  .tool-search-wrap:focus-within { border-color: var(--color-primary); }
+  .tool-search-wrap svg { color: var(--color-text-muted); flex-shrink: 0; }
+  .tool-search {
+    border: none; background: transparent; outline: none;
+    font-size: .85rem; color: var(--color-text); flex: 1;
+  }
+  .tool-btn {
+    display: flex; align-items: center; gap: .75rem;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-bg); border-radius: 12px;
+    padding: .75rem; cursor: pointer; transition: all .15s;
+    text-align: left;
+  }
+  .tool-btn:hover { border-color: var(--color-primary); background: var(--color-primary-dim); }
+  .tool-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--color-primary-dim); color: var(--color-primary);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tool-icon--write { background: #fef3c7; color: #b45309; }
+  .tool-text { flex: 1; display: flex; flex-direction: column; gap: .1rem; }
+  .tool-name { font-size: .85rem; font-weight: 700; color: var(--color-text); }
+  .tool-desc { font-size: .72rem; color: var(--color-text-muted); }
+  .tool-progress { display: flex; flex-direction: column; gap: .5rem; }
+  .progress-row { display: flex; justify-content: space-between; font-size: .78rem; color: var(--color-text-muted); }
+  .progress-bar-wrap { height: 8px; background: var(--color-border); border-radius: 999px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--color-primary); border-radius: 999px; transition: width .4s ease; }
+
+  /* AI View */
+  .ai-form-title { display: flex; align-items: center; gap: .4rem; font-size: .95rem; font-weight: 700; color: var(--color-text); }
+  .ai-label { font-size: .78rem; font-weight: 600; color: var(--color-text-muted); margin-top: .25rem; }
+  .ai-select, .ai-input {
+    width: 100%; padding: .55rem .75rem;
+    border: 1.5px solid var(--color-border); border-radius: 10px;
+    background: var(--color-bg); color: var(--color-text);
+    font-size: .85rem; outline: none; transition: border-color .15s;
+  }
+  .ai-select:focus, .ai-input:focus { border-color: var(--color-primary); }
+  .ai-generate-btn {
+    display: flex; align-items: center; justify-content: center; gap: .5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    color: #fff; border: none; border-radius: 12px;
+    padding: .7rem 1rem; font-size: .875rem; font-weight: 700;
+    cursor: pointer; transition: opacity .15s, transform .12s;
+    box-shadow: 0 4px 14px rgba(99,72,210,.35);
+  }
+  .ai-generate-btn:hover { opacity: .9; transform: translateY(-1px); }
+  .ai-suggestions-title { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--color-text-muted); }
+  .ai-suggest-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .4rem; }
+  .ai-suggest-tag {
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 999px; padding: .25rem .7rem;
+    font-size: .78rem; color: var(--color-text-muted); cursor: pointer;
+    transition: all .15s;
+  }
+  .ai-suggest-tag:hover { border-color: #7c3aed; color: #7c3aed; background: #f5f3ff; }
+  .ai-history-section { display: flex; flex-direction: column; gap: .5rem; }
+  .ai-hist-list { display: flex; flex-direction: column; gap: .35rem; }
+  .ai-hist-empty { font-size: .78rem; color: var(--color-text-muted); text-align: center; padding: .5rem; }
+  :global(.ai-hist-item) {
+    display: flex; align-items: center; gap: .5rem;
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 8px; padding: .4rem .65rem;
+    font-size: .78rem; color: var(--color-text); cursor: pointer;
+    transition: all .15s;
+  }
+  :global(.ai-hist-item:hover) { border-color: #7c3aed; color: #7c3aed; }
+
+  /* Roadmap */
+  .roadmap-header { margin-bottom: 1.25rem; }
+  .roadmap-title {
+    display: flex; align-items: center; gap: .5rem;
+    font-size: 1.2rem; font-weight: 800; color: var(--color-text); margin-bottom: .35rem;
+  }
+  .roadmap-sub { font-size: .83rem; color: var(--color-text-muted); line-height: 1.6; }
+  .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .85rem; }
+  :global(.roadmap-card) {
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: 16px; padding: 1.1rem;
+    cursor: pointer; transition: all .2s;
+    display: flex; flex-direction: column; gap: .5rem;
+    position: relative; overflow: hidden;
+  }
+  :global(.roadmap-card:hover) { border-color: var(--rc-color); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  :global(.rc-tag) {
+    font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    padding: .15rem .5rem; border-radius: 999px; width: fit-content;
+  }
+  :global(.rc-title) { font-size: .92rem; font-weight: 700; color: var(--color-text); line-height: 1.3; }
+  :global(.rc-desc) { font-size: .78rem; color: var(--color-text-muted); line-height: 1.5; }
+  :global(.rc-badge) {
+    font-size: .72rem; font-weight: 600;
+    background: var(--color-bg); color: var(--color-text-muted);
+    border: 1px solid var(--color-border); border-radius: 999px;
+    padding: .15rem .5rem; width: fit-content; margin-top: auto;
+  }
+  :global(.rc-watermark) {
+    position: absolute; right: .6rem; bottom: -.4rem;
+    font-size: 3rem; opacity: .06; line-height: 1;
+    font-weight: 300; pointer-events: none; user-select: none;
+  }
+
+  /* AI lesson result */
+  .ai-lesson-result {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 16px; padding: 1.25rem; margin-top: 1rem;
+  }
+  .lesson-result-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .lesson-result-title { font-size: 1rem; font-weight: 700; color: var(--color-text); }
+  .lesson-words { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: .6rem; }
+  :global(.lw-card) {
+    background: var(--color-bg); border: 1.5px solid var(--color-border);
+    border-radius: 12px; padding: .8rem;
+    display: flex; flex-direction: column; gap: .2rem;
+  }
+  :global(.lw-hanzi) { font-size: 1.5rem; font-weight: 500; color: var(--color-text); line-height: 1; }
+  :global(.lw-pinyin) { font-size: .75rem; font-style: italic; color: var(--color-primary); }
+  :global(.lw-meaning) { font-size: .8rem; color: var(--color-text-muted); }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.45);
+    z-index: 100; display: flex; align-items: center; justify-content: center;
+    padding: 1rem; animation: fadeIn .15s ease;
+  }
+  .modal {
+    background: var(--color-surface); border-radius: 20px;
+    padding: 1.75rem; width: 100%; max-width: 380px;
+    box-shadow: var(--shadow-md);
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .modal--wide { max-width: 480px; }
+  .modal-title { font-size: 1.1rem; font-weight: 800; color: var(--color-text); }
+  .modal-input {
+    width: 100%; padding: .65rem .85rem;
+    border: 1.5px solid var(--color-border); border-radius: 10px;
+    background: var(--color-bg); color: var(--color-text);
+    font-size: .9rem; outline: none;
+  }
+  .modal-input:focus { border-color: var(--color-primary); }
+  .modal-footer { display: flex; gap: .6rem; justify-content: flex-end; }
+  .modal-btn {
+    padding: .5rem 1.2rem; border-radius: 9px; border: none;
+    font-size: .875rem; font-weight: 600; cursor: pointer; transition: all .15s;
+  }
+  .modal-btn--cancel { background: var(--color-bg); color: var(--color-text-muted); border: 1.5px solid var(--color-border); }
+  .modal-btn--cancel:hover { border-color: var(--color-text-muted); }
+  .modal-btn--confirm { background: var(--color-primary); color: #fff; }
+  .modal-btn--confirm:hover { background: var(--color-primary-hover); }
+
+  /* Flashcard modal */
+  .fc-card {
+    background: var(--color-bg); border: 2px solid var(--color-border);
+    border-radius: 18px; padding: 2rem;
+    min-height: 180px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; cursor: pointer; transition: border-color .2s;
+  }
+  .fc-card:hover { border-color: var(--color-primary); }
+  .fc-front, .fc-back { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; }
+  .fc-hanzi { font-size: 4rem; font-weight: 300; color: var(--color-text); line-height: 1; }
+  .fc-pinyin { font-size: 1.2rem; font-style: italic; color: var(--color-primary); }
+  .fc-meaning { font-size: 1rem; color: var(--color-text); }
+  .fc-controls { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: center; }
+  .fc-btn {
+    padding: .45rem .9rem; border-radius: 9px; border: 1.5px solid var(--color-border);
+    background: var(--color-bg); color: var(--color-text);
+    font-size: .82rem; font-weight: 600; cursor: pointer; transition: all .15s;
+  }
+  .fc-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+  .fc-btn--close { background: #fee2e2; color: #ef4444; border-color: #fecaca; }
+  .fc-btn--close:hover { background: #ef4444; color: #fff; border-color: #ef4444; }
+  .fc-counter { font-size: .8rem; color: var(--color-text-muted); padding: .3rem .5rem; }
+
+  .footer { border-top: 1px solid var(--color-border); padding: 1.25rem 1.5rem; text-align: center; font-size: .78rem; color: var(--color-text-muted); }
+  .hidden { display: none !important; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+
+<script>
+  // ── Constants ────────────────────────────────────────────────────────────
+  const NB_KEY  = 'wz-notebooks';
+  const SRS_KEY = 'wz-srs';
+
+  // ── Types ────────────────────────────────────────────────────────────────
+  interface NbWord { simplified: string; traditional: string; pinyin: string; meaning: string; color: string; }
+  interface Notebook { id: string; name: string; words: NbWord[]; createdAt: string; srs: Record<string, number>; }
+
+  // ── Storage ───────────────────────────────────────────────────────────────
+  function loadNotebooks(): Notebook[] {
+    try { return JSON.parse(localStorage.getItem(NB_KEY) ?? '[]'); }
+    catch { return []; }
+  }
+  function saveNotebooks(arr: Notebook[]): void {
+    try { localStorage.setItem(NB_KEY, JSON.stringify(arr)); }
+    catch {}
+  }
+
+  // ── Demo data ────────────────────────────────────────────────────────────
+  const DEMO_WORDS: NbWord[] = [
+    { simplified:'战争', traditional:'戰爭', pinyin:'zhànzhēng', meaning:'Chiến tranh', color:'#dc2626' },
+    { simplified:'士兵', traditional:'士兵', pinyin:'shìbīng', meaning:'Binh lính', color:'#b45309' },
+    { simplified:'武器', traditional:'武器', pinyin:'wǔqì', meaning:'Vũ khí', color:'#4f46e5' },
+    { simplified:'胜利', traditional:'勝利', pinyin:'shènglì', meaning:'Chiến thắng', color:'#16a34a' },
+    { simplified:'失败', traditional:'失敗', pinyin:'shībài', meaning:'Thất bại', color:'#ef4444' },
+    { simplified:'军队', traditional:'軍隊', pinyin:'jūnduì', meaning:'Quân đội', color:'#7c3aed' },
+    { simplified:'炸弹', traditional:'炸彈', pinyin:'zhàdàn', meaning:'Bom đạn', color:'#dc2626' },
+    { simplified:'和平', traditional:'和平', pinyin:'hépíng', meaning:'Hòa bình', color:'#0ea5e9' },
+    { simplified:'战场', traditional:'戰場', pinyin:'zhànchǎng', meaning:'Chiến trường', color:'#b45309' },
+    { simplified:'英雄', traditional:'英雄', pinyin:'yīngxióng', meaning:'Anh hùng', color:'#f59e0b' },
+  ];
+
+  function ensureDemo(): void {
+    let nbs = loadNotebooks();
+    if (!nbs.find(n => n.id === 'demo-war')) {
+      nbs.unshift({ id: 'demo-war', name: 'Chủ đề Chiến tranh', words: DEMO_WORDS, createdAt: '2026-06-10', srs: {} });
+      saveNotebooks(nbs);
+    }
+  }
+  ensureDemo();
+
+  // ── SRS ──────────────────────────────────────────────────────────────────
+  const SRS_COLORS = ['#ef4444','#f97316','#eab308','#22c55e','#3b82f6'];
+  const SRS_LABELS = ['Cấp 1','Cấp 2','Cấp 3','Cấp 4','Cấp 5'];
+
+  function getSRSData(): number[] {
+    try {
+      const d = JSON.parse(localStorage.getItem(SRS_KEY) ?? 'null');
+      if (Array.isArray(d) && d.length === 5) return d;
+    } catch {}
+    return [8, 5, 12, 7, 3];
+  }
+
+  function renderSRS(): void {
+    const levels = getSRSData();
+    const total  = levels.reduce((a, b) => a + b, 0);
+    const el     = document.getElementById('srs-levels')!;
+    el.innerHTML = levels.map((n, i) => `
+      <div class="srs-level-row">
+        <span class="srs-level-label">${SRS_LABELS[i]}</span>
+        <div class="srs-level-bar-wrap">
+          <div class="srs-level-bar-fill" style="width:${total ? (n/total*100).toFixed(1) : 0}%;background:${SRS_COLORS[i]}"></div>
+        </div>
+        <span class="srs-level-count">${n}</span>
+      </div>`).join('');
+
+    const due = levels[0] + Math.floor(levels[1] * .4);
+    document.getElementById('srs-due-count')!.textContent = String(due);
+    (document.getElementById('srs-review-btn') as HTMLButtonElement).disabled = due === 0;
+  }
+
+  // ── Personal notebooks ───────────────────────────────────────────────────
+  function renderPersonal(): void {
+    const nbs    = loadNotebooks();
+    const grid   = document.getElementById('personal-grid')!;
+    const empty  = document.getElementById('empty-personal')!;
+
+    grid.innerHTML = '';
+    if (nbs.length === 0) {
+      empty.classList.remove('hidden');
+      return;
+    }
+    empty.classList.add('hidden');
+
+    nbs.forEach(nb => {
+      const btn = document.createElement('button');
+      btn.type  = 'button';
+      btn.className = 'personal-nb-card';
+      btn.dataset.nbId = nb.id;
+      btn.innerHTML = `
+        <div class="nb-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <span class="nb-card-name">${nb.name}</span>
+        <span class="nb-card-count">${nb.words.length} từ · ${nb.createdAt}</span>
+      `;
+      btn.addEventListener('click', () => openDetail(nb.id));
+      grid.appendChild(btn);
+    });
+
+    const totalWords = nbs.reduce((a, n) => a + n.words.length, 0);
+    document.getElementById('stat-total')!.textContent    = String(totalWords);
+    document.getElementById('stat-notebooks')!.textContent = String(nbs.length);
+  }
+
+  // ── Detail view ───────────────────────────────────────────────────────────
+  let currentNbId = '';
+  let allWords: NbWord[] = [];
+
+  function openDetail(id: string): void {
+    const nbs = loadNotebooks();
+    const nb  = nbs.find(n => n.id === id);
+    if (!nb) return;
+    currentNbId = id;
+    allWords    = nb.words;
+
+    document.getElementById('view-notebooks')!.classList.add('hidden');
+    document.getElementById('view-detail')!.classList.remove('hidden');
+
+    document.getElementById('detail-title')!.textContent       = nb.name;
+    document.getElementById('detail-date')!.textContent        = 'Tạo: ' + nb.createdAt;
+    document.getElementById('detail-count-badge')!.textContent = `${nb.words.length} từ`;
+
+    const learned = Math.floor(nb.words.length * 0.6);
+    document.getElementById('detail-learned')!.textContent = `${learned} / ${nb.words.length} từ`;
+    (document.getElementById('detail-progress-bar') as HTMLElement).style.width =
+      nb.words.length ? `${(learned/nb.words.length*100).toFixed(0)}%` : '0%';
+
+    renderWordGrid(nb.words);
+  }
+
+  function renderWordGrid(words: NbWord[]): void {
+    const grid  = document.getElementById('word-grid')!;
+    const empty = document.getElementById('empty-words')!;
+    grid.innerHTML = '';
+    if (words.length === 0) { empty.classList.remove('hidden'); return; }
+    empty.classList.add('hidden');
+
+    words.forEach(w => {
+      const card = document.createElement('div');
+      card.className = 'word-card';
+      card.innerHTML = `
+        <div class="word-card-img" style="background:${w.color}">
+          <span lang="zh">${w.simplified[0]}</span>
+        </div>
+        <div class="word-card-body">
+          <span class="wc-hanzi" lang="zh">${w.simplified}</span>
+          ${w.traditional !== w.simplified ? `<span class="wc-trad" lang="zh">${w.traditional}</span>` : ''}
+          <span class="wc-pinyin">${w.pinyin}</span>
+          <span class="wc-meaning">${w.meaning}</span>
+          <div class="wc-actions">
+            <button class="wc-btn" type="button">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Ghi chú
+            </button>
+            <button class="wc-btn" type="button" onclick="speakWord('${w.simplified}')">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+              Nghe
+            </button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  (window as any).speakWord = (text: string) => {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN'; u.rate = 0.9;
+    speechSynthesis.speak(u);
+  };
+
+  // ── Word search filter ────────────────────────────────────────────────────
+  document.getElementById('word-search')?.addEventListener('input', (e) => {
+    const q = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    const filtered = q ? allWords.filter(w =>
+      w.simplified.includes(q) || w.pinyin.toLowerCase().includes(q) || w.meaning.toLowerCase().includes(q)
+    ) : allWords;
+    renderWordGrid(filtered);
+  });
+
+  // ── Back button ───────────────────────────────────────────────────────────
+  document.getElementById('btn-back-detail')?.addEventListener('click', () => {
+    document.getElementById('view-detail')!.classList.add('hidden');
+    document.getElementById('view-notebooks')!.classList.remove('hidden');
+    (document.getElementById('word-search') as HTMLInputElement).value = '';
+  });
+
+  // ── Create notebook modal ─────────────────────────────────────────────────
+  document.getElementById('btn-create-nb')?.addEventListener('click', () => {
+    document.getElementById('modal-create')!.classList.remove('hidden');
+    (document.getElementById('modal-name') as HTMLInputElement).value = '';
+    setTimeout(() => (document.getElementById('modal-name') as HTMLInputElement).focus(), 100);
+  });
+  document.getElementById('modal-cancel')?.addEventListener('click', () => {
+    document.getElementById('modal-create')!.classList.add('hidden');
+  });
+  document.getElementById('modal-confirm')?.addEventListener('click', () => {
+    const name = (document.getElementById('modal-name') as HTMLInputElement).value.trim();
+    if (!name) return;
+    const nb: Notebook = { id: `nb-${Date.now()}`, name, words: [], createdAt: new Date().toISOString().slice(0,10), srs: {} };
+    const nbs = loadNotebooks();
+    nbs.unshift(nb);
+    saveNotebooks(nbs);
+    document.getElementById('modal-create')!.classList.add('hidden');
+    renderPersonal();
+    openDetail(nb.id);
+  });
+
+  // ── Edit name ─────────────────────────────────────────────────────────────
+  document.getElementById('btn-edit-name')?.addEventListener('click', () => {
+    const nbs  = loadNotebooks();
+    const nb   = nbs.find(n => n.id === currentNbId);
+    if (!nb) return;
+    const newName = prompt('Đổi tên sổ tay:', nb.name);
+    if (newName?.trim()) {
+      nb.name = newName.trim();
+      saveNotebooks(nbs);
+      document.getElementById('detail-title')!.textContent = nb.name;
+      renderPersonal();
+    }
+  });
+
+  // ── HSK/TOCFL book cards ──────────────────────────────────────────────────
+  document.querySelectorAll<HTMLButtonElement>('.book-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const label = btn.dataset.bookLabel ?? '';
+      const count = btn.dataset.bookCount ?? '0';
+      alert(`📚 ${label} — ${parseInt(count).toLocaleString()} từ\n\nTính năng tải dữ liệu ${label} đang được phát triển. Vui lòng quay lại sau!`);
+    });
+  });
+
+  // ── Flashcard ─────────────────────────────────────────────────────────────
+  let fcWords: NbWord[] = [];
+  let fcIdx   = 0;
+  let fcFlipped = false;
+
+  function openFlashcard(): void {
+    const nbs = loadNotebooks();
+    const nb  = nbs.find(n => n.id === currentNbId);
+    if (!nb || nb.words.length === 0) { alert('Sổ tay chưa có từ nào.'); return; }
+    fcWords   = [...nb.words].sort(() => Math.random() - .5);
+    fcIdx     = 0; fcFlipped = false;
+    renderFCCard();
+    document.getElementById('modal-fc')!.classList.remove('hidden');
+  }
+
+  function renderFCCard(): void {
+    const w = fcWords[fcIdx];
+    document.getElementById('fc-hanzi')!.textContent   = w.simplified;
+    document.getElementById('fc-pinyin')!.textContent  = w.pinyin;
+    document.getElementById('fc-meaning')!.textContent = w.meaning;
+    document.getElementById('fc-front')!.classList.remove('hidden');
+    document.getElementById('fc-back')!.classList.add('hidden');
+    document.getElementById('fc-counter')!.textContent = `${fcIdx+1} / ${fcWords.length}`;
+    fcFlipped = false;
+  }
+
+  document.getElementById('btn-flashcard')?.addEventListener('click', openFlashcard);
+  document.getElementById('fc-flip')?.addEventListener('click', () => {
+    fcFlipped = !fcFlipped;
+    document.getElementById('fc-front')!.classList.toggle('hidden', fcFlipped);
+    document.getElementById('fc-back')!.classList.toggle('hidden', !fcFlipped);
+  });
+  document.getElementById('fc-card')?.addEventListener('click', () => {
+    document.getElementById('fc-flip')!.click();
+  });
+  document.getElementById('fc-prev')?.addEventListener('click', () => {
+    if (fcIdx > 0) { fcIdx--; renderFCCard(); }
+  });
+  document.getElementById('fc-next')?.addEventListener('click', () => {
+    if (fcIdx < fcWords.length - 1) { fcIdx++; renderFCCard(); }
+  });
+  document.getElementById('fc-close')?.addEventListener('click', () => {
+    document.getElementById('modal-fc')!.classList.add('hidden');
+  });
+
+  document.getElementById('btn-write')?.addEventListener('click', () => {
+    window.location.href = `/word/${0}`;
+  });
+
+  // ── Tab switcher ──────────────────────────────────────────────────────────
+  const TABS: [string, string][] = [
+    ['tab-notebooks', 'view-notebooks'],
+    ['tab-ai',        'view-ai'],
+  ];
+  document.querySelectorAll<HTMLButtonElement>('.tab').forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      TABS.forEach(([tabId, viewId], j) => {
+        const t = document.getElementById(tabId)!;
+        const v = document.getElementById(viewId)!;
+        const active = j === i;
+        t.classList.toggle('tab--active', active);
+        t.setAttribute('aria-selected', String(active));
+        if (i === 1 && active && document.getElementById('view-detail')!.classList.contains('hidden') === false) {
+          document.getElementById('view-detail')!.classList.add('hidden');
+        }
+        v.classList.toggle('hidden', !active);
+      });
+    });
+  });
+
+  // ── Roadmap data ──────────────────────────────────────────────────────────
+  const ROADMAP = [
+    { emoji:'🌱', title:'Những bước chân đầu tiên', desc:'Chào hỏi, số đếm, màu sắc. HSK 1–2.', level:'HSK 1', color:'#22c55e', rc:'#dcfce7' },
+    { emoji:'🏡', title:'Gia đình & Cuộc sống', desc:'Thành viên gia đình, nhà cửa, sinh hoạt hàng ngày.', level:'HSK 2', color:'#3b82f6', rc:'#dbeafe' },
+    { emoji:'🍜', title:'Ẩm thực & Thực phẩm', desc:'Gọi món, nấu ăn, các món đặc trưng Trung Hoa.', level:'HSK 2–3', color:'#f97316', rc:'#ffedd5' },
+    { emoji:'🚇', title:'Hòa nhập & Khám phá', desc:'Đi lại, hỏi đường, giao thông công cộng.', level:'HSK 3', color:'#8b5cf6', rc:'#ede9fe' },
+    { emoji:'💼', title:'Kinh doanh & Nghề nghiệp', desc:'Phỏng vấn, làm việc văn phòng, thương mại.', level:'HSK 4', color:'#0ea5e9', rc:'#e0f2fe' },
+    { emoji:'📰', title:'Tin tức & Thời sự', desc:'Đọc hiểu báo chí, bình luận, phân tích sự kiện.', level:'HSK 5–6', color:'#dc2626', rc:'#fee2e2' },
+  ];
+
+  function renderRoadmap(): void {
+    const grid = document.getElementById('roadmap-grid')!;
+    grid.innerHTML = ROADMAP.map(r => `
+      <button class="roadmap-card" type="button" style="--rc-color:${r.color}">
+        <span class="rc-tag" style="background:${r.rc};color:${r.color}">${r.level}</span>
+        <span class="rc-title">${r.emoji} ${r.title}</span>
+        <span class="rc-desc">${r.desc}</span>
+        <span class="rc-badge">Bắt đầu học →</span>
+        <span class="rc-watermark" lang="zh">${r.emoji}</span>
+      </button>`).join('');
+  }
+
+  // ── AI lesson generation (mock) ───────────────────────────────────────────
+  const AI_LESSONS: Record<string, NbWord[]> = {
+    'Du lịch': [
+      { simplified:'机场', traditional:'機場', pinyin:'jīchǎng', meaning:'Sân bay', color:'#0ea5e9' },
+      { simplified:'护照', traditional:'護照', pinyin:'hùzhào', meaning:'Hộ chiếu', color:'#4f46e5' },
+      { simplified:'酒店', traditional:'酒店', pinyin:'jiǔdiàn', meaning:'Khách sạn', color:'#f97316' },
+      { simplified:'景点', traditional:'景點', pinyin:'jǐngdiǎn', meaning:'Điểm tham quan', color:'#16a34a' },
+      { simplified:'导游', traditional:'導遊', pinyin:'dǎoyóu', meaning:'Hướng dẫn viên', color:'#7c3aed' },
+      { simplified:'旅行', traditional:'旅行', pinyin:'lǚxíng', meaning:'Du lịch, đi chơi', color:'#0ea5e9' },
+    ],
+    'Ẩm thực': [
+      { simplified:'饺子', traditional:'餃子', pinyin:'jiǎozi', meaning:'Sủi cảo', color:'#f97316' },
+      { simplified:'火锅', traditional:'火鍋', pinyin:'huǒguō', meaning:'Lẩu', color:'#dc2626' },
+      { simplified:'米饭', traditional:'米飯', pinyin:'mǐfàn', meaning:'Cơm', color:'#eab308' },
+      { simplified:'面条', traditional:'麵條', pinyin:'miàntiáo', meaning:'Mì sợi', color:'#f97316' },
+      { simplified:'饮料', traditional:'飲料', pinyin:'yǐnliào', meaning:'Đồ uống', color:'#0ea5e9' },
+      { simplified:'甜点', traditional:'甜點', pinyin:'tiándiǎn', meaning:'Tráng miệng', color:'#ec4899' },
+    ],
+    'Công nghệ': [
+      { simplified:'人工智能', traditional:'人工智能', pinyin:'réngōng zhìnéng', meaning:'Trí tuệ nhân tạo', color:'#4f46e5' },
+      { simplified:'手机', traditional:'手機', pinyin:'shǒujī', meaning:'Điện thoại di động', color:'#0ea5e9' },
+      { simplified:'网络', traditional:'網絡', pinyin:'wǎngluò', meaning:'Mạng lưới, internet', color:'#16a34a' },
+      { simplified:'软件', traditional:'軟件', pinyin:'ruǎnjiàn', meaning:'Phần mềm', color:'#8b5cf6' },
+      { simplified:'数据', traditional:'數據', pinyin:'shùjù', meaning:'Dữ liệu', color:'#3b82f6' },
+      { simplified:'编程', traditional:'編程', pinyin:'biānchéng', meaning:'Lập trình', color:'#f97316' },
+    ],
+  };
+
+  function generateLesson(topic: string): void {
+    const btn = document.getElementById('ai-generate-btn') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = '⏳ Đang tạo...';
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg> Tạo bài học`;
+      const words = AI_LESSONS[topic] ?? AI_LESSONS['Ẩm thực'];
+      showLessonResult(topic, words);
+      addAIHistory(topic);
+    }, 1400);
+  }
+
+  function showLessonResult(topic: string, words: NbWord[]): void {
+    const result = document.getElementById('ai-lesson-result')!;
+    const title  = document.getElementById('lesson-result-title')!;
+    const grid   = document.getElementById('lesson-words')!;
+    title.textContent = `✨ Bài học: ${topic}`;
+    grid.innerHTML = words.map(w => `
+      <div class="lw-card">
+        <span class="lw-hanzi" lang="zh">${w.simplified}</span>
+        <span class="lw-pinyin">${w.pinyin}</span>
+        <span class="lw-meaning">${w.meaning}</span>
+      </div>`).join('');
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function addAIHistory(topic: string): void {
+    const el = document.getElementById('ai-lesson-history')!;
+    const empty = el.querySelector('.ai-hist-empty');
+    if (empty) empty.remove();
+    const existing = el.querySelector(`[data-topic="${topic}"]`);
+    if (existing) return;
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.className = 'ai-hist-item';
+    item.dataset.topic = topic;
+    item.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${topic}`;
+    item.addEventListener('click', () => generateLesson(topic));
+    el.prepend(item);
+  }
+
+  document.getElementById('ai-generate-btn')?.addEventListener('click', () => {
+    const topic = (document.getElementById('ai-topic') as HTMLInputElement).value.trim() || 'Ẩm thực';
+    generateLesson(topic);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.ai-suggest-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      (document.getElementById('ai-topic') as HTMLInputElement).value = btn.dataset.topic ?? '';
+      generateLesson(btn.dataset.topic ?? '');
+    });
+  });
+
+  document.getElementById('btn-close-lesson')?.addEventListener('click', () => {
+    document.getElementById('ai-lesson-result')!.classList.add('hidden');
+  });
+
+  // ── Init ─────────────────────────────────────────────────────────────────
+  renderSRS();
+  renderPersonal();
+  renderRoadmap();
+  document.getElementById('stat-streak')!.textContent = '3';
+</script>
