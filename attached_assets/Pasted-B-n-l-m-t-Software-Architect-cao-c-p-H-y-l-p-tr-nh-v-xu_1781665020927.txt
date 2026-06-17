@@ -1,0 +1,43 @@
+Bạn là một Software Architect cao cấp. Hãy lập trình và xuất bản mã nguồn HOÀN CHỈNH cho module Sổ tay (`/notebook`) của dự án WenZi (Astro + Bun + SQLite + TypeScript). 
+
+### 1. Phân tích bối cảnh & Luồng giao diện (Tham chiếu 3 file ảnh):
+Hệ thống sổ tay bao gồm cấu trúc Tab Switcher ở trên cùng ("Sổ tay" và "Bài học AI") và các view tương ứng:
+
+#### A. View "Sổ tay" chính (Tham chiếu image_b34022.png):
+- **Layout:** Chia làm 2 phần (Sidebar trái và Nội dung phải).
+- **Sidebar trái:** Khối "Spaced Repetition" (Lặp lại ngắt quãng) hiển thị các cấp độ nhớ từ 1 đến 5, số lượng từ tương ứng và nút lớn "Ôn tập ngay (X) Từ" có màu gradient nổi bật.
+- **Nội dung phải:** 
+  - Nút "Tạo sổ tay" ở trên cùng.
+  - Nhóm "Cá nhân": Các thư mục từ vựng do người dùng tự tạo (Ví dụ: "Chủ đề Chiến tranh - 10 từ").
+  - Nhóm "Miễn phí": Lưới danh sách các sổ tay mẫu chia theo lộ trình HSK (HSK 1 -> HSK 7-9) và TOCFL (TOCFL 1 -> TOCFL 4), hiển thị rõ số lượng từ bên dưới mỗi card.
+  - Nhóm "Cao cấp 👑": Trạng thái trống (Empty state) kèm minh họa dễ thương và thông báo không tìm thấy.
+
+#### B. View "Bài học AI ✨" (Tham chiếu image_b33fe4.png):
+- **Sidebar trái:** Form tạo bài học thông minh: Chọn cấp độ (Sơ cấp, Trung cấp...), ô input nhập chủ đề muốn học, và nút "Tạo bài học ✨". Bên dưới có mục "Gợi ý cho bạn" và "Lịch sử" tạo bài học.
+- **Nội dung phải:** Tiêu đề "Học theo lộ trình 🎯" kèm danh sách các block bài học trực quan dạng timeline/grid (Ví dụ: Những bước chân đầu tiên, Hòa nhập và Khám phá...) xếp so le đẹp mắt.
+
+#### C. View Chi tiết Sổ tay (Tham chiếu image_b33cbc.png):
+- Kích hoạt khi nhấn vào một sổ tay cụ thể (Ví dụ: "Chủ đề Chiến tranh").
+- Có nút "Trở về", tiêu đề sổ tay kèm icon sửa đổi (chỉnh sửa tên), số lượng từ và ngày tạo.
+- **Layout:**
+  - **Bên trái (Danh sách từ):** Grid hiển thị danh sách từ vựng. Mỗi từ là một card gồm: Hình ảnh minh họa, Chữ Hán (Giản/Phồn), Pinyin, Nghĩa tiếng Việt, nút Ghi chú và nút Phát âm (Loa).
+  - **Bên phải (Công cụ ôn tập):** Thanh tìm kiếm từ vựng, Khối "Ôn tập" chia thành các chế độ: "Luyện viết" 📝 và "Flashcard" 🗂️.
+
+### 2. Tiêu chuẩn công nghệ & Thiết kế WenZi:
+- **Framework:** Astro (File-based routing, tổ chức các sub-view qua query params hoặc client-side state thích hợp).
+- **Hệ thống Icon (Chỉ dùng `lucide-astro`):** 
+  - Thư mục/Sổ tay: `FolderHeart` hoặc `BookOpen`
+  - Tạo mới: `Plus`
+  - Quay lại: `ArrowLeft`
+  - Phát âm: `Volume2`
+  - Sửa đổi: `Pencil`
+  - Bộ não/AI: `Sparkles`
+  - Luyện viết: `PenTool`
+  - Flashcard: `Layers`
+  - Lặp lại ngắt quãng: `BrainCircuit`
+- **Tailwind CSS:** Bo góc `rounded-2xl` mềm mại đồng bộ hệ thống, sử dụng shadow nhẹ để tạo chiều sâu cho các card từ vựng. Responsive thông minh khi chuyển từ màn hình Desktop (Sidebar + Nội dung) sang Mobile (Sidebar đẩy lên trên hoặc chuyển thành tab vuộn).
+
+### 3. Yêu cầu đặc biệt về mã nguồn:
+1. **Hoàn thiện logic Client-side:** Viết toàn bộ logic chuyển đổi tab ("Sổ tay" / "Bài học AI") mượt mà, bộ lọc tìm kiếm từ vựng hoạt động thời gian thực (real-time).
+2. **Dữ liệu Mockup chuẩn:** Khởi tạo dữ liệu mẫu phong phú cho danh sách HSK/TOCFL và bộ từ vựng "Chủ đề Chiến tranh" (gồm chữ Hán, Pinyin, nghĩa tiếng Việt và link ảnh minh họa placeholder giữ chỗ) để trang hiển thị trực quan ngay lập tức.
+3. **Tuyệt đối không bỏ sót code:** Xuất toàn bộ cấu trúc file hoàn chỉnh, không viết mã giả, không dùng comment né tránh viết logic.
