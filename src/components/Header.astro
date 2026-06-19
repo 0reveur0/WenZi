@@ -1,10 +1,11 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import { Activity, Bell, BookOpen, HelpCircle, Inbox, LogOut, MonitorSmartphone } from 'lucide-astro';
 import logo from '../../favicon.png';
 
 interface Props {
   backHref?: string;
-  activePage?: 'home' | 'favorites' | 'notebook' | 'community';
+  activePage?: 'home' | 'favorites' | 'notebook' | 'community' | 'profile' | 'guide';
 }
 
 const { backHref, activePage = 'home' } = Astro.props;
@@ -61,10 +62,38 @@ const { backHref, activePage = 'home' } = Astro.props;
         </svg>
         Cộng đồng
       </a>
+      <a href="/guide" class={`nav-link ${activePage === 'guide' ? 'nav-link--active' : ''}`}>
+        <BookOpen class="nav-icon" />
+        Hướng dẫn
+      </a>
     </nav>
 
     <!-- Right: Controls + Auth -->
     <div class="controls">
+      <div class="notification-wrapper" id="notification-wrapper">
+        <button id="notification-trigger" class="notification-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+          <Bell class="notification-icon" />
+          <span class="notification-badge hidden" id="notification-badge">0</span>
+        </button>
+        <div class="notification-panel hidden" id="notification-panel" role="menu" aria-label="Thông báo">
+          <div class="notification-panel-head">
+            <div>
+              <p class="panel-title">Thông báo</p>
+              <p class="panel-subtext">Cập nhật mới nhất của bạn</p>
+            </div>
+            <div class="panel-quick-actions">
+              <button id="mark-read-all" type="button" class="notification-action">Đánh dấu đã đọc tất cả</button>
+              <button id="clear-all-notifications" type="button" class="notification-action notification-action--muted">Xóa tất cả</button>
+            </div>
+          </div>
+          <div class="notification-list" id="notification-list"></div>
+          <div class="notification-empty hidden" id="notification-empty">
+            <Inbox class="empty-icon" />
+            <p class="empty-title">Bạn chưa có thông báo!</p>
+            <p class="empty-copy">Mọi thông báo mới sẽ xuất hiện ở đây khi có hoạt động.</p>
+          </div>
+        </div>
+      </div>
       <ThemeToggle />
 
       <!-- Auth: guest state (default visible, hidden by JS when logged in) -->
@@ -75,8 +104,46 @@ const { backHref, activePage = 'home' } = Astro.props;
 
       <!-- Auth: logged-in state (hidden by default, shown by JS) -->
       <div class="auth-user" id="auth-user" hidden>
-        <span class="auth-username" id="auth-username"></span>
-        <button class="btn-logout" id="btn-logout" type="button">Đăng xuất</button>
+        <div class="profile-wrapper" id="profile-wrapper">
+          <button id="profile-trigger" class="profile-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Mở menu hồ sơ">
+            <img id="profile-avatar" class="profile-avatar" src="" alt="Avatar người dùng" />
+          </button>
+
+          <div class="profile-panel hidden" id="profile-panel" role="menu" aria-label="Menu hồ sơ người dùng">
+            <div class="profile-panel-header">
+              <div>
+                <p class="profile-name" id="profile-name"></p>
+                <p class="profile-email" id="profile-email"></p>
+              </div>
+              <div class="profile-actions">
+                <a href="/profile" class="profile-button profile-button--secondary">Xem hồ sơ</a>
+                <a href="/notebook" class="profile-button profile-button--primary">Nâng cấp</a>
+              </div>
+            </div>
+
+            <div class="profile-menu">
+              <a href="/notebook" class="profile-link">
+                <Activity class="profile-link-icon" />
+                <span>Hoạt động</span>
+              </a>
+              <a href="/help" class="profile-link">
+                <HelpCircle class="profile-link-icon" />
+                <span>Trợ giúp</span>
+              </a>
+              <a href="/devices" class="profile-link">
+                <MonitorSmartphone class="profile-link-icon" />
+                <span>Quản lý thiết bị</span>
+              </a>
+            </div>
+
+            <div class="profile-footer">
+              <button id="logout-action" type="button" class="profile-logout">
+                <LogOut class="profile-link-icon profile-link-icon--danger" />
+                <span>Đăng xuất</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -264,6 +331,357 @@ const { backHref, activePage = 'home' } = Astro.props;
   }
   .btn-logout:hover { color: #b91c1c; }
 
+  .notification-wrapper {
+    position: relative;
+  }
+  .profile-wrapper {
+    position: relative;
+  }
+  .profile-trigger {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,.18);
+    background: var(--color-bg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow .18s ease, transform .18s ease;
+  }
+  .profile-trigger:hover {
+    box-shadow: 0 10px 24px rgba(15,23,42,.12);
+    transform: translateY(-1px);
+  }
+  .profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .profile-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + .75rem);
+    width: min(320px, calc(100vw - 1rem));
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(15,23,42,.18);
+    padding: 1rem;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .profile-panel:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .profile-panel-header {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
+  .profile-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color-text);
+  }
+  .profile-email {
+    margin: 0;
+    font-size: .82rem;
+    color: var(--color-text-muted);
+  }
+  .profile-actions {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-top: .6rem;
+  }
+  .profile-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    padding: .65rem .95rem;
+    border-radius: 999px;
+    font-size: .79rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .15s, color .15s;
+  }
+  .profile-button--secondary {
+    background: #f8fafc;
+    color: var(--color-text);
+    border: 1px solid rgba(148,163,184,.2);
+  }
+  .profile-button--secondary:hover {
+    background: #eef2ff;
+  }
+  .profile-button--primary {
+    background: #1d4ed8;
+    color: #fff;
+  }
+  .profile-button--primary:hover {
+    background: #1e40af;
+  }
+  .profile-menu {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    border-top: 1px solid rgba(148,163,184,.18);
+    padding-top: 1rem;
+  }
+  .profile-link {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .85rem 1rem;
+    border-radius: 18px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background .15s, color .15s;
+  }
+  .profile-link:hover {
+    background: var(--color-primary-dim);
+  }
+  .profile-link-icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+  }
+  .profile-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148,163,184,.18);
+  }
+  .profile-logout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .85rem 1rem;
+    border-radius: 18px;
+    border: none;
+    background: transparent;
+    color: #dc2626;
+    font-size: .92rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s;
+  }
+  .profile-logout:hover {
+    background: rgba(220,38,38,.08);
+  }
+  .profile-link-icon--danger {
+    color: #dc2626;
+  }
+  .notification-trigger {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .notification-trigger:hover { background: var(--color-primary-dim); }
+  .notification-icon { width: 20px; height: 20px; }
+  .notification-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #ef4444;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 700;
+  }
+  .notification-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + .75rem);
+    width: min(360px, calc(100vw - 1rem));
+    max-height: 420px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(15,23,42,.18);
+    padding: 1rem;
+    overflow: hidden;
+    z-index: 80;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .notification-panel:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .notification-panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: .85rem;
+  }
+  .panel-title {
+    margin: 0;
+    font-size: .95rem;
+    font-weight: 800;
+    color: var(--color-text);
+  }
+  .panel-subtext {
+    margin: .25rem 0 0;
+    font-size: .78rem;
+    color: var(--color-text-muted);
+  }
+  .panel-quick-actions {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .notification-action {
+    border: none;
+    background: transparent;
+    color: var(--color-primary);
+    font-size: .75rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: .3rem .45rem;
+  }
+  .notification-action:hover { text-decoration: underline; }
+  .notification-action--muted { color: var(--color-text-muted); }
+  .notification-list {
+    max-height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+    padding-right: .15rem;
+  }
+  .notification-item {
+    display: flex;
+    gap: .9rem;
+    align-items: flex-start;
+    padding: .9rem;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: background .15s, border-color .15s;
+    cursor: pointer;
+  }
+  .notification-item:hover { background: var(--color-primary-dim); }
+  .notification-item.unread {
+    background: rgba(14,165,233,.1);
+    border-color: rgba(14,165,233,.25);
+  }
+  .notification-item-icon {
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #2563eb;
+  }
+  .notification-item-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+  }
+  .notification-item-title {
+    margin: 0;
+    font-size: .86rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .notification-item-message {
+    margin: 0;
+    font-size: .8rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+  .notification-item-time {
+    font-size: .72rem;
+    color: var(--color-text-muted);
+  }
+  .notification-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #22c55e;
+    margin-left: auto;
+    margin-top: 6px;
+  }
+  .notification-empty {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: .75rem;
+    color: var(--color-text-muted);
+  }
+  .empty-icon {
+    width: 44px;
+    height: 44px;
+    color: #94a3b8;
+  }
+  .empty-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .empty-copy {
+    margin: 0;
+    font-size: .84rem;
+  }
+
+  @media (max-width: 768px) {
+    .notification-panel {
+      position: fixed;
+      inset: auto 0 0 0;
+      width: 100%;
+      max-height: 70vh;
+      border-radius: 24px 24px 0 0;
+      padding: 1rem 1rem .85rem;
+      top: auto;
+      right: auto;
+      left: auto;
+    }
+    .notification-wrapper { z-index: 90; }
+  }
+  @media (max-width: 480px) {
+    .notification-trigger { width: 40px; height: 40px; }
+    .notification-panel { max-height: 72vh; }
+  }
+
   /* ── Modal ── */
   .modal-backdrop {
     position: fixed;
@@ -353,76 +771,360 @@ const { backHref, activePage = 'home' } = Astro.props;
 </style>
 
 <script>
-  const AUTH_KEY = 'wz-user';
+  const AUTH_KEY = 'wz-user-session';
 
-  function getUser(): string | null {
-    try { return localStorage.getItem(AUTH_KEY); }
-    catch { return null; }
-  }
-  function setUser(name: string) {
-    try { localStorage.setItem(AUTH_KEY, name); }
-    catch { /* private mode */ }
-  }
-  function clearUser() {
-    try { localStorage.removeItem(AUTH_KEY); }
-    catch { /* */ }
-  }
+  const MOCK_USER = {
+    name: 'Nguyễn Văn A',
+    email: 'nguyenvana@example.com',
+    avatar: 'https://i.pravatar.cc/128?img=48',
+  };
 
-  const guestEl    = document.getElementById('auth-guest')!;
-  const userEl     = document.getElementById('auth-user')!;
-  const usernameEl = document.getElementById('auth-username')!;
-  const modal      = document.getElementById('auth-modal')!;
-  const nameInput  = document.getElementById('modal-name-input') as HTMLInputElement;
-  const errorEl    = document.getElementById('modal-error')!;
-
-  // ── Sync UI to auth state ─────────────────────────────────────────────────
-  function syncAuthUI() {
-    const user = getUser();
-    if (user) {
-      guestEl.hidden = true;
-      userEl.hidden  = false;
-      usernameEl.textContent = `Tài khoản: ${user}`;
-    } else {
-      guestEl.hidden = false;
-      userEl.hidden  = true;
+  function getUserSession() {
+    try {
+      const raw = localStorage.getItem(AUTH_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object' || typeof parsed.name !== 'string') return null;
+      return {
+        name: String(parsed.name),
+        email: String(parsed.email || MOCK_USER.email),
+        avatar: String(parsed.avatar || MOCK_USER.avatar),
+      };
+    } catch {
+      return null;
     }
-    // Notify SearchWidgets to re-render
+  }
+
+  function setUserSession(name) {
+    const session = {
+      ...MOCK_USER,
+      name,
+    };
+    try {
+      localStorage.setItem(AUTH_KEY, JSON.stringify(session));
+    } catch {
+      // ignore private mode errors
+    }
+  }
+
+  function clearUserSession() {
+    try { localStorage.removeItem(AUTH_KEY); }
+    catch { /* ignore */ }
+  }
+
+  const guestEl = document.getElementById('auth-guest');
+  const userEl = document.getElementById('auth-user');
+  const profileNameEl = document.getElementById('profile-name');
+  const profileEmailEl = document.getElementById('profile-email');
+  const profileAvatarEl = document.getElementById('profile-avatar');
+  const profileTrigger = document.getElementById('profile-trigger');
+  const profilePanel = document.getElementById('profile-panel');
+  const profileWrapper = document.getElementById('profile-wrapper');
+  const logoutAction = document.getElementById('logout-action');
+  const modal = document.getElementById('auth-modal');
+  const nameInput = document.getElementById('modal-name-input');
+  const errorEl = document.getElementById('modal-error');
+
+  function syncAuthUI() {
+    const session = getUserSession();
+    if (session && guestEl && userEl) {
+      guestEl.hidden = true;
+      userEl.hidden = false;
+      if (profileNameEl) profileNameEl.textContent = session.name;
+      if (profileEmailEl) profileEmailEl.textContent = session.email;
+      if (profileAvatarEl) profileAvatarEl.src = session.avatar;
+      if (profileTrigger) profileTrigger.setAttribute('aria-label', `Mở menu của ${session.name}`);
+    } else if (guestEl && userEl) {
+      guestEl.hidden = false;
+      userEl.hidden = true;
+    }
     document.dispatchEvent(new CustomEvent('wz:authchange'));
   }
 
-  // ── Modal helpers ─────────────────────────────────────────────────────────
   function openModal() {
-    nameInput.value   = '';
-    errorEl.hidden    = true;
-    modal.hidden      = false;
+    if (!nameInput || !errorEl || !modal) return;
+    nameInput.value = '';
+    errorEl.hidden = true;
+    modal.hidden = false;
     requestAnimationFrame(() => nameInput.focus());
   }
+
   function closeModal() {
+    if (!modal) return;
     modal.hidden = true;
   }
+
   function confirmLogin() {
+    if (!nameInput || !errorEl) return;
     const name = nameInput.value.trim();
-    if (name.length < 2) { errorEl.hidden = false; nameInput.focus(); return; }
-    setUser(name);
+    if (name.length < 2) {
+      errorEl.hidden = false;
+      nameInput.focus();
+      return;
+    }
+    setUserSession(name);
     closeModal();
     syncAuthUI();
   }
 
-  // ── Wire buttons ──────────────────────────────────────────────────────────
+  function openProfilePanel() {
+    if (!profilePanel || !profileTrigger) return;
+    profilePanel.classList.remove('hidden');
+    profileTrigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeProfilePanel() {
+    if (!profilePanel || !profileTrigger) return;
+    profilePanel.classList.add('hidden');
+    profileTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleProfilePanel() {
+    if (!profilePanel) return;
+    if (profilePanel.classList.contains('hidden')) {
+      openProfilePanel();
+    } else {
+      closeProfilePanel();
+    }
+  }
+
   document.getElementById('btn-login')?.addEventListener('click', openModal);
   document.getElementById('btn-register')?.addEventListener('click', openModal);
   document.getElementById('modal-cancel')?.addEventListener('click', closeModal);
   document.getElementById('modal-confirm')?.addEventListener('click', confirmLogin);
-  nameInput.addEventListener('keydown', e => {
+  nameInput?.addEventListener('keydown', e => {
     if (e.key === 'Enter') confirmLogin();
     if (e.key === 'Escape') closeModal();
   });
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  modal?.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 
-  document.getElementById('btn-logout')?.addEventListener('click', () => {
-    clearUser();
-    syncAuthUI();
+  profileTrigger?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleProfilePanel();
+    closeNotificationPanel();
   });
+
+  logoutAction?.addEventListener('click', () => {
+    clearUserSession();
+    syncAuthUI();
+    closeProfilePanel();
+    console.log('Xử lý xóa session/cookie đăng xuất tại đây...');
+  });
+
+  // ── Notification Bell Dropdown ───────────────────────────────────────────
+  const NOTIFICATION_KEY = 'wz-notifications';
+  type NotificationType = 'system' | 'challenge' | 'community' | 'learning';
+  interface NotificationItem {
+    id: number;
+    type: NotificationType;
+    title: string;
+    message: string;
+    time: string;
+    unread: boolean;
+  }
+
+  const DEFAULT_NOTIFICATIONS: NotificationItem[] = [
+    {
+      id: 1,
+      type: 'system',
+      title: 'WenZi bảo trì định kỳ',
+      message: 'Hệ thống sẽ tạm bảo trì vào 23:00 để cập nhật tính năng mới.',
+      time: '5 phút trước',
+      unread: true,
+    },
+    {
+      id: 2,
+      type: 'challenge',
+      title: 'Thách thức bài thi mới',
+      message: 'Bạn vừa được mời tham gia thử thách HSK 4 trong 24 giờ tới.',
+      time: '30 phút trước',
+      unread: true,
+    },
+    {
+      id: 3,
+      type: 'community',
+      title: 'Minh Tú đã bình luận',
+      message: 'Minh Tú phản hồi vào bài viết của bạn trong nhóm Cộng đồng.',
+      time: '1 giờ trước',
+      unread: true,
+    },
+    {
+      id: 4,
+      type: 'learning',
+      title: 'Tài liệu HSK 4 mới',
+      message: 'Đã cập nhật bộ flashcard HSK 4 trong thư viện học tập.',
+      time: '2 giờ trước',
+      unread: false,
+    },
+  ];
+
+  const notificationTrigger = document.getElementById('notification-trigger');
+  const notificationPanel = document.getElementById('notification-panel');
+  const notificationBadge = document.getElementById('notification-badge');
+  const notificationList = document.getElementById('notification-list');
+  const notificationEmpty = document.getElementById('notification-empty');
+  const markReadAllButton = document.getElementById('mark-read-all');
+  const clearAllButton = document.getElementById('clear-all-notifications');
+  const notificationWrapper = document.getElementById('notification-wrapper');
+
+  let notifications: NotificationItem[] = loadNotifications();
+
+  function loadNotifications(): NotificationItem[] {
+    try {
+      const raw = localStorage.getItem(NOTIFICATION_KEY);
+      if (!raw) return [...DEFAULT_NOTIFICATIONS];
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [...DEFAULT_NOTIFICATIONS];
+      return parsed.map((item: any) => ({
+        id: Number(item.id) || Date.now(),
+        type: ['system', 'challenge', 'community', 'learning'].includes(item.type) ? item.type : 'system',
+        title: String(item.title || ''),
+        message: String(item.message || ''),
+        time: String(item.time || ''),
+        unread: Boolean(item.unread),
+      }));
+    } catch {
+      return [...DEFAULT_NOTIFICATIONS];
+    }
+  }
+
+  function saveNotifications(list: NotificationItem[]) {
+    try {
+      localStorage.setItem(NOTIFICATION_KEY, JSON.stringify(list));
+    } catch {
+      // ignore private mode issues
+    }
+  }
+
+  function getUnreadCount(list: NotificationItem[]) {
+    return list.filter(item => item.unread).length;
+  }
+
+  function renderNotificationBadge() {
+    if (!notificationBadge) return;
+    const unreadCount = getUnreadCount(notifications);
+    if (unreadCount > 0) {
+      notificationBadge.textContent = String(unreadCount);
+      notificationBadge.classList.remove('hidden');
+    } else {
+      notificationBadge.classList.add('hidden');
+    }
+  }
+
+  function formatNotificationIcon(type: NotificationType) {
+    if (type === 'system') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7l3-7z"/></svg>';
+    if (type === 'challenge') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M3 11l7-7 7 7M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
+    if (type === 'community') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>';
+  }
+
+  function renderNotificationPanel() {
+    if (!notificationList || !notificationEmpty) return;
+    notificationList.innerHTML = '';
+    if (notifications.length === 0) {
+      notificationEmpty.classList.remove('hidden');
+      notificationList.classList.add('hidden');
+      return;
+    }
+
+    notificationEmpty.classList.add('hidden');
+    notificationList.classList.remove('hidden');
+
+    notificationList.innerHTML = notifications
+      .map(item => `
+        <button class="notification-item ${item.unread ? 'unread' : ''}" type="button" data-notification-id="${item.id}">
+          <span class="notification-item-icon">${formatNotificationIcon(item.type)}</span>
+          <span class="notification-item-content">
+            <span class="notification-item-title">${item.title}</span>
+            <span class="notification-item-message">${item.message}</span>
+            <span class="notification-item-time">${item.time}</span>
+          </span>
+          ${item.unread ? '<span class="notification-dot"></span>' : ''}
+        </button>`)
+      .join('');
+
+    notificationList.querySelectorAll<HTMLButtonElement>('[data-notification-id]').forEach(button => {
+      button.addEventListener('click', () => {
+        const id = Number(button.dataset.notificationId);
+        const item = notifications.find(entry => entry.id === id);
+        if (!item) return;
+        if (item.unread) {
+          item.unread = false;
+          saveNotifications(notifications);
+          renderNotificationBadge();
+          renderNotificationPanel();
+        }
+      });
+    });
+  }
+
+  function openNotificationPanel() {
+    notificationPanel?.classList.remove('hidden');
+    notificationTrigger?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeNotificationPanel() {
+    notificationPanel?.classList.add('hidden');
+    notificationTrigger?.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleNotificationPanel() {
+    if (!notificationPanel) return;
+    if (notificationPanel.classList.contains('hidden')) {
+      openNotificationPanel();
+    } else {
+      closeNotificationPanel();
+    }
+  }
+
+  function markAllNotificationsAsRead() {
+    notifications = notifications.map(item => ({ ...item, unread: false }));
+    saveNotifications(notifications);
+    renderNotificationBadge();
+    renderNotificationPanel();
+  }
+
+  function clearAllNotifications() {
+    notifications = [];
+    saveNotifications(notifications);
+    renderNotificationBadge();
+    renderNotificationPanel();
+  }
+
+  notificationTrigger?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleNotificationPanel();
+  });
+
+  markReadAllButton?.addEventListener('click', () => {
+    markAllNotificationsAsRead();
+  });
+
+  clearAllButton?.addEventListener('click', () => {
+    clearAllNotifications();
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    const clickedOutsideNotification = !notificationWrapper?.contains(target);
+    const clickedOutsideProfile = !profileWrapper?.contains(target);
+    if (clickedOutsideNotification) {
+      closeNotificationPanel();
+    }
+    if (clickedOutsideProfile) {
+      closeProfilePanel();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeNotificationPanel();
+      closeProfilePanel();
+    }
+  });
+
+  renderNotificationBadge();
+  renderNotificationPanel();
 
   // ── Init ──────────────────────────────────────────────────────────────────
   syncAuthUI();

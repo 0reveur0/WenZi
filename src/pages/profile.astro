@@ -1,0 +1,393 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import { Award, CalendarDays, CheckCircle2, Lock, Medal, SearchCode, X } from 'lucide-astro';
+
+const ACHIEVEMENTS = [
+  {
+    id: 1,
+    title: 'Gấu rất rảnh',
+    description: '7 ngày đăng nhập liên tục',
+    current: 3,
+    goal: 7,
+    icon: 'CalendarDays',
+  },
+  {
+    id: 2,
+    title: 'Gấu chăm chỉ',
+    description: 'Tra cứu 10 từ / ngày',
+    current: 6,
+    goal: 10,
+    icon: 'SearchCode',
+  },
+  {
+    id: 3,
+    title: 'Gấu gương mẫu',
+    description: 'Hoàn thành 30 bài học',
+    current: 12,
+    goal: 30,
+    icon: 'Award',
+  },
+  {
+    id: 4,
+    title: 'Gấu kiên trì',
+    description: 'Học 90 phút trong ngày',
+    current: 90,
+    goal: 90,
+    icon: 'Medal',
+  },
+  {
+    id: 5,
+    title: 'Gấu máy móc',
+    description: 'Hoàn thành 180 giờ học',
+    current: 125,
+    goal: 180,
+    icon: 'CalendarDays',
+  },
+  {
+    id: 6,
+    title: 'Gấu lướt bài',
+    description: 'Đọc 365 từ mới',
+    current: 205,
+    goal: 365,
+    icon: 'SearchCode',
+  },
+];
+
+const ACHIEVEMENTS_WITH_PROGRESS = ACHIEVEMENTS.map((item) => ({
+  ...item,
+  progress: Math.min(100, Math.round((item.current / item.goal) * 100)),
+  completed: item.current >= item.goal,
+}));
+---
+
+<BaseLayout title="Hồ sơ cá nhân — WenZi">
+  <Header activePage="profile" />
+
+  <main class="min-h-[calc(100dvh-72px)] bg-slate-50 px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6">
+      <section class="grid gap-6 lg:grid-cols-[1.3fr_0.9fr]">
+        <div class="rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70">
+          <div class="flex items-center gap-5">
+            <div class="h-24 w-24 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
+              <img class="h-full w-full object-cover" src="https://i.pravatar.cc/160?img=48" alt="Avatar người dùng" />
+            </div>
+            <div class="min-w-0">
+              <p class="text-2xl font-semibold tracking-tight text-slate-950">Nguyễn Văn A</p>
+              <p class="mt-1 text-sm text-slate-500">nguyenvana@example.com</p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-3xl bg-slate-50 p-5 text-center ring-1 ring-slate-200/70">
+              <p class="text-3xl font-bold text-slate-900">128</p>
+              <p class="mt-2 text-sm text-slate-500">Điểm danh</p>
+            </div>
+            <div class="rounded-3xl bg-slate-50 p-5 text-center ring-1 ring-slate-200/70">
+              <p class="text-3xl font-bold text-slate-900">24</p>
+              <p class="mt-2 text-sm text-slate-500">Danh hiệu</p>
+            </div>
+            <div class="rounded-3xl bg-slate-50 p-5 text-center ring-1 ring-slate-200/70">
+              <p class="text-3xl font-bold text-slate-900">18</p>
+              <p class="mt-2 text-sm text-slate-500">Ngày liên tiếp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xl font-semibold text-slate-950">Thành tích của bạn</p>
+              <p class="mt-2 text-sm text-slate-500">Theo dõi tiến trình và mở khóa danh hiệu mới mỗi ngày.</p>
+            </div>
+            <button id="open-achievements" class="inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-white" type="button">
+              Xem thêm
+            </button>
+          </div>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-1">
+            {ACHIEVEMENTS.slice(0, 3).map((item) => (
+              <div class="flex items-center gap-4 rounded-3xl bg-slate-50 p-4 ring-1 ring-slate-200/70" key={item.id}>
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">
+                  {item.icon === 'Medal' ? <Medal class="h-6 w-6" /> : item.icon === 'Award' ? <Award class="h-6 w-6" /> : item.icon === 'CalendarDays' ? <CalendarDays class="h-6 w-6" /> : <SearchCode class="h-6 w-6" />}
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-950">{item.title}</p>
+                  <p class="mt-1 text-sm text-slate-500">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="achievements-modal" class="fixed inset-0 z-50 hidden bg-black/50 p-4 backdrop-blur-sm sm:p-6" aria-hidden="true">
+    <div class="mx-auto flex h-full max-h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl ring-1 ring-slate-200">
+      <div class="flex items-start justify-between gap-4 border-b border-slate-200 p-6">
+        <div>
+          <h2 id="achievements-heading" class="text-2xl font-bold text-slate-950">Danh sách danh hiệu</h2>
+          <p class="mt-2 text-sm text-slate-500">Xem tổng quan tiến trình và trạng thái mở khóa từng danh hiệu.</p>
+        </div>
+        <button id="close-achievements" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-600 transition hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-label="Đóng danh sách danh hiệu">
+          <X class="h-5 w-5" />
+        </button>
+      </div>
+
+      <div class="overflow-y-auto p-6 pb-8">
+        <div class="space-y-4">
+          {ACHIEVEMENTS_WITH_PROGRESS.map((item) => (
+            <div class="flex items-center gap-4 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70" key={item.id}>
+              <div class="flex h-14 w-14 items-center justify-center rounded-[1.25rem] bg-slate-100 text-slate-700">
+                {item.icon === 'Medal' ? <Medal class="h-6 w-6" /> : item.icon === 'Award' ? <Award class="h-6 w-6" /> : item.icon === 'CalendarDays' ? <CalendarDays class="h-6 w-6" /> : <SearchCode class="h-6 w-6" />}
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="font-semibold text-slate-950">{item.title}</p>
+                <p class="mt-1 text-sm text-slate-500">{item.description}</p>
+                <div class="mt-4 h-2 rounded-full bg-slate-200">
+                  <div class="h-full rounded-full bg-sky-600 transition-all duration-200" style={`width:${item.progress}%`}></div>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-2">
+                {item.completed ? <CheckCircle2 class="h-5 w-5 text-emerald-500" /> : <Lock class="h-5 w-5 text-rose-500" />}
+                <span class="text-sm font-semibold text-slate-700">{item.current}/{item.goal}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    const modalOverlay = document.getElementById('achievements-modal');
+    const openButton = document.getElementById('open-achievements');
+    const closeButton = document.getElementById('close-achievements');
+
+    function openAchievementsModal() {
+      if (!modalOverlay) return;
+      modalOverlay.classList.remove('hidden');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAchievementsModal() {
+      if (!modalOverlay) return;
+      modalOverlay.classList.add('hidden');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    openButton?.addEventListener('click', openAchievementsModal);
+    closeButton?.addEventListener('click', closeAchievementsModal);
+
+    modalOverlay?.addEventListener('click', (event) => {
+      if (event.target === modalOverlay) {
+        closeAchievementsModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAchievementsModal();
+      }
+    });
+  </script>
+</BaseLayout>
+
+    .modal-panel {
+      width: min(100%, 840px);
+      max-width: 780px;
+      max-height: min(100vh - 3rem, 680px);
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 32px 80px rgba(15, 23, 42, 0.22);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--color-text);
+    }
+
+    .modal-subtitle {
+      margin: .45rem 0 0;
+      color: var(--color-text-muted);
+      font-size: .95rem;
+    }
+
+    .modal-close {
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 14px;
+      background: #f8fafc;
+      color: var(--color-text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background .15s ease;
+    }
+
+    .modal-close:hover {
+      background: #e2e8f0;
+    }
+
+    .modal-body {
+      padding: 1.35rem 1.5rem 1.5rem;
+      display: grid;
+      gap: 1rem;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    .achievement-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      background: #f8fafc;
+      border-radius: 1.2rem;
+      border: 1px solid #e2e8f0;
+      padding: 1rem 1rem 1rem 1.1rem;
+    }
+
+    .achievement-row-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: #eef2ff;
+      flex-shrink: 0;
+      font-size: 1.35rem;
+    }
+
+    .achievement-row-main {
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      min-width: 0;
+    }
+
+    .achievement-row-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--color-text);
+    }
+
+    .achievement-row-desc {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: .88rem;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+
+    .achievement-row-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: .35rem;
+      min-width: 86px;
+    }
+
+    .achievement-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .achievement-status--complete {
+      background: #d1fae5;
+      color: #047857;
+    }
+
+    .achievement-status--locked {
+      background: #fef2f2;
+      color: #dc2626;
+    }
+
+    .achievement-ratio {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      .profile-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .achievement-snapshot {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .profile-page {
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .profile-card,
+      .achievement-section {
+        border-radius: 24px;
+      }
+
+      .profile-hero {
+        gap: 1rem;
+      }
+
+      .achievement-snapshot {
+        grid-template-columns: 1fr;
+      }
+
+      .achievement-row {
+        grid-template-columns: auto 1fr;
+      }
+
+      .achievement-row-meta {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  </style>
+</BaseLayout>

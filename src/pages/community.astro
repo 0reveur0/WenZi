@@ -1,20 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
+import { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSquareText } from 'lucide-astro';
 export const prerender = true;
 
-const CATEGORIES = [
-  { name: 'Học tiếng Trung', icon: `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>` },
-  { name: 'Văn hóa Trung Quốc', icon: `<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>` },
-  { name: 'Dịch thuật', icon: `<path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>` },
-  { name: 'Du học Trung Quốc', icon: `<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>` },
-  { name: 'Du lịch', icon: `<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 3.5c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>` },
-  { name: 'Góc chia sẻ', icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>` },
-  { name: 'Tìm bạn học chung', icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>` },
-  { name: 'Công nghệ thông tin', icon: `<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>` },
-  { name: 'Việc làm', icon: `<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>` },
-  { name: 'Cơ khí', icon: `<circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 2.12 3.44l-2.88 1.11A7 7 0 0 0 17 8.15M4.93 4.93a10 10 0 0 0-2.12 3.44l2.88 1.11A7 7 0 0 1 7 8.15M4.93 19.07a10 10 0 0 0 3.44 2.12l1.11-2.88A7 7 0 0 1 8.15 17M19.07 19.07a10 10 0 0 1-3.44 2.12l-1.11-2.88A7 7 0 0 0 15.85 17"/>` },
-];
+const currentUser = { name: 'Anh Nguyen', avatar: 'AN' };
 
 const HOT_QUESTIONS = [
   'Làm thế nào để phân biệt 的、地、得 trong tiếng Trung?',
@@ -24,51 +14,111 @@ const HOT_QUESTIONS = [
   'Kinh nghiệm thi TOCFL tại Đài Loan — chia sẻ từ người đã qua!',
 ];
 
+const CATEGORIES = [
+  { name: 'Học tiếng Trung', icon: 'MessageSquareText' },
+  { name: 'Văn hóa Trung Quốc', icon: 'Grid' },
+  { name: 'Dịch thuật', icon: 'Grid' },
+  { name: 'Du học Trung Quốc', icon: 'Grid' },
+  { name: 'Du lịch', icon: 'Grid' },
+  { name: 'Góc chia sẻ', icon: 'MessageSquareText' },
+  { name: 'Tìm bạn học chung', icon: 'Grid' },
+  { name: 'Công nghệ thông tin', icon: 'Grid' },
+  { name: 'Việc làm', icon: 'Grid' },
+  { name: 'Cơ khí', icon: 'Grid' },
+];
+
+const FILTERS = ['Tất cả', 'Yêu thích', 'Quan tâm', 'BTV lựa chọn'];
+
 const POSTS = [
   {
-    id: 1, pinned: true,
-    avatar: 'AN', name: 'Anh Nguyen', role: 'Mod',
-    time: '2 giờ trước', category: 'Học tiếng Trung',
+    id: 1,
+    pinned: true,
+    avatar: 'AN',
+    name: 'Anh Nguyen',
+    role: 'Mod',
+    time: '2 giờ trước',
+    category: 'Học tiếng Trung',
     title: '📌 [THÔNG BÁO] Quy định cộng đồng WenZi — Đọc trước khi tham gia',
-    content: 'Chào mừng bạn đến với cộng đồng WenZi! Để duy trì môi trường học tập lành mạnh và tích cực, vui lòng đọc kỹ các quy định sau trước khi đăng bài. Tôn trọng lẫn nhau, không spam, không quảng cáo ngoài luồng...',
-    likes: 142, comments: 28, views: 3540, color: '#2b4c7e',
+    content:
+      'Chào mừng bạn đến với cộng đồng WenZi! Để duy trì môi trường học tập lành mạnh và tích cực, vui lòng đọc kỹ các quy định sau trước khi đăng bài. Tôn trọng lẫn nhau, không spam, không quảng cáo ngoài luồng. Mọi thảo luận cần đảm bảo văn phong lịch sự và đúng chủ đề.',
+    likes: 142,
+    comments: 28,
+    views: 3540,
+    color: '#2b4c7e',
+    liked: false,
   },
   {
-    id: 2, pinned: false,
-    avatar: 'MT', name: 'Minh Tú', role: '',
-    time: '45 phút trước', category: 'Học tiếng Trung',
+    id: 2,
+    pinned: false,
+    avatar: 'MT',
+    name: 'Minh Tú',
+    role: '',
+    time: '45 phút trước',
+    category: 'Học tiếng Trung',
     title: 'Mẹo nhớ thanh điệu tiếng Trung siêu hiệu quả cho người Việt',
-    content: 'Sau 2 năm học tiếng Trung, mình đã tổng hợp được một số mẹo để ghi nhớ 4 thanh điệu (+ thanh nhẹ) một cách tự nhiên nhất. Bí quyết là gắn mỗi thanh với một hành động cơ thể: thanh 1 → giọng phẳng cao như hát, thanh 2 → giọng lên như hỏi...',
-    likes: 87, comments: 34, views: 1820, color: '#7c3aed',
+    content:
+      'Sau 2 năm học tiếng Trung, mình đã tổng hợp được một số mẹo để ghi nhớ 4 thanh điệu (+ thanh nhẹ) một cách tự nhiên nhất. Bí quyết là gắn mỗi thanh với một hành động cơ thể: thanh 1 → giọng phẳng cao như hát, thanh 2 → giọng lên như hỏi, thanh 3 → giọng rơi xuống rồi lên, thanh 4 → giọng gãy và mạnh.',
+    likes: 87,
+    comments: 34,
+    views: 1820,
+    color: '#7c3aed',
+    liked: false,
   },
   {
-    id: 3, pinned: false,
-    avatar: 'HT', name: 'Hồng Thái', role: 'HSK 5',
-    time: '3 giờ trước', category: 'Du học Trung Quốc',
+    id: 3,
+    pinned: false,
+    avatar: 'HT',
+    name: 'Hồng Thái',
+    role: 'HSK 5',
+    time: '3 giờ trước',
+    category: 'Du học Trung Quốc',
     title: 'Kinh nghiệm xin visa du học Trung Quốc 2026 — Hồ sơ cần chuẩn bị gì?',
-    content: 'Mình vừa nhận được visa du học Trung Quốc tuần trước. Quá trình xin visa khá phức tạp nhưng nếu chuẩn bị kỹ thì không khó. Bài viết này mình sẽ liệt kê đầy đủ các giấy tờ cần thiết và những lưu ý quan trọng...',
-    likes: 203, comments: 67, views: 4210, color: '#0ea5e9',
+    content:
+      'Mình vừa nhận được visa du học Trung Quốc tuần trước. Quá trình xin visa khá phức tạp nhưng nếu chuẩn bị kỹ thì không khó. Bài viết này mình sẽ liệt kê đầy đủ các giấy tờ cần thiết và những lưu ý quan trọng để bạn tự tin nộp hồ sơ.',
+    likes: 203,
+    comments: 67,
+    views: 4210,
+    color: '#0ea5e9',
+    liked: false,
   },
   {
-    id: 4, pinned: false,
-    avatar: 'LP', name: 'Lan Phương', role: '',
-    time: '5 giờ trước', category: 'Góc chia sẻ',
+    id: 4,
+    pinned: false,
+    avatar: 'LP',
+    name: 'Lan Phương',
+    role: '',
+    time: '5 giờ trước',
+    category: 'Góc chia sẻ',
     title: '分享：学了3个月汉语后的感想 — Cảm nhận sau 3 tháng học tiếng Trung',
-    content: '我学中文已经三个月了。开始的时候很难，特别是声调。但是现在我可以用中文打招呼，点菜，还有买东西！ | Mình học tiếng Trung được 3 tháng rồi. Lúc đầu rất khó, đặc biệt là thanh điệu. Nhưng giờ mình có thể dùng tiếng Trung để chào hỏi, gọi món và mua đồ!',
-    likes: 156, comments: 43, views: 2890, color: '#16a34a',
+    content:
+      '我学中文已经三个月了。开始的时候很难，特别是声调。但是现在我可以用中文打招呼，点菜，还有买东西！ | Mình học tiếng Trung được 3 tháng rồi. Lúc đầu rất khó, đặc biệt là thanh điệu. Nhưng giờ mình có thể dùng tiếng Trung để chào hỏi, gọi món và mua đồ!',
+    likes: 156,
+    comments: 43,
+    views: 2890,
+    color: '#16a34a',
+    liked: false,
   },
   {
-    id: 5, pinned: false,
-    avatar: 'DK', name: 'Đức Khoa', role: 'BTV',
-    time: '1 ngày trước', category: 'Dịch thuật',
+    id: 5,
+    pinned: false,
+    avatar: 'DK',
+    name: 'Đức Khoa',
+    role: 'BTV',
+    time: '1 ngày trước',
+    category: 'Dịch thuật',
     title: 'Giải thích chi tiết: Khi nào dùng 把 trong câu tiếng Trung?',
-    content: 'Cấu trúc 把 (bǎ) là một trong những điểm ngữ pháp khiến người học hay nhầm lẫn nhất. Hôm nay mình sẽ giải thích chi tiết với ví dụ cụ thể: 把 được dùng khi động từ tác động lên tân ngữ xác định, tạo ra sự thay đổi...',
-    likes: 312, comments: 89, views: 6750, color: '#f97316',
+    content:
+      'Cấu trúc 把 (bǎ) là một trong những điểm ngữ pháp khiến người học hay nhầm lẫn nhất. Hôm nay mình sẽ giải thích chi tiết với ví dụ cụ thể: 把 được dùng khi động từ tác động lên tân ngữ xác định, tạo ra sự thay đổi và nhấn mạnh kết quả.',
+    likes: 312,
+    comments: 89,
+    views: 6750,
+    color: '#f97316',
+    liked: false,
   },
 ];
 
 const LEADERBOARD = {
-  week: [
+  tuần: [
     { rank: 1, name: 'Minh Tú', avatar: 'MT', score: 2840, color: '#f59e0b' },
     { rank: 2, name: 'Hồng Thái', avatar: 'HT', score: 2210, color: '#94a3b8' },
     { rank: 3, name: 'Đức Khoa', avatar: 'DK', score: 1980, color: '#b45309' },
@@ -80,7 +130,7 @@ const LEADERBOARD = {
     { rank: 9, name: 'Bích Ngọc', avatar: 'BN', score: 720 },
     { rank: 10, name: 'Hoàng Nam', avatar: 'HN', score: 612 },
   ],
-  month: [
+  tháng: [
     { rank: 1, name: 'Đức Khoa', avatar: 'DK', score: 12400, color: '#f59e0b' },
     { rank: 2, name: 'Minh Tú', avatar: 'MT', score: 9870, color: '#94a3b8' },
     { rank: 3, name: 'Thu Hà', avatar: 'TH', score: 8200, color: '#b45309' },
@@ -92,7 +142,7 @@ const LEADERBOARD = {
     { rank: 9, name: 'Quốc Bảo', avatar: 'QB', score: 3120 },
     { rank: 10, name: 'Hoàng Nam', avatar: 'HN', score: 2560 },
   ],
-  year: [
+  năm: [
     { rank: 1, name: 'Anh Nguyen', avatar: 'AN', score: 145000, color: '#f59e0b' },
     { rank: 2, name: 'Đức Khoa', avatar: 'DK', score: 128000, color: '#94a3b8' },
     { rank: 3, name: 'Minh Tú', avatar: 'MT', score: 112000, color: '#b45309' },
@@ -105,711 +155,435 @@ const LEADERBOARD = {
     { rank: 10, name: 'Hoàng Nam', avatar: 'HN', score: 38000 },
   ],
 };
+
+const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSquareText };
 ---
 
 <BaseLayout title="Cộng đồng — WenZi">
-<div class="page">
-  <Header activePage="community" />
+  <div class="min-h-screen bg-slate-50 text-slate-950">
+    <Header activePage="community" />
 
-  <main class="cm-main">
-    <div class="cm-container">
+    <main class="px-4 py-6 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-[1280px]">
+        <div class="grid gap-4 md:grid-cols-[1fr_320px] lg:grid-cols-[280px_1fr_320px]">
 
-      <!-- ── 3-COLUMN GRID ─────────────────────────────────────────────── -->
-      <div class="cm-grid">
-
-        <!-- ═══ COL LEFT ══════════════════════════════════════════════════ -->
-        <aside class="col-left">
-
-          <!-- Hot questions -->
-          <div class="cm-card">
-            <div class="cm-card-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2c0 0-4 4-4 8a4 4 0 0 0 8 0c0-1-.3-2-.8-2.9C15 8.9 15 11 13 12c0-2-1-4-1-4z"/>
-                <path d="M12 22a6 6 0 0 0 6-6c0-3-2-4.5-3-5.5 0 1.5-1 3-2 3.5C12.3 13.2 10 14 9 16a4 4 0 0 0 3 4z"/>
-              </svg>
-              <h2 class="cm-card-title">Câu hỏi được quan tâm</h2>
-            </div>
-            <ol class="hot-list">
-              {HOT_QUESTIONS.map((q, i) => (
-                <li class="hot-item">
-                  <span class={`hot-num hot-num--${i < 3 ? 'top' : 'normal'}`}>{i+1}</span>
-                  <span class="hot-text">{q}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <!-- Categories -->
-          <div class="cm-card">
-            <div class="cm-card-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7" rx="1"/>
-                <rect x="14" y="3" width="7" height="7" rx="1"/>
-                <rect x="3" y="14" width="7" height="7" rx="1"/>
-                <rect x="14" y="14" width="7" height="7" rx="1"/>
-              </svg>
-              <h2 class="cm-card-title">Thể loại</h2>
-            </div>
-            <ul class="cat-list">
-              {CATEGORIES.map(c => (
-                <li>
-                  <button class="cat-item" type="button" data-cat={c.name}>
-                    <span class="cat-icon">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        set:html={c.icon}/>
+          <aside class="hidden lg:block space-y-4">
+            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-100 text-rose-600">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="M12 2c0 0-4 4-4 8a4 4 0 0 0 8 0c0-1-.3-2-.8-2.9C15 8.9 15 11 13 12c0-2-1-4-1-4z"/>
+                    <path d="M12 22a6 6 0 0 0 6-6c0-3-2-4.5-3-5.5 0 1.5-1 3-2 3.5C12.3 13.2 10 14 9 16a4 4 0 0 0 3 4z"/>
+                  </svg>
+                </span>
+                <div>
+                  <p class="text-sm font-semibold text-slate-900">Câu hỏi được quan tâm</p>
+                  <p class="text-xs text-slate-500">Những topic đang nóng nhất trong cộng đồng.</p>
+                </div>
+              </div>
+              <ol class="space-y-3">
+                {HOT_QUESTIONS.map((question, index) => (
+                  <li class="flex items-start gap-3 rounded-3xl border border-slate-200/80 bg-slate-50 px-4 py-3 transition hover:border-slate-300 hover:bg-white">
+                    <span class={`mt-1 inline-flex h-7 w-7 items-center justify-center rounded-2xl ${index < 3 ? 'bg-sky-600 text-white' : 'bg-slate-200 text-slate-700'} text-xs font-semibold`}>
+                      {index + 1}
                     </span>
-                    <span class="cat-name">{c.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-        </aside>
-
-        <!-- ═══ COL CENTER ════════════════════════════════════════════════ -->
-        <div class="col-center">
-
-          <!-- Create post -->
-          <div class="cm-card create-post-card">
-            <div class="create-avatar">AN</div>
-            <button class="create-input-btn" id="create-post-btn" type="button">
-              Anh Nguyen, bạn đang thắc mắc điều gì?
-            </button>
-          </div>
-
-          <!-- Filter tabs -->
-          <div class="post-filter-bar" role="tablist">
-            {['Tất cả', 'Yêu thích', 'Quan tâm', 'BTV lựa chọn'].map((f, i) => (
-              <button class={`post-filter-tab ${i === 0 ? 'post-filter-tab--active' : ''}`}
-                role="tab" data-filter={f} type="button">{f}</button>
-            ))}
-          </div>
-
-          <!-- Post list -->
-          <div id="post-list" class="post-list"></div>
-
-        </div>
-
-        <!-- ═══ COL RIGHT ═════════════════════════════════════════════════ -->
-        <aside class="col-right">
-
-          <!-- Search -->
-          <div class="cm-card">
-            <div class="right-search-wrap">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-              </svg>
-              <input type="search" id="post-search" class="right-search" placeholder="Tìm kiếm bài viết..." autocomplete="off"/>
-            </div>
-          </div>
-
-          <!-- Leaderboard -->
-          <div class="cm-card leaderboard-card">
-            <div class="cm-card-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.892 9.007a1 1 0 0 1-.947.685H5.857a1 1 0 0 1-.946-.685L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/>
-                <path d="M5 21h14"/>
-              </svg>
-              <h2 class="cm-card-title">Vinh danh</h2>
-              <div class="lb-tabs" role="tablist" id="lb-tabs">
-                {['Tuần', 'Tháng', 'Năm'].map((t, i) => (
-                  <button class={`lb-tab ${i===0 ? 'lb-tab--active' : ''}`}
-                    data-period={t.toLowerCase()} role="tab" type="button">{t}</button>
+                    <p class="text-sm leading-6 text-slate-700">{question}</p>
+                  </li>
                 ))}
+              </ol>
+            </section>
+
+            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">
+                  <Grid class="h-5 w-5" />
+                </span>
+                <div>
+                  <p class="text-sm font-semibold text-slate-900">Thể loại</p>
+                  <p class="text-xs text-slate-500">Chọn chủ đề bạn quan tâm.</p>
+                </div>
+              </div>
+              <div class="grid gap-2">
+                {CATEGORIES.map((category) => {
+                  const Icon = ICONS[category.icon];
+                  return (
+                    <button class="flex items-center gap-3 rounded-3xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-white" type="button" data-cat={category.name}>
+                      <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">
+                        <Icon class="h-5 w-5" />
+                      </span>
+                      <span>{category.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          </aside>
+
+          <section class="space-y-4">
+            <div class="rounded-[32px] bg-white border border-slate-200/80 p-5 shadow-sm transition hover:shadow-md">
+              <div class="flex items-center gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-sm font-bold text-white">{currentUser.avatar}</div>
+                <button id="create-post-btn" type="button" class="flex-1 rounded-full border border-slate-200/80 bg-slate-50 px-4 py-3 text-left text-sm text-slate-500 transition hover:border-slate-300 hover:bg-white">
+                  {currentUser.name}, bạn đang thắc mắc điều gì?
+                </button>
               </div>
             </div>
 
-            <!-- Podium top 3 -->
-            <div class="podium" id="podium"></div>
+            <div class="inline-flex flex-wrap gap-2 rounded-full border border-slate-200/80 bg-white p-2 shadow-sm">
+              {FILTERS.map((filter, index) => (
+                <button type="button" class={`filter-tab rounded-full px-4 py-2 text-sm font-semibold transition ${index === 0 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}`} data-filter={filter}>
+                  {filter}
+                </button>
+              ))}
+            </div>
 
-            <!-- List 4–10 -->
-            <div class="lb-list" id="lb-list"></div>
+            <div id="post-list" class="space-y-4">
+              {POSTS.map((post) => (
+                <article class={`rounded-[28px] border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${post.pinned ? 'ring-1 ring-sky-200' : ''}`} data-id={post.id}>
+                  <div class="flex flex-wrap items-start justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                      <div class="flex h-12 w-12 items-center justify-center rounded-3xl text-sm font-bold text-white" style={`background:${post.color}`}>
+                        {post.avatar}
+                      </div>
+                      <div class="min-w-0">
+                        <p class="text-sm font-semibold text-slate-950">{post.name}</p>
+                        <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                          {post.role && <span class={`rounded-full px-2 py-1 ${post.role === 'BTV' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700'}`}>{post.role}</span>}
+                          <span>{post.time}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                      {post.pinned && (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1 text-sky-700">
+                          <Pin class="h-3.5 w-3.5" /> Ghim
+                        </span>
+                      )}
+                      <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-600">{post.category}</span>
+                    </div>
+                  </div>
+                  <h2 class="mt-5 text-lg font-extrabold leading-7 text-slate-950 transition hover:text-sky-600">{post.title}</h2>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">{post.content}</p>
+                  <div class="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-200/80 pt-4 text-sm text-slate-600">
+                    <button class={`post-stat inline-flex items-center gap-2 rounded-full px-3 py-2 transition ${post.liked ? 'bg-rose-50 text-rose-600' : 'hover:bg-slate-100'}`} type="button" data-like={post.id}>
+                      <Heart class="h-4 w-4" />
+                      <span>{post.likes}</span>
+                    </button>
+                    <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 hover:bg-slate-100">
+                      <MessageCircle class="h-4 w-4" />
+                      <span>{post.comments}</span>
+                    </span>
+                    <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 hover:bg-slate-100">
+                      <Eye class="h-4 w-4" />
+                      <span>{post.views}</span>
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <aside class="hidden md:block space-y-4">
+            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+              <label class="relative block text-slate-900">
+                <span class="sr-only">Tìm kiếm bài viết</span>
+                <Search class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+                <input id="post-search" type="search" placeholder="Tìm kiếm bài viết..." class="w-full rounded-3xl border border-slate-200/80 bg-slate-50/90 py-3 pl-12 pr-4 text-sm text-slate-700 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100" />
+              </label>
+            </section>
+
+            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
+                  <Crown class="h-5 w-5" />
+                </span>
+                <div>
+                  <p class="text-sm font-semibold text-slate-950">Vinh danh</p>
+                  <p class="text-xs text-slate-500">Top thành viên tương tác cao.</p>
+                </div>
+              </div>
+              <div class="mb-5 flex flex-wrap gap-2">
+                {['Tuần', 'Tháng', 'Năm'].map((period, index) => (
+                  <button type="button" class={`lb-tab min-w-[88px] rounded-full border px-4 py-2 text-center text-sm font-semibold transition ${index === 0 ? 'bg-slate-900 text-white' : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'}`} data-period={period.toLowerCase()}>
+                    {period}
+                  </button>
+                ))}
+              </div>
+              <div id="podium" class="mb-4 flex items-end justify-center gap-3"></div>
+              <div id="lb-list" class="space-y-3"></div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <div id="modal-post" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm">
+      <div class="w-full max-w-xl rounded-[30px] bg-white p-6 shadow-2xl">
+        <div class="mb-6 flex items-center justify-between">
+          <div>
+            <p class="text-lg font-bold text-slate-950">Đăng bài mới</p>
+            <p class="mt-1 text-sm text-slate-500">Chia sẻ thắc mắc hoặc kiến thức của bạn với cộng đồng.</p>
           </div>
-
-        </aside>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Create post modal -->
-  <div class="modal-overlay hidden" id="modal-post">
-    <div class="modal" role="dialog" aria-modal="true">
-      <div class="modal-hdr">
-        <h2 class="modal-title">Đăng bài mới</h2>
-        <button class="modal-close" id="modal-post-close" type="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-            <path d="M18 6 6 18M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-      <input type="text" id="new-post-title" class="modal-input" placeholder="Tiêu đề bài viết..." maxlength="120"/>
-      <textarea id="new-post-content" class="modal-textarea" placeholder="Nội dung bài viết..." rows="5" maxlength="1000"></textarea>
-      <select id="new-post-cat" class="modal-select">
-        {CATEGORIES.map(c => <option value={c.name}>{c.name}</option>)}
-      </select>
-      <div class="modal-footer">
-        <button class="modal-btn modal-btn--cancel" id="modal-post-cancel" type="button">Hủy</button>
-        <button class="modal-btn modal-btn--confirm" id="modal-post-submit" type="button">Đăng bài</button>
+          <button id="modal-post-close" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-200 text-slate-600 transition hover:border-slate-300 hover:text-slate-900">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="grid gap-4">
+          <input id="new-post-title" type="text" placeholder="Tiêu đề bài viết..." class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100" maxlength="120" />
+          <textarea id="new-post-content" rows="5" placeholder="Nội dung bài viết..." class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100 resize-none" maxlength="1000"></textarea>
+          <select id="new-post-cat" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100">
+            {CATEGORIES.map((category) => (
+              <option value={category.name}>{category.name}</option>
+            ))}
+          </select>
+          <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <button id="modal-post-cancel" type="button" class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-100">Hủy</button>
+            <button id="modal-post-submit" type="button" class="rounded-3xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Đăng bài</button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <footer class="border-t border-slate-200 bg-slate-50 py-6 text-center text-sm text-slate-500">
+      WenZi © 2026 — MIT License
+    </footer>
   </div>
-
-  <footer class="footer">
-    <p>WenZi © 2026 — MIT License</p>
-  </footer>
-</div>
 </BaseLayout>
 
-<style>
-  .page { display: flex; flex-direction: column; min-height: 100dvh; }
+<script type="module">
+  const POSTS_DATA = ${JSON.stringify(POSTS)};
+  const CATEGORIES_DATA = ${JSON.stringify(CATEGORIES)};
+  const LB_DATA = ${JSON.stringify(LEADERBOARD)};
 
-  /* Main */
-  .cm-main { flex: 1; padding: 1.5rem; background: var(--color-bg); }
-  .cm-container { max-width: 1180px; margin: 0 auto; }
-
-  /* 3-column grid */
-  .cm-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr 240px;
-    gap: 1.1rem;
-    align-items: start;
-  }
-  @media (max-width: 1000px) {
-    .cm-grid { grid-template-columns: 1fr 220px; }
-    .col-left { display: none; }
-  }
-  @media (max-width: 680px) {
-    .cm-grid { grid-template-columns: 1fr; }
-    .col-right { display: none; }
-  }
-
-  /* Card base */
-  .cm-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 18px;
-    box-shadow: var(--shadow-sm);
-    padding: 1.1rem 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .cm-card-hdr {
-    display: flex; align-items: center; gap: .45rem;
-    margin-bottom: .85rem; flex-wrap: wrap;
-  }
-  .cm-card-title { font-size: .88rem; font-weight: 700; color: var(--color-text); flex: 1; }
-
-  /* Sidebar left */
-  .col-left, .col-right { position: sticky; top: 80px; }
-
-  /* Hot questions */
-  .hot-list { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
-  .hot-item { display: flex; gap: .5rem; align-items: flex-start; cursor: pointer; padding: .2rem 0; }
-  .hot-item:hover .hot-text { color: var(--color-primary); }
-  .hot-num {
-    width: 20px; height: 20px; border-radius: 5px;
-    font-size: .72rem; font-weight: 800;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 1px;
-  }
-  .hot-num--top { background: var(--color-primary); color: #fff; }
-  .hot-num--normal { background: var(--color-border); color: var(--color-text-muted); }
-  .hot-text { font-size: .78rem; color: var(--color-text-muted); line-height: 1.45; transition: color .15s; }
-
-  /* Categories */
-  .cat-list { list-style: none; display: flex; flex-direction: column; gap: .25rem; }
-  .cat-item {
-    display: flex; align-items: center; gap: .55rem;
-    width: 100%; padding: .4rem .5rem;
-    border: none; background: transparent; border-radius: 8px;
-    cursor: pointer; transition: background .15s; text-align: left;
-  }
-  .cat-item:hover { background: var(--color-primary-dim); }
-  .cat-icon { color: var(--color-text-muted); display: flex; align-items: center; }
-  .cat-item:hover .cat-icon { color: var(--color-primary); }
-  .cat-name { font-size: .8rem; color: var(--color-text-muted); font-weight: 500; transition: color .15s; }
-  .cat-item:hover .cat-name { color: var(--color-primary); }
-
-  /* Create post */
-  .create-post-card { display: flex; align-items: center; gap: .75rem; }
-  .create-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--color-primary); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: .78rem; font-weight: 700; flex-shrink: 0;
-  }
-  .create-input-btn {
-    flex: 1; padding: .65rem 1rem;
-    border: 1.5px solid var(--color-border); border-radius: 999px;
-    background: var(--color-bg); color: var(--color-text-muted);
-    font-size: .85rem; cursor: pointer; text-align: left;
-    transition: border-color .15s, background .15s;
-  }
-  .create-input-btn:hover { border-color: var(--color-primary); background: var(--color-surface); }
-
-  /* Filter tabs */
-  .post-filter-bar {
-    display: flex; gap: .3rem; margin-bottom: .85rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 12px; padding: .25rem; width: fit-content;
-    box-shadow: var(--shadow-sm);
-  }
-  .post-filter-tab {
-    padding: .35rem .85rem; border-radius: 8px; border: none;
-    background: transparent; font-size: .8rem; font-weight: 600;
-    color: var(--color-text-muted); cursor: pointer; transition: all .15s;
-  }
-  .post-filter-tab:hover { color: var(--color-text); background: var(--color-bg); }
-  .post-filter-tab--active { background: var(--color-primary); color: #fff; }
-
-  /* Post list */
-  .post-list { display: flex; flex-direction: column; gap: .75rem; }
-
-  /* Post card */
-  :global(.post-card) {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 18px; padding: 1.1rem 1.25rem;
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow .15s, transform .1s;
-  }
-  :global(.post-card:hover) { box-shadow: var(--shadow-md); transform: translateY(-1px); }
-  :global(.post-card--pinned) { border-color: color-mix(in srgb, var(--color-primary) 30%, transparent); }
-  :global(.post-hdr) { display: flex; align-items: center; gap: .6rem; margin-bottom: .6rem; }
-  :global(.post-avatar) {
-    width: 36px; height: 36px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: .72rem; font-weight: 700; color: #fff; flex-shrink: 0;
-  }
-  :global(.post-meta) { flex: 1; display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
-  :global(.post-author) { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
-  :global(.post-name) { font-size: .85rem; font-weight: 700; color: var(--color-text); }
-  :global(.post-role) {
-    font-size: .65rem; font-weight: 700; padding: .1rem .4rem;
-    border-radius: 999px; background: var(--color-primary-dim); color: var(--color-primary);
-  }
-  :global(.post-role--btv) { background: #fef3c7; color: #b45309; }
-  :global(.post-time) { font-size: .72rem; color: var(--color-text-muted); }
-  :global(.post-badges) { display: flex; gap: .35rem; align-items: center; }
-  :global(.post-badge-pin) {
-    display: flex; align-items: center; gap: .2rem;
-    font-size: .68rem; font-weight: 700; color: var(--color-primary);
-    background: var(--color-primary-dim); padding: .1rem .45rem; border-radius: 999px;
-  }
-  :global(.post-cat-tag) {
-    font-size: .68rem; font-weight: 600; padding: .1rem .45rem;
-    border-radius: 999px; background: var(--color-bg); color: var(--color-text-muted);
-    border: 1px solid var(--color-border);
-  }
-  :global(.post-title) {
-    font-size: .96rem; font-weight: 800; color: var(--color-text);
-    margin-bottom: .4rem; line-height: 1.35;
-    cursor: pointer;
-  }
-  :global(.post-title:hover) { color: var(--color-primary); }
-  :global(.post-content) {
-    font-size: .82rem; color: var(--color-text-muted); line-height: 1.65;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-    margin-bottom: .75rem;
-  }
-  :global(.post-footer) {
-    display: flex; align-items: center; gap: 1.1rem; border-top: 1px solid var(--color-border);
-    padding-top: .6rem; margin-top: .2rem;
-  }
-  :global(.post-stat) {
-    display: flex; align-items: center; gap: .3rem;
-    font-size: .75rem; color: var(--color-text-muted); cursor: pointer;
-    transition: color .12s;
-  }
-  :global(.post-stat:hover) { color: var(--color-primary); }
-  :global(.post-stat--liked) { color: #ef4444 !important; }
-  :global(.post-stat--liked svg) { fill: #ef4444; stroke: #ef4444; }
-
-  /* Right sidebar */
-  .right-search-wrap {
-    display: flex; align-items: center; gap: .5rem;
-    border: 1.5px solid var(--color-border); border-radius: 10px;
-    padding: .5rem .7rem; background: var(--color-bg);
-    transition: border-color .15s;
-  }
-  .right-search-wrap:focus-within { border-color: var(--color-primary); }
-  .right-search-wrap svg { color: var(--color-text-muted); flex-shrink: 0; }
-  .right-search { border: none; background: transparent; outline: none; font-size: .83rem; color: var(--color-text); flex: 1; }
-  .right-search::placeholder { color: var(--color-text-muted); }
-
-  /* Leaderboard */
-  .leaderboard-card .cm-card-hdr { flex-wrap: wrap; }
-  .lb-tabs { display: flex; gap: .2rem; margin-left: auto; }
-  .lb-tab {
-    padding: .2rem .6rem; border-radius: 6px; border: none;
-    font-size: .72rem; font-weight: 600;
-    background: transparent; color: var(--color-text-muted); cursor: pointer; transition: all .15s;
-  }
-  .lb-tab:hover { background: var(--color-bg); }
-  .lb-tab--active { background: var(--color-primary); color: #fff; }
-
-  /* Podium */
-  .podium {
-    display: flex; align-items: flex-end; justify-content: center;
-    gap: .4rem; margin-bottom: .85rem; padding: .5rem 0;
-  }
-  :global(.podium-slot) {
-    display: flex; flex-direction: column; align-items: center; gap: .3rem;
-    flex: 1;
-  }
-  :global(.podium-avatar) {
-    width: 36px; height: 36px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: .72rem; font-weight: 800; color: #fff;
-    border: 2.5px solid transparent; position: relative;
-  }
-  :global(.podium-crown) { position: absolute; top: -12px; font-size: .8rem; }
-  :global(.podium-name) { font-size: .7rem; font-weight: 700; color: var(--color-text); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60px; }
-  :global(.podium-score) { font-size: .65rem; color: var(--color-text-muted); }
-  :global(.podium-block) {
-    width: 100%; border-radius: 8px 8px 0 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; font-weight: 800; color: #fff;
-  }
-
-  /* LB list */
-  .lb-list { display: flex; flex-direction: column; gap: .3rem; }
-  :global(.lb-row) {
-    display: flex; align-items: center; gap: .55rem;
-    padding: .35rem .25rem; border-radius: 8px;
-    transition: background .12s;
-  }
-  :global(.lb-row:hover) { background: var(--color-bg); }
-  :global(.lb-rank) { font-size: .72rem; font-weight: 700; color: var(--color-text-muted); min-width: 18px; text-align: center; }
-  :global(.lb-av) {
-    width: 26px; height: 26px; border-radius: 50%;
-    background: var(--color-primary-dim); color: var(--color-primary);
-    font-size: .6rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-  :global(.lb-name) { font-size: .78rem; font-weight: 600; color: var(--color-text); flex: 1; }
-  :global(.lb-score) { font-size: .72rem; font-weight: 700; color: var(--color-text-muted); }
-
-  /* Modal */
-  .modal-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,.45);
-    z-index: 100; display: flex; align-items: center; justify-content: center;
-    padding: 1rem;
-  }
-  .modal {
-    background: var(--color-surface); border-radius: 20px;
-    padding: 1.75rem; width: 100%; max-width: 480px;
-    box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: .85rem;
-  }
-  .modal-hdr { display: flex; align-items: center; justify-content: space-between; }
-  .modal-title { font-size: 1.05rem; font-weight: 800; color: var(--color-text); }
-  .modal-close {
-    width: 28px; height: 28px; border-radius: 7px; border: 1px solid var(--color-border);
-    background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    color: var(--color-text-muted); transition: all .15s;
-  }
-  .modal-close:hover { border-color: #ef4444; color: #ef4444; }
-  .modal-input, .modal-select {
-    width: 100%; padding: .6rem .8rem;
-    border: 1.5px solid var(--color-border); border-radius: 10px;
-    background: var(--color-bg); color: var(--color-text);
-    font-size: .88rem; outline: none; transition: border-color .15s;
-  }
-  .modal-input:focus, .modal-select:focus { border-color: var(--color-primary); }
-  .modal-textarea {
-    width: 100%; padding: .6rem .8rem;
-    border: 1.5px solid var(--color-border); border-radius: 10px;
-    background: var(--color-bg); color: var(--color-text);
-    font-size: .85rem; outline: none; resize: vertical; line-height: 1.6;
-    font-family: inherit; transition: border-color .15s;
-  }
-  .modal-textarea:focus { border-color: var(--color-primary); }
-  .modal-footer { display: flex; gap: .6rem; justify-content: flex-end; }
-  .modal-btn {
-    padding: .5rem 1.2rem; border-radius: 9px; border: none;
-    font-size: .875rem; font-weight: 600; cursor: pointer; transition: all .15s;
-  }
-  .modal-btn--cancel { background: var(--color-bg); color: var(--color-text-muted); border: 1.5px solid var(--color-border); }
-  .modal-btn--cancel:hover { border-color: var(--color-text-muted); }
-  .modal-btn--confirm { background: var(--color-primary); color: #fff; }
-  .modal-btn--confirm:hover { background: var(--color-primary-hover); }
-
-  .footer { border-top: 1px solid var(--color-border); padding: 1.25rem 1.5rem; text-align: center; font-size: .78rem; color: var(--color-text-muted); }
-  .hidden { display: none !important; }
-</style>
-
-<script>
-  // ── Post data ─────────────────────────────────────────────────────────────
-  interface Post {
-    id: number; pinned: boolean;
-    avatar: string; name: string; role: string;
-    time: string; category: string;
-    title: string; content: string;
-    likes: number; comments: number; views: number;
-    color: string; liked?: boolean;
-  }
-
-  const POSTS_DATA: Post[] = [
-    { id:1, pinned:true, avatar:'AN', name:'Anh Nguyen', role:'Mod', time:'2 giờ trước', category:'Học tiếng Trung',
-      title:'📌 [THÔNG BÁO] Quy định cộng đồng WenZi — Đọc trước khi tham gia',
-      content:'Chào mừng bạn đến với cộng đồng WenZi! Để duy trì môi trường học tập lành mạnh và tích cực, vui lòng đọc kỹ các quy định sau trước khi đăng bài. Tôn trọng lẫn nhau, không spam, không quảng cáo ngoài luồng...',
-      likes:142, comments:28, views:3540, color:'#2b4c7e' },
-    { id:2, pinned:false, avatar:'MT', name:'Minh Tú', role:'', time:'45 phút trước', category:'Học tiếng Trung',
-      title:'Mẹo nhớ thanh điệu tiếng Trung siêu hiệu quả cho người Việt',
-      content:'Sau 2 năm học tiếng Trung, mình đã tổng hợp được một số mẹo để ghi nhớ 4 thanh điệu (+ thanh nhẹ) một cách tự nhiên nhất. Bí quyết là gắn mỗi thanh với một hành động cơ thể: thanh 1 → giọng phẳng cao như hát, thanh 2 → giọng lên như hỏi...',
-      likes:87, comments:34, views:1820, color:'#7c3aed' },
-    { id:3, pinned:false, avatar:'HT', name:'Hồng Thái', role:'HSK 5', time:'3 giờ trước', category:'Du học Trung Quốc',
-      title:'Kinh nghiệm xin visa du học Trung Quốc 2026 — Hồ sơ cần chuẩn bị gì?',
-      content:'Mình vừa nhận được visa du học Trung Quốc tuần trước. Quá trình xin visa khá phức tạp nhưng nếu chuẩn bị kỹ thì không khó. Bài viết này mình sẽ liệt kê đầy đủ các giấy tờ cần thiết và những lưu ý quan trọng...',
-      likes:203, comments:67, views:4210, color:'#0ea5e9' },
-    { id:4, pinned:false, avatar:'LP', name:'Lan Phương', role:'', time:'5 giờ trước', category:'Góc chia sẻ',
-      title:'分享：学了3个月汉语后的感想 — Cảm nhận sau 3 tháng học tiếng Trung',
-      content:'我学中文已经三个月了。开始的时候很难，特别是声调。但是现在我可以用中文打招呼，点菜，还有买东西！ | Mình học tiếng Trung được 3 tháng rồi. Lúc đầu rất khó, đặc biệt là thanh điệu. Nhưng giờ mình có thể dùng tiếng Trung để chào hỏi, gọi món và mua đồ!',
-      likes:156, comments:43, views:2890, color:'#16a34a' },
-    { id:5, pinned:false, avatar:'DK', name:'Đức Khoa', role:'BTV', time:'1 ngày trước', category:'Dịch thuật',
-      title:'Giải thích chi tiết: Khi nào dùng 把 trong câu tiếng Trung?',
-      content:'Cấu trúc 把 (bǎ) là một trong những điểm ngữ pháp khiến người học hay nhầm lẫn nhất. Hôm nay mình sẽ giải thích chi tiết với ví dụ cụ thể: 把 được dùng khi động từ tác động lên tân ngữ xác định, tạo ra sự thay đổi...',
-      likes:312, comments:89, views:6750, color:'#f97316' },
-  ];
-
+  let activeCategory = '';
   let filteredPosts = [...POSTS_DATA];
-  let activeCat = '';
 
-  // ── Render posts ──────────────────────────────────────────────────────────
-  function fmtNum(n: number): string {
-    return n >= 1000 ? (n/1000).toFixed(1) + 'k' : String(n);
+  const postList = document.getElementById('post-list');
+  const postSearch = document.getElementById('post-search');
+  const createPostBtn = document.getElementById('create-post-btn');
+  const modalPost = document.getElementById('modal-post');
+  const modalClose = document.getElementById('modal-post-close');
+  const modalCancel = document.getElementById('modal-post-cancel');
+  const modalSubmit = document.getElementById('modal-post-submit');
+  const newTitle = document.getElementById('new-post-title');
+  const newContent = document.getElementById('new-post-content');
+  const newCat = document.getElementById('new-post-cat');
+  const filterButtons = Array.from(document.querySelectorAll('.filter-tab'));
+  const categoryButtons = Array.from(document.querySelectorAll('[data-cat]'));
+  const lbTabs = Array.from(document.querySelectorAll('.lb-tab'));
+
+  const posts = POSTS_DATA;
+  const leaderboard = LB_DATA;
+  const categories = CATEGORIES_DATA;
+
+  function fmtNumber(value) {
+    return value >= 1000 ? `${(value / 1000).toFixed(1)}k` : String(value);
   }
 
-  function renderPosts(posts: Post[]): void {
-    const list = document.getElementById('post-list')!;
-    if (posts.length === 0) {
-      list.innerHTML = `<div style="text-align:center;padding:3rem 1rem;color:var(--color-text-muted);font-size:.9rem">Không tìm thấy bài viết nào.</div>`;
+  function renderPosts(postsToRender) {
+    if (!postList) return;
+    if (postsToRender.length === 0) {
+      postList.innerHTML = `<div class="rounded-[28px] border border-slate-200/80 bg-white p-8 text-center text-sm text-slate-500 shadow-sm">Không tìm thấy bài viết phù hợp.</div>`;
       return;
     }
-    list.innerHTML = posts.map(p => `
-      <article class="post-card ${p.pinned ? 'post-card--pinned' : ''}" data-id="${p.id}">
-        <div class="post-hdr">
-          <div class="post-avatar" style="background:${p.color}">${p.avatar}</div>
-          <div class="post-meta">
-            <div class="post-author">
-              <span class="post-name">${p.name}</span>
-              ${p.role ? `<span class="post-role ${p.role==='BTV'?'post-role--btv':''}">${p.role}</span>` : ''}
-            </div>
-            <span class="post-time">${p.time}</span>
-          </div>
-          <div class="post-badges">
-            ${p.pinned ? `<span class="post-badge-pin"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg> Ghim</span>` : ''}
-            <span class="post-cat-tag">${p.category}</span>
-          </div>
-        </div>
-        <h3 class="post-title">${p.title}</h3>
-        <p class="post-content">${p.content}</p>
-        <div class="post-footer">
-          <button class="post-stat ${p.liked ? 'post-stat--liked' : ''}" data-like="${p.id}" type="button">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="${p.liked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            ${fmtNum(p.likes)}
-          </button>
-          <span class="post-stat">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-            ${fmtNum(p.comments)}
-          </span>
-          <span class="post-stat">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-            </svg>
-            ${fmtNum(p.views)}
-          </span>
-        </div>
-      </article>`).join('');
 
-    // Like button events
-    list.querySelectorAll<HTMLButtonElement>('[data-like]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id  = parseInt(btn.dataset.like ?? '0');
-        const post = POSTS_DATA.find(p => p.id === id);
-        if (!post) return;
-        post.liked = !post.liked;
-        post.likes += post.liked ? 1 : -1;
+    postList.innerHTML = postsToRender
+      .map((post) => `
+      <article class="rounded-[28px] border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${post.pinned ? 'ring-1 ring-sky-200' : ''}" data-id="${post.id}">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-3xl text-sm font-bold text-white" style="background: ${post.color}">${post.avatar}</div>
+            <div class="min-w-0">
+              <p class="text-sm font-semibold text-slate-950">${post.name}</p>
+              <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                ${post.role ? `<span class="rounded-full px-2 py-1 ${post.role === 'BTV' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700'}">${post.role}</span>` : ''}
+                <span>${post.time}</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-500">
+            ${post.pinned ? `<span class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1 text-sky-700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5"><path d="M6 2h12v4H6z"></path><path d="M12 6v16"></path></svg>Ghim</span>` : ''}
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-600">${post.category}</span>
+          </div>
+        </div>
+        <h2 class="mt-5 text-lg font-extrabold leading-7 text-slate-950 transition hover:text-sky-600">${post.title}</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-600">${post.content}</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-200/80 pt-4 text-sm text-slate-600">
+          <button class="inline-flex items-center gap-2 rounded-full px-3 py-2 transition ${post.liked ? 'bg-rose-50 text-rose-600' : 'hover:bg-slate-100'}" data-like="${post.id}" type="button">
+            <svg viewBox="0 0 24 24" fill="${post.liked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"> <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>${fmtNumber(post.likes)}</span>
+          </button>
+          <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 hover:bg-slate-100">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>${fmtNumber(post.comments)}</span>
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 hover:bg-slate-100">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>${fmtNumber(post.views)}</span>
+          </span>
+        </div>
+      </article>`
+      )
+      .join('');
+
+    postList.querySelectorAll('[data-like]').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const id = Number(button.dataset.like);
+        const item = posts.find((post) => post.id === id);
+        if (!item) return;
+        item.liked = !item.liked;
+        item.likes += item.liked ? 1 : -1;
         renderPosts(filteredPosts);
       });
     });
   }
 
-  // ── Filter tabs ──────────────────────────────────────────────────────────
-  document.querySelectorAll<HTMLButtonElement>('.post-filter-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.post-filter-tab').forEach(b => b.classList.remove('post-filter-tab--active'));
-      btn.classList.add('post-filter-tab--active');
-      const filter = btn.dataset.filter ?? '';
-      if (filter === 'Tất cả') filteredPosts = [...POSTS_DATA];
-      else if (filter === 'Yêu thích') filteredPosts = POSTS_DATA.filter(p => p.liked);
-      else if (filter === 'BTV lựa chọn') filteredPosts = POSTS_DATA.filter(p => p.role === 'BTV');
-      else filteredPosts = [...POSTS_DATA];
-      renderPosts(filteredPosts);
+  function updateFilters(filterLabel) {
+    filterButtons.forEach((button) => button.classList.toggle('bg-slate-900', button.dataset.filter === filterLabel));
+    filterButtons.forEach((button) => button.classList.toggle('text-white', button.dataset.filter === filterLabel));
+    filterButtons.forEach((button) => button.classList.toggle('text-slate-600', button.dataset.filter !== filterLabel));
+
+    if (filterLabel === 'Tất cả') {
+      filteredPosts = [...posts];
+    } else if (filterLabel === 'Yêu thích') {
+      filteredPosts = posts.filter((post) => post.liked);
+    } else if (filterLabel === 'Quan tâm') {
+      filteredPosts = posts.filter((post) => post.likes >= 150 || post.pinned);
+    } else if (filterLabel === 'BTV lựa chọn') {
+      filteredPosts = posts.filter((post) => post.role === 'BTV');
+    } else {
+      filteredPosts = [...posts];
+    }
+    if (activeCategory) {
+      filteredPosts = filteredPosts.filter((post) => post.category === activeCategory);
+    }
+    renderPosts(filteredPosts);
+  }
+
+  function renderLeaderboard(period) {
+    const periodKey = period || 'tuần';
+    const items = leaderboard[periodKey] || leaderboard['tuần'];
+    const podiumContainer = document.getElementById('podium');
+    const listContainer = document.getElementById('lb-list');
+    if (!podiumContainer || !listContainer) return;
+    const top3 = items.slice(0, 3);
+    const rest = items.slice(3);
+    const slots = [top3[1], top3[0], top3[2]];
+    const heights = ['52px', '72px', '44px'];
+    const crowns = ['','👑',''];
+
+    podiumContainer.innerHTML = slots
+      .map((entry, index) => `
+        <div class="flex w-full flex-col items-center gap-3 text-center">
+          <div class="relative flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold text-white" style="background:${entry.color || '#0f172a'};">
+            ${crowns[index] ? `<span class="absolute -top-3 text-[0.7rem]">${crowns[index]}</span>` : ''}
+            ${entry.avatar}
+          </div>
+          <span class="max-w-[92px] truncate text-sm font-semibold text-slate-900">${entry.name}</span>
+          <span class="text-xs text-slate-500">${entry.score >= 1000 ? `${(entry.score / 1000).toFixed(1)}k` : entry.score} điểm</span>
+          <div class="flex h-12 w-full items-end justify-center rounded-t-3xl text-lg font-black text-white" style="background:${entry.color || '#0f172a'}; height:${heights[index]};">${entry.rank}</div>
+        </div>`)
+      .join('');
+
+    listContainer.innerHTML = rest
+      .map((entry) => `
+        <div class="flex items-center gap-3 rounded-3xl px-3 py-2 transition hover:bg-slate-100">
+          <span class="min-w-[24px] text-xs font-bold text-slate-500">${entry.rank}</span>
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700">${entry.avatar}</span>
+          <span class="min-w-0 flex-1 truncate text-sm font-semibold text-slate-900">${entry.name}</span>
+          <span class="text-xs font-semibold text-slate-500">${entry.score >= 1000 ? `${(entry.score / 1000).toFixed(1)}k` : entry.score}</span>
+        </div>`)
+      .join('');
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      updateFilters(button.dataset.filter || 'Tất cả');
     });
   });
 
-  // ── Post search ───────────────────────────────────────────────────────────
-  document.getElementById('post-search')?.addEventListener('input', (e) => {
-    const q = (e.target as HTMLInputElement).value.trim().toLowerCase();
-    filteredPosts = q
-      ? POSTS_DATA.filter(p => p.title.toLowerCase().includes(q) || p.content.toLowerCase().includes(q) || p.name.toLowerCase().includes(q))
-      : [...POSTS_DATA];
-    renderPosts(filteredPosts);
-  });
-
-  // ── Category filter ───────────────────────────────────────────────────────
-  document.querySelectorAll<HTMLButtonElement>('.cat-item').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.cat ?? '';
-      if (activeCat === cat) {
-        activeCat = '';
-        filteredPosts = [...POSTS_DATA];
-        btn.style.background = '';
+  categoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.cat || '';
+      if (activeCategory === category) {
+        activeCategory = '';
+        categoryButtons.forEach((btn) => btn.classList.remove('bg-slate-100'));
       } else {
-        activeCat = cat;
-        filteredPosts = POSTS_DATA.filter(p => p.category === cat);
-        document.querySelectorAll<HTMLButtonElement>('.cat-item').forEach(b => b.style.background = '');
-        btn.style.background = 'var(--color-primary-dim)';
+        activeCategory = category;
+        categoryButtons.forEach((btn) => btn.classList.remove('bg-slate-100'));
+        button.classList.add('bg-slate-100');
       }
+      filteredPosts = posts.filter((post) => (!activeCategory || post.category === activeCategory));
       renderPosts(filteredPosts);
     });
   });
 
-  // ── Leaderboard ───────────────────────────────────────────────────────────
-  type LBEntry = { rank: number; name: string; avatar: string; score: number; color?: string };
-  const LB_DATA: Record<string, LBEntry[]> = {
-    tuần: [
-      { rank:1, name:'Minh Tú', avatar:'MT', score:2840, color:'#f59e0b' },
-      { rank:2, name:'Hồng Thái', avatar:'HT', score:2210, color:'#94a3b8' },
-      { rank:3, name:'Đức Khoa', avatar:'DK', score:1980, color:'#b45309' },
-      { rank:4, name:'Lan Phương', avatar:'LP', score:1540 },
-      { rank:5, name:'Anh Nguyen', avatar:'AN', score:1320 },
-      { rank:6, name:'Quốc Bảo', avatar:'QB', score:1180 },
-      { rank:7, name:'Thu Hà', avatar:'TH', score:987 },
-      { rank:8, name:'Văn Long', avatar:'VL', score:854 },
-      { rank:9, name:'Bích Ngọc', avatar:'BN', score:720 },
-      { rank:10, name:'Hoàng Nam', avatar:'HN', score:612 },
-    ],
-    tháng: [
-      { rank:1, name:'Đức Khoa', avatar:'DK', score:12400, color:'#f59e0b' },
-      { rank:2, name:'Minh Tú', avatar:'MT', score:9870, color:'#94a3b8' },
-      { rank:3, name:'Thu Hà', avatar:'TH', score:8200, color:'#b45309' },
-      { rank:4, name:'Hồng Thái', avatar:'HT', score:7540 },
-      { rank:5, name:'Lan Phương', avatar:'LP', score:6890 },
-      { rank:6, name:'Văn Long', avatar:'VL', score:5430 },
-      { rank:7, name:'Anh Nguyen', avatar:'AN', score:4210 },
-      { rank:8, name:'Bích Ngọc', avatar:'BN', score:3870 },
-      { rank:9, name:'Quốc Bảo', avatar:'QB', score:3120 },
-      { rank:10, name:'Hoàng Nam', avatar:'HN', score:2560 },
-    ],
-    năm: [
-      { rank:1, name:'Anh Nguyen', avatar:'AN', score:145000, color:'#f59e0b' },
-      { rank:2, name:'Đức Khoa', avatar:'DK', score:128000, color:'#94a3b8' },
-      { rank:3, name:'Minh Tú', avatar:'MT', score:112000, color:'#b45309' },
-      { rank:4, name:'Lan Phương', avatar:'LP', score:94000 },
-      { rank:5, name:'Thu Hà', avatar:'TH', score:87000 },
-      { rank:6, name:'Hồng Thái', avatar:'HT', score:76000 },
-      { rank:7, name:'Quốc Bảo', avatar:'QB', score:65000 },
-      { rank:8, name:'Bích Ngọc', avatar:'BN', score:54000 },
-      { rank:9, name:'Văn Long', avatar:'VL', score:43000 },
-      { rank:10, name:'Hoàng Nam', avatar:'HN', score:38000 },
-    ],
-  };
-
-  function fmtScore(n: number): string {
-    if (n >= 1000) return (n/1000).toFixed(1) + 'k';
-    return String(n);
-  }
-
-  function renderLeaderboard(period: string): void {
-    const data = LB_DATA[period] ?? LB_DATA['tuần'];
-    const top3 = data.slice(0, 3);
-    const rest = data.slice(3);
-
-    // Podium: order = [2nd, 1st, 3rd]
-    const podiumOrder = [top3[1], top3[0], top3[2]];
-    const podiumHeights = ['54px', '70px', '46px'];
-    const podiumCrowns = ['', '👑', ''];
-    const bgColors = [top3[1]?.color ?? '#94a3b8', top3[0]?.color ?? '#f59e0b', top3[2]?.color ?? '#b45309'];
-
-    document.getElementById('podium')!.innerHTML = podiumOrder.map((p, i) => !p ? '' : `
-      <div class="podium-slot">
-        <div class="podium-avatar" style="background:${bgColors[i]};border-color:${bgColors[i]}">
-          ${podiumCrowns[i] ? `<span class="podium-crown">${podiumCrowns[i]}</span>` : ''}
-          ${p.avatar}
-        </div>
-        <span class="podium-name">${p.name}</span>
-        <span class="podium-score">${fmtScore(p.score)} điểm</span>
-        <div class="podium-block" style="height:${podiumHeights[i]};background:${bgColors[i]}">
-          ${p.rank}
-        </div>
-      </div>`).join('');
-
-    document.getElementById('lb-list')!.innerHTML = rest.map(p => `
-      <div class="lb-row">
-        <span class="lb-rank">${p.rank}</span>
-        <div class="lb-av">${p.avatar}</div>
-        <span class="lb-name">${p.name}</span>
-        <span class="lb-score">${fmtScore(p.score)}</span>
-      </div>`).join('');
-  }
-
-  document.getElementById('lb-tabs')?.querySelectorAll<HTMLButtonElement>('.lb-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.lb-tab').forEach(b => b.classList.remove('lb-tab--active'));
-      btn.classList.add('lb-tab--active');
-      renderLeaderboard(btn.dataset.period ?? 'tuần');
+  postSearch?.addEventListener('input', (event) => {
+    const query = (event.target.value || '').trim().toLowerCase();
+    filteredPosts = posts.filter((post) => {
+      const match = [post.title, post.content, post.name, post.category].some((value) => value.toLowerCase().includes(query));
+      return query ? match : true;
     });
-  });
-
-  // ── Create post modal ─────────────────────────────────────────────────────
-  document.getElementById('create-post-btn')?.addEventListener('click', () => {
-    document.getElementById('modal-post')!.classList.remove('hidden');
-  });
-  document.getElementById('modal-post-close')?.addEventListener('click', () => {
-    document.getElementById('modal-post')!.classList.add('hidden');
-  });
-  document.getElementById('modal-post-cancel')?.addEventListener('click', () => {
-    document.getElementById('modal-post')!.classList.add('hidden');
-  });
-  document.getElementById('modal-post-submit')?.addEventListener('click', () => {
-    const title   = (document.getElementById('new-post-title') as HTMLInputElement).value.trim();
-    const content = (document.getElementById('new-post-content') as HTMLTextAreaElement).value.trim();
-    const cat     = (document.getElementById('new-post-cat') as HTMLSelectElement).value;
-    if (!title) { (document.getElementById('new-post-title') as HTMLInputElement).focus(); return; }
-    const newPost: Post = {
-      id: Date.now(), pinned: false,
-      avatar: 'BN', name: 'Bạn', role: '',
-      time: 'Vừa xong', category: cat,
-      title, content: content || 'Chưa có nội dung.',
-      likes: 0, comments: 0, views: 1, color: '#2b4c7e',
-    };
-    POSTS_DATA.unshift(newPost);
-    filteredPosts = [...POSTS_DATA];
-    document.getElementById('modal-post')!.classList.add('hidden');
+    if (activeCategory) {
+      filteredPosts = filteredPosts.filter((post) => post.category === activeCategory);
+    }
     renderPosts(filteredPosts);
   });
 
-  // Close modal on backdrop click
-  document.getElementById('modal-post')?.addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) document.getElementById('modal-post')!.classList.add('hidden');
+  createPostBtn?.addEventListener('click', () => modalPost?.classList.remove('hidden'));
+  modalClose?.addEventListener('click', () => modalPost?.classList.add('hidden'));
+  modalCancel?.addEventListener('click', () => modalPost?.classList.add('hidden'));
+
+  modalSubmit?.addEventListener('click', () => {
+    const titleValue = newTitle.value.trim();
+    const contentValue = newContent.value.trim();
+    const categoryValue = newCat.value;
+    if (!titleValue) {
+      newTitle.focus();
+      return;
+    }
+    const newPost = {
+      id: Date.now(),
+      pinned: false,
+      avatar: 'BN',
+      name: 'Bạn',
+      role: '',
+      time: 'Vừa xong',
+      category: categoryValue,
+      title: titleValue,
+      content: contentValue || 'Mình đang cần thảo luận thêm về chủ đề này.',
+      likes: 0,
+      comments: 0,
+      views: 1,
+      color: '#0f172a',
+      liked: false,
+    };
+    posts.unshift(newPost);
+    filteredPosts = [...posts];
+    modalPost?.classList.add('hidden');
+    newTitle.value = '';
+    newContent.value = '';
+    renderPosts(filteredPosts);
   });
 
-  // ── Init ─────────────────────────────────────────────────────────────────
-  renderPosts(filteredPosts);
+  modalPost?.addEventListener('click', (event) => {
+    if (event.target === modalPost) {
+      modalPost.classList.add('hidden');
+    }
+  });
+
+  updateFilters('Tất cả');
   renderLeaderboard('tuần');
+  lbTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      lbTabs.forEach((item) => item.classList.remove('bg-slate-900', 'text-white'));
+      lbTabs.forEach((item) => item.classList.add('bg-slate-50', 'text-slate-600'));
+      tab.classList.remove('bg-slate-50', 'text-slate-600');
+      tab.classList.add('bg-slate-900', 'text-white');
+      renderLeaderboard(tab.dataset.period || 'tuần');
+    });
+  });
 </script>
