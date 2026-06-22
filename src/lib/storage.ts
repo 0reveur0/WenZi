@@ -10,6 +10,8 @@ export interface StoredEntry {
   pinyin: string | null;
   hanviet: string | null;
   vietnamese: string;
+  meaning_en: string;
+  meaning_vi: string;
 }
 
 const HISTORY_KEY  = 'wz-history';
@@ -33,7 +35,9 @@ function slim(e: StoredEntry): StoredEntry {
     traditional: e.traditional ?? null,
     pinyin: e.pinyin ?? null,
     hanviet: e.hanviet ?? null,
-    vietnamese: e.vietnamese
+    vietnamese: e.vietnamese,
+    meaning_en: e.meaning_en || e.vietnamese || '',
+    meaning_vi: e.meaning_vi || '',
   };
 }
 

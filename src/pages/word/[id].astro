@@ -13,12 +13,14 @@ export function getStaticPaths() {
       traditional: entry.traditional,
       pinyin: entry.pinyin,
       hanviet: entry.hanviet,
-      vietnamese: entry.vietnamese
+      meaning_vi: entry.meaning_vi || entry.vietnamese || '',
+      meaning_en: entry.meaning_en || '',
+      vietnamese: entry.vietnamese || '',
     }
   }));
 }
 
-const { id, simplified, traditional, pinyin, hanviet, vietnamese } = Astro.props;
+const { id, simplified, traditional, pinyin, hanviet, meaning_vi, meaning_en, vietnamese } = Astro.props;
 const showTraditional = traditional && traditional !== simplified;
 const pageTitle = `${simplified} — WenZi`;
 ---
@@ -37,7 +39,7 @@ const pageTitle = `${simplified} — WenZi`;
               <span class="char-main" lang="zh">{simplified}</span>
               {showTraditional && (
                 <div class="char-trad-wrap">
-                  <span class="char-trad-label">Phồn thể</span>
+                  <span class="char-trad-label" data-i18n="traditional">Phồn thể</span>
                   <span class="char-trad" lang="zh">{traditional}</span>
                 </div>
               )}
@@ -49,10 +51,31 @@ const pageTitle = `${simplified} — WenZi`;
           </div>
         </div>
 
-        <!-- Meaning card -->
+        <!-- Bilingual meaning card -->
         <div class="meaning-card">
-          <span class="meaning-label">Nghĩa tiếng Việt</span>
-          <p class="meaning-text">{vietnamese}</p>
+          <div class="meaning-row" id="meaning-vi" data-lang-row="vi">
+            <div class="meaning-lang-tag">
+              <span class="flag">🇻🇳</span>
+              <span class="lang-name" data-i18n="meaningViLabel">Tiếng Việt</span>
+            </div>
+            <p class="meaning-text" id="meaning-vi-text">{meaning_vi || '—'}</p>
+          </div>
+          <div class="meaning-divider"></div>
+          <div class="meaning-row" id="meaning-en" data-lang-row="en">
+            <div class="meaning-lang-tag">
+              <span class="flag">🇬🇧</span>
+              <span class="lang-name" data-i18n="meaningEnLabel">Tiếng Anh</span>
+            </div>
+            <p class="meaning-text" id="meaning-en-text">{meaning_en || '—'}</p>
+          </div>
+        </div>
+
+        <!-- Example sentences -->
+        <div class="examples-card" id="examples-section" style="display:none">
+          <div class="examples-header">
+            <span class="examples-label" data-i18n="examples">Ví dụ câu</span>
+          </div>
+          <div class="examples-list" id="examples-list"></div>
         </div>
 
         <!-- Stroke order animation -->
@@ -69,7 +92,7 @@ const pageTitle = `${simplified} — WenZi`;
                 <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
               </svg>
             </span>
-            <span id="speak-label">Phát âm</span>
+            <span id="speak-label" data-i18n="pronounce">Phát âm</span>
           </button>
 
           <button class="action-btn action-btn--fav" id="fav-btn" type="button" aria-label="Yêu thích">
@@ -79,7 +102,7 @@ const pageTitle = `${simplified} — WenZi`;
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
             </span>
-            <span id="fav-label">Yêu thích</span>
+            <span id="fav-label" data-i18n="favorite">Yêu thích</span>
           </button>
         </div>
 
@@ -87,24 +110,24 @@ const pageTitle = `${simplified} — WenZi`;
         <div class="info-pills">
           {pinyin && (
             <div class="pill">
-              <span class="pill-label">Pinyin</span>
+              <span class="pill-label" data-i18n="pinyin">Pinyin</span>
               <span class="pill-value">{pinyin}</span>
             </div>
           )}
           {hanviet && (
             <div class="pill">
-              <span class="pill-label">Hán Việt</span>
+              <span class="pill-label" data-i18n="hanviet">Hán Việt</span>
               <span class="pill-value">{hanviet}</span>
             </div>
           )}
           {showTraditional && (
             <div class="pill">
-              <span class="pill-label">Phồn thể</span>
+              <span class="pill-label" data-i18n="traditional">Phồn thể</span>
               <span class="pill-value" lang="zh">{traditional}</span>
             </div>
           )}
           <div class="pill">
-            <span class="pill-label">Giản thể</span>
+            <span class="pill-label" data-i18n="simplified">Giản thể</span>
             <span class="pill-value" lang="zh">{simplified}</span>
           </div>
         </div>
@@ -124,6 +147,8 @@ const pageTitle = `${simplified} — WenZi`;
     data-traditional={traditional ?? ''}
     data-pinyin={pinyin ?? ''}
     data-hanviet={hanviet ?? ''}
+    data-meaning-vi={meaning_vi ?? ''}
+    data-meaning-en={meaning_en ?? ''}
     data-vietnamese={vietnamese}
     hidden
   ></div>
@@ -202,29 +227,98 @@ const pageTitle = `${simplified} — WenZi`;
   }
   .char-hanviet strong { color: rgba(255,255,255,.9); font-weight: 600; }
 
-  /* Meaning card */
+  /* Bilingual meaning card */
   .meaning-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 20px;
     box-shadow: var(--shadow-sm);
-    padding: 1.5rem 1.75rem;
+    overflow: hidden;
+  }
+  .meaning-row {
+    padding: 1.1rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .45rem;
+    transition: background .2s;
   }
-  .meaning-label {
+  .meaning-row.active {
+    background: var(--color-primary-dim);
+  }
+  .meaning-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 0 1rem;
+  }
+  .meaning-lang-tag {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .flag { font-size: .9rem; line-height: 1; }
+  .lang-name {
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--color-text-muted);
+  }
+  .meaning-row.active .lang-name { color: var(--color-primary); }
+  .meaning-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.45;
+  }
+  .meaning-row.active .meaning-text { color: var(--color-primary); }
+
+  /* Examples card */
+  .examples-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.25rem 1.5rem;
+  }
+  .examples-header {
+    margin-bottom: .9rem;
+  }
+  .examples-label {
     font-size: .72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .07em;
     color: var(--color-text-muted);
   }
-  .meaning-text {
-    font-size: 1.35rem;
+  .examples-list {
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+  }
+  :global(.example-item) {
+    border-left: 3px solid var(--color-primary-dim);
+    padding: .6rem .85rem;
+    border-radius: 0 10px 10px 0;
+    background: #f8fafc;
+  }
+  :global([data-theme='dark'] .example-item) { background: rgba(255,255,255,.04); }
+  :global(.example-cn) {
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--color-text);
-    line-height: 1.45;
+    margin-bottom: .28rem;
+  }
+  :global(.example-en) {
+    font-size: .88rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  :global(.example-vi) {
+    font-size: .88rem;
+    color: var(--color-primary);
+    line-height: 1.5;
+    margin-top: .15rem;
   }
 
   /* Actions */
@@ -309,26 +403,98 @@ const pageTitle = `${simplified} — WenZi`;
 <script>
   import { addToHistory, isFavorite, toggleFavorite } from '@/lib/storage';
   import type { StoredEntry } from '@/lib/storage';
+  import { getExamples } from '@/lib/examples';
+  import { UI } from '@/lib/i18n';
+  import type { Lang } from '@/lib/i18n';
 
   const el = document.getElementById('entry-data')!;
+  const simplified = el.dataset.simplified!;
+
   const entry: StoredEntry = {
     id:          Number(el.dataset.id),
-    simplified:  el.dataset.simplified!,
+    simplified,
     traditional: el.dataset.traditional || null,
     pinyin:      el.dataset.pinyin      || null,
     hanviet:     el.dataset.hanviet     || null,
-    vietnamese:  el.dataset.vietnamese!,
+    meaning_vi:  el.dataset.meaningVi   || '',
+    meaning_en:  el.dataset.meaningEn   || '',
+    vietnamese:  el.dataset.vietnamese  || '',
   };
 
   addToHistory(entry);
 
+  // ── Language state ─────────────────────────────────────────────────────────
+  function getLang(): Lang {
+    try { return (localStorage.getItem('wz-lang') as Lang) || 'vi'; }
+    catch { return 'vi'; }
+  }
+
+  function applyLang(lang: Lang) {
+    const viRow = document.getElementById('meaning-vi');
+    const enRow = document.getElementById('meaning-en');
+    viRow?.classList.toggle('active', lang === 'vi');
+    enRow?.classList.toggle('active', lang === 'en');
+
+    const ui = UI[lang];
+
+    const speakLabel = document.getElementById('speak-label');
+    if (speakLabel) speakLabel.textContent = ui.pronounce;
+    const favLabel = document.getElementById('fav-label');
+    if (favLabel) {
+      favLabel.textContent = isFavorite(entry.id) ? ui.favorited : ui.favorite;
+    }
+
+    document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n as keyof typeof ui;
+      const val = ui[key];
+      if (typeof val === 'string') el.textContent = val;
+    });
+
+    renderExamples(lang);
+  }
+
+  // ── Examples ──────────────────────────────────────────────────────────────
+  function renderExamples(lang: Lang) {
+    const section = document.getElementById('examples-section')!;
+    const list = document.getElementById('examples-list')!;
+    const examples = getExamples(simplified);
+
+    if (examples.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+
+    section.style.display = '';
+    list.innerHTML = '';
+
+    examples.forEach(ex => {
+      const div = document.createElement('div');
+      div.className = 'example-item';
+      div.innerHTML = `
+        <div class="example-cn" lang="zh">${ex.cn}</div>
+        <div class="example-en">${ex.en}</div>
+        <div class="example-vi">${ex.vi}</div>
+      `;
+      list.appendChild(div);
+    });
+  }
+
+  // ── Init + listen for lang changes ────────────────────────────────────────
+  applyLang(getLang());
+
+  window.addEventListener('wz:langchange', (e: Event) => {
+    applyLang((e as CustomEvent).detail.lang as Lang);
+  });
+
+  // ── Favorites ─────────────────────────────────────────────────────────────
   const favBtn   = document.getElementById('fav-btn')!;
-  const favLabel = document.getElementById('fav-label')!;
   const favIcon  = document.getElementById('fav-icon')!;
 
   function updateFavUI(active: boolean) {
     favBtn.classList.toggle('active', active);
-    favLabel.textContent = active ? 'Đã lưu' : 'Yêu thích';
+    const lang = getLang();
+    const favLabel = document.getElementById('fav-label')!;
+    favLabel.textContent = active ? UI[lang].favorited : UI[lang].favorite;
     favIcon.setAttribute('fill', active ? 'currentColor' : 'none');
   }
   updateFavUI(isFavorite(entry.id));
@@ -336,6 +502,7 @@ const pageTitle = `${simplified} — WenZi`;
     updateFavUI(toggleFavorite(entry));
   });
 
+  // ── Speech ────────────────────────────────────────────────────────────────
   const speakBtn   = document.getElementById('speak-btn')!;
   const speakLabel = document.getElementById('speak-label')!;
 
@@ -344,11 +511,12 @@ const pageTitle = `${simplified} — WenZi`;
     window.speechSynthesis.cancel();
     const utt = new SpeechSynthesisUtterance(text);
     utt.lang = 'zh-CN'; utt.rate = 0.85; utt.pitch = 1;
+    const lang = getLang();
     speakBtn.classList.add('speaking');
-    speakLabel.textContent = 'Đang phát...';
+    speakLabel.textContent = UI[lang].pronouncing;
     utt.onend = utt.onerror = () => {
       speakBtn.classList.remove('speaking');
-      speakLabel.textContent = 'Phát âm';
+      speakLabel.textContent = UI[getLang()].pronounce;
     };
     window.speechSynthesis.speak(utt);
   }

@@ -1,248 +1,2216 @@
 [
-  {"simplified": "爱", "traditional": "愛", "pinyin": "ài", "hanviet": "ái", "vietnamese": "Yêu, tình yêu"},
-  {"simplified": "爸爸", "traditional": "爸爸", "pinyin": "bà ba", "hanviet": "ba ba", "vietnamese": "Bố, cha"},
-  {"simplified": "杯子", "traditional": "杯子", "pinyin": "bēi zi", "hanviet": "bôi tử", "vietnamese": "Cái cốc, ly"},
-  {"simplified": "北京", "traditional": "北京", "pinyin": "běi jīng", "hanviet": "bắc kinh", "vietnamese": "Bắc Kinh"},
-  {"simplified": "大", "traditional": "大", "pinyin": "dà", "hanviet": "đại", "vietnamese": "To, lớn"},
-  {"simplified": "弟弟", "traditional": "弟弟", "pinyin": "dì di", "hanviet": "đệ đệ", "vietnamese": "Em trai"},
-  {"simplified": "都", "traditional": "都", "pinyin": "dōu", "hanviet": "đô", "vietnamese": "Đều, cả"},
-  {"simplified": "对", "traditional": "對", "pinyin": "duì", "hanviet": "đối", "vietnamese": "Đúng, phải"},
-  {"simplified": "多", "traditional": "多", "pinyin": "duō", "hanviet": "đa", "vietnamese": "Nhiều"},
-  {"simplified": "饿", "traditional": "餓", "pinyin": "è", "hanviet": "ngạ", "vietnamese": "Đói"},
-  {"simplified": "儿子", "traditional": "兒子", "pinyin": "ér zi", "hanviet": "nhi tử", "vietnamese": "Con trai"},
-  {"simplified": "飞", "traditional": "飛", "pinyin": "fēi", "hanviet": "phi", "vietnamese": "Bay"},
-  {"simplified": "分钟", "traditional": "分鐘", "pinyin": "fēn zhōng", "hanviet": "phân chung", "vietnamese": "Phút"},
-  {"simplified": "高兴", "traditional": "高興", "pinyin": "gāo xìng", "hanviet": "cao hứng", "vietnamese": "Vui vẻ"},
-  {"simplified": "个", "traditional": "個", "pinyin": "gè", "hanviet": "cá", "vietnamese": "Cái (lượng từ)"},
-  {"simplified": "工作", "traditional": "工作", "pinyin": "gōng zuò", "hanviet": "công tác", "vietnamese": "Công việc, làm việc"},
-  {"simplified": "狗", "traditional": "狗", "pinyin": "gǒu", "hanviet": "cẩu", "vietnamese": "Chó"},
-  {"simplified": "贵", "traditional": "貴", "pinyin": "guì", "hanviet": "quý", "vietnamese": "Đắt"},
-  {"simplified": "过", "traditional": "過", "pinyin": "guò", "hanviet": "quá", "vietnamese": "Qua, trải qua"},
-  {"simplified": "还", "traditional": "還", "pinyin": "hái", "hanviet": "hoàn", "vietnamese": "Còn, vẫn"},
-  {"simplified": "和", "traditional": "和", "pinyin": "hé", "hanviet": "hòa", "vietnamese": "Và, với"},
-  {"simplified": "喝", "traditional": "喝", "pinyin": "hē", "hanviet": "hát", "vietnamese": "Uống"},
-  {"simplified": "很", "traditional": "很", "pinyin": "hěn", "hanviet": "ngận", "vietnamese": "Rất"},
-  {"simplified": "红", "traditional": "紅", "pinyin": "hóng", "hanviet": "hồng", "vietnamese": "Màu đỏ"},
-  {"simplified": "花儿", "traditional": "花兒", "pinyin": "huā er", "hanviet": "hoa nhi", "vietnamese": "Hoa"},
-  {"simplified": "会", "traditional": "會", "pinyin": "huì", "hanviet": "hội", "vietnamese": "Biết, sẽ"},
-  {"simplified": "几", "traditional": "幾", "pinyin": "jǐ", "hanviet": "kỷ", "vietnamese": "Mấy, bao nhiêu"},
-  {"simplified": "家", "traditional": "家", "pinyin": "jiā", "hanviet": "gia", "vietnamese": "Nhà, gia đình"},
-  {"simplified": "叫", "traditional": "叫", "pinyin": "jiào", "hanviet": "khiếu", "vietnamese": "Gọi, tên là"},
-  {"simplified": "今天", "traditional": "今天", "pinyin": "jīn tiān", "hanviet": "kim thiên", "vietnamese": "Hôm nay"},
-  {"simplified": "九", "traditional": "九", "pinyin": "jiǔ", "hanviet": "cửu", "vietnamese": "Chín"},
-  {"simplified": "开", "traditional": "開", "pinyin": "kāi", "hanviet": "khai", "vietnamese": "Mở"},
-  {"simplified": "看", "traditional": "看", "pinyin": "kàn", "hanviet": "khán", "vietnamese": "Nhìn, xem"},
-  {"simplified": "看见", "traditional": "看見", "pinyin": "kàn jiàn", "hanviet": "khán kiến", "vietnamese": "Nhìn thấy"},
-  {"simplified": "哥哥", "traditional": "哥哥", "pinyin": "gē ge", "hanviet": "ca ca", "vietnamese": "Anh trai"},
-  {"simplified": "姐姐", "traditional": "姐姐", "pinyin": "jiě jie", "hanviet": "tỷ tỷ", "vietnamese": "Chị gái"},
-  {"simplified": "块", "traditional": "塊", "pinyin": "kuài", "hanviet": "khối", "vietnamese": "Miếng, đồng (tiền)"},
-  {"simplified": "来", "traditional": "來", "pinyin": "lái", "hanviet": "lai", "vietnamese": "Đến"},
-  {"simplified": "老", "traditional": "老", "pinyin": "lǎo", "hanviet": "lão", "vietnamese": "Già, cũ"},
-  {"simplified": "老师", "traditional": "老師", "pinyin": "lǎo shī", "hanviet": "lão sư", "vietnamese": "Giáo viên"},
-  {"simplified": "了", "traditional": "了", "pinyin": "le", "hanviet": "liễu", "vietnamese": "Đã (trợ từ)"},
-  {"simplified": "冷", "traditional": "冷", "pinyin": "lěng", "hanviet": "lãnh", "vietnamese": "Lạnh"},
-  {"simplified": "里", "traditional": "裏", "pinyin": "lǐ", "hanviet": "lý", "vietnamese": "Trong, bên trong"},
-  {"simplified": "六", "traditional": "六", "pinyin": "liù", "hanviet": "lục", "vietnamese": "Sáu"},
-  {"simplified": "妈妈", "traditional": "媽媽", "pinyin": "mā ma", "hanviet": "ma ma", "vietnamese": "Mẹ"},
-  {"simplified": "吗", "traditional": "嗎", "pinyin": "ma", "hanviet": "ma", "vietnamese": "(trợ từ hỏi)"},
-  {"simplified": "买", "traditional": "買", "pinyin": "mǎi", "hanviet": "mãi", "vietnamese": "Mua"},
-  {"simplified": "猫", "traditional": "貓", "pinyin": "māo", "hanviet": "mao", "vietnamese": "Mèo"},
-  {"simplified": "没关系", "traditional": "沒關係", "pinyin": "méi guān xi", "hanviet": "vô quan hệ", "vietnamese": "Không sao"},
-  {"simplified": "没有", "traditional": "沒有", "pinyin": "méi yǒu", "hanviet": "vô hữu", "vietnamese": "Không có"},
-  {"simplified": "米饭", "traditional": "米飯", "pinyin": "mǐ fàn", "hanviet": "mễ phạn", "vietnamese": "Cơm"},
-  {"simplified": "名字", "traditional": "名字", "pinyin": "míng zi", "hanviet": "danh tự", "vietnamese": "Tên"},
-  {"simplified": "明天", "traditional": "明天", "pinyin": "míng tiān", "hanviet": "minh thiên", "vietnamese": "Ngày mai"},
-  {"simplified": "哪", "traditional": "哪", "pinyin": "nǎ", "hanviet": "na", "vietnamese": "Nào"},
-  {"simplified": "那", "traditional": "那", "pinyin": "nà", "hanviet": "na", "vietnamese": "Kia, đó"},
-  {"simplified": "呢", "traditional": "呢", "pinyin": "ne", "hanviet": "ni", "vietnamese": "(trợ từ)"},
-  {"simplified": "能", "traditional": "能", "pinyin": "néng", "hanviet": "năng", "vietnamese": "Có thể"},
-  {"simplified": "你", "traditional": "你", "pinyin": "nǐ", "hanviet": "nễ", "vietnamese": "Bạn, anh"},
-  {"simplified": "年", "traditional": "年", "pinyin": "nián", "hanviet": "niên", "vietnamese": "Năm"},
-  {"simplified": "女儿", "traditional": "女兒", "pinyin": "nǚ ér", "hanviet": "nữ nhi", "vietnamese": "Con gái"},
-  {"simplified": "朋友", "traditional": "朋友", "pinyin": "péng yǒu", "hanviet": "bằng hữu", "vietnamese": "Bạn bè"},
-  {"simplified": "便宜", "traditional": "便宜", "pinyin": "pián yi", "hanviet": "tiện nghi", "vietnamese": "Rẻ"},
-  {"simplified": "苹果", "traditional": "蘋果", "pinyin": "píng guǒ", "hanviet": "bình quả", "vietnamese": "Quả táo"},
-  {"simplified": "七", "traditional": "七", "pinyin": "qī", "hanviet": "thất", "vietnamese": "Bảy"},
-  {"simplified": "前", "traditional": "前", "pinyin": "qián", "hanviet": "tiền", "vietnamese": "Trước"},
-  {"simplified": "钱", "traditional": "錢", "pinyin": "qián", "hanviet": "tiền", "vietnamese": "Tiền bạc"},
-  {"simplified": "请", "traditional": "請", "pinyin": "qǐng", "hanviet": "thỉnh", "vietnamese": "Mời, xin"},
-  {"simplified": "去", "traditional": "去", "pinyin": "qù", "hanviet": "khứ", "vietnamese": "Đi"},
-  {"simplified": "日", "traditional": "日", "pinyin": "rì", "hanviet": "nhật", "vietnamese": "Ngày, mặt trời"},
-  {"simplified": "热", "traditional": "熱", "pinyin": "rè", "hanviet": "nhiệt", "vietnamese": "Nóng"},
-  {"simplified": "人", "traditional": "人", "pinyin": "rén", "hanviet": "nhân", "vietnamese": "Người"},
-  {"simplified": "认识", "traditional": "認識", "pinyin": "rèn shi", "hanviet": "nhận thức", "vietnamese": "Biết, nhận ra"},
-  {"simplified": "三", "traditional": "三", "pinyin": "sān", "hanviet": "tam", "vietnamese": "Ba"},
-  {"simplified": "商店", "traditional": "商店", "pinyin": "shāng diàn", "hanviet": "thương điếm", "vietnamese": "Cửa hàng"},
-  {"simplified": "上", "traditional": "上", "pinyin": "shàng", "hanviet": "thượng", "vietnamese": "Trên, lên"},
-  {"simplified": "上午", "traditional": "上午", "pinyin": "shàng wǔ", "hanviet": "thượng ngọ", "vietnamese": "Buổi sáng"},
-  {"simplified": "少", "traditional": "少", "pinyin": "shǎo", "hanviet": "thiểu", "vietnamese": "Ít"},
-  {"simplified": "谁", "traditional": "誰", "pinyin": "shéi", "hanviet": "thùy", "vietnamese": "Ai"},
-  {"simplified": "什么", "traditional": "什麼", "pinyin": "shén me", "hanviet": "thập ma", "vietnamese": "Cái gì"},
-  {"simplified": "十", "traditional": "十", "pinyin": "shí", "hanviet": "thập", "vietnamese": "Mười"},
-  {"simplified": "时候", "traditional": "時候", "pinyin": "shí hou", "hanviet": "thì hầu", "vietnamese": "Thời gian, lúc"},
-  {"simplified": "是", "traditional": "是", "pinyin": "shì", "hanviet": "thị", "vietnamese": "Là"},
-  {"simplified": "书", "traditional": "書", "pinyin": "shū", "hanviet": "thư", "vietnamese": "Sách"},
-  {"simplified": "水", "traditional": "水", "pinyin": "shuǐ", "hanviet": "thủy", "vietnamese": "Nước"},
-  {"simplified": "说", "traditional": "說", "pinyin": "shuō", "hanviet": "thuyết", "vietnamese": "Nói"},
-  {"simplified": "四", "traditional": "四", "pinyin": "sì", "hanviet": "tứ", "vietnamese": "Bốn"},
-  {"simplified": "岁", "traditional": "歲", "pinyin": "suì", "hanviet": "tuế", "vietnamese": "Tuổi"},
-  {"simplified": "他", "traditional": "他", "pinyin": "tā", "hanviet": "tha", "vietnamese": "Anh ấy, ông ấy"},
-  {"simplified": "她", "traditional": "她", "pinyin": "tā", "hanviet": "tha", "vietnamese": "Cô ấy, bà ấy"},
-  {"simplified": "太", "traditional": "太", "pinyin": "tài", "hanviet": "thái", "vietnamese": "Quá, quá mức"},
-  {"simplified": "天", "traditional": "天", "pinyin": "tiān", "hanviet": "thiên", "vietnamese": "Trời, ngày"},
-  {"simplified": "听", "traditional": "聽", "pinyin": "tīng", "hanviet": "thính", "vietnamese": "Nghe"},
-  {"simplified": "同学", "traditional": "同學", "pinyin": "tóng xué", "hanviet": "đồng học", "vietnamese": "Bạn học"},
-  {"simplified": "喂", "traditional": "喂", "pinyin": "wèi", "hanviet": "vị", "vietnamese": "A lô (điện thoại)"},
-  {"simplified": "我", "traditional": "我", "pinyin": "wǒ", "hanviet": "ngã", "vietnamese": "Tôi, tao"},
-  {"simplified": "我们", "traditional": "我們", "pinyin": "wǒ men", "hanviet": "ngã môn", "vietnamese": "Chúng tôi, chúng ta"},
-  {"simplified": "五", "traditional": "五", "pinyin": "wǔ", "hanviet": "ngũ", "vietnamese": "Năm"},
-  {"simplified": "喜欢", "traditional": "喜歡", "pinyin": "xǐ huan", "hanviet": "hỷ hoan", "vietnamese": "Thích"},
-  {"simplified": "下", "traditional": "下", "pinyin": "xià", "hanviet": "hạ", "vietnamese": "Xuống, dưới"},
-  {"simplified": "下午", "traditional": "下午", "pinyin": "xià wǔ", "hanviet": "hạ ngọ", "vietnamese": "Buổi chiều"},
-  {"simplified": "下雨", "traditional": "下雨", "pinyin": "xià yǔ", "hanviet": "hạ vũ", "vietnamese": "Trời mưa"},
-  {"simplified": "先生", "traditional": "先生", "pinyin": "xiān sheng", "hanviet": "tiên sinh", "vietnamese": "Ông, ngài"},
-  {"simplified": "现在", "traditional": "現在", "pinyin": "xiàn zài", "hanviet": "hiện tại", "vietnamese": "Bây giờ, hiện tại"},
-  {"simplified": "想", "traditional": "想", "pinyin": "xiǎng", "hanviet": "tưởng", "vietnamese": "Muốn, nghĩ"},
-  {"simplified": "小", "traditional": "小", "pinyin": "xiǎo", "hanviet": "tiểu", "vietnamese": "Nhỏ, bé"},
-  {"simplified": "小姐", "traditional": "小姐", "pinyin": "xiǎo jie", "hanviet": "tiểu tỷ", "vietnamese": "Cô, tiểu thư"},
-  {"simplified": "些", "traditional": "些", "pinyin": "xiē", "hanviet": "ta", "vietnamese": "Vài, một ít"},
-  {"simplified": "写", "traditional": "寫", "pinyin": "xiě", "hanviet": "tả", "vietnamese": "Viết"},
-  {"simplified": "谢谢", "traditional": "謝謝", "pinyin": "xiè xie", "hanviet": "tạ tạ", "vietnamese": "Cảm ơn"},
-  {"simplified": "星期", "traditional": "星期", "pinyin": "xīng qī", "hanviet": "tinh kỳ", "vietnamese": "Tuần"},
-  {"simplified": "姓", "traditional": "姓", "pinyin": "xìng", "hanviet": "tánh", "vietnamese": "Họ"},
-  {"simplified": "学生", "traditional": "學生", "pinyin": "xué sheng", "hanviet": "học sinh", "vietnamese": "Học sinh"},
-  {"simplified": "学习", "traditional": "學習", "pinyin": "xué xí", "hanviet": "học tập", "vietnamese": "Học"},
-  {"simplified": "学校", "traditional": "學校", "pinyin": "xué xiào", "hanviet": "học hiệu", "vietnamese": "Trường học"},
-  {"simplified": "一", "traditional": "一", "pinyin": "yī", "hanviet": "nhất", "vietnamese": "Một"},
-  {"simplified": "一点儿", "traditional": "一點兒", "pinyin": "yì diǎn er", "hanviet": "nhất điểm nhi", "vietnamese": "Một chút"},
-  {"simplified": "医生", "traditional": "醫生", "pinyin": "yī shēng", "hanviet": "y sinh", "vietnamese": "Bác sĩ"},
-  {"simplified": "医院", "traditional": "醫院", "pinyin": "yī yuàn", "hanviet": "y viện", "vietnamese": "Bệnh viện"},
-  {"simplified": "衣服", "traditional": "衣服", "pinyin": "yī fu", "hanviet": "y phục", "vietnamese": "Quần áo"},
-  {"simplified": "以后", "traditional": "以後", "pinyin": "yǐ hòu", "hanviet": "dĩ hậu", "vietnamese": "Sau đó"},
-  {"simplified": "椅子", "traditional": "椅子", "pinyin": "yǐ zi", "hanviet": "ỷ tử", "vietnamese": "Ghế"},
-  {"simplified": "有", "traditional": "有", "pinyin": "yǒu", "hanviet": "hữu", "vietnamese": "Có"},
-  {"simplified": "月", "traditional": "月", "pinyin": "yuè", "hanviet": "nguyệt", "vietnamese": "Tháng, mặt trăng"},
-  {"simplified": "再", "traditional": "再", "pinyin": "zài", "hanviet": "tái", "vietnamese": "Lại, nữa"},
-  {"simplified": "再见", "traditional": "再見", "pinyin": "zài jiàn", "hanviet": "tái kiến", "vietnamese": "Tạm biệt"},
-  {"simplified": "在", "traditional": "在", "pinyin": "zài", "hanviet": "tại", "vietnamese": "Ở, tại"},
-  {"simplified": "怎么", "traditional": "怎麼", "pinyin": "zěn me", "hanviet": "chẩm ma", "vietnamese": "Như thế nào"},
-  {"simplified": "怎么样", "traditional": "怎麼樣", "pinyin": "zěn me yàng", "hanviet": "chẩm ma dạng", "vietnamese": "Thế nào"},
-  {"simplified": "站", "traditional": "站", "pinyin": "zhàn", "hanviet": "trạm", "vietnamese": "Đứng, ga"},
-  {"simplified": "这", "traditional": "這", "pinyin": "zhè", "hanviet": "giá", "vietnamese": "Đây, này"},
-  {"simplified": "中国", "traditional": "中國", "pinyin": "zhōng guó", "hanviet": "trung quốc", "vietnamese": "Trung Quốc"},
-  {"simplified": "中午", "traditional": "中午", "pinyin": "zhōng wǔ", "hanviet": "trung ngọ", "vietnamese": "Buổi trưa"},
-  {"simplified": "住", "traditional": "住", "pinyin": "zhù", "hanviet": "trụ", "vietnamese": "Ở, sống"},
-  {"simplified": "桌子", "traditional": "桌子", "pinyin": "zhuō zi", "hanviet": "trác tử", "vietnamese": "Bàn"},
-  {"simplified": "字", "traditional": "字", "pinyin": "zì", "hanviet": "tự", "vietnamese": "Chữ"},
-  {"simplified": "昨天", "traditional": "昨天", "pinyin": "zuó tiān", "hanviet": "tạc thiên", "vietnamese": "Hôm qua"},
-  {"simplified": "做", "traditional": "做", "pinyin": "zuò", "hanviet": "tác", "vietnamese": "Làm"},
-  {"simplified": "坐", "traditional": "坐", "pinyin": "zuò", "hanviet": "tọa", "vietnamese": "Ngồi"},
-  {"simplified": "班", "traditional": "班", "pinyin": "bān", "hanviet": "ban", "vietnamese": "Lớp, ca làm việc"},
-  {"simplified": "搬", "traditional": "搬", "pinyin": "bān", "hanviet": "ban", "vietnamese": "Chuyển nhà"},
-  {"simplified": "办法", "traditional": "辦法", "pinyin": "bàn fǎ", "hanviet": "biện pháp", "vietnamese": "Cách, phương pháp"},
-  {"simplified": "半", "traditional": "半", "pinyin": "bàn", "hanviet": "bán", "vietnamese": "Nửa"},
-  {"simplified": "帮助", "traditional": "幫助", "pinyin": "bāng zhù", "hanviet": "bang trợ", "vietnamese": "Giúp đỡ"},
-  {"simplified": "别", "traditional": "別", "pinyin": "bié", "hanviet": "biệt", "vietnamese": "Đừng"},
-  {"simplified": "宾馆", "traditional": "賓館", "pinyin": "bīn guǎn", "hanviet": "tân quán", "vietnamese": "Khách sạn"},
-  {"simplified": "冰箱", "traditional": "冰箱", "pinyin": "bīng xiāng", "hanviet": "băng tường", "vietnamese": "Tủ lạnh"},
-  {"simplified": "菜", "traditional": "菜", "pinyin": "cài", "hanviet": "thài", "vietnamese": "Món ăn, rau"},
-  {"simplified": "餐厅", "traditional": "餐廳", "pinyin": "cān tīng", "hanviet": "thinh thính", "vietnamese": "Nhà hàng"},
-  {"simplified": "草", "traditional": "草", "pinyin": "cǎo", "hanviet": "thảo", "vietnamese": "Cỏ"},
-  {"simplified": "层", "traditional": "層", "pinyin": "céng", "hanviet": "tằng", "vietnamese": "Tầng"},
-  {"simplified": "茶", "traditional": "茶", "pinyin": "chá", "hanviet": "trà", "vietnamese": "Trà"},
-  {"simplified": "差不多", "traditional": "差不多", "pinyin": "chà bu duō", "hanviet": "sai bất đa", "vietnamese": "Gần như"},
-  {"simplified": "长", "traditional": "長", "pinyin": "cháng", "hanviet": "trường", "vietnamese": "Dài"},
-  {"simplified": "城市", "traditional": "城市", "pinyin": "chéng shì", "hanviet": "thành thị", "vietnamese": "Thành phố"},
-  {"simplified": "迟到", "traditional": "遲到", "pinyin": "chí dào", "hanviet": "trì đáo", "vietnamese": "Đến muộn"},
-  {"simplified": "吃饭", "traditional": "吃飯", "pinyin": "chī fàn", "hanviet": "xực phạn", "vietnamese": "Ăn cơm"},
-  {"simplified": "出", "traditional": "出", "pinyin": "chū", "hanviet": "xuất", "vietnamese": "Ra, đi ra"},
-  {"simplified": "除了", "traditional": "除了", "pinyin": "chú le", "hanviet": "trừ liễu", "vietnamese": "Ngoài ra"},
-  {"simplified": "船", "traditional": "船", "pinyin": "chuán", "hanviet": "thuyền", "vietnamese": "Thuyền, tàu"},
-  {"simplified": "春", "traditional": "春", "pinyin": "chūn", "hanviet": "xuân", "vietnamese": "Mùa xuân"},
-  {"simplified": "词语", "traditional": "詞語", "pinyin": "cí yǔ", "hanviet": "từ ngữ", "vietnamese": "Từ ngữ"},
-  {"simplified": "次", "traditional": "次", "pinyin": "cì", "hanviet": "thứ", "vietnamese": "Lần"},
-  {"simplified": "聪明", "traditional": "聰明", "pinyin": "cōng ming", "hanviet": "thông minh", "vietnamese": "Thông minh"},
-  {"simplified": "打", "traditional": "打", "pinyin": "dǎ", "hanviet": "đả", "vietnamese": "Đánh"},
-  {"simplified": "打扫", "traditional": "打掃", "pinyin": "dǎ sǎo", "hanviet": "đả tảo", "vietnamese": "Dọn dẹp"},
-  {"simplified": "大家", "traditional": "大家", "pinyin": "dà jiā", "hanviet": "đại gia", "vietnamese": "Mọi người"},
-  {"simplified": "答题", "traditional": "答題", "pinyin": "dá tí", "hanviet": "đáp đề", "vietnamese": "Trả lời"},
-  {"simplified": "带", "traditional": "帶", "pinyin": "dài", "hanviet": "đái", "vietnamese": "Mang, đem"},
-  {"simplified": "蛋糕", "traditional": "蛋糕", "pinyin": "dàn gāo", "hanviet": "đản cao", "vietnamese": "Bánh ngọt"},
-  {"simplified": "地点", "traditional": "地點", "pinyin": "dì diǎn", "hanviet": "địa điểm", "vietnamese": "Địa điểm"},
-  {"simplified": "地铁", "traditional": "地鐵", "pinyin": "dì tiě", "hanviet": "địa thiết", "vietnamese": "Tàu điện ngầm"},
-  {"simplified": "地图", "traditional": "地圖", "pinyin": "dì tú", "hanviet": "địa đồ", "vietnamese": "Bản đồ"},
-  {"simplified": "第一", "traditional": "第一", "pinyin": "dì yī", "hanviet": "đệ nhất", "vietnamese": "Thứ nhất"},
-  {"simplified": "懂", "traditional": "懂", "pinyin": "dǒng", "hanviet": "đổng", "vietnamese": "Hiểu"},
-  {"simplified": "动物", "traditional": "動物", "pinyin": "dòng wù", "hanviet": "động vật", "vietnamese": "Động vật"},
-  {"simplified": "短", "traditional": "短", "pinyin": "duǎn", "hanviet": "đoản", "vietnamese": "Ngắn"},
-  {"simplified": "耳朵", "traditional": "耳朵", "pinyin": "ěr duo", "hanviet": "nhĩ đa", "vietnamese": "Tai"},
-  {"simplified": "发烧", "traditional": "發燒", "pinyin": "fā shāo", "hanviet": "phát thiêu", "vietnamese": "Sốt"},
-  {"simplified": "发现", "traditional": "發現", "pinyin": "fā xiàn", "hanviet": "phát hiện", "vietnamese": "Phát hiện"},
-  {"simplified": "方便", "traditional": "方便", "pinyin": "fāng biàn", "hanviet": "phương tiện", "vietnamese": "Tiện lợi"},
-  {"simplified": "放", "traditional": "放", "pinyin": "fàng", "hanviet": "phóng", "vietnamese": "Đặt, thả"},
-  {"simplified": "放学", "traditional": "放學", "pinyin": "fàng xué", "hanviet": "phóng học", "vietnamese": "Tan học"},
-  {"simplified": "分", "traditional": "分", "pinyin": "fēn", "hanviet": "phân", "vietnamese": "Phân, chia"},
-  {"simplified": "服务员", "traditional": "服務員", "pinyin": "fú wù yuán", "hanviet": "phục vụ viên", "vietnamese": "Nhân viên phục vụ"},
-  {"simplified": "附近", "traditional": "附近", "pinyin": "fù jìn", "hanviet": "phụ cận", "vietnamese": "Gần đây"},
-  {"simplified": "干净", "traditional": "乾淨", "pinyin": "gān jìng", "hanviet": "can tịnh", "vietnamese": "Sạch sẽ"},
-  {"simplified": "告诉", "traditional": "告訴", "pinyin": "gào su", "hanviet": "cáo tố", "vietnamese": "Nói cho biết"},
-  {"simplified": "公共汽车", "traditional": "公共汽車", "pinyin": "gōng gòng qì chē", "hanviet": "công cộng khí xa", "vietnamese": "Xe buýt"},
-  {"simplified": "公园", "traditional": "公園", "pinyin": "gōng yuán", "hanviet": "công viên", "vietnamese": "Công viên"},
-  {"simplified": "故事", "traditional": "故事", "pinyin": "gù shi", "hanviet": "cố sự", "vietnamese": "Câu chuyện"},
-  {"simplified": "关", "traditional": "關", "pinyin": "guān", "hanviet": "quan", "vietnamese": "Đóng, tắt"},
-  {"simplified": "关机", "traditional": "關機", "pinyin": "guān jī", "hanviet": "quan cơ", "vietnamese": "Tắt máy"},
-  {"simplified": "关心", "traditional": "關心", "pinyin": "guān xīn", "hanviet": "quan tâm", "vietnamese": "Quan tâm"},
-  {"simplified": "关于", "traditional": "關於", "pinyin": "guān yú", "hanviet": "quan ư", "vietnamese": "Về"},
-  {"simplified": "还是", "traditional": "還是", "pinyin": "hái shì", "hanviet": "hoàn thị", "vietnamese": "Hay là"},
-  {"simplified": "孩子", "traditional": "孩子", "pinyin": "hái zi", "hanviet": "hài tử", "vietnamese": "Trẻ con"},
-  {"simplified": "黑", "traditional": "黑", "pinyin": "hēi", "hanviet": "hắc", "vietnamese": "Đen"},
-  {"simplified": "黑板", "traditional": "黑板", "pinyin": "hēi bǎn", "hanviet": "hắc bản", "vietnamese": "Bảng đen"},
-  {"simplified": "花", "traditional": "花", "pinyin": "huā", "hanviet": "hoa", "vietnamese": "Hoa"},
-  {"simplified": "画", "traditional": "畫", "pinyin": "huà", "hanviet": "họa", "vietnamese": "Vẽ"},
-  {"simplified": "坏", "traditional": "壞", "pinyin": "huài", "hanviet": "hoại", "vietnamese": "Hỏng, xấu"},
-  {"simplified": "欢迎", "traditional": "歡迎", "pinyin": "huān yíng", "hanviet": "hoan nghênh", "vietnamese": "Chào mừng"},
-  {"simplified": "还", "traditional": "還", "pinyin": "huán", "hanviet": "hoàn", "vietnamese": "Trả lại"},
-  {"simplified": "换", "traditional": "換", "pinyin": "huàn", "hanviet": "hoán", "vietnamese": "Đổi"},
-  {"simplified": "黄", "traditional": "黃", "pinyin": "huáng", "hanviet": "hoàng", "vietnamese": "Màu vàng"},
-  {"simplified": "房间", "traditional": "房間", "pinyin": "fáng jiān", "hanviet": "phòng gian", "vietnamese": "Phòng"},
-  {"simplified": "机场", "traditional": "機場", "pinyin": "jī chǎng", "hanviet": "cơ trường", "vietnamese": "Sân bay"},
-  {"simplified": "鸡蛋", "traditional": "雞蛋", "pinyin": "jī dàn", "hanviet": "kê đản", "vietnamese": "Trứng gà"},
-  {"simplified": "机", "traditional": "機", "pinyin": "jī", "hanviet": "cơ", "vietnamese": "Máy"},
-  {"simplified": "机会", "traditional": "機會", "pinyin": "jī huì", "hanviet": "cơ hội", "vietnamese": "Cơ hội"},
-  {"simplified": "解决", "traditional": "解決", "pinyin": "jiě jué", "hanviet": "giải quyết", "vietnamese": "Giải quyết"},
-  {"simplified": "节课", "traditional": "節課", "pinyin": "jié kè", "hanviet": "tiết khóa", "vietnamese": "Tiết học"},
-  {"simplified": "借", "traditional": "借", "pinyin": "jiè", "hanviet": "tá", "vietnamese": "Mượn"},
-  {"simplified": "经常", "traditional": "經常", "pinyin": "jīng cháng", "hanviet": "kinh thường", "vietnamese": "Thường xuyên"},
-  {"simplified": "经过", "traditional": "經過", "pinyin": "jīng guò", "hanviet": "kinh quá", "vietnamese": "Đi qua"},
-  {"simplified": "旧", "traditional": "舊", "pinyin": "jiù", "hanviet": "cựu", "vietnamese": "Cũ"},
-  {"simplified": "决定", "traditional": "決定", "pinyin": "jué dìng", "hanviet": "quyết định", "vietnamese": "Quyết định"},
-  {"simplified": "可爱", "traditional": "可愛", "pinyin": "kě ài", "hanviet": "khả ái", "vietnamese": "Dễ thương"},
-  {"simplified": "可是", "traditional": "可是", "pinyin": "kě shì", "hanviet": "khả thị", "vietnamese": "Tuy nhiên"},
-  {"simplified": "可以", "traditional": "可以", "pinyin": "kě yǐ", "hanviet": "khả dĩ", "vietnamese": "Có thể"},
-  {"simplified": "哭", "traditional": "哭", "pinyin": "kū", "hanviet": "khốc", "vietnamese": "Khóc"},
-  {"simplified": "快", "traditional": "快", "pinyin": "kuài", "hanviet": "khoái", "vietnamese": "Nhanh"},
-  {"simplified": "快乐", "traditional": "快樂", "pinyin": "kuài lè", "hanviet": "khoái lạc", "vietnamese": "Vui vẻ"},
-  {"simplified": "累", "traditional": "累", "pinyin": "lèi", "hanviet": "lụy", "vietnamese": "Mệt"},
-  {"simplified": "礼貌", "traditional": "禮貌", "pinyin": "lǐ mào", "hanviet": "lễ mạo", "vietnamese": "Lịch sự"},
-  {"simplified": "两", "traditional": "兩", "pinyin": "liǎng", "hanviet": "lưỡng", "vietnamese": "Hai"},
-  {"simplified": "亮", "traditional": "亮", "pinyin": "liàng", "hanviet": "lượng", "vietnamese": "Sáng"},
-  {"simplified": "路", "traditional": "路", "pinyin": "lù", "hanviet": "lộ", "vietnamese": "Đường"},
-  {"simplified": "绿", "traditional": "綠", "pinyin": "lǜ", "hanviet": "lục", "vietnamese": "Xanh lá"},
-  {"simplified": "马", "traditional": "馬", "pinyin": "mǎ", "hanviet": "mã", "vietnamese": "Ngựa"},
-  {"simplified": "马上", "traditional": "馬上", "pinyin": "mǎ shàng", "hanviet": "mã thượng", "vietnamese": "Ngay lập tức"},
-  {"simplified": "满意", "traditional": "滿意", "pinyin": "mǎn yì", "hanviet": "mãn ý", "vietnamese": "Hài lòng"},
-  {"simplified": "妹妹", "traditional": "妹妹", "pinyin": "mèi mei", "hanviet": "muội muội", "vietnamese": "Em gái"},
-  {"simplified": "门", "traditional": "門", "pinyin": "mén", "hanviet": "môn", "vietnamese": "Cửa"},
-  {"simplified": "面", "traditional": "面", "pinyin": "miàn", "hanviet": "mịch", "vietnamese": "Mặt"},
-  {"simplified": "面条", "traditional": "麵條", "pinyin": "miàn tiáo", "hanviet": "mịch điều", "vietnamese": "Mì sợi"},
-  {"simplified": "明白", "traditional": "明白", "pinyin": "míng bai", "hanviet": "minh bạch", "vietnamese": "Hiểu rõ"},
-  {"simplified": "拿", "traditional": "拿", "pinyin": "ná", "hanviet": "nã", "vietnamese": "Cầm, lấy"},
-  {"simplified": "奶奶", "traditional": "奶奶", "pinyin": "nǎi nai", "hanviet": "nãi nãi", "vietnamese": "Bà nội"},
-  {"simplified": "难过", "traditional": "難過", "pinyin": "nán guò", "hanviet": "nan quá", "vietnamese": "Buồn"},
-  {"simplified": "好吃", "traditional": "好吃", "pinyin": "hǎo chī", "hanviet": "hảo xực", "vietnamese": "Ngon"},
-  {"simplified": "号", "traditional": "號", "pinyin": "hào", "hanviet": "hiệu", "vietnamese": "Ngày, số"},
-  {"simplified": "好看", "traditional": "好看", "pinyin": "hǎo kàn", "hanviet": "hảo khán", "vietnamese": "Đẹp"},
-  {"simplified": "好听", "traditional": "好聽", "pinyin": "hǎo tīng", "hanviet": "hảo thính", "vietnamese": "Hay (âm thanh)"},
-  {"simplified": "好玩", "traditional": "好玩", "pinyin": "hǎo wán", "hanviet": "hảo ngoạn", "vietnamese": "Vui"},
-  {"simplified": "好用", "traditional": "好用", "pinyin": "hǎo yòng", "hanviet": "hảo dụng", "vietnamese": "Tiện dụng"}
+  {
+    "simplified": "爱",
+    "traditional": "愛",
+    "pinyin": "ài",
+    "hanviet": "ái",
+    "meaning_vi": "Yêu, tình yêu",
+    "meaning_en": "to love; to be fond of; to like; affection",
+    "vietnamese": "Yêu, tình yêu"
+  },
+  {
+    "simplified": "爸爸",
+    "traditional": "爸爸",
+    "pinyin": "bà ba",
+    "hanviet": "ba ba",
+    "meaning_vi": "Bố, cha",
+    "meaning_en": "(coll.) father; dad; CL:位[wei4]",
+    "vietnamese": "Bố, cha"
+  },
+  {
+    "simplified": "杯子",
+    "traditional": "杯子",
+    "pinyin": "bēi zi",
+    "hanviet": "bôi tử",
+    "meaning_vi": "Cái cốc, ly",
+    "meaning_en": "cup; glass",
+    "vietnamese": "Cái cốc, ly"
+  },
+  {
+    "simplified": "北京",
+    "traditional": "北京",
+    "pinyin": "běi jīng",
+    "hanviet": "bắc kinh",
+    "meaning_vi": "Bắc Kinh",
+    "meaning_en": "Beijing municipality, capital of the People's Republic of China (short name 京[Jing1])",
+    "vietnamese": "Bắc Kinh"
+  },
+  {
+    "simplified": "大",
+    "traditional": "大",
+    "pinyin": "dà",
+    "hanviet": "đại",
+    "meaning_vi": "To, lớn",
+    "meaning_en": "big; large; great; older (than another person)",
+    "vietnamese": "To, lớn"
+  },
+  {
+    "simplified": "弟弟",
+    "traditional": "弟弟",
+    "pinyin": "dì di",
+    "hanviet": "đệ đệ",
+    "meaning_vi": "Em trai",
+    "meaning_en": "younger brother; CL:個|个[ge4],位[wei4]",
+    "vietnamese": "Em trai"
+  },
+  {
+    "simplified": "都",
+    "traditional": "都",
+    "pinyin": "dōu",
+    "hanviet": "đô",
+    "meaning_vi": "Đều, cả",
+    "meaning_en": "all; both; entirely; (used for emphasis) even",
+    "vietnamese": "Đều, cả"
+  },
+  {
+    "simplified": "对",
+    "traditional": "對",
+    "pinyin": "duì",
+    "hanviet": "đối",
+    "meaning_vi": "Đúng, phải",
+    "meaning_en": "right; correct; towards; at; for",
+    "vietnamese": "Đúng, phải"
+  },
+  {
+    "simplified": "多",
+    "traditional": "多",
+    "pinyin": "duō",
+    "hanviet": "đa",
+    "meaning_vi": "Nhiều",
+    "meaning_en": "many; much; more; a lot of; too many; in excess",
+    "vietnamese": "Nhiều"
+  },
+  {
+    "simplified": "饿",
+    "traditional": "餓",
+    "pinyin": "è",
+    "hanviet": "ngạ",
+    "meaning_vi": "Đói",
+    "meaning_en": "hungry; to starve (sb)",
+    "vietnamese": "Đói"
+  },
+  {
+    "simplified": "儿子",
+    "traditional": "兒子",
+    "pinyin": "ér zi",
+    "hanviet": "nhi tử",
+    "meaning_vi": "Con trai",
+    "meaning_en": "son",
+    "vietnamese": "Con trai"
+  },
+  {
+    "simplified": "飞",
+    "traditional": "飛",
+    "pinyin": "fēi",
+    "hanviet": "phi",
+    "meaning_vi": "Bay",
+    "meaning_en": "to fly",
+    "vietnamese": "Bay"
+  },
+  {
+    "simplified": "分钟",
+    "traditional": "分鐘",
+    "pinyin": "fēn zhōng",
+    "hanviet": "phân chung",
+    "meaning_vi": "Phút",
+    "meaning_en": "minute",
+    "vietnamese": "Phút"
+  },
+  {
+    "simplified": "高兴",
+    "traditional": "高興",
+    "pinyin": "gāo xìng",
+    "hanviet": "cao hứng",
+    "meaning_vi": "Vui vẻ",
+    "meaning_en": "happy; glad",
+    "vietnamese": "Vui vẻ"
+  },
+  {
+    "simplified": "个",
+    "traditional": "個",
+    "pinyin": "gè",
+    "hanviet": "cá",
+    "meaning_vi": "Cái (lượng từ)",
+    "meaning_en": "(classifier used before a noun that has no specific classifier); (bound form) individual",
+    "vietnamese": "Cái (lượng từ)"
+  },
+  {
+    "simplified": "工作",
+    "traditional": "工作",
+    "pinyin": "gōng zuò",
+    "hanviet": "công tác",
+    "meaning_vi": "Công việc, làm việc",
+    "meaning_en": "to work; (of a machine) to operate",
+    "vietnamese": "Công việc, làm việc"
+  },
+  {
+    "simplified": "狗",
+    "traditional": "狗",
+    "pinyin": "gǒu",
+    "hanviet": "cẩu",
+    "meaning_vi": "Chó",
+    "meaning_en": "dog; CL:隻|只[zhi1],條|条[tiao2]",
+    "vietnamese": "Chó"
+  },
+  {
+    "simplified": "贵",
+    "traditional": "貴",
+    "pinyin": "guì",
+    "hanviet": "quý",
+    "meaning_vi": "Đắt",
+    "meaning_en": "short name for Guizhou 貴州|贵州[Gui4 zhou1]",
+    "vietnamese": "Đắt"
+  },
+  {
+    "simplified": "过",
+    "traditional": "過",
+    "pinyin": "guò",
+    "hanviet": "quá",
+    "meaning_vi": "Qua, trải qua",
+    "meaning_en": "surname Guo",
+    "vietnamese": "Qua, trải qua"
+  },
+  {
+    "simplified": "还",
+    "traditional": "還",
+    "pinyin": "hái",
+    "hanviet": "hoàn",
+    "meaning_vi": "Còn, vẫn",
+    "meaning_en": "still; still in progress",
+    "vietnamese": "Còn, vẫn"
+  },
+  {
+    "simplified": "和",
+    "traditional": "和",
+    "pinyin": "hé",
+    "hanviet": "hòa",
+    "meaning_vi": "Và, với",
+    "meaning_en": "surname He",
+    "vietnamese": "Và, với"
+  },
+  {
+    "simplified": "喝",
+    "traditional": "喝",
+    "pinyin": "hē",
+    "hanviet": "hát",
+    "meaning_vi": "Uống",
+    "meaning_en": "to drink; variant of 嗬[he1]",
+    "vietnamese": "Uống"
+  },
+  {
+    "simplified": "很",
+    "traditional": "很",
+    "pinyin": "hěn",
+    "hanviet": "ngận",
+    "meaning_vi": "Rất",
+    "meaning_en": "very; quite; (also, often used before an adjective without intensifying its meaning, i.e. as a meaningless syntactic ele",
+    "vietnamese": "Rất"
+  },
+  {
+    "simplified": "红",
+    "traditional": "紅",
+    "pinyin": "hóng",
+    "hanviet": "hồng",
+    "meaning_vi": "Màu đỏ",
+    "meaning_en": "surname Hong",
+    "vietnamese": "Màu đỏ"
+  },
+  {
+    "simplified": "花儿",
+    "traditional": "花兒",
+    "pinyin": "huā er",
+    "hanviet": "hoa nhi",
+    "meaning_vi": "Hoa",
+    "meaning_en": "style of folk song popular in Gansu, Qinghai and Ningxia; CL:首[shou3]",
+    "vietnamese": "Hoa"
+  },
+  {
+    "simplified": "会",
+    "traditional": "會",
+    "pinyin": "huì",
+    "hanviet": "hội",
+    "meaning_vi": "Biết, sẽ",
+    "meaning_en": "can; to have the skill; to know how to; to be likely to; to be sure to",
+    "vietnamese": "Biết, sẽ"
+  },
+  {
+    "simplified": "几",
+    "traditional": "幾",
+    "pinyin": "jǐ",
+    "hanviet": "kỷ",
+    "meaning_vi": "Mấy, bao nhiêu",
+    "meaning_en": "small table",
+    "vietnamese": "Mấy, bao nhiêu"
+  },
+  {
+    "simplified": "家",
+    "traditional": "家",
+    "pinyin": "jiā",
+    "hanviet": "gia",
+    "meaning_vi": "Nhà, gia đình",
+    "meaning_en": "home; family",
+    "vietnamese": "Nhà, gia đình"
+  },
+  {
+    "simplified": "叫",
+    "traditional": "叫",
+    "pinyin": "jiào",
+    "hanviet": "khiếu",
+    "meaning_vi": "Gọi, tên là",
+    "meaning_en": "to shout; to call",
+    "vietnamese": "Gọi, tên là"
+  },
+  {
+    "simplified": "今天",
+    "traditional": "今天",
+    "pinyin": "jīn tiān",
+    "hanviet": "kim thiên",
+    "meaning_vi": "Hôm nay",
+    "meaning_en": "today; the present time; now",
+    "vietnamese": "Hôm nay"
+  },
+  {
+    "simplified": "九",
+    "traditional": "九",
+    "pinyin": "jiǔ",
+    "hanviet": "cửu",
+    "meaning_vi": "Chín",
+    "meaning_en": "nine; 9",
+    "vietnamese": "Chín"
+  },
+  {
+    "simplified": "开",
+    "traditional": "開",
+    "pinyin": "kāi",
+    "hanviet": "khai",
+    "meaning_vi": "Mở",
+    "meaning_en": "to open (transitive or intransitive); (of ships, vehicles, troops etc) to start",
+    "vietnamese": "Mở"
+  },
+  {
+    "simplified": "看",
+    "traditional": "看",
+    "pinyin": "kàn",
+    "hanviet": "khán",
+    "meaning_vi": "Nhìn, xem",
+    "meaning_en": "to look after; to take care of",
+    "vietnamese": "Nhìn, xem"
+  },
+  {
+    "simplified": "看见",
+    "traditional": "看見",
+    "pinyin": "kàn jiàn",
+    "hanviet": "khán kiến",
+    "meaning_vi": "Nhìn thấy",
+    "meaning_en": "to see; to catch sight of",
+    "vietnamese": "Nhìn thấy"
+  },
+  {
+    "simplified": "哥哥",
+    "traditional": "哥哥",
+    "pinyin": "gē ge",
+    "hanviet": "ca ca",
+    "meaning_vi": "Anh trai",
+    "meaning_en": "older brother; CL:個|个[ge4],位[wei4]",
+    "vietnamese": "Anh trai"
+  },
+  {
+    "simplified": "姐姐",
+    "traditional": "姐姐",
+    "pinyin": "jiě jie",
+    "hanviet": "tỷ tỷ",
+    "meaning_vi": "Chị gái",
+    "meaning_en": "older sister; CL:個|个[ge4]",
+    "vietnamese": "Chị gái"
+  },
+  {
+    "simplified": "块",
+    "traditional": "塊",
+    "pinyin": "kuài",
+    "hanviet": "khối",
+    "meaning_vi": "Miếng, đồng (tiền)",
+    "meaning_en": "lump; chunk; piece; classifier for pieces of cloth, cake, soap etc",
+    "vietnamese": "Miếng, đồng (tiền)"
+  },
+  {
+    "simplified": "来",
+    "traditional": "來",
+    "pinyin": "lái",
+    "hanviet": "lai",
+    "meaning_vi": "Đến",
+    "meaning_en": "to come; (used as a substitute for a more specific verb)",
+    "vietnamese": "Đến"
+  },
+  {
+    "simplified": "老",
+    "traditional": "老",
+    "pinyin": "lǎo",
+    "hanviet": "lão",
+    "meaning_vi": "Già, cũ",
+    "meaning_en": "prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to ",
+    "vietnamese": "Già, cũ"
+  },
+  {
+    "simplified": "老师",
+    "traditional": "老師",
+    "pinyin": "lǎo shī",
+    "hanviet": "lão sư",
+    "meaning_vi": "Giáo viên",
+    "meaning_en": "teacher",
+    "vietnamese": "Giáo viên"
+  },
+  {
+    "simplified": "了",
+    "traditional": "了",
+    "pinyin": "le",
+    "hanviet": "liễu",
+    "meaning_vi": "Đã (trợ từ)",
+    "meaning_en": "(completed action marker); (modal particle indicating change of state, situation now)",
+    "vietnamese": "Đã (trợ từ)"
+  },
+  {
+    "simplified": "冷",
+    "traditional": "冷",
+    "pinyin": "lěng",
+    "hanviet": "lãnh",
+    "meaning_vi": "Lạnh",
+    "meaning_en": "surname Leng",
+    "vietnamese": "Lạnh"
+  },
+  {
+    "simplified": "里",
+    "traditional": "裏",
+    "pinyin": "lǐ",
+    "hanviet": "lý",
+    "meaning_vi": "Trong, bên trong",
+    "meaning_en": "lining; interior",
+    "vietnamese": "Trong, bên trong"
+  },
+  {
+    "simplified": "六",
+    "traditional": "六",
+    "pinyin": "liù",
+    "hanviet": "lục",
+    "meaning_vi": "Sáu",
+    "meaning_en": "six; 6",
+    "vietnamese": "Sáu"
+  },
+  {
+    "simplified": "妈妈",
+    "traditional": "媽媽",
+    "pinyin": "mā ma",
+    "hanviet": "ma ma",
+    "meaning_vi": "Mẹ",
+    "meaning_en": "mama; mommy",
+    "vietnamese": "Mẹ"
+  },
+  {
+    "simplified": "吗",
+    "traditional": "嗎",
+    "pinyin": "ma",
+    "hanviet": "ma",
+    "meaning_vi": "(trợ từ hỏi)",
+    "meaning_en": "(coll.) what?",
+    "vietnamese": "(trợ từ hỏi)"
+  },
+  {
+    "simplified": "买",
+    "traditional": "買",
+    "pinyin": "mǎi",
+    "hanviet": "mãi",
+    "meaning_vi": "Mua",
+    "meaning_en": "to buy; to purchase",
+    "vietnamese": "Mua"
+  },
+  {
+    "simplified": "猫",
+    "traditional": "貓",
+    "pinyin": "māo",
+    "hanviet": "mao",
+    "meaning_vi": "Mèo",
+    "meaning_en": "cat (CL:隻|只[zhi1]); (dialect) to hide oneself",
+    "vietnamese": "Mèo"
+  },
+  {
+    "simplified": "没关系",
+    "traditional": "沒關係",
+    "pinyin": "méi guān xi",
+    "hanviet": "vô quan hệ",
+    "meaning_vi": "Không sao",
+    "meaning_en": "",
+    "vietnamese": "Không sao"
+  },
+  {
+    "simplified": "没有",
+    "traditional": "沒有",
+    "pinyin": "méi yǒu",
+    "hanviet": "vô hữu",
+    "meaning_vi": "Không có",
+    "meaning_en": "haven't; hasn't",
+    "vietnamese": "Không có"
+  },
+  {
+    "simplified": "米饭",
+    "traditional": "米飯",
+    "pinyin": "mǐ fàn",
+    "hanviet": "mễ phạn",
+    "meaning_vi": "Cơm",
+    "meaning_en": "(cooked) rice",
+    "vietnamese": "Cơm"
+  },
+  {
+    "simplified": "名字",
+    "traditional": "名字",
+    "pinyin": "míng zi",
+    "hanviet": "danh tự",
+    "meaning_vi": "Tên",
+    "meaning_en": "name (of a person or thing)",
+    "vietnamese": "Tên"
+  },
+  {
+    "simplified": "明天",
+    "traditional": "明天",
+    "pinyin": "míng tiān",
+    "hanviet": "minh thiên",
+    "meaning_vi": "Ngày mai",
+    "meaning_en": "tomorrow",
+    "vietnamese": "Ngày mai"
+  },
+  {
+    "simplified": "哪",
+    "traditional": "哪",
+    "pinyin": "nǎ",
+    "hanviet": "na",
+    "meaning_vi": "Nào",
+    "meaning_en": "how; which",
+    "vietnamese": "Nào"
+  },
+  {
+    "simplified": "那",
+    "traditional": "那",
+    "pinyin": "nà",
+    "hanviet": "na",
+    "meaning_vi": "Kia, đó",
+    "meaning_en": "surname Na",
+    "vietnamese": "Kia, đó"
+  },
+  {
+    "simplified": "呢",
+    "traditional": "呢",
+    "pinyin": "ne",
+    "hanviet": "ni",
+    "meaning_vi": "(trợ từ)",
+    "meaning_en": "(sentence-final particle) used in questions to link back to prior discourse or context (\"what about...?\", \"and...?\"); (s",
+    "vietnamese": "(trợ từ)"
+  },
+  {
+    "simplified": "能",
+    "traditional": "能",
+    "pinyin": "néng",
+    "hanviet": "năng",
+    "meaning_vi": "Có thể",
+    "meaning_en": "surname Neng",
+    "vietnamese": "Có thể"
+  },
+  {
+    "simplified": "你",
+    "traditional": "你",
+    "pinyin": "nǐ",
+    "hanviet": "nễ",
+    "meaning_vi": "Bạn, anh",
+    "meaning_en": "you (informal, as opposed to courteous 您[nin2])",
+    "vietnamese": "Bạn, anh"
+  },
+  {
+    "simplified": "年",
+    "traditional": "年",
+    "pinyin": "nián",
+    "hanviet": "niên",
+    "meaning_vi": "Năm",
+    "meaning_en": "surname Nian",
+    "vietnamese": "Năm"
+  },
+  {
+    "simplified": "女儿",
+    "traditional": "女兒",
+    "pinyin": "nǚ ér",
+    "hanviet": "nữ nhi",
+    "meaning_vi": "Con gái",
+    "meaning_en": "daughter",
+    "vietnamese": "Con gái"
+  },
+  {
+    "simplified": "朋友",
+    "traditional": "朋友",
+    "pinyin": "péng yǒu",
+    "hanviet": "bằng hữu",
+    "meaning_vi": "Bạn bè",
+    "meaning_en": "friend; CL:個|个[ge4],位[wei4]",
+    "vietnamese": "Bạn bè"
+  },
+  {
+    "simplified": "便宜",
+    "traditional": "便宜",
+    "pinyin": "pián yi",
+    "hanviet": "tiện nghi",
+    "meaning_vi": "Rẻ",
+    "meaning_en": "convenient",
+    "vietnamese": "Rẻ"
+  },
+  {
+    "simplified": "苹果",
+    "traditional": "蘋果",
+    "pinyin": "píng guǒ",
+    "hanviet": "bình quả",
+    "meaning_vi": "Quả táo",
+    "meaning_en": "Apple (American tech company)",
+    "vietnamese": "Quả táo"
+  },
+  {
+    "simplified": "七",
+    "traditional": "七",
+    "pinyin": "qī",
+    "hanviet": "thất",
+    "meaning_vi": "Bảy",
+    "meaning_en": "seven; 7",
+    "vietnamese": "Bảy"
+  },
+  {
+    "simplified": "前",
+    "traditional": "前",
+    "pinyin": "qián",
+    "hanviet": "tiền",
+    "meaning_vi": "Trước",
+    "meaning_en": "front; forward",
+    "vietnamese": "Trước"
+  },
+  {
+    "simplified": "钱",
+    "traditional": "錢",
+    "pinyin": "qián",
+    "hanviet": "tiền",
+    "meaning_vi": "Tiền bạc",
+    "meaning_en": "surname Qian",
+    "vietnamese": "Tiền bạc"
+  },
+  {
+    "simplified": "请",
+    "traditional": "請",
+    "pinyin": "qǐng",
+    "hanviet": "thỉnh",
+    "meaning_vi": "Mời, xin",
+    "meaning_en": "to ask; to invite",
+    "vietnamese": "Mời, xin"
+  },
+  {
+    "simplified": "去",
+    "traditional": "去",
+    "pinyin": "qù",
+    "hanviet": "khứ",
+    "meaning_vi": "Đi",
+    "meaning_en": "to go; to go to (a place)",
+    "vietnamese": "Đi"
+  },
+  {
+    "simplified": "日",
+    "traditional": "日",
+    "pinyin": "rì",
+    "hanviet": "nhật",
+    "meaning_vi": "Ngày, mặt trời",
+    "meaning_en": "(bound form) sun; day",
+    "vietnamese": "Ngày, mặt trời"
+  },
+  {
+    "simplified": "热",
+    "traditional": "熱",
+    "pinyin": "rè",
+    "hanviet": "nhiệt",
+    "meaning_vi": "Nóng",
+    "meaning_en": "to warm up; to heat up",
+    "vietnamese": "Nóng"
+  },
+  {
+    "simplified": "人",
+    "traditional": "人",
+    "pinyin": "rén",
+    "hanviet": "nhân",
+    "meaning_vi": "Người",
+    "meaning_en": "person; people; CL:個|个[ge4],位[wei4],名[ming2]",
+    "vietnamese": "Người"
+  },
+  {
+    "simplified": "认识",
+    "traditional": "認識",
+    "pinyin": "rèn shi",
+    "hanviet": "nhận thức",
+    "meaning_vi": "Biết, nhận ra",
+    "meaning_en": "to know; to recognize",
+    "vietnamese": "Biết, nhận ra"
+  },
+  {
+    "simplified": "三",
+    "traditional": "三",
+    "pinyin": "sān",
+    "hanviet": "tam",
+    "meaning_vi": "Ba",
+    "meaning_en": "surname San",
+    "vietnamese": "Ba"
+  },
+  {
+    "simplified": "商店",
+    "traditional": "商店",
+    "pinyin": "shāng diàn",
+    "hanviet": "thương điếm",
+    "meaning_vi": "Cửa hàng",
+    "meaning_en": "store; shop; CL:家[jia1]",
+    "vietnamese": "Cửa hàng"
+  },
+  {
+    "simplified": "上",
+    "traditional": "上",
+    "pinyin": "shàng",
+    "hanviet": "thượng",
+    "meaning_vi": "Trên, lên",
+    "meaning_en": "(bound form) up; upper; above; previous; first (of multiple parts)",
+    "vietnamese": "Trên, lên"
+  },
+  {
+    "simplified": "上午",
+    "traditional": "上午",
+    "pinyin": "shàng wǔ",
+    "hanviet": "thượng ngọ",
+    "meaning_vi": "Buổi sáng",
+    "meaning_en": "morning",
+    "vietnamese": "Buổi sáng"
+  },
+  {
+    "simplified": "少",
+    "traditional": "少",
+    "pinyin": "shǎo",
+    "hanviet": "thiểu",
+    "meaning_vi": "Ít",
+    "meaning_en": "few; less",
+    "vietnamese": "Ít"
+  },
+  {
+    "simplified": "谁",
+    "traditional": "誰",
+    "pinyin": "shéi",
+    "hanviet": "thùy",
+    "meaning_vi": "Ai",
+    "meaning_en": "who; also pr. [shui2]",
+    "vietnamese": "Ai"
+  },
+  {
+    "simplified": "什么",
+    "traditional": "什麼",
+    "pinyin": "shén me",
+    "hanviet": "thập ma",
+    "meaning_vi": "Cái gì",
+    "meaning_en": "what?; something; anything",
+    "vietnamese": "Cái gì"
+  },
+  {
+    "simplified": "十",
+    "traditional": "十",
+    "pinyin": "shí",
+    "hanviet": "thập",
+    "meaning_vi": "Mười",
+    "meaning_en": "ten; 10",
+    "vietnamese": "Mười"
+  },
+  {
+    "simplified": "时候",
+    "traditional": "時候",
+    "pinyin": "shí hou",
+    "hanviet": "thì hầu",
+    "meaning_vi": "Thời gian, lúc",
+    "meaning_en": "time; length of time",
+    "vietnamese": "Thời gian, lúc"
+  },
+  {
+    "simplified": "是",
+    "traditional": "是",
+    "pinyin": "shì",
+    "hanviet": "thị",
+    "meaning_vi": "Là",
+    "meaning_en": "to be (followed by substantives only); correct; right; true",
+    "vietnamese": "Là"
+  },
+  {
+    "simplified": "书",
+    "traditional": "書",
+    "pinyin": "shū",
+    "hanviet": "thư",
+    "meaning_vi": "Sách",
+    "meaning_en": "book; letter",
+    "vietnamese": "Sách"
+  },
+  {
+    "simplified": "水",
+    "traditional": "水",
+    "pinyin": "shuǐ",
+    "hanviet": "thủy",
+    "meaning_vi": "Nước",
+    "meaning_en": "surname Shui; Shui ethnic group",
+    "vietnamese": "Nước"
+  },
+  {
+    "simplified": "说",
+    "traditional": "說",
+    "pinyin": "shuō",
+    "hanviet": "thuyết",
+    "meaning_vi": "Nói",
+    "meaning_en": "to persuade",
+    "vietnamese": "Nói"
+  },
+  {
+    "simplified": "四",
+    "traditional": "四",
+    "pinyin": "sì",
+    "hanviet": "tứ",
+    "meaning_vi": "Bốn",
+    "meaning_en": "four; 4",
+    "vietnamese": "Bốn"
+  },
+  {
+    "simplified": "岁",
+    "traditional": "歲",
+    "pinyin": "suì",
+    "hanviet": "tuế",
+    "meaning_vi": "Tuổi",
+    "meaning_en": "classifier for years (of age); year",
+    "vietnamese": "Tuổi"
+  },
+  {
+    "simplified": "他",
+    "traditional": "他",
+    "pinyin": "tā",
+    "hanviet": "tha",
+    "meaning_vi": "Anh ấy, ông ấy",
+    "meaning_en": "(third-person singular) (since the early 20th century, usu. male) he; him; his; (bound form) other; another; some other ",
+    "vietnamese": "Anh ấy, ông ấy"
+  },
+  {
+    "simplified": "她",
+    "traditional": "她",
+    "pinyin": "tā",
+    "hanviet": "tha",
+    "meaning_vi": "Cô ấy, bà ấy",
+    "meaning_en": "she",
+    "vietnamese": "Cô ấy, bà ấy"
+  },
+  {
+    "simplified": "太",
+    "traditional": "太",
+    "pinyin": "tài",
+    "hanviet": "thái",
+    "meaning_vi": "Quá, quá mức",
+    "meaning_en": "highest; greatest",
+    "vietnamese": "Quá, quá mức"
+  },
+  {
+    "simplified": "天",
+    "traditional": "天",
+    "pinyin": "tiān",
+    "hanviet": "thiên",
+    "meaning_vi": "Trời, ngày",
+    "meaning_en": "day; sky",
+    "vietnamese": "Trời, ngày"
+  },
+  {
+    "simplified": "听",
+    "traditional": "聽",
+    "pinyin": "tīng",
+    "hanviet": "thính",
+    "meaning_vi": "Nghe",
+    "meaning_en": "to listen to; to hear; to heed; to obey",
+    "vietnamese": "Nghe"
+  },
+  {
+    "simplified": "同学",
+    "traditional": "同學",
+    "pinyin": "tóng xué",
+    "hanviet": "đồng học",
+    "meaning_vi": "Bạn học",
+    "meaning_en": "to study at the same school; fellow student",
+    "vietnamese": "Bạn học"
+  },
+  {
+    "simplified": "喂",
+    "traditional": "喂",
+    "pinyin": "wèi",
+    "hanviet": "vị",
+    "meaning_vi": "A lô (điện thoại)",
+    "meaning_en": "hello (when answering the phone)",
+    "vietnamese": "A lô (điện thoại)"
+  },
+  {
+    "simplified": "我",
+    "traditional": "我",
+    "pinyin": "wǒ",
+    "hanviet": "ngã",
+    "meaning_vi": "Tôi, tao",
+    "meaning_en": "I; me; my",
+    "vietnamese": "Tôi, tao"
+  },
+  {
+    "simplified": "我们",
+    "traditional": "我們",
+    "pinyin": "wǒ men",
+    "hanviet": "ngã môn",
+    "meaning_vi": "Chúng tôi, chúng ta",
+    "meaning_en": "we; us; ourselves; our",
+    "vietnamese": "Chúng tôi, chúng ta"
+  },
+  {
+    "simplified": "五",
+    "traditional": "五",
+    "pinyin": "wǔ",
+    "hanviet": "ngũ",
+    "meaning_vi": "Năm",
+    "meaning_en": "five; 5",
+    "vietnamese": "Năm"
+  },
+  {
+    "simplified": "喜欢",
+    "traditional": "喜歡",
+    "pinyin": "xǐ huan",
+    "hanviet": "hỷ hoan",
+    "meaning_vi": "Thích",
+    "meaning_en": "to like; to be fond of",
+    "vietnamese": "Thích"
+  },
+  {
+    "simplified": "下",
+    "traditional": "下",
+    "pinyin": "xià",
+    "hanviet": "hạ",
+    "meaning_vi": "Xuống, dưới",
+    "meaning_en": "down; downwards",
+    "vietnamese": "Xuống, dưới"
+  },
+  {
+    "simplified": "下午",
+    "traditional": "下午",
+    "pinyin": "xià wǔ",
+    "hanviet": "hạ ngọ",
+    "meaning_vi": "Buổi chiều",
+    "meaning_en": "afternoon; CL:個|个[ge4]",
+    "vietnamese": "Buổi chiều"
+  },
+  {
+    "simplified": "下雨",
+    "traditional": "下雨",
+    "pinyin": "xià yǔ",
+    "hanviet": "hạ vũ",
+    "meaning_vi": "Trời mưa",
+    "meaning_en": "to rain",
+    "vietnamese": "Trời mưa"
+  },
+  {
+    "simplified": "先生",
+    "traditional": "先生",
+    "pinyin": "xiān sheng",
+    "hanviet": "tiên sinh",
+    "meaning_vi": "Ông, ngài",
+    "meaning_en": "teacher; gentleman; sir; mister (Mr.)",
+    "vietnamese": "Ông, ngài"
+  },
+  {
+    "simplified": "现在",
+    "traditional": "現在",
+    "pinyin": "xiàn zài",
+    "hanviet": "hiện tại",
+    "meaning_vi": "Bây giờ, hiện tại",
+    "meaning_en": "now; at present; currently",
+    "vietnamese": "Bây giờ, hiện tại"
+  },
+  {
+    "simplified": "想",
+    "traditional": "想",
+    "pinyin": "xiǎng",
+    "hanviet": "tưởng",
+    "meaning_vi": "Muốn, nghĩ",
+    "meaning_en": "to think (about); to think of; to devise",
+    "vietnamese": "Muốn, nghĩ"
+  },
+  {
+    "simplified": "小",
+    "traditional": "小",
+    "pinyin": "xiǎo",
+    "hanviet": "tiểu",
+    "meaning_vi": "Nhỏ, bé",
+    "meaning_en": "small; tiny",
+    "vietnamese": "Nhỏ, bé"
+  },
+  {
+    "simplified": "小姐",
+    "traditional": "小姐",
+    "pinyin": "xiǎo jie",
+    "hanviet": "tiểu tỷ",
+    "meaning_vi": "Cô, tiểu thư",
+    "meaning_en": "young lady; miss",
+    "vietnamese": "Cô, tiểu thư"
+  },
+  {
+    "simplified": "些",
+    "traditional": "些",
+    "pinyin": "xiē",
+    "hanviet": "ta",
+    "meaning_vi": "Vài, một ít",
+    "meaning_en": "classifier indicating a small amount or small number greater than 1: some, a few, several",
+    "vietnamese": "Vài, một ít"
+  },
+  {
+    "simplified": "写",
+    "traditional": "寫",
+    "pinyin": "xiě",
+    "hanviet": "tả",
+    "meaning_vi": "Viết",
+    "meaning_en": "to write",
+    "vietnamese": "Viết"
+  },
+  {
+    "simplified": "谢谢",
+    "traditional": "謝謝",
+    "pinyin": "xiè xie",
+    "hanviet": "tạ tạ",
+    "meaning_vi": "Cảm ơn",
+    "meaning_en": "to thank; thanks",
+    "vietnamese": "Cảm ơn"
+  },
+  {
+    "simplified": "星期",
+    "traditional": "星期",
+    "pinyin": "xīng qī",
+    "hanviet": "tinh kỳ",
+    "meaning_vi": "Tuần",
+    "meaning_en": "week; CL:個|个[ge4]",
+    "vietnamese": "Tuần"
+  },
+  {
+    "simplified": "姓",
+    "traditional": "姓",
+    "pinyin": "xìng",
+    "hanviet": "tánh",
+    "meaning_vi": "Họ",
+    "meaning_en": "family name; surname; to be surnamed ...",
+    "vietnamese": "Họ"
+  },
+  {
+    "simplified": "学生",
+    "traditional": "學生",
+    "pinyin": "xué sheng",
+    "hanviet": "học sinh",
+    "meaning_vi": "Học sinh",
+    "meaning_en": "student; schoolchild",
+    "vietnamese": "Học sinh"
+  },
+  {
+    "simplified": "学习",
+    "traditional": "學習",
+    "pinyin": "xué xí",
+    "hanviet": "học tập",
+    "meaning_vi": "Học",
+    "meaning_en": "to learn; to study",
+    "vietnamese": "Học"
+  },
+  {
+    "simplified": "学校",
+    "traditional": "學校",
+    "pinyin": "xué xiào",
+    "hanviet": "học hiệu",
+    "meaning_vi": "Trường học",
+    "meaning_en": "school; CL:所[suo3]",
+    "vietnamese": "Trường học"
+  },
+  {
+    "simplified": "一",
+    "traditional": "一",
+    "pinyin": "yī",
+    "hanviet": "nhất",
+    "meaning_vi": "Một",
+    "meaning_en": "one; single",
+    "vietnamese": "Một"
+  },
+  {
+    "simplified": "一点儿",
+    "traditional": "一點兒",
+    "pinyin": "yì diǎn er",
+    "hanviet": "nhất điểm nhi",
+    "meaning_vi": "Một chút",
+    "meaning_en": "",
+    "vietnamese": "Một chút"
+  },
+  {
+    "simplified": "医生",
+    "traditional": "醫生",
+    "pinyin": "yī shēng",
+    "hanviet": "y sinh",
+    "meaning_vi": "Bác sĩ",
+    "meaning_en": "doctor; medical practitioner",
+    "vietnamese": "Bác sĩ"
+  },
+  {
+    "simplified": "医院",
+    "traditional": "醫院",
+    "pinyin": "yī yuàn",
+    "hanviet": "y viện",
+    "meaning_vi": "Bệnh viện",
+    "meaning_en": "hospital; CL:所[suo3],家[jia1],座[zuo4]",
+    "vietnamese": "Bệnh viện"
+  },
+  {
+    "simplified": "衣服",
+    "traditional": "衣服",
+    "pinyin": "yī fu",
+    "hanviet": "y phục",
+    "meaning_vi": "Quần áo",
+    "meaning_en": "clothes; CL:件[jian4],套[tao4]",
+    "vietnamese": "Quần áo"
+  },
+  {
+    "simplified": "以后",
+    "traditional": "以後",
+    "pinyin": "yǐ hòu",
+    "hanviet": "dĩ hậu",
+    "meaning_vi": "Sau đó",
+    "meaning_en": "after; later",
+    "vietnamese": "Sau đó"
+  },
+  {
+    "simplified": "椅子",
+    "traditional": "椅子",
+    "pinyin": "yǐ zi",
+    "hanviet": "ỷ tử",
+    "meaning_vi": "Ghế",
+    "meaning_en": "chair; CL:把[ba3],張|张[zhang1]",
+    "vietnamese": "Ghế"
+  },
+  {
+    "simplified": "有",
+    "traditional": "有",
+    "pinyin": "yǒu",
+    "hanviet": "hữu",
+    "meaning_vi": "Có",
+    "meaning_en": "to have; there is; (bound form) having; with; -ful; -ed; -al (as in 有意[you3 yi4] intentional)",
+    "vietnamese": "Có"
+  },
+  {
+    "simplified": "月",
+    "traditional": "月",
+    "pinyin": "yuè",
+    "hanviet": "nguyệt",
+    "meaning_vi": "Tháng, mặt trăng",
+    "meaning_en": "moon; month",
+    "vietnamese": "Tháng, mặt trăng"
+  },
+  {
+    "simplified": "再",
+    "traditional": "再",
+    "pinyin": "zài",
+    "hanviet": "tái",
+    "meaning_vi": "Lại, nữa",
+    "meaning_en": "again; once more; re-; further; beyond this point of time",
+    "vietnamese": "Lại, nữa"
+  },
+  {
+    "simplified": "再见",
+    "traditional": "再見",
+    "pinyin": "zài jiàn",
+    "hanviet": "tái kiến",
+    "meaning_vi": "Tạm biệt",
+    "meaning_en": "goodbye; see you again later",
+    "vietnamese": "Tạm biệt"
+  },
+  {
+    "simplified": "在",
+    "traditional": "在",
+    "pinyin": "zài",
+    "hanviet": "tại",
+    "meaning_vi": "Ở, tại",
+    "meaning_en": "to exist; to be alive; (of sb or sth) to be (located) at",
+    "vietnamese": "Ở, tại"
+  },
+  {
+    "simplified": "怎么",
+    "traditional": "怎麼",
+    "pinyin": "zěn me",
+    "hanviet": "chẩm ma",
+    "meaning_vi": "Như thế nào",
+    "meaning_en": "how?; what?",
+    "vietnamese": "Như thế nào"
+  },
+  {
+    "simplified": "怎么样",
+    "traditional": "怎麼樣",
+    "pinyin": "zěn me yàng",
+    "hanviet": "chẩm ma dạng",
+    "meaning_vi": "Thế nào",
+    "meaning_en": "",
+    "vietnamese": "Thế nào"
+  },
+  {
+    "simplified": "站",
+    "traditional": "站",
+    "pinyin": "zhàn",
+    "hanviet": "trạm",
+    "meaning_vi": "Đứng, ga",
+    "meaning_en": "station; to stand",
+    "vietnamese": "Đứng, ga"
+  },
+  {
+    "simplified": "这",
+    "traditional": "這",
+    "pinyin": "zhè",
+    "hanviet": "giá",
+    "meaning_vi": "Đây, này",
+    "meaning_en": "(pronoun) this; these; (bound form) this; the (followed by a noun)",
+    "vietnamese": "Đây, này"
+  },
+  {
+    "simplified": "中国",
+    "traditional": "中國",
+    "pinyin": "zhōng guó",
+    "hanviet": "trung quốc",
+    "meaning_vi": "Trung Quốc",
+    "meaning_en": "China",
+    "vietnamese": "Trung Quốc"
+  },
+  {
+    "simplified": "中午",
+    "traditional": "中午",
+    "pinyin": "zhōng wǔ",
+    "hanviet": "trung ngọ",
+    "meaning_vi": "Buổi trưa",
+    "meaning_en": "noon; midday",
+    "vietnamese": "Buổi trưa"
+  },
+  {
+    "simplified": "住",
+    "traditional": "住",
+    "pinyin": "zhù",
+    "hanviet": "trụ",
+    "meaning_vi": "Ở, sống",
+    "meaning_en": "to live; to reside; to stay; to stop; to cease",
+    "vietnamese": "Ở, sống"
+  },
+  {
+    "simplified": "桌子",
+    "traditional": "桌子",
+    "pinyin": "zhuō zi",
+    "hanviet": "trác tử",
+    "meaning_vi": "Bàn",
+    "meaning_en": "table; desk",
+    "vietnamese": "Bàn"
+  },
+  {
+    "simplified": "字",
+    "traditional": "字",
+    "pinyin": "zì",
+    "hanviet": "tự",
+    "meaning_vi": "Chữ",
+    "meaning_en": "letter; symbol",
+    "vietnamese": "Chữ"
+  },
+  {
+    "simplified": "昨天",
+    "traditional": "昨天",
+    "pinyin": "zuó tiān",
+    "hanviet": "tạc thiên",
+    "meaning_vi": "Hôm qua",
+    "meaning_en": "yesterday",
+    "vietnamese": "Hôm qua"
+  },
+  {
+    "simplified": "做",
+    "traditional": "做",
+    "pinyin": "zuò",
+    "hanviet": "tác",
+    "meaning_vi": "Làm",
+    "meaning_en": "to make; to produce; to write; to compose",
+    "vietnamese": "Làm"
+  },
+  {
+    "simplified": "坐",
+    "traditional": "坐",
+    "pinyin": "zuò",
+    "hanviet": "tọa",
+    "meaning_vi": "Ngồi",
+    "meaning_en": "surname Zuo",
+    "vietnamese": "Ngồi"
+  },
+  {
+    "simplified": "班",
+    "traditional": "班",
+    "pinyin": "bān",
+    "hanviet": "ban",
+    "meaning_vi": "Lớp, ca làm việc",
+    "meaning_en": "surname Ban",
+    "vietnamese": "Lớp, ca làm việc"
+  },
+  {
+    "simplified": "搬",
+    "traditional": "搬",
+    "pinyin": "bān",
+    "hanviet": "ban",
+    "meaning_vi": "Chuyển nhà",
+    "meaning_en": "to move (i.e. relocate oneself); to move (sth relatively heavy or bulky)",
+    "vietnamese": "Chuyển nhà"
+  },
+  {
+    "simplified": "办法",
+    "traditional": "辦法",
+    "pinyin": "bàn fǎ",
+    "hanviet": "biện pháp",
+    "meaning_vi": "Cách, phương pháp",
+    "meaning_en": "way of handling sth; means; measure; (practical) solution to a problem; CL:條|条[tiao2]",
+    "vietnamese": "Cách, phương pháp"
+  },
+  {
+    "simplified": "半",
+    "traditional": "半",
+    "pinyin": "bàn",
+    "hanviet": "bán",
+    "meaning_vi": "Nửa",
+    "meaning_en": "half; semi-",
+    "vietnamese": "Nửa"
+  },
+  {
+    "simplified": "帮助",
+    "traditional": "幫助",
+    "pinyin": "bāng zhù",
+    "hanviet": "bang trợ",
+    "meaning_vi": "Giúp đỡ",
+    "meaning_en": "assistance; aid; to help; to assist",
+    "vietnamese": "Giúp đỡ"
+  },
+  {
+    "simplified": "别",
+    "traditional": "別",
+    "pinyin": "bié",
+    "hanviet": "biệt",
+    "meaning_vi": "Đừng",
+    "meaning_en": "surname Bie",
+    "vietnamese": "Đừng"
+  },
+  {
+    "simplified": "宾馆",
+    "traditional": "賓館",
+    "pinyin": "bīn guǎn",
+    "hanviet": "tân quán",
+    "meaning_vi": "Khách sạn",
+    "meaning_en": "guesthouse; lodge",
+    "vietnamese": "Khách sạn"
+  },
+  {
+    "simplified": "冰箱",
+    "traditional": "冰箱",
+    "pinyin": "bīng xiāng",
+    "hanviet": "băng tường",
+    "meaning_vi": "Tủ lạnh",
+    "meaning_en": "refrigerator; (old) icebox",
+    "vietnamese": "Tủ lạnh"
+  },
+  {
+    "simplified": "菜",
+    "traditional": "菜",
+    "pinyin": "cài",
+    "hanviet": "thài",
+    "meaning_vi": "Món ăn, rau",
+    "meaning_en": "vegetable; greens (CL:棵[ke1]); dish (of food) (CL:樣|样[yang4],道[dao4],盤|盘[pan2])",
+    "vietnamese": "Món ăn, rau"
+  },
+  {
+    "simplified": "餐厅",
+    "traditional": "餐廳",
+    "pinyin": "cān tīng",
+    "hanviet": "thinh thính",
+    "meaning_vi": "Nhà hàng",
+    "meaning_en": "dining hall; dining room",
+    "vietnamese": "Nhà hàng"
+  },
+  {
+    "simplified": "草",
+    "traditional": "草",
+    "pinyin": "cǎo",
+    "hanviet": "thảo",
+    "meaning_vi": "Cỏ",
+    "meaning_en": "grass; straw",
+    "vietnamese": "Cỏ"
+  },
+  {
+    "simplified": "层",
+    "traditional": "層",
+    "pinyin": "céng",
+    "hanviet": "tằng",
+    "meaning_vi": "Tầng",
+    "meaning_en": "to pile on top of one another; layer; stratum",
+    "vietnamese": "Tầng"
+  },
+  {
+    "simplified": "茶",
+    "traditional": "茶",
+    "pinyin": "chá",
+    "hanviet": "trà",
+    "meaning_vi": "Trà",
+    "meaning_en": "tea; tea plant",
+    "vietnamese": "Trà"
+  },
+  {
+    "simplified": "差不多",
+    "traditional": "差不多",
+    "pinyin": "chà bu duō",
+    "hanviet": "sai bất đa",
+    "meaning_vi": "Gần như",
+    "meaning_en": "",
+    "vietnamese": "Gần như"
+  },
+  {
+    "simplified": "长",
+    "traditional": "長",
+    "pinyin": "cháng",
+    "hanviet": "trường",
+    "meaning_vi": "Dài",
+    "meaning_en": "long; (bound form) length",
+    "vietnamese": "Dài"
+  },
+  {
+    "simplified": "城市",
+    "traditional": "城市",
+    "pinyin": "chéng shì",
+    "hanviet": "thành thị",
+    "meaning_vi": "Thành phố",
+    "meaning_en": "city; town; CL:座[zuo4]",
+    "vietnamese": "Thành phố"
+  },
+  {
+    "simplified": "迟到",
+    "traditional": "遲到",
+    "pinyin": "chí dào",
+    "hanviet": "trì đáo",
+    "meaning_vi": "Đến muộn",
+    "meaning_en": "to arrive late",
+    "vietnamese": "Đến muộn"
+  },
+  {
+    "simplified": "吃饭",
+    "traditional": "吃飯",
+    "pinyin": "chī fàn",
+    "hanviet": "xực phạn",
+    "meaning_vi": "Ăn cơm",
+    "meaning_en": "to have a meal; to eat",
+    "vietnamese": "Ăn cơm"
+  },
+  {
+    "simplified": "出",
+    "traditional": "出",
+    "pinyin": "chū",
+    "hanviet": "xuất",
+    "meaning_vi": "Ra, đi ra",
+    "meaning_en": "to go out; to come out; to arise; to occur",
+    "vietnamese": "Ra, đi ra"
+  },
+  {
+    "simplified": "除了",
+    "traditional": "除了",
+    "pinyin": "chú le",
+    "hanviet": "trừ liễu",
+    "meaning_vi": "Ngoài ra",
+    "meaning_en": "apart from; besides; in addition to (used to exclude, as in 除了他，誰也沒來|除了他，谁也没来[chu2 le5 ta1 , shei2 ye3 mei2 lai2] \"apart",
+    "vietnamese": "Ngoài ra"
+  },
+  {
+    "simplified": "船",
+    "traditional": "船",
+    "pinyin": "chuán",
+    "hanviet": "thuyền",
+    "meaning_vi": "Thuyền, tàu",
+    "meaning_en": "boat; vessel",
+    "vietnamese": "Thuyền, tàu"
+  },
+  {
+    "simplified": "春",
+    "traditional": "春",
+    "pinyin": "chūn",
+    "hanviet": "xuân",
+    "meaning_vi": "Mùa xuân",
+    "meaning_en": "surname Chun",
+    "vietnamese": "Mùa xuân"
+  },
+  {
+    "simplified": "词语",
+    "traditional": "詞語",
+    "pinyin": "cí yǔ",
+    "hanviet": "từ ngữ",
+    "meaning_vi": "Từ ngữ",
+    "meaning_en": "word (general term including monosyllables through to short phrases); term (e.g. technical term)",
+    "vietnamese": "Từ ngữ"
+  },
+  {
+    "simplified": "次",
+    "traditional": "次",
+    "pinyin": "cì",
+    "hanviet": "thứ",
+    "meaning_vi": "Lần",
+    "meaning_en": "next in sequence; second",
+    "vietnamese": "Lần"
+  },
+  {
+    "simplified": "聪明",
+    "traditional": "聰明",
+    "pinyin": "cōng ming",
+    "hanviet": "thông minh",
+    "meaning_vi": "Thông minh",
+    "meaning_en": "intelligent; clever; bright; acute (of sight and hearing)",
+    "vietnamese": "Thông minh"
+  },
+  {
+    "simplified": "打",
+    "traditional": "打",
+    "pinyin": "dǎ",
+    "hanviet": "đả",
+    "meaning_vi": "Đánh",
+    "meaning_en": "(loanword) dozen; Taiwan pr. [da3]",
+    "vietnamese": "Đánh"
+  },
+  {
+    "simplified": "打扫",
+    "traditional": "打掃",
+    "pinyin": "dǎ sǎo",
+    "hanviet": "đả tảo",
+    "meaning_vi": "Dọn dẹp",
+    "meaning_en": "to clean; to sweep",
+    "vietnamese": "Dọn dẹp"
+  },
+  {
+    "simplified": "大家",
+    "traditional": "大家",
+    "pinyin": "dà jiā",
+    "hanviet": "đại gia",
+    "meaning_vi": "Mọi người",
+    "meaning_en": "everyone; influential family",
+    "vietnamese": "Mọi người"
+  },
+  {
+    "simplified": "答题",
+    "traditional": "答題",
+    "pinyin": "dá tí",
+    "hanviet": "đáp đề",
+    "meaning_vi": "Trả lời",
+    "meaning_en": "",
+    "vietnamese": "Trả lời"
+  },
+  {
+    "simplified": "带",
+    "traditional": "帶",
+    "pinyin": "dài",
+    "hanviet": "đái",
+    "meaning_vi": "Mang, đem",
+    "meaning_en": "band; belt",
+    "vietnamese": "Mang, đem"
+  },
+  {
+    "simplified": "蛋糕",
+    "traditional": "蛋糕",
+    "pinyin": "dàn gāo",
+    "hanviet": "đản cao",
+    "meaning_vi": "Bánh ngọt",
+    "meaning_en": "cake; CL:塊|块[kuai4],個|个[ge4]",
+    "vietnamese": "Bánh ngọt"
+  },
+  {
+    "simplified": "地点",
+    "traditional": "地點",
+    "pinyin": "dì diǎn",
+    "hanviet": "địa điểm",
+    "meaning_vi": "Địa điểm",
+    "meaning_en": "place; site",
+    "vietnamese": "Địa điểm"
+  },
+  {
+    "simplified": "地铁",
+    "traditional": "地鐵",
+    "pinyin": "dì tiě",
+    "hanviet": "địa thiết",
+    "meaning_vi": "Tàu điện ngầm",
+    "meaning_en": "underground railway; subway; subway train",
+    "vietnamese": "Tàu điện ngầm"
+  },
+  {
+    "simplified": "地图",
+    "traditional": "地圖",
+    "pinyin": "dì tú",
+    "hanviet": "địa đồ",
+    "meaning_vi": "Bản đồ",
+    "meaning_en": "map; CL:張|张[zhang1],本[ben3]",
+    "vietnamese": "Bản đồ"
+  },
+  {
+    "simplified": "第一",
+    "traditional": "第一",
+    "pinyin": "dì yī",
+    "hanviet": "đệ nhất",
+    "meaning_vi": "Thứ nhất",
+    "meaning_en": "first; most important; primary; foremost",
+    "vietnamese": "Thứ nhất"
+  },
+  {
+    "simplified": "懂",
+    "traditional": "懂",
+    "pinyin": "dǒng",
+    "hanviet": "đổng",
+    "meaning_vi": "Hiểu",
+    "meaning_en": "to understand; to comprehend",
+    "vietnamese": "Hiểu"
+  },
+  {
+    "simplified": "动物",
+    "traditional": "動物",
+    "pinyin": "dòng wù",
+    "hanviet": "động vật",
+    "meaning_vi": "Động vật",
+    "meaning_en": "animal; CL:隻|只[zhi1],群[qun2],個|个[ge4]",
+    "vietnamese": "Động vật"
+  },
+  {
+    "simplified": "短",
+    "traditional": "短",
+    "pinyin": "duǎn",
+    "hanviet": "đoản",
+    "meaning_vi": "Ngắn",
+    "meaning_en": "short; brief",
+    "vietnamese": "Ngắn"
+  },
+  {
+    "simplified": "耳朵",
+    "traditional": "耳朵",
+    "pinyin": "ěr duo",
+    "hanviet": "nhĩ đa",
+    "meaning_vi": "Tai",
+    "meaning_en": "ear; CL:隻|只[zhi1],個|个[ge4],對|对[dui4]",
+    "vietnamese": "Tai"
+  },
+  {
+    "simplified": "发烧",
+    "traditional": "發燒",
+    "pinyin": "fā shāo",
+    "hanviet": "phát thiêu",
+    "meaning_vi": "Sốt",
+    "meaning_en": "to have a high temperature (from illness); to have a fever; (fig.) to be fascinated with; to obsess over",
+    "vietnamese": "Sốt"
+  },
+  {
+    "simplified": "发现",
+    "traditional": "發現",
+    "pinyin": "fā xiàn",
+    "hanviet": "phát hiện",
+    "meaning_vi": "Phát hiện",
+    "meaning_en": "to notice; to become aware of; to discover; to find; to detect",
+    "vietnamese": "Phát hiện"
+  },
+  {
+    "simplified": "方便",
+    "traditional": "方便",
+    "pinyin": "fāng biàn",
+    "hanviet": "phương tiện",
+    "meaning_vi": "Tiện lợi",
+    "meaning_en": "convenient; suitable; to facilitate; to make things easy",
+    "vietnamese": "Tiện lợi"
+  },
+  {
+    "simplified": "放",
+    "traditional": "放",
+    "pinyin": "fàng",
+    "hanviet": "phóng",
+    "meaning_vi": "Đặt, thả",
+    "meaning_en": "to put; to place",
+    "vietnamese": "Đặt, thả"
+  },
+  {
+    "simplified": "放学",
+    "traditional": "放學",
+    "pinyin": "fàng xué",
+    "hanviet": "phóng học",
+    "meaning_vi": "Tan học",
+    "meaning_en": "to dismiss students at the end of the school day",
+    "vietnamese": "Tan học"
+  },
+  {
+    "simplified": "分",
+    "traditional": "分",
+    "pinyin": "fēn",
+    "hanviet": "phân",
+    "meaning_vi": "Phân, chia",
+    "meaning_en": "to divide; to separate; to distribute; to allocate",
+    "vietnamese": "Phân, chia"
+  },
+  {
+    "simplified": "服务员",
+    "traditional": "服務員",
+    "pinyin": "fú wù yuán",
+    "hanviet": "phục vụ viên",
+    "meaning_vi": "Nhân viên phục vụ",
+    "meaning_en": "",
+    "vietnamese": "Nhân viên phục vụ"
+  },
+  {
+    "simplified": "附近",
+    "traditional": "附近",
+    "pinyin": "fù jìn",
+    "hanviet": "phụ cận",
+    "meaning_vi": "Gần đây",
+    "meaning_en": "nearby; neighboring; (in the) vicinity (of); neighborhood",
+    "vietnamese": "Gần đây"
+  },
+  {
+    "simplified": "干净",
+    "traditional": "乾淨",
+    "pinyin": "gān jìng",
+    "hanviet": "can tịnh",
+    "meaning_vi": "Sạch sẽ",
+    "meaning_en": "clean; neat",
+    "vietnamese": "Sạch sẽ"
+  },
+  {
+    "simplified": "告诉",
+    "traditional": "告訴",
+    "pinyin": "gào su",
+    "hanviet": "cáo tố",
+    "meaning_vi": "Nói cho biết",
+    "meaning_en": "to press charges; to file a complaint",
+    "vietnamese": "Nói cho biết"
+  },
+  {
+    "simplified": "公共汽车",
+    "traditional": "公共汽車",
+    "pinyin": "gōng gòng qì chē",
+    "hanviet": "công cộng khí xa",
+    "meaning_vi": "Xe buýt",
+    "meaning_en": "",
+    "vietnamese": "Xe buýt"
+  },
+  {
+    "simplified": "公园",
+    "traditional": "公園",
+    "pinyin": "gōng yuán",
+    "hanviet": "công viên",
+    "meaning_vi": "Công viên",
+    "meaning_en": "park (for public recreation); CL:座[zuo4]",
+    "vietnamese": "Công viên"
+  },
+  {
+    "simplified": "故事",
+    "traditional": "故事",
+    "pinyin": "gù shi",
+    "hanviet": "cố sự",
+    "meaning_vi": "Câu chuyện",
+    "meaning_en": "old practice",
+    "vietnamese": "Câu chuyện"
+  },
+  {
+    "simplified": "关",
+    "traditional": "關",
+    "pinyin": "guān",
+    "hanviet": "quan",
+    "meaning_vi": "Đóng, tắt",
+    "meaning_en": "surname Guan",
+    "vietnamese": "Đóng, tắt"
+  },
+  {
+    "simplified": "关机",
+    "traditional": "關機",
+    "pinyin": "guān jī",
+    "hanviet": "quan cơ",
+    "meaning_vi": "Tắt máy",
+    "meaning_en": "to turn off (a machine or device); to finish shooting a film",
+    "vietnamese": "Tắt máy"
+  },
+  {
+    "simplified": "关心",
+    "traditional": "關心",
+    "pinyin": "guān xīn",
+    "hanviet": "quan tâm",
+    "meaning_vi": "Quan tâm",
+    "meaning_en": "to be concerned about; to care about",
+    "vietnamese": "Quan tâm"
+  },
+  {
+    "simplified": "关于",
+    "traditional": "關於",
+    "pinyin": "guān yú",
+    "hanviet": "quan ư",
+    "meaning_vi": "Về",
+    "meaning_en": "pertaining to; concerning",
+    "vietnamese": "Về"
+  },
+  {
+    "simplified": "还是",
+    "traditional": "還是",
+    "pinyin": "hái shì",
+    "hanviet": "hoàn thị",
+    "meaning_vi": "Hay là",
+    "meaning_en": "still (as before); had better",
+    "vietnamese": "Hay là"
+  },
+  {
+    "simplified": "孩子",
+    "traditional": "孩子",
+    "pinyin": "hái zi",
+    "hanviet": "hài tử",
+    "meaning_vi": "Trẻ con",
+    "meaning_en": "child",
+    "vietnamese": "Trẻ con"
+  },
+  {
+    "simplified": "黑",
+    "traditional": "黑",
+    "pinyin": "hēi",
+    "hanviet": "hắc",
+    "meaning_vi": "Đen",
+    "meaning_en": "short name for Heilongjiang 黑龍江|黑龙江[Hei1 long2 jiang1]",
+    "vietnamese": "Đen"
+  },
+  {
+    "simplified": "黑板",
+    "traditional": "黑板",
+    "pinyin": "hēi bǎn",
+    "hanviet": "hắc bản",
+    "meaning_vi": "Bảng đen",
+    "meaning_en": "blackboard; CL:塊|块[kuai4],個|个[ge4]",
+    "vietnamese": "Bảng đen"
+  },
+  {
+    "simplified": "花",
+    "traditional": "花",
+    "pinyin": "huā",
+    "hanviet": "hoa",
+    "meaning_vi": "Hoa",
+    "meaning_en": "surname Hua",
+    "vietnamese": "Hoa"
+  },
+  {
+    "simplified": "画",
+    "traditional": "畫",
+    "pinyin": "huà",
+    "hanviet": "họa",
+    "meaning_vi": "Vẽ",
+    "meaning_en": "to draw; to paint; picture; painting (CL:幅[fu2],張|张[zhang1])",
+    "vietnamese": "Vẽ"
+  },
+  {
+    "simplified": "坏",
+    "traditional": "壞",
+    "pinyin": "huài",
+    "hanviet": "hoại",
+    "meaning_vi": "Hỏng, xấu",
+    "meaning_en": "bad; spoiled",
+    "vietnamese": "Hỏng, xấu"
+  },
+  {
+    "simplified": "欢迎",
+    "traditional": "歡迎",
+    "pinyin": "huān yíng",
+    "hanviet": "hoan nghênh",
+    "meaning_vi": "Chào mừng",
+    "meaning_en": "to welcome; welcome",
+    "vietnamese": "Chào mừng"
+  },
+  {
+    "simplified": "还",
+    "traditional": "還",
+    "pinyin": "huán",
+    "hanviet": "hoàn",
+    "meaning_vi": "Trả lại",
+    "meaning_en": "still; still in progress",
+    "vietnamese": "Trả lại"
+  },
+  {
+    "simplified": "换",
+    "traditional": "換",
+    "pinyin": "huàn",
+    "hanviet": "hoán",
+    "meaning_vi": "Đổi",
+    "meaning_en": "to exchange; to change (clothes etc)",
+    "vietnamese": "Đổi"
+  },
+  {
+    "simplified": "黄",
+    "traditional": "黃",
+    "pinyin": "huáng",
+    "hanviet": "hoàng",
+    "meaning_vi": "Màu vàng",
+    "meaning_en": "surname Huang or Hwang",
+    "vietnamese": "Màu vàng"
+  },
+  {
+    "simplified": "房间",
+    "traditional": "房間",
+    "pinyin": "fáng jiān",
+    "hanviet": "phòng gian",
+    "meaning_vi": "Phòng",
+    "meaning_en": "room; CL:間|间[jian1]",
+    "vietnamese": "Phòng"
+  },
+  {
+    "simplified": "机场",
+    "traditional": "機場",
+    "pinyin": "jī chǎng",
+    "hanviet": "cơ trường",
+    "meaning_vi": "Sân bay",
+    "meaning_en": "airport; airfield; (slang) service provider for Shadowsocks or similar software for circumventing Internet censorship",
+    "vietnamese": "Sân bay"
+  },
+  {
+    "simplified": "鸡蛋",
+    "traditional": "雞蛋",
+    "pinyin": "jī dàn",
+    "hanviet": "kê đản",
+    "meaning_vi": "Trứng gà",
+    "meaning_en": "(chicken) egg; hen's egg",
+    "vietnamese": "Trứng gà"
+  },
+  {
+    "simplified": "机",
+    "traditional": "機",
+    "pinyin": "jī",
+    "hanviet": "cơ",
+    "meaning_vi": "Máy",
+    "meaning_en": "surname Ji",
+    "vietnamese": "Máy"
+  },
+  {
+    "simplified": "机会",
+    "traditional": "機會",
+    "pinyin": "jī huì",
+    "hanviet": "cơ hội",
+    "meaning_vi": "Cơ hội",
+    "meaning_en": "opportunity; chance",
+    "vietnamese": "Cơ hội"
+  },
+  {
+    "simplified": "解决",
+    "traditional": "解決",
+    "pinyin": "jiě jué",
+    "hanviet": "giải quyết",
+    "meaning_vi": "Giải quyết",
+    "meaning_en": "to solve; to resolve; to settle (a problem); to eliminate; to wipe out (an enemy, bandits etc)",
+    "vietnamese": "Giải quyết"
+  },
+  {
+    "simplified": "节课",
+    "traditional": "節課",
+    "pinyin": "jié kè",
+    "hanviet": "tiết khóa",
+    "meaning_vi": "Tiết học",
+    "meaning_en": "",
+    "vietnamese": "Tiết học"
+  },
+  {
+    "simplified": "借",
+    "traditional": "借",
+    "pinyin": "jiè",
+    "hanviet": "tá",
+    "meaning_vi": "Mượn",
+    "meaning_en": "to borrow; (used in combination with 給|给[gei3] or 出[chu1] etc) to lend",
+    "vietnamese": "Mượn"
+  },
+  {
+    "simplified": "经常",
+    "traditional": "經常",
+    "pinyin": "jīng cháng",
+    "hanviet": "kinh thường",
+    "meaning_vi": "Thường xuyên",
+    "meaning_en": "frequently; constantly; regularly; often; day-to-day; everyday; daily",
+    "vietnamese": "Thường xuyên"
+  },
+  {
+    "simplified": "经过",
+    "traditional": "經過",
+    "pinyin": "jīng guò",
+    "hanviet": "kinh quá",
+    "meaning_vi": "Đi qua",
+    "meaning_en": "to pass; to go through",
+    "vietnamese": "Đi qua"
+  },
+  {
+    "simplified": "旧",
+    "traditional": "舊",
+    "pinyin": "jiù",
+    "hanviet": "cựu",
+    "meaning_vi": "Cũ",
+    "meaning_en": "old; opposite: new 新",
+    "vietnamese": "Cũ"
+  },
+  {
+    "simplified": "决定",
+    "traditional": "決定",
+    "pinyin": "jué dìng",
+    "hanviet": "quyết định",
+    "meaning_vi": "Quyết định",
+    "meaning_en": "to decide; to determine; to make up one's mind; decision (CL:個|个[ge4],項|项[xiang4])",
+    "vietnamese": "Quyết định"
+  },
+  {
+    "simplified": "可爱",
+    "traditional": "可愛",
+    "pinyin": "kě ài",
+    "hanviet": "khả ái",
+    "meaning_vi": "Dễ thương",
+    "meaning_en": "adorable; cute",
+    "vietnamese": "Dễ thương"
+  },
+  {
+    "simplified": "可是",
+    "traditional": "可是",
+    "pinyin": "kě shì",
+    "hanviet": "khả thị",
+    "meaning_vi": "Tuy nhiên",
+    "meaning_en": "but; however; (used for emphasis) indeed",
+    "vietnamese": "Tuy nhiên"
+  },
+  {
+    "simplified": "可以",
+    "traditional": "可以",
+    "pinyin": "kě yǐ",
+    "hanviet": "khả dĩ",
+    "meaning_vi": "Có thể",
+    "meaning_en": "can; may",
+    "vietnamese": "Có thể"
+  },
+  {
+    "simplified": "哭",
+    "traditional": "哭",
+    "pinyin": "kū",
+    "hanviet": "khốc",
+    "meaning_vi": "Khóc",
+    "meaning_en": "to cry; to weep",
+    "vietnamese": "Khóc"
+  },
+  {
+    "simplified": "快",
+    "traditional": "快",
+    "pinyin": "kuài",
+    "hanviet": "khoái",
+    "meaning_vi": "Nhanh",
+    "meaning_en": "rapid; quick",
+    "vietnamese": "Nhanh"
+  },
+  {
+    "simplified": "快乐",
+    "traditional": "快樂",
+    "pinyin": "kuài lè",
+    "hanviet": "khoái lạc",
+    "meaning_vi": "Vui vẻ",
+    "meaning_en": "happy; joyful",
+    "vietnamese": "Vui vẻ"
+  },
+  {
+    "simplified": "累",
+    "traditional": "累",
+    "pinyin": "lèi",
+    "hanviet": "lụy",
+    "meaning_vi": "Mệt",
+    "meaning_en": "to accumulate; to involve or implicate (Taiwan pr. [lei4])",
+    "vietnamese": "Mệt"
+  },
+  {
+    "simplified": "礼貌",
+    "traditional": "禮貌",
+    "pinyin": "lǐ mào",
+    "hanviet": "lễ mạo",
+    "meaning_vi": "Lịch sự",
+    "meaning_en": "courtesy; politeness; manners; courteous; polite",
+    "vietnamese": "Lịch sự"
+  },
+  {
+    "simplified": "两",
+    "traditional": "兩",
+    "pinyin": "liǎng",
+    "hanviet": "lưỡng",
+    "meaning_vi": "Hai",
+    "meaning_en": "two; both",
+    "vietnamese": "Hai"
+  },
+  {
+    "simplified": "亮",
+    "traditional": "亮",
+    "pinyin": "liàng",
+    "hanviet": "lượng",
+    "meaning_vi": "Sáng",
+    "meaning_en": "bright; light; to shine; to flash",
+    "vietnamese": "Sáng"
+  },
+  {
+    "simplified": "路",
+    "traditional": "路",
+    "pinyin": "lù",
+    "hanviet": "lộ",
+    "meaning_vi": "Đường",
+    "meaning_en": "surname Lu",
+    "vietnamese": "Đường"
+  },
+  {
+    "simplified": "绿",
+    "traditional": "綠",
+    "pinyin": "lǜ",
+    "hanviet": "lục",
+    "meaning_vi": "Xanh lá",
+    "meaning_en": "green; (slang) (derived from 綠帽子|绿帽子[lu:4 mao4 zi5]) to cheat on (one's spouse or boyfriend or girlfriend)",
+    "vietnamese": "Xanh lá"
+  },
+  {
+    "simplified": "马",
+    "traditional": "馬",
+    "pinyin": "mǎ",
+    "hanviet": "mã",
+    "meaning_vi": "Ngựa",
+    "meaning_en": "surname Ma; abbr. for Malaysia 馬來西亞|马来西亚[Ma3 lai2 xi1 ya4]",
+    "vietnamese": "Ngựa"
+  },
+  {
+    "simplified": "马上",
+    "traditional": "馬上",
+    "pinyin": "mǎ shàng",
+    "hanviet": "mã thượng",
+    "meaning_vi": "Ngay lập tức",
+    "meaning_en": "at once; right away",
+    "vietnamese": "Ngay lập tức"
+  },
+  {
+    "simplified": "满意",
+    "traditional": "滿意",
+    "pinyin": "mǎn yì",
+    "hanviet": "mãn ý",
+    "meaning_vi": "Hài lòng",
+    "meaning_en": "satisfied; pleased",
+    "vietnamese": "Hài lòng"
+  },
+  {
+    "simplified": "妹妹",
+    "traditional": "妹妹",
+    "pinyin": "mèi mei",
+    "hanviet": "muội muội",
+    "meaning_vi": "Em gái",
+    "meaning_en": "younger sister; young woman",
+    "vietnamese": "Em gái"
+  },
+  {
+    "simplified": "门",
+    "traditional": "門",
+    "pinyin": "mén",
+    "hanviet": "môn",
+    "meaning_vi": "Cửa",
+    "meaning_en": "surname Men",
+    "vietnamese": "Cửa"
+  },
+  {
+    "simplified": "面",
+    "traditional": "面",
+    "pinyin": "miàn",
+    "hanviet": "mịch",
+    "meaning_vi": "Mặt",
+    "meaning_en": "face; side",
+    "vietnamese": "Mặt"
+  },
+  {
+    "simplified": "面条",
+    "traditional": "麵條",
+    "pinyin": "miàn tiáo",
+    "hanviet": "mịch điều",
+    "meaning_vi": "Mì sợi",
+    "meaning_en": "noodles",
+    "vietnamese": "Mì sợi"
+  },
+  {
+    "simplified": "明白",
+    "traditional": "明白",
+    "pinyin": "míng bai",
+    "hanviet": "minh bạch",
+    "meaning_vi": "Hiểu rõ",
+    "meaning_en": "clear; obvious; unequivocal; sensible; reasonable",
+    "vietnamese": "Hiểu rõ"
+  },
+  {
+    "simplified": "拿",
+    "traditional": "拿",
+    "pinyin": "ná",
+    "hanviet": "nã",
+    "meaning_vi": "Cầm, lấy",
+    "meaning_en": "to hold; to seize",
+    "vietnamese": "Cầm, lấy"
+  },
+  {
+    "simplified": "奶奶",
+    "traditional": "奶奶",
+    "pinyin": "nǎi nai",
+    "hanviet": "nãi nãi",
+    "meaning_vi": "Bà nội",
+    "meaning_en": "(informal) grandma (paternal grandmother); (respectful) mistress of the house",
+    "vietnamese": "Bà nội"
+  },
+  {
+    "simplified": "难过",
+    "traditional": "難過",
+    "pinyin": "nán guò",
+    "hanviet": "nan quá",
+    "meaning_vi": "Buồn",
+    "meaning_en": "to feel sad; to feel unwell",
+    "vietnamese": "Buồn"
+  },
+  {
+    "simplified": "好吃",
+    "traditional": "好吃",
+    "pinyin": "hǎo chī",
+    "hanviet": "hảo xực",
+    "meaning_vi": "Ngon",
+    "meaning_en": "tasty; delicious",
+    "vietnamese": "Ngon"
+  },
+  {
+    "simplified": "号",
+    "traditional": "號",
+    "pinyin": "hào",
+    "hanviet": "hiệu",
+    "meaning_vi": "Ngày, số",
+    "meaning_en": "(bound form) to wail; to howl",
+    "vietnamese": "Ngày, số"
+  },
+  {
+    "simplified": "好看",
+    "traditional": "好看",
+    "pinyin": "hǎo kàn",
+    "hanviet": "hảo khán",
+    "meaning_vi": "Đẹp",
+    "meaning_en": "good-looking; nice-looking; (of a movie, book, TV show etc) good",
+    "vietnamese": "Đẹp"
+  },
+  {
+    "simplified": "好听",
+    "traditional": "好聽",
+    "pinyin": "hǎo tīng",
+    "hanviet": "hảo thính",
+    "meaning_vi": "Hay (âm thanh)",
+    "meaning_en": "pleasant to hear",
+    "vietnamese": "Hay (âm thanh)"
+  },
+  {
+    "simplified": "好玩",
+    "traditional": "好玩",
+    "pinyin": "hǎo wán",
+    "hanviet": "hảo ngoạn",
+    "meaning_vi": "Vui",
+    "meaning_en": "amusing; fun",
+    "vietnamese": "Vui"
+  },
+  {
+    "simplified": "好用",
+    "traditional": "好用",
+    "pinyin": "hǎo yòng",
+    "hanviet": "hảo dụng",
+    "meaning_vi": "Tiện dụng",
+    "meaning_en": "useful; serviceable",
+    "vietnamese": "Tiện dụng"
+  }
 ]

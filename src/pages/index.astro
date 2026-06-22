@@ -382,7 +382,7 @@ export const prerender = true;
     justify-content: center;
     min-width: 0;
   }
-  :global(.card-vietnamese) {
+  :global(.card-meaning) {
     font-size: .92rem;
     font-weight: 600;
     color: var(--color-text);
@@ -487,22 +487,54 @@ export const prerender = true;
   // If a newer search starts before this one finishes, its results are discarded.
   let searchGeneration = 0;
 
+  // ── Language helpers ──────────────────────────────────────────────────────
+  function getLang(): string {
+    try { return localStorage.getItem('wz-lang') || 'vi'; }
+    catch { return 'vi'; }
+  }
+
+  function getMeaning(e: DictEntry): string {
+    const lang = getLang();
+    if (lang === 'en') return e.meaning_en || e.vietnamese || '';
+    return e.meaning_vi || e.meaning_en || e.vietnamese || '';
+  }
+
+  function updateCardMeanings() {
+    const lang = getLang();
+    document.querySelectorAll<HTMLElement>('[data-meaning-en]').forEach(card => {
+      const meaning = lang === 'en'
+        ? (card.dataset.meaningEn || card.dataset.meaningVi || '')
+        : (card.dataset.meaningVi || card.dataset.meaningEn || '');
+      const el = card.querySelector('.card-meaning');
+      if (el) el.textContent = meaning;
+    });
+    const inp = document.getElementById('search-input') as HTMLInputElement;
+    if (inp) inp.placeholder = lang === 'en'
+      ? 'Enter Hanzi, pinyin or meaning...'
+      : 'Nhập chữ Hán, pinyin hoặc nghĩa...';
+  }
+
+  window.addEventListener('wz:langchange', updateCardMeanings);
+
   // ── Card factory ─────────────────────────────────────────────────────────
   function makeCard(e: DictEntry, withFavBadge = true): HTMLAnchorElement {
     const showTrad = e.traditional && e.traditional !== e.simplified;
     const faved    = withFavBadge && isFavorite(e.id);
+    const meaning  = getMeaning(e);
 
     const a = document.createElement('a');
     a.href  = `/word/${e.id}`;
     a.className = 'entry-card';
     a.setAttribute('role', 'listitem');
+    a.dataset.meaningEn = e.meaning_en || e.vietnamese || '';
+    a.dataset.meaningVi = e.meaning_vi || e.meaning_en || e.vietnamese || '';
     a.innerHTML = `
       <div class="card-accent">
         <span class="card-simplified">${e.simplified}</span>
         ${showTrad ? `<span class="card-traditional">${e.traditional}</span>` : ''}
       </div>
       <div class="card-body">
-        <div class="card-vietnamese">${e.vietnamese}</div>
+        <div class="card-meaning">${meaning}</div>
         ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
         ${e.hanviet ? `<div class="card-hanviet">${e.hanviet}</div>` : ''}
       </div>
@@ -615,10 +647,17 @@ export const prerender = true;
       currentResults = data;
       results.innerHTML = '';
 
-      if (resultsLabel) resultsLabel.textContent = `${data.length} kết quả cho "${q}"`;
+      const lang = getLang();
+      if (resultsLabel) {
+        resultsLabel.textContent = lang === 'en'
+          ? `${data.length} results for "${q}"`
+          : `${data.length} kết quả cho "${q}"`;
+      }
 
       if (data.length === 0) {
-        emptyEl.innerHTML = `Không tìm thấy kết quả cho <strong>"${q}"</strong>`;
+        emptyEl.innerHTML = lang === 'en'
+          ? `No results for <strong>"${q}"</strong>`
+          : `Không tìm thấy kết quả cho <strong>"${q}"</strong>`;
         emptyEl.classList.remove('hidden');
       } else {
         data.forEach(e => results.appendChild(makeCard(e)));

@@ -1,20 +1,19 @@
 ---
 /**
- * SearchWidgets — Từ khóa hot + Lịch sử tìm kiếm
- * Auth-aware history (localStorage auth), no SVG / img / icon / emoji.
+ * SearchWidgets — Từ khóa hot + Lịch sử tìm kiếm (bilingual)
  */
 
 const HOT_KEYWORDS = [
-  { word: '划船', note: 'chèo thuyền' },
-  { word: '真实', note: 'thật sự' },
-  { word: '爸爸', note: 'bố, cha' },
-  { word: '粽子', note: 'bánh chưng' },
-  { word: '责任', note: 'trách nhiệm' },
-  { word: '新闻', note: 'tin tức' },
-  { word: '夏天', note: 'mùa hè' },
-  { word: '关心', note: 'quan tâm' },
-  { word: '报道', note: 'đưa tin' },
-  { word: '记者', note: 'phóng viên' },
+  { word: '划船', vi: 'chèo thuyền', en: 'rowing' },
+  { word: '真实', vi: 'thật sự', en: 'real, genuine' },
+  { word: '爸爸', vi: 'bố, cha', en: 'father, dad' },
+  { word: '粽子', vi: 'bánh chưng', en: 'sticky rice dumpling' },
+  { word: '责任', vi: 'trách nhiệm', en: 'responsibility' },
+  { word: '新闻', vi: 'tin tức', en: 'news' },
+  { word: '夏天', vi: 'mùa hè', en: 'summer' },
+  { word: '关心', vi: 'quan tâm', en: 'to care about' },
+  { word: '报道', vi: 'đưa tin', en: 'to report' },
+  { word: '记者', vi: 'phóng viên', en: 'journalist' },
 ];
 ---
 
@@ -23,23 +22,25 @@ const HOT_KEYWORDS = [
   <!-- ── Card 1: Từ khóa hot ───────────────────────────────────────────── -->
   <div class="sw-card">
     <div class="sw-header">
-      <h2 class="sw-title">Từ khóa hot</h2>
+      <h2 class="sw-title" id="sw-hot-title">Từ khóa hot</h2>
       <span class="sw-badge">{HOT_KEYWORDS.length}</span>
     </div>
 
-    <div class="sw-tags-wrap" role="list" aria-label="Danh sách từ khóa hot">
-      {HOT_KEYWORDS.map(k => (
+    <div class="sw-tags-wrap" role="list" aria-label="Danh sách từ khóa hot" id="sw-hot-tags">
+      {HOT_KEYWORDS.map((k, i) => (
         <button
           class="sw-tag sw-tag--hot"
           type="button"
           role="listitem"
           data-query={k.word}
-          title={k.note}
-          aria-label={`${k.word} — ${k.note}`}
+          data-note-vi={k.vi}
+          data-note-en={k.en}
+          title={k.vi}
+          aria-label={`${k.word} — ${k.vi}`}
         >
           <span class="sw-tag-zh" lang="zh">{k.word}</span>
           <span class="sw-tag-sep" aria-hidden="true">·</span>
-          <span class="sw-tag-vi">{k.note}</span>
+          <span class="sw-tag-note">{k.vi}</span>
         </button>
       ))}
     </div>
@@ -48,15 +49,15 @@ const HOT_KEYWORDS = [
   <!-- ── Card 2: Lịch sử tìm kiếm ─────────────────────────────────────── -->
   <div class="sw-card">
     <div class="sw-header">
-      <h2 class="sw-title">Lịch sử</h2>
+      <h2 class="sw-title" id="sw-hist-title">Lịch sử</h2>
       <button class="sw-clear-btn" id="sw-clear-hist" type="button"
         aria-label="Xóa lịch sử tìm kiếm" hidden>Xóa tất cả</button>
     </div>
 
     <!-- State A: not logged in (default; hidden by JS when logged in) -->
     <div class="sw-guest-notice" id="sw-guest-notice">
-      <p class="sw-guest-title">Yêu cầu đăng nhập</p>
-      <p class="sw-guest-body">
+      <p class="sw-guest-title" id="sw-guest-title">Yêu cầu đăng nhập</p>
+      <p class="sw-guest-body" id="sw-guest-body">
         Vui lòng đăng nhập tài khoản để hệ thống kích hoạt tính năng lưu giữ
         dữ liệu lịch sử tra cứu của bạn.
       </p>
@@ -182,13 +183,13 @@ const HOT_KEYWORDS = [
     color: #cbd5e1;
     font-size: .72rem;
   }
-  :global(.sw-tag-vi) {
+  :global(.sw-tag-note) {
     font-size: .73rem;
     color: var(--color-text-muted);
     font-style: italic;
   }
   :global(.sw-tag--hot:hover .sw-tag-sep),
-  :global(.sw-tag--hot:hover .sw-tag-vi) {
+  :global(.sw-tag--hot:hover .sw-tag-note) {
     color: color-mix(in srgb, var(--color-primary) 60%, transparent);
   }
 
@@ -270,8 +271,69 @@ const HOT_KEYWORDS = [
 <script>
   const AUTH_KEY  = 'wz-user';
   const QHIST_KEY = 'wz-qhistory';
+  const LANG_KEY  = 'wz-lang';
   const MAX_QHIST = 10;
   const MIN_QLEN  = 2;
+
+  // ── Language helpers ──────────────────────────────────────────────────────
+  function getLang(): string {
+    try { return localStorage.getItem(LANG_KEY) || 'vi'; }
+    catch { return 'vi'; }
+  }
+
+  const SW_UI = {
+    vi: {
+      hotTitle: 'Từ khóa hot',
+      histTitle: 'Lịch sử',
+      clearAll: 'Xóa tất cả',
+      loginRequired: 'Yêu cầu đăng nhập',
+      loginBody: 'Vui lòng đăng nhập tài khoản để hệ thống kích hoạt tính năng lưu giữ dữ liệu lịch sử tra cứu của bạn.',
+      histEmpty: 'Hệ thống chưa ghi nhận dữ liệu lịch sử tra cứu của bạn.',
+      searchAgain: 'Tìm lại',
+      remove: 'Xóa',
+    },
+    en: {
+      hotTitle: 'Hot keywords',
+      histTitle: 'History',
+      clearAll: 'Clear all',
+      loginRequired: 'Login required',
+      loginBody: 'Please log in to enable search history saving.',
+      histEmpty: 'No search history recorded yet.',
+      searchAgain: 'Search again',
+      remove: 'Remove',
+    },
+  };
+
+  function applyLangUI(lang: string) {
+    const ui = (SW_UI as any)[lang] || SW_UI.vi;
+    const hotTitle = document.getElementById('sw-hot-title');
+    if (hotTitle) hotTitle.textContent = ui.hotTitle;
+    const histTitle = document.getElementById('sw-hist-title');
+    if (histTitle) histTitle.textContent = ui.histTitle;
+    const clearBtn = document.getElementById('sw-clear-hist') as HTMLButtonElement | null;
+    if (clearBtn) clearBtn.textContent = ui.clearAll;
+    const guestTitle = document.getElementById('sw-guest-title');
+    if (guestTitle) guestTitle.textContent = ui.loginRequired;
+    const guestBody = document.getElementById('sw-guest-body');
+    if (guestBody) guestBody.textContent = ui.loginBody;
+    const emptyMsg = document.getElementById('sw-logged-empty');
+    if (emptyMsg) emptyMsg.textContent = ui.histEmpty;
+
+    // Update hot keyword notes
+    document.querySelectorAll<HTMLButtonElement>('.sw-tag--hot').forEach(btn => {
+      const note = btn.querySelector('.sw-tag-note');
+      if (note) {
+        note.textContent = lang === 'en'
+          ? (btn.dataset.noteEn || btn.dataset.noteVi || '')
+          : (btn.dataset.noteVi || btn.dataset.noteEn || '');
+      }
+      const noteVal = lang === 'en'
+        ? (btn.dataset.noteEn || btn.dataset.noteVi || '')
+        : (btn.dataset.noteVi || btn.dataset.noteEn || '');
+      btn.title = noteVal;
+      btn.setAttribute('aria-label', `${btn.dataset.query} — ${noteVal}`);
+    });
+  }
 
   // ── Auth helpers ──────────────────────────────────────────────────────────
   function getUser(): string | null {
@@ -320,15 +382,16 @@ const HOT_KEYWORDS = [
 
   // ── Render history section ────────────────────────────────────────────────
   function renderHistory() {
-    const guestEl    = document.getElementById('sw-guest-notice')!;
-    const emptyEl    = document.getElementById('sw-logged-empty')!;
-    const tagsEl     = document.getElementById('sw-hist-tags')!;
-    const clearBtn   = document.getElementById('sw-clear-hist') as HTMLButtonElement;
+    const lang     = getLang();
+    const ui       = (SW_UI as any)[lang] || SW_UI.vi;
+    const guestEl  = document.getElementById('sw-guest-notice')!;
+    const emptyEl  = document.getElementById('sw-logged-empty')!;
+    const tagsEl   = document.getElementById('sw-hist-tags')!;
+    const clearBtn = document.getElementById('sw-clear-hist') as HTMLButtonElement;
 
     const user = getUser();
 
     if (!user) {
-      // State A: not logged in
       guestEl.hidden = false;
       emptyEl.hidden = true;
       tagsEl.innerHTML = '';
@@ -340,14 +403,12 @@ const HOT_KEYWORDS = [
     const hist = loadQHist();
 
     if (hist.length === 0) {
-      // State B: logged in, empty
       emptyEl.hidden   = false;
       tagsEl.innerHTML = '';
       clearBtn.hidden  = true;
       return;
     }
 
-    // State C: logged in, has data
     emptyEl.hidden  = true;
     clearBtn.hidden = false;
     tagsEl.innerHTML = '';
@@ -358,11 +419,11 @@ const HOT_KEYWORDS = [
       btn.className = 'sw-tag sw-tag--hist';
       btn.setAttribute('role', 'listitem');
       btn.setAttribute('data-query', q);
-      btn.setAttribute('aria-label', `Tìm lại: ${q}`);
+      btn.setAttribute('aria-label', `${ui.searchAgain}: ${q}`);
       btn.innerHTML = `
         <span lang="auto">${q}</span>
         <span class="sw-tag-remove" data-remove="${q}"
-          aria-label="Xóa ${q}" title="Xóa" role="button">✕</span>
+          aria-label="${ui.remove} ${q}" title="${ui.remove}" role="button">✕</span>
       `;
       tagsEl.appendChild(btn);
     });
@@ -404,6 +465,14 @@ const HOT_KEYWORDS = [
   // ── React to auth changes from Header ────────────────────────────────────
   document.addEventListener('wz:authchange', () => renderHistory());
 
+  // ── React to language changes ─────────────────────────────────────────────
+  window.addEventListener('wz:langchange', (e: Event) => {
+    const lang = (e as CustomEvent).detail?.lang || getLang();
+    applyLangUI(lang);
+    renderHistory();
+  });
+
   // ── Init ──────────────────────────────────────────────────────────────────
+  applyLangUI(getLang());
   renderHistory();
 </script>

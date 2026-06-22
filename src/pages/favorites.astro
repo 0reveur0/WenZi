@@ -20,9 +20,11 @@ export const prerender = true;
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
             </span>
-            Từ yêu thích
+            <span id="page-title-text">Từ yêu thích</span>
           </h1>
-          <button class="btn-clear" id="clear-btn" type="button" hidden>Xóa tất cả</button>
+          <button class="btn-clear" id="clear-btn" type="button" hidden>
+            <span id="clear-btn-text">Xóa tất cả</span>
+          </button>
         </div>
 
         <div id="fav-grid" class="results-grid"></div>
@@ -34,11 +36,11 @@ export const prerender = true;
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
           </div>
-          <p class="empty-title">Chưa có từ yêu thích</p>
-          <p class="empty-sub">
+          <p class="empty-title" id="empty-title-text">Chưa có từ yêu thích</p>
+          <p class="empty-sub" id="empty-sub-text">
             Nhấn vào biểu tượng ★ trên trang chi tiết để lưu từ vào đây.
           </p>
-          <a href="/" class="btn-home">Tìm từ ngay</a>
+          <a href="/" class="btn-home" id="search-now-link">Tìm từ ngay</a>
         </div>
 
       </div>
@@ -129,7 +131,7 @@ export const prerender = true;
     flex: 1; padding: .75rem .9rem;
     display: flex; flex-direction: column; gap: .2rem; justify-content: center; min-width: 0;
   }
-  :global(.card-vietnamese) {
+  :global(.card-meaning) {
     font-size: .92rem; font-weight: 600; color: var(--color-text);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
@@ -173,23 +175,59 @@ export const prerender = true;
 <script>
   import { getFavorites, clearFavorites } from '@/lib/storage';
   import type { StoredEntry } from '@/lib/storage';
+  import { UI } from '@/lib/i18n';
+  import type { Lang } from '@/lib/i18n';
 
   const grid     = document.getElementById('fav-grid')!;
   const emptyEl  = document.getElementById('fav-empty')!;
   const clearBtn = document.getElementById('clear-btn') as HTMLButtonElement;
 
+  function getLang(): Lang {
+    try { return (localStorage.getItem('wz-lang') as Lang) || 'vi'; }
+    catch { return 'vi'; }
+  }
+
+  function getMeaning(e: StoredEntry): string {
+    const lang = getLang();
+    if (lang === 'en') return e.meaning_en || e.vietnamese || '';
+    return e.meaning_vi || e.meaning_en || e.vietnamese || '';
+  }
+
+  function updateI18n(lang: Lang) {
+    const ui = UI[lang];
+    const titleEl = document.getElementById('page-title-text');
+    if (titleEl) titleEl.textContent = ui.favTitle;
+    const clearText = document.getElementById('clear-btn-text');
+    if (clearText) clearText.textContent = ui.clearAll;
+    const emptyTitle = document.getElementById('empty-title-text');
+    if (emptyTitle) emptyTitle.textContent = ui.noFav;
+    const searchLink = document.getElementById('search-now-link');
+    if (searchLink) searchLink.textContent = ui.searchStart;
+    // Update all visible cards' meaning text
+    document.querySelectorAll<HTMLElement>('[data-meaning-en]').forEach(el => {
+      const meaning = lang === 'en'
+        ? (el.dataset.meaningEn || el.dataset.meaningVi || '')
+        : (el.dataset.meaningVi || el.dataset.meaningEn || '');
+      const textEl = el.querySelector('.card-meaning');
+      if (textEl) textEl.textContent = meaning;
+    });
+  }
+
   function makeCard(e: StoredEntry): HTMLAnchorElement {
     const showTrad = e.traditional && e.traditional !== e.simplified;
+    const meaning = getMeaning(e);
     const a = document.createElement('a');
     a.href = `/word/${e.id}`;
     a.className = 'entry-card';
+    a.dataset.meaningEn = e.meaning_en || e.vietnamese || '';
+    a.dataset.meaningVi = e.meaning_vi || e.vietnamese || '';
     a.innerHTML = `
       <div class="card-accent">
         <span class="card-simplified">${e.simplified}</span>
         ${showTrad ? `<span class="card-traditional">${e.traditional}</span>` : ''}
       </div>
       <div class="card-body">
-        <div class="card-vietnamese">${e.vietnamese}</div>
+        <div class="card-meaning">${meaning}</div>
         ${e.pinyin ? `<div class="card-pinyin">${e.pinyin}</div>` : ''}
         ${e.hanviet ? `<div class="card-hanviet">${e.hanviet}</div>` : ''}
       </div>`;
@@ -210,11 +248,21 @@ export const prerender = true;
   }
 
   clearBtn.addEventListener('click', () => {
-    if (confirm('Xóa toàn bộ danh sách yêu thích?')) {
+    const lang = getLang();
+    const msg = lang === 'en'
+      ? 'Clear all favorites?'
+      : 'Xóa toàn bộ danh sách yêu thích?';
+    if (confirm(msg)) {
       clearFavorites();
       render();
     }
   });
 
+  window.addEventListener('wz:langchange', (e: Event) => {
+    const lang = (e as CustomEvent).detail.lang as Lang;
+    updateI18n(lang);
+  });
+
+  updateI18n(getLang());
   render();
 </script>

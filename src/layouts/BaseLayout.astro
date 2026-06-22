@@ -102,6 +102,8 @@ const {
         } else {
           document.documentElement.setAttribute('data-theme', 'light');
         }
+        const lang = localStorage.getItem('wz-lang') || 'vi';
+        document.documentElement.setAttribute('data-lang', lang);
       })();
     </script>
   </head>

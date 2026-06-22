@@ -17,6 +17,8 @@ export interface DictEntry {
   pinyin: string;
   hanviet: string;
   vietnamese: string;
+  meaning_en: string;
+  meaning_vi: string;
 }
 
 interface ChunkInfo {
@@ -78,7 +80,12 @@ async function loadChunk(letter: string): Promise<DictEntry[]> {
   const res = await fetch(`${CHUNKS_BASE_URL}/${chunkInfo.file}`);
   if (!res.ok) throw new Error(`Failed to load chunk ${key}: ${res.status}`);
 
-  const entries: DictEntry[] = await res.json();
+  const raw: any[] = await res.json();
+  const entries: DictEntry[] = raw.map(e => ({
+    ...e,
+    meaning_en: e.meaning_en || e.vietnamese || '',
+    meaning_vi: e.meaning_vi || '',
+  }));
   const withIds = assignIds(entries);
   chunkCache.set(key, withIds);
   return withIds;
@@ -101,12 +108,10 @@ function getPinyinLetter(query: string): string | null {
 }
 
 function isLikelyPinyin(query: string): boolean {
-  // Chỉ chứa chữ cái Latin
   return /^[a-zA-Z\s]+$/.test(removeTones(query));
 }
 
 function isHanZi(query: string): boolean {
-  // Chứa ký tự Trung Quốc
   return /[\u4e00-\u9fff]/.test(query);
 }
 
@@ -116,32 +121,32 @@ function scoreEntry(entry: DictEntry, query: string, queryPlain: string): number
   const tradPlain = removeTones(entry.traditional);
   const pinyinPlain = removeTones(entry.pinyin);
   const hanvietPlain = removeTones(entry.hanviet);
-  const vietPlain = removeTones(entry.vietnamese);
+  const enPlain = removeTones(entry.meaning_en);
+  const viPlain = removeTones(entry.meaning_vi || entry.vietnamese);
 
-  // Exact matches (highest priority)
   if (entry.simplified === query) return 0;
   if (entry.traditional === query) return 1;
   if (pinyinPlain === queryPlain) return 2;
   if (entry.hanviet === query) return 3;
   if (hanvietPlain === queryPlain) return 3;
-  if (entry.vietnamese === query) return 4;
-  if (vietPlain === queryPlain) return 4;
+  if (viPlain === queryPlain) return 4;
+  if (enPlain === queryPlain) return 4;
 
-  // Prefix matches
   if (entry.simplified.startsWith(query)) return 10;
   if (entry.traditional?.startsWith(query)) return 11;
   if (pinyinPlain.startsWith(queryPlain)) return 12;
   if (hanvietPlain.startsWith(queryPlain)) return 13;
-  if (vietPlain.startsWith(queryPlain)) return 14;
+  if (viPlain.startsWith(queryPlain)) return 14;
+  if (enPlain.startsWith(queryPlain)) return 14;
 
-  // Contains matches
   if (entry.simplified.includes(query)) return 20;
   if (entry.traditional?.includes(query)) return 21;
   if (pinyinPlain.includes(queryPlain)) return 22;
   if (hanvietPlain.includes(queryPlain)) return 23;
-  if (vietPlain.includes(queryPlain)) return 24;
+  if (viPlain.includes(queryPlain)) return 24;
+  if (enPlain.includes(queryPlain)) return 24;
 
-  return 100; // No match
+  return 100;
 }
 
 function searchInEntries(entries: DictEntry[], query: string): SearchResult[] {
@@ -155,7 +160,6 @@ function searchInEntries(entries: DictEntry[], query: string): SearchResult[] {
     }
   }
 
-  // Sort by score, then by length of simplified
   results.sort((a, b) => {
     if (a._score !== b._score) return a._score - b._score;
     return a.simplified.length - b.simplified.length;
@@ -170,27 +174,18 @@ export async function search(query: string): Promise<SearchResult[]> {
 
   const q = query.trim();
 
-  // Chiến lược load:
-  // 1. Nếu query là chữ Hán → load tất cả chunks (không biết pinyin)
-  // 2. Nếu query là Latin → chỉ load chunk phù hợp với chữ cái đầu
-  // 3. Nếu không rõ → load tất cả để đảm bảo
-
   let entries: DictEntry[];
 
   if (isHanZi(q)) {
-    // Chữ Hán → cần load tất cả
     entries = await loadAllChunks();
   } else if (isLikelyPinyin(q)) {
     const letter = getPinyinLetter(q);
     if (letter) {
-      // Load chunk phù hợp + các chunk lân cận
       entries = await loadChunk(letter);
-      // Có thể thêm các chunk khác nếu cần
     } else {
       entries = await loadAllChunks();
     }
   } else {
-    // Có thể là Hán Việt hoặc tiếng Việt → load tất cả
     entries = await loadAllChunks();
   }
 
@@ -198,7 +193,6 @@ export async function search(query: string): Promise<SearchResult[]> {
 }
 
 export async function getEntryById(id: number): Promise<DictEntry | null> {
-  // Tìm trong cache
   for (const entries of chunkCache.values()) {
     const found = entries.find(e => e.id === id);
     if (found) return found;
@@ -207,7 +201,6 @@ export async function getEntryById(id: number): Promise<DictEntry | null> {
 }
 
 export async function preloadCommonChunks(): Promise<void> {
-  // Preload các chunk phổ biến (hsk level 1-2 thường gặp)
   const commonLetters = ['a', 'b', 'c', 'd', 'h', 'j', 'm', 'n', 's', 't', 'x', 'y', 'z'];
   await Promise.all(commonLetters.map(l => loadChunk(l)));
 }

@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import LangSwitcher from './LangSwitcher.astro';
 import { Activity, Bell, BookOpen, HelpCircle, Inbox, LogOut, MonitorSmartphone } from 'lucide-astro';
 
 interface Props {
@@ -93,6 +94,7 @@ const { backHref, activePage = 'home' } = Astro.props;
           </div>
         </div>
       </div>
+      <LangSwitcher />
       <ThemeToggle />
 
       <!-- Auth: guest state (default visible, hidden by JS when logged in) -->

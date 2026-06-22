@@ -1,0 +1,97 @@
+---
+---
+
+<div class="ls-wrap" id="lang-switcher" role="group" aria-label="Chọn ngôn ngữ hiển thị">
+  <button class="ls-btn" id="ls-vi" type="button" data-lang="vi"
+    aria-label="Tiếng Việt" title="Hiển thị nghĩa tiếng Việt">
+    <span class="ls-flag" aria-hidden="true">🇻🇳</span>
+    <span class="ls-label">VI</span>
+  </button>
+  <button class="ls-btn" id="ls-en" type="button" data-lang="en"
+    aria-label="English" title="Show English meaning">
+    <span class="ls-flag" aria-hidden="true">🇬🇧</span>
+    <span class="ls-label">EN</span>
+  </button>
+</div>
+
+<style>
+  .ls-wrap {
+    display: flex;
+    align-items: center;
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .ls-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: .22rem .52rem;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: .75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+    line-height: 1.4;
+    letter-spacing: .02em;
+  }
+
+  .ls-btn:hover {
+    background: var(--color-primary-dim);
+    color: var(--color-primary);
+  }
+
+  .ls-btn.active {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .ls-flag {
+    font-size: .88rem;
+    line-height: 1;
+  }
+
+  .ls-label {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+</style>
+
+<script>
+  const LANG_KEY = 'wz-lang';
+
+  function getLang(): string {
+    try { return localStorage.getItem(LANG_KEY) || 'vi'; }
+    catch { return 'vi'; }
+  }
+
+  function applyLang(lang: string) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll<HTMLButtonElement>('.ls-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  function setLang(lang: string) {
+    try { localStorage.setItem(LANG_KEY, lang); }
+    catch {}
+    applyLang(lang);
+    window.dispatchEvent(new CustomEvent('wz:langchange', { detail: { lang } }));
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.ls-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.lang) setLang(btn.dataset.lang);
+    });
+  });
+
+  applyLang(getLang());
+</script>
