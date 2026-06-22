@@ -13,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="vi">
+<html lang="vi" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,36 +59,6 @@ const {
         --lh-tight:   1.4;
         --lh-normal:  1.75;
         --lh-relaxed: 1.9;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme='light']) {
-          --color-bg:            #0d1520;
-          --color-surface:       #162032;
-          --color-border:        #1e2d42;
-          --color-text:          #e2e8f0;
-          --color-text-muted:    #7f98b8;
-          --color-primary:       #5b8ad4;
-          --color-primary-dim:   #162038;
-          --color-primary-hover: #7ba4e0;
-          --shadow-sm: 0 1px 4px rgba(0,0,0,.45);
-          --shadow-md: 0 4px 24px rgba(0,0,0,.55);
-          --shadow-lg: 0 8px 40px rgba(0,0,0,.65);
-        }
-      }
-
-      [data-theme='dark'] {
-        --color-bg:            #0d1520;
-        --color-surface:       #162032;
-        --color-border:        #1e2d42;
-        --color-text:          #e2e8f0;
-        --color-text-muted:    #7f98b8;
-        --color-primary:       #5b8ad4;
-        --color-primary-dim:   #162038;
-        --color-primary-hover: #7ba4e0;
-        --shadow-sm: 0 1px 4px rgba(0,0,0,.45);
-        --shadow-md: 0 4px 24px rgba(0,0,0,.55);
-        --shadow-lg: 0 8px 40px rgba(0,0,0,.65);
       }
 
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

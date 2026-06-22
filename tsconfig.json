@@ -3,8 +3,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
-    "types": ["bun-types"]
+    "types": [
+      "bun-types"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

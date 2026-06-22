@@ -1,0 +1,115 @@
+"""import { Steps } from 'nextra/components';
+
+<div className="text-center p-10 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
+  <h1 className="text-6xl font-extrabold text-white font-hanzi">文字 - WenZi</h1>
+  <p className="text-2xl text-gray-300 mt-4">Một từ điển Hán tự hiện đại, song ngữ.</p>
+  <p className="text-xl text-gray-400 mt-2">A Modern, Bilingual Chinese Character Dictionary.</p>
+</div>
+
+## Giới thiệu (Introduction)
+
+**Tiếng Việt:**
+
+WenZi (文字) là một từ điển Hán tự mã nguồn mở, được thiết kế để trở thành công cụ học tập và tra cứu hữu ích cho cả người mới bắt đầu và người học nâng cao. Với giao diện tối giản và hiện đại, WenZi tập trung vào trải nghiệm người dùng, cho phép bạn dễ dàng tìm kiếm và khám phá sự phong phú của Hán tự.
+
+Ứng dụng hỗ trợ hai chế độ ngôn ngữ, cho phép bạn xem nghĩa của từ bằng **Tiếng Anh** hoặc **Tiếng Việt**, giúp việc học trở nên linh hoạt và phù hợp với nhiều đối tượng người dùng.
+
+---
+
+**English:**
+
+WenZi (文字) is an open-source Chinese character dictionary designed to be a useful learning and reference tool for both beginners and advanced learners. With a minimalist and modern interface, WenZi focuses on user experience, allowing you to easily search and explore the richness of Chinese characters.
+
+The application supports two language modes, allowing you to view the meaning of words in either **English** or **Vietnamese**, making learning flexible and suitable for a wide range of users.
+
+## ✨ Tính năng nổi bật (Features)
+
+-  bilingual_support **Song ngữ:** Hỗ trợ đầy đủ nghĩa tiếng Anh và tiếng Việt.
+- instant_search **Tìm kiếm tức thì:** Tìm kiếm nhanh chóng theo Hán tự, Pinyin hoặc nghĩa.
+- character_details **Chi tiết ký tự:** Xem thông tin đầy đủ về một ký tự, bao gồm thứ tự nét, các thành phần và các từ liên quan.
+- stroke_order_animation **Thứ tự nét động:** Học cách viết các ký tự với hình ảnh động hướng dẫn thứ tự nét.
+- pronunciation **Phát âm:** Nghe cách phát âm chuẩn của từng từ và ký tự.
+- responsive_design **Thiết kế đáp ứng:** Giao diện được tối ưu hóa cho cả máy tính để bàn và thiết bị di động.
+
+## 🖼️ Hình ảnh minh họa (Screenshots)
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <img src="https://i.imgur.com/example1.png" alt="WenZi - Chế độ xem từ" className="rounded-lg shadow-lg" />
+  <img src="https://i.imgur.com/example2.png" alt="WenZi - Chế độ xem ký tự" className="rounded-lg shadow-lg" />
+</div>
+
+> *Lưu ý: Đây là những hình ảnh ví dụ. Bạn nên thay thế chúng bằng ảnh chụp màn hình thực tế của ứng dụng.*
+
+## 🚀 Cài đặt & Chạy (Installation & Usage)
+
+Để bắt đầu với WenZi, bạn chỉ cần làm theo các bước đơn giản sau:
+
+<Steps>
+  ### Sao chép mã nguồn
+  ```bash
+  git clone https://github.com/your-username/wenzi.git
+  cd wenzi
+  ```
+
+  ### Cài đặt các gói phụ thuộc
+  <div className="flex space-x-4 my-4">
+    <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+      bun install
+    </button>
+    <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+      npm install
+    </button>
+    <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+      pnpm install
+    </button>
+  </div>
+
+
+  ### Chạy ứng dụng
+  ```bash
+  bun dev
+  ```
+  Ứng dụng sẽ có sẵn tại `http://localhost:3000`.
+</Steps>
+
+## 📖 Cách sử dụng (How to Use)
+
+1.  **Tìm kiếm:** Sử dụng thanh tìm kiếm ở đầu trang để nhập Hán tự, Pinyin hoặc nghĩa tiếng Anh/Việt.
+2.  **Chuyển đổi chế độ xem:** Chuyển đổi giữa chế độ xem "Từ" và "Ký tự" bằng cách sử dụng các tab.
+3.  **Xem chi tiết:** Nhấp vào một thẻ từ hoặc ký tự để xem trang chi tiết của nó.
+4.  **Thứ tự nét:** Trên trang chi tiết của một ký tự, bạn sẽ tìm thấy một hình ảnh động về thứ tự các nét.
+5.  **Chuyển đổi ngôn ngữ:** Sử dụng nút chuyển đổi ngôn ngữ (EN/VN) ở đầu trang để thay đổi ngôn ngữ của các định nghĩa.
+
+## 🛠️ Công nghệ sử dụng (Tech Stack)
+
+| Lĩnh vực | Công nghệ |
+| :--- | :--- |
+| **Framework** | Next.js / Astro |
+| **Ngôn ngữ** | TypeScript |
+| **Giao diện người dùng** | React, Tailwind CSS |
+| **Dữ liệu** | Dữ liệu từ điển mã nguồn mở |
+| **Deployment** | Vercel / Netlify |
+
+## 🗺️ Lộ trình (Roadmap)
+
+- [ ] Tích hợp API từ điển CC-CEDICT.
+- [ ] Thêm tính năng lưu các từ và ký tự yêu thích.
+- [ ] Xây dựng một hệ thống flashcard để ôn tập.
+- [ ] Cải thiện hiệu suất và khả năng tiếp cận.
+- [ ] Hỗ trợ các chủ đề giao diện khác nhau (sáng/tối).
+
+## 🤝 Đóng góp (Contributing)
+
+Chúng tôi hoan nghênh mọi đóng góp! Nếu bạn muốn đóng góp, vui lòng fork mã nguồn và tạo một pull request. Vui lòng đọc `CONTRIBUTING.md` để biết thêm chi tiết.
+
+## 📄 Giấy phép (License)
+
+Dự án này được cấp phép theo [Giấy phép MIT](LICENSE).
+
+---
+
+<div className="text-center text-gray-500 mt-8">
+  <p>Được xây dựng với ❤️ bởi [Tên của bạn] và cộng đồng.</p>
+  <p>&copy; {new Date().getFullYear()} WenZi. All Rights Reserved.</p>
+</div>
+""

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { mockWords, mockCharacters } from '../../../data/dictionary/mock';
+
+const { slug } = Astro.params;
+const isWord = slug && slug.includes('word');
+const id = slug ? slug.split('-')[1] : null;
+
+let item: any = null;
+if (id) {
+  if (isWord) {
+    item = mockWords.find(w => w.id === id);
+  } else {
+    item = mockCharacters.find(c => c.id === id);
+  }
+}
+---
+
+<BaseLayout title={item ? item.hanzi : 'Không tìm thấy'}>
+  <div class="p-6">
+    {item ? (
+      <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
+        <div class="flex items-center justify-between">
+          <h1 class="text-5xl font-bold text-white font-hanzi">{item.hanzi}</h1>
+          <button id="play-audio" class="text-3xl">🔊</button>
+        </div>
+        <p class="text-gray-400 text-2xl mt-2">{item.pinyin}</p>
+        <p class="text-gray-200 text-xl mt-4">{item.meaning}</p>
+        {item.components && (
+          <div class="mt-6 text-lg text-gray-400">
+            <span>Components: {item.components.join(', ')}</span>
+            <span class="mx-3">|</span>
+            <span>Strokes: {item.strokes}</span>
+          </div>
+        )}
+      </div>
+    ) : (
+      <div class="text-center">
+        <h1 class="text-2xl text-white">Không tìm thấy từ hoặc ký tự.</h1>
+        <a href="/dictionary" class="text-blue-400 hover:underline mt-4 block">Quay lại trang từ điển</a>
+      </div>
+    )}
+  </div>
+
+  <script>
+    const button = document.getElementById('play-audio');
+    if (button) {
+      const pinyin = (document.querySelector('.text-gray-400.text-2xl') as HTMLElement)?.innerText;
+      if (pinyin) {
+        button.addEventListener('click', () => {
+          const utterance = new SpeechSynthesisUtterance(pinyin);
+          utterance.lang = 'zh-CN';
+          speechSynthesis.speak(utterance);
+        });
+      }
+    }
+  </script>
+</BaseLayout>
