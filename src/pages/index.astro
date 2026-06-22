@@ -536,8 +536,8 @@ export const prerender = true;
     a.dataset.meaningVi = e.meaning_vi || e.meaning_en || e.vietnamese || '';
     a.innerHTML = `
       <div class="card-accent">
-        <span class="card-simplified">${e.simplified}</span>
-        ${showTrad ? `<span class="card-traditional">${e.traditional}</span>` : ''}
+        <span class="card-simplified" lang="zh">${e.simplified}</span>
+        ${showTrad ? `<span class="card-traditional" lang="zh">${e.traditional}</span>` : ''}
       </div>
       <div class="card-body">
         <div class="card-meaning">${meaning}</div>

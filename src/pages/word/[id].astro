@@ -190,11 +190,11 @@ const pageTitle = `${simplified} — WenZi`;
     justify-content: center;
   }
   .char-main {
-    font-size: clamp(5rem, 22vw, 9rem);
+    font-size: clamp(4.5rem, 20vw, 8rem);
     line-height: 1;
     color: #fff;
-    font-weight: 300;
-    letter-spacing: -.02em;
+    font-weight: 600;
+    letter-spacing: .01em;
     text-shadow: 0 6px 32px rgba(0,0,0,.25);
   }
   .char-trad-wrap {
@@ -213,21 +213,22 @@ const pageTitle = `${simplified} — WenZi`;
   }
   .char-trad {
     font-size: clamp(1.75rem, 6vw, 2.75rem);
-    color: rgba(255,255,255,.8);
-    font-weight: 300;
+    color: rgba(255,255,255,.85);
+    font-weight: 500;
   }
-  .char-meta { display: flex; flex-direction: column; gap: .5rem; }
+  .char-meta { display: flex; flex-direction: column; gap: .55rem; }
   .char-pinyin {
-    font-size: 1.6rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-style: italic;
     color: rgba(255,255,255,.95);
-    letter-spacing: .04em;
-    font-weight: 400;
+    letter-spacing: .06em;
+    font-weight: 500;
   }
   .char-hanviet {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,.7);
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.72);
     line-height: var(--lh-normal);
+    font-weight: 400;
   }
   .char-hanviet strong { color: rgba(255,255,255,.95); font-weight: 700; }
 
@@ -267,8 +268,8 @@ const pageTitle = `${simplified} — WenZi`;
   }
   .meaning-row.active .lang-name { color: var(--color-primary); }
   .meaning-text {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 500;
     color: var(--color-text);
     line-height: var(--lh-relaxed);
   }
@@ -303,24 +304,24 @@ const pageTitle = `${simplified} — WenZi`;
   }
   :global([data-theme='dark'] .example-item) { background: rgba(255,255,255,.04); }
   :global(.example-cn) {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: .4rem;
+    margin-bottom: .45rem;
     line-height: var(--lh-normal);
   }
   :global(.example-en) {
-    font-size: .95rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
     font-style: italic;
     line-height: var(--lh-relaxed);
   }
   :global(.example-vi) {
-    font-size: .95rem;
+    font-size: 1rem;
     color: var(--color-primary);
     line-height: var(--lh-relaxed);
     margin-top: .25rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   /* ── Actions ────────────────────────────────────────────────────────── */
