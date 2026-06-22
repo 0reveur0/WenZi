@@ -496,10 +496,10 @@ const TOCFL_BOOKS = [
   .srs-card, .study-card, .ai-form-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
-    padding: 1.25rem;
-    display: flex; flex-direction: column; gap: .85rem;
+    padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 1rem;
   }
   .srs-header { display: flex; align-items: center; gap: .5rem; color: var(--color-text-muted); }
   .srs-title { font-size: .88rem; font-weight: 700; color: var(--color-text); }
@@ -562,16 +562,16 @@ const TOCFL_BOOKS = [
   .nb-section {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
-    padding: 1.25rem 1.4rem;
+    padding: 1.5rem 1.6rem;
   }
   .section-hdr {
     display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 1rem; gap: .75rem;
+    margin-bottom: 1.1rem; gap: .75rem;
   }
-  .section-hdr-left { display: flex; align-items: center; gap: .45rem; }
-  .section-title { font-size: .95rem; font-weight: 700; color: var(--color-text); }
+  .section-hdr-left { display: flex; align-items: center; gap: .5rem; }
+  .section-title { font-size: 1rem; font-weight: 700; color: var(--color-text); }
   .crown-badge { font-size: .9rem; }
   .subsection-label { font-size: .72rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: .06em; color: var(--color-text-muted); margin-bottom: .6rem; }
@@ -627,27 +627,27 @@ const TOCFL_BOOKS = [
   .book-card {
     background: var(--color-bg);
     border: 1.5px solid var(--color-border);
-    border-radius: 14px;
-    padding: .9rem .75rem;
+    border-radius: var(--radius-md);
+    padding: 1.1rem .9rem;
     cursor: pointer;
-    transition: all .15s;
-    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    transition: all .18s;
+    display: flex; flex-direction: column; align-items: center; gap: .6rem;
     text-align: center;
   }
   .book-card:hover {
     border-color: var(--book-color, var(--color-primary));
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-md);
     background: var(--color-surface);
   }
   .book-icon-wrap {
-    width: 44px; height: 44px;
-    border-radius: 12px;
+    width: 52px; height: 52px;
+    border-radius: var(--radius-sm);
     display: flex; align-items: center; justify-content: center;
   }
-  .book-hz { font-size: 1.4rem; font-weight: 500; line-height: 1; }
-  .book-name { font-size: .82rem; font-weight: 700; color: var(--color-text); }
-  .book-count { font-size: .7rem; color: var(--color-text-muted); }
+  .book-hz { font-size: 1.75rem; font-weight: 600; line-height: 1; }
+  .book-name { font-size: .88rem; font-weight: 700; color: var(--color-text); }
+  .book-count { font-size: .75rem; color: var(--color-text-muted); line-height: 1.4; }
 
   /* Premium empty */
   .premium-tag {
@@ -699,22 +699,26 @@ const TOCFL_BOOKS = [
   :global(.word-card) {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
-    transition: box-shadow .15s, transform .15s;
+    transition: box-shadow .18s, transform .18s, border-color .18s;
   }
-  :global(.word-card:hover) { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  :global(.word-card:hover) {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+  }
   :global(.word-card-img) {
-    width: 100%; height: 72px;
+    width: 100%; height: 80px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 2.2rem; font-weight: 300; color: #fff;
+    font-size: 2.6rem; font-weight: 500; color: #fff;
   }
-  :global(.word-card-body) { padding: .7rem .8rem; display: flex; flex-direction: column; gap: .2rem; }
-  :global(.wc-hanzi) { font-size: 1.2rem; font-weight: 600; color: var(--color-text); line-height: 1.1; }
-  :global(.wc-trad) { font-size: .7rem; color: var(--color-text-muted); }
-  :global(.wc-pinyin) { font-size: .78rem; font-style: italic; color: var(--color-primary); }
-  :global(.wc-meaning) { font-size: .8rem; color: var(--color-text); }
+  :global(.word-card-body) { padding: .9rem 1rem; display: flex; flex-direction: column; gap: .3rem; }
+  :global(.wc-hanzi) { font-size: 1.4rem; font-weight: 600; color: var(--color-text); line-height: 1.15; }
+  :global(.wc-trad) { font-size: .75rem; color: var(--color-text-muted); }
+  :global(.wc-pinyin) { font-size: .85rem; font-style: italic; color: var(--color-primary); font-weight: 500; }
+  :global(.wc-meaning) { font-size: .88rem; color: var(--color-text); line-height: var(--lh-normal); }
   :global(.wc-actions) {
     display: flex; gap: .4rem; margin-top: .4rem;
   }

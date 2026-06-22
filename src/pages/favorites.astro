@@ -98,7 +98,7 @@ export const prerender = true;
   .btn-clear:hover { border-color: #dc2626; color: #dc2626; }
 
   /* Results grid */
-  .results-grid { display: grid; gap: .75rem; grid-template-columns: 1fr; }
+  .results-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
   @media (min-width: 560px) { .results-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 820px) { .results-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (min-width: 1080px) { .results-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -108,36 +108,46 @@ export const prerender = true;
     display: flex; align-items: stretch;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     overflow: hidden; text-decoration: none; color: inherit;
-    transition: box-shadow .15s, transform .15s;
-    animation: fadeIn .18s ease;
+    transition: box-shadow .18s, transform .18s, border-color .18s;
+    animation: fadeIn .2s ease;
   }
   :global(.entry-card:hover) {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
     text-decoration: none;
   }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   :global(.card-accent) {
     background: var(--color-primary);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 1rem .9rem; min-width: 70px; gap: .2rem;
+    padding: 1.1rem 1rem; min-width: 80px; gap: .25rem;
   }
-  :global(.card-simplified) { font-size: 1.9rem; color: #fff; line-height: 1; font-weight: 400; }
-  :global(.card-traditional) { font-size: .65rem; color: rgba(255,255,255,.65); }
+  :global(.card-simplified) {
+    font-size: 2.5rem; color: #fff; line-height: 1; font-weight: 500;
+    font-family: var(--font-hanzi);
+  }
+  :global(.card-traditional) {
+    font-size: .72rem; color: rgba(255,255,255,.72);
+    font-family: var(--font-hanzi);
+  }
   :global(.card-body) {
-    flex: 1; padding: .75rem .9rem;
-    display: flex; flex-direction: column; gap: .2rem; justify-content: center; min-width: 0;
+    flex: 1; padding: 1rem 1.15rem;
+    display: flex; flex-direction: column; gap: .3rem; justify-content: center; min-width: 0;
   }
   :global(.card-meaning) {
-    font-size: .92rem; font-weight: 600; color: var(--color-text);
+    font-size: 1rem; font-weight: 600; color: var(--color-text);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    line-height: var(--lh-tight);
   }
-  :global(.card-pinyin) { font-size: .8rem; font-style: italic; color: var(--color-primary); }
+  :global(.card-pinyin) {
+    font-size: .88rem; font-style: italic; color: var(--color-primary); font-weight: 500;
+  }
   :global(.card-hanviet) {
-    font-size: .75rem; color: var(--color-text-muted);
+    font-size: .82rem; color: var(--color-text-muted);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
 
@@ -223,8 +233,8 @@ export const prerender = true;
     a.dataset.meaningVi = e.meaning_vi || e.vietnamese || '';
     a.innerHTML = `
       <div class="card-accent">
-        <span class="card-simplified">${e.simplified}</span>
-        ${showTrad ? `<span class="card-traditional">${e.traditional}</span>` : ''}
+        <span class="card-simplified" lang="zh">${e.simplified}</span>
+        ${showTrad ? `<span class="card-traditional" lang="zh">${e.traditional}</span>` : ''}
       </div>
       <div class="card-body">
         <div class="card-meaning">${meaning}</div>

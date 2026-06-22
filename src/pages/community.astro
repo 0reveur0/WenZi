@@ -358,6 +358,35 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
   ></div>
 </BaseLayout>
 
+<style>
+  /* Typography improvements for community page */
+
+  /* Post title: bump from text-lg (1.125rem) to slightly larger with better weight */
+  :global(.community-post h2),
+  :global(h2.text-lg.font-extrabold) {
+    font-size: 1.2rem;
+    line-height: 1.55;
+    letter-spacing: -.01em;
+  }
+
+  /* Post body content: bump from text-sm (0.875rem) to 0.975rem */
+  :global(p.text-sm.leading-7) {
+    font-size: .975rem;
+    line-height: 1.85;
+  }
+
+  /* Hot questions list items */
+  :global(p.text-sm.leading-6) {
+    font-size: .925rem;
+    line-height: 1.7;
+  }
+
+  /* Category / sidebar labels */
+  :global(.sidebar-section p.text-sm) {
+    font-size: .925rem;
+  }
+</style>
+
 <script is:inline>
   const POSTS_DATA = JSON.parse(document.getElementById('__community_data__').dataset.posts);
   const CATEGORIES_DATA = JSON.parse(document.getElementById('__community_data__').dataset.categories);
