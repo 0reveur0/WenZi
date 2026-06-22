@@ -1,115 +1,162 @@
-"""import { Steps } from 'nextra/components';
 
-<div className="text-center p-10 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
-  <h1 className="text-6xl font-extrabold text-white font-hanzi">文字 - WenZi</h1>
-  <p className="text-2xl text-gray-300 mt-4">Một từ điển Hán tự hiện đại, song ngữ.</p>
-  <p className="text-xl text-gray-400 mt-2">A Modern, Bilingual Chinese Character Dictionary.</p>
+{/* 
+  Giả định rằng các component này được import từ một thư viện component nội bộ
+  hoặc một framework như Nextra.
+  import { Tab, Tabs } from 'nextra/components';
+  import { Card, Cards } from 'nextra/components';
+  import { Alert } from 'nextra/components';
+  import { CodeGroup } from 'nextra/components';
+  import { Badge } from '../components/Badge'; // Component Badge tùy chỉnh
+*/}
+
+{/* ======================= Hero Section ======================= */}
+<div className="w-full text-center py-20 px-4 bg-grid-gray-900/[0.2] relative">
+  <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-gray-900 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+  <h1 className="text-6xl md:text-7xl font-extrabold text-white font-hanzi tracking-wider">
+    文字 — WenZi
+  </h1>
+  <p className="mt-6 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+    Một từ điển Hán tự song ngữ, hiện đại và mã nguồn mở, được xây dựng cho những người yêu ngôn ngữ.
+  </p>
+  <p className="mt-2 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+    A modern, bilingual, open-source Chinese dictionary, built for language lovers.
+  </p>
+  <div className="mt-8 flex justify-center gap-4">
+    <a href="https://wenzi-demo.vercel.app" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+      🚀 Try Live Demo
+    </a>
+    <a href="https://github.com/your-username/wenzi" className="inline-block bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+      View on GitHub
+    </a>
+  </div>
 </div>
 
-## Giới thiệu (Introduction)
+{/* ======================= Giới thiệu ======================= */}
+<Tabs items={['Tiếng Việt', 'English']}>
+  <Tab>
+    ### Chào mừng đến với WenZi!
 
-**Tiếng Việt:**
+    **WenZi (文字)** không chỉ là một từ điển. Nó là một người bạn đồng hành trong hành trình chinh phục Hán tự của bạn. Được thiết kế với giao diện tối giản, hiện đại và tập trung vào trải nghiệm người dùng, WenZi giúp bạn tra cứu, học hỏi và khám phá sự phong phú của Hán tự một cách trực quan và hiệu quả.
 
-WenZi (文字) là một từ điển Hán tự mã nguồn mở, được thiết kế để trở thành công cụ học tập và tra cứu hữu ích cho cả người mới bắt đầu và người học nâng cao. Với giao diện tối giản và hiện đại, WenZi tập trung vào trải nghiệm người dùng, cho phép bạn dễ dàng tìm kiếm và khám phá sự phong phú của Hán tự.
+    Điểm đặc biệt của WenZi là khả năng hỗ trợ song ngữ đầy đủ, cho phép bạn xem nghĩa của từ bằng cả **Tiếng Anh** và **Tiếng Việt**. Dù bạn là người mới bắt đầu hay đã có kinh nghiệm, WenZi đều cung cấp các công cụ cần thiết để nâng cao kiến thức của bạn.
+  </Tab>
+  <Tab>
+    ### Welcome to WenZi!
 
-Ứng dụng hỗ trợ hai chế độ ngôn ngữ, cho phép bạn xem nghĩa của từ bằng **Tiếng Anh** hoặc **Tiếng Việt**, giúp việc học trở nên linh hoạt và phù hợp với nhiều đối tượng người dùng.
+    **WenZi (文字)** is more than just a dictionary. It's a companion on your journey to mastering Chinese characters. Designed with a minimalist, modern interface focused on user experience, WenZi helps you look up, learn, and explore the richness of Hanzi in an intuitive and effective way.
 
----
+    WenZi's standout feature is its full bilingual support, allowing you to view word meanings in both **English** and **Vietnamese**. Whether you are a beginner or an experienced learner, WenZi provides the necessary tools to enhance your knowledge.
+  </Tab>
+</Tabs>
 
-**English:**
+{/* ======================= Tính năng nổi bật ======================= */}
+<h2 className="text-3xl font-bold mt-16 mb-8 text-center">Tại sao bạn sẽ yêu thích WenZi?</h2>
+<Cards>
+  <Card title="Từ điển Song ngữ (EN/VI)" icon="🌐">
+    Chuyển đổi liền mạch giữa nghĩa tiếng Anh và tiếng Việt để phù hợp với phương pháp học của bạn.
+  </Card>
+  <Card title="Tìm kiếm Thông minh & Nhanh chóng" icon="⚡️">
+    Tìm kiếm tức thì theo Hán tự, Pinyin có hoặc không có thanh điệu, hoặc theo nghĩa.
+  </Card>
+  <Card title="Chi tiết Ký tự Toàn diện" icon="🔍">
+    Khám phá mọi thứ về một ký tự: pinyin, bộ thủ, thành phần, thứ tự nét và các từ liên quan.
+  </Card>
+  <Card title="Hoạt ảnh Thứ tự Nét" icon="✍️">
+    Học cách viết Hán tự một cách chính xác với các hoạt ảnh hướng dẫn từng nét.
+  </Card>
+  <Card title="Sổ tay & Từ yêu thích" icon="📓">
+    Lưu các từ và ký tự vào sổ tay cá nhân của bạn để dễ dàng ôn tập và theo dõi tiến độ.
+  </Card>
+  <Card title="Mã nguồn mở & Hướng đến cộng đồng" icon="💖">
+    WenZi là một dự án mã nguồn mở. Chúng tôi hoan nghênh mọi sự đóng góp để làm cho nó tốt hơn.
+  </Card>
+</Cards>
 
-WenZi (文字) is an open-source Chinese character dictionary designed to be a useful learning and reference tool for both beginners and advanced learners. With a minimalist and modern interface, WenZi focuses on user experience, allowing you to easily search and explore the richness of Chinese characters.
+{/* ======================= Cài đặt ======================= */}
+<h2 className="text-3xl font-bold mt-16 mb-8">🚀 Bắt đầu ngay</h2>
+<Alert type="info">
+  Hãy đảm bảo bạn đã cài đặt Node.js (v18+) và một trong các trình quản lý gói: `bun`, `npm`, hoặc `pnpm`.
+</Alert>
 
-The application supports two language modes, allowing you to view the meaning of words in either **English** or **Vietnamese**, making learning flexible and suitable for a wide range of users.
-
-## ✨ Tính năng nổi bật (Features)
-
--  bilingual_support **Song ngữ:** Hỗ trợ đầy đủ nghĩa tiếng Anh và tiếng Việt.
-- instant_search **Tìm kiếm tức thì:** Tìm kiếm nhanh chóng theo Hán tự, Pinyin hoặc nghĩa.
-- character_details **Chi tiết ký tự:** Xem thông tin đầy đủ về một ký tự, bao gồm thứ tự nét, các thành phần và các từ liên quan.
-- stroke_order_animation **Thứ tự nét động:** Học cách viết các ký tự với hình ảnh động hướng dẫn thứ tự nét.
-- pronunciation **Phát âm:** Nghe cách phát âm chuẩn của từng từ và ký tự.
-- responsive_design **Thiết kế đáp ứng:** Giao diện được tối ưu hóa cho cả máy tính để bàn và thiết bị di động.
-
-## 🖼️ Hình ảnh minh họa (Screenshots)
-
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-  <img src="https://i.imgur.com/example1.png" alt="WenZi - Chế độ xem từ" className="rounded-lg shadow-lg" />
-  <img src="https://i.imgur.com/example2.png" alt="WenZi - Chế độ xem ký tự" className="rounded-lg shadow-lg" />
-</div>
-
-> *Lưu ý: Đây là những hình ảnh ví dụ. Bạn nên thay thế chúng bằng ảnh chụp màn hình thực tế của ứng dụng.*
-
-## 🚀 Cài đặt & Chạy (Installation & Usage)
-
-Để bắt đầu với WenZi, bạn chỉ cần làm theo các bước đơn giản sau:
-
-<Steps>
-  ### Sao chép mã nguồn
-  ```bash
+<CodeGroup>
+  ```bash title="Bun"
+  # 1. Sao chép mã nguồn
   git clone https://github.com/your-username/wenzi.git
   cd wenzi
-  ```
 
-  ### Cài đặt các gói phụ thuộc
-  <div className="flex space-x-4 my-4">
-    <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-      bun install
-    </button>
-    <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-      npm install
-    </button>
-    <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-      pnpm install
-    </button>
-  </div>
+  # 2. Cài đặt các gói phụ thuộc
+  bun install
 
-
-  ### Chạy ứng dụng
-  ```bash
+  # 3. Khởi chạy máy chủ phát triển
   bun dev
   ```
-  Ứng dụng sẽ có sẵn tại `http://localhost:3000`.
-</Steps>
+  ```bash title="NPM"
+  # 1. Sao chép mã nguồn
+  git clone https://github.com/your-username/wenzi.git
+  cd wenzi
 
-## 📖 Cách sử dụng (How to Use)
+  # 2. Cài đặt các gói phụ thuộc
+  npm install
 
-1.  **Tìm kiếm:** Sử dụng thanh tìm kiếm ở đầu trang để nhập Hán tự, Pinyin hoặc nghĩa tiếng Anh/Việt.
-2.  **Chuyển đổi chế độ xem:** Chuyển đổi giữa chế độ xem "Từ" và "Ký tự" bằng cách sử dụng các tab.
-3.  **Xem chi tiết:** Nhấp vào một thẻ từ hoặc ký tự để xem trang chi tiết của nó.
-4.  **Thứ tự nét:** Trên trang chi tiết của một ký tự, bạn sẽ tìm thấy một hình ảnh động về thứ tự các nét.
-5.  **Chuyển đổi ngôn ngữ:** Sử dụng nút chuyển đổi ngôn ngữ (EN/VN) ở đầu trang để thay đổi ngôn ngữ của các định nghĩa.
+  # 3. Khởi chạy máy chủ phát triển
+  npm run dev
+  ```
+  ```bash title="PNPM"
+  # 1. Sao chép mã nguồn
+  git clone https://github.com/your-username/wenzi.git
+  cd wenzi
 
-## 🛠️ Công nghệ sử dụng (Tech Stack)
+  # 2. Cài đặt các gói phụ thuộc
+  pnpm install
 
-| Lĩnh vực | Công nghệ |
-| :--- | :--- |
-| **Framework** | Next.js / Astro |
-| **Ngôn ngữ** | TypeScript |
-| **Giao diện người dùng** | React, Tailwind CSS |
-| **Dữ liệu** | Dữ liệu từ điển mã nguồn mở |
-| **Deployment** | Vercel / Netlify |
+  # 3. Khởi chạy máy chủ phát triển
+  pnpm dev
+  ```
+</CodeGroup>
+<p className="mt-4">
+  Sau đó, mở trình duyệt của bạn và truy cập `http://localhost:3000`.
+</p>
 
-## 🗺️ Lộ trình (Roadmap)
-
-- [ ] Tích hợp API từ điển CC-CEDICT.
-- [ ] Thêm tính năng lưu các từ và ký tự yêu thích.
-- [ ] Xây dựng một hệ thống flashcard để ôn tập.
-- [ ] Cải thiện hiệu suất và khả năng tiếp cận.
-- [ ] Hỗ trợ các chủ đề giao diện khác nhau (sáng/tối).
-
-## 🤝 Đóng góp (Contributing)
-
-Chúng tôi hoan nghênh mọi đóng góp! Nếu bạn muốn đóng góp, vui lòng fork mã nguồn và tạo một pull request. Vui lòng đọc `CONTRIBUTING.md` để biết thêm chi tiết.
-
-## 📄 Giấy phép (License)
-
-Dự án này được cấp phép theo [Giấy phép MIT](LICENSE).
-
----
-
-<div className="text-center text-gray-500 mt-8">
-  <p>Được xây dựng với ❤️ bởi [Tên của bạn] và cộng đồng.</p>
-  <p>&copy; {new Date().getFullYear()} WenZi. All Rights Reserved.</p>
+{/* ======================= Công nghệ sử dụng ======================= */}
+<h2 className="text-3xl font-bold mt-16 mb-8">🛠️ Công nghệ sử dụng</h2>
+<div className="flex flex-wrap gap-2">
+  <Badge text="Next.js" type="Framework" />
+  <Badge text="React" type="Library" />
+  <Badge text="TypeScript" type="Language" />
+  <Badge text="Tailwind CSS" type="Styling" />
+  <Badge text="MDX" type="Content" />
+  <Badge text="Vercel" type="Deployment" />
 </div>
-""
+
+{/* ======================= Lộ trình ======================= */}
+<h2 className="text-3xl font-bold mt-16 mb-8">🗺️ Lộ trình Phát triển</h2>
+<ul className="list-disc list-inside space-y-2 p-4 border border-gray-700 rounded-lg">
+  <li>✅ Hỗ trợ từ điển Trung-Việt và Trung-Anh.</li>
+  <li>✅ Hiển thị chi tiết ký tự và hoạt ảnh thứ tự nét.</li>
+  <li>✅ Chức năng tìm kiếm nâng cao.</li>
+  <li>◻️ Tính năng Sổ tay (Notebook) và Từ yêu thích (Favorites).</li>
+  <li>◻️ Tích hợp API từ điển CC-CEDICT và dữ liệu Hán-Việt.</li>
+  <li>◻️ Hệ thống Flashcard để ôn tập.</li>
+  <li>◻️ Chế độ giao diện Sáng (Light Mode).</li>
+</ul>
+
+{/* ======================= Đóng góp ======================= */}
+<h2 className="text-3xl font-bold mt-16 mb-8">🤝 Đóng góp</h2>
+<Alert type="success">
+  Mọi đóng góp đều được chào đón! WenZi là một dự án được xây dựng bởi cộng đồng, cho cộng đồng.
+</Alert>
+<p className="mt-4">
+  Nếu bạn có ý tưởng về tính năng mới, báo cáo lỗi, hoặc muốn cải thiện mã nguồn, vui lòng xem qua tệp <a href="#" className="text-blue-400 hover:underline">CONTRIBUTING.md</a> của chúng tôi và tạo một Pull Request.
+</p>
+
+{/* ======================= Giấy phép ======================= */}
+<h2 className="text-3xl font-bold mt-16 mb-8">📄 Giấy phép</h2>
+<p>
+  Dự án này được cấp phép theo <a href="#" className="text-blue-400 hover:underline">Giấy phép MIT</a>.
+</p>
+
+{/* ======================= Footer ======================= */}
+<footer className="mt-20 border-t border-gray-800 py-8 text-center text-gray-500">
+  <p>Được xây dựng với ❤️ bởi Cộng đồng WenZi</p>
+  <p>&copy; {new Date().getFullYear()} WenZi Project. All Rights Reserved.</p>
+</footer>
