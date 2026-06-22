@@ -1,917 +1,309 @@
-= WenZi: The Intelligent Chinese Language Companion
-:subtitle: An open-source, AI-powered platform for mastering the Chinese language, from characters to conversation.
-:version: 2.0.0
-:revdate: 2023-10-27
-:author: The WenZi Project Contributors
-:email: contact@wenzi.example.com
-:doctype: book
-:toc: left
-:toclevels: 4
-:sectnums:
-:sectnumlevels: 5
-:icons: font
+[suppress]
+= WenZi
+:doctype: article
+:showtitle:
+:toc: macro
+:toclevels: 2
 :source-highlighter: rouge
-:imagesdir: assets/images
+:imagesdir: ./docs/images
+:icons: font
 :data-uri:
-:stem: latexmath
-:biblio-style: apa
-:reproducible:
+:sectanchors:
 
-// Document Attributes
-:project-name: WenZi
-:github-url: https://github.com/example/wenzi
-:docs-url: https://wenzi.example.com/docs
-:api-docs-url: https://wenzi.example.com/api/v1
-:twitter-handle: WenZiProject
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// HERO BANNER
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-// Indexing Terms
-indexterm:[WenZi, Project]
-indexterm:[Chinese, Language Learning]
-indexterm:[Sinology, Digital]
-indexterm:[NLP, Chinese]
+image::banner.png[WenZi Project Banner, width=100%, alt="WenZi Project Banner"]
 
-[abstract]
-== Executive Summary
-{project-name} is a comprehensive, open-source suite of tools designed for learners, educators, and researchers of the Chinese language. It integrates cutting-edge technology, including AI-powered search, Optical Character Recognition (OCR), and advanced linguistic analysis, into a unified, user-friendly platform. Our mission is to dismantle the barriers to learning Chinese by providing intuitive, powerful, and accessible resources. This document serves as a holistic guide to {project-name}, covering its vision, architecture, usage, and development, acting as the single source of truth for the project.
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// TITLE & BADGES
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-\'\'\'
-[quote, Xunzi, "Encouraging Learning"]
-"Not hearing is not as good as hearing, hearing is not as good as seeing, seeing is not as good as knowing, knowing is not as good as acting; true learning continues until it is put into action."
+[.text-center]
+== *WenZi: The Intelligent Chinese Language Companion*
 
-{project-name} is designed to be the bridge from knowing to acting, providing the tools to practice and internalize knowledge.
-\'\'\'
+[.text-center]
+_An open-source, AI-powered platform for mastering the Chinese language, from characters to conversation._
 
-== Project Vision
-Our vision is to create the "VS Code for Chinese language learning"—an extensible, powerful, and open platform that becomes the de-facto standard for digital sinology. We envision a future where anyone, regardless of their background, can achieve fluency through a combination of structured learning, personalized practice, and AI-driven feedback. {project-name} aims to be a living project, constantly evolving with the latest research in linguistics, pedagogy, and artificial intelligence.
+.Shields
+[.text-center]
+image:https://img.shields.io/github/v/release/example/wenzi?style=for-the-badge&label=version[Version]
+image:https://img.shields.io/github/actions/workflow/status/example/wenzi/main.yml?style=for-the-badge&logo=github&label=build[Build Status]
+image:https://img.shields.io/codecov/c/github/example/wenzi?style=for-the-badge&logo=codecov&label=coverage[Code Coverage]
+image:https://img.shields.io/github/license/example/wenzi?style=for-the-badge&color=blue[License]
+image:https://img.shields.io/npm/dt/wenzi?style=for-the-badge&logo=npm&label=downloads[Downloads]
+image:https://img.shields.io/github/stars/example/wenzi?style=for-the-badge&logo=github&label=stars[GitHub Stars]
+image:https://img.shields.io/github/forks/example/wenzi?style=for-the-badge&logo=github&label=forks[GitHub Forks]
 
-== Problem Statement
-Learning Chinese presents a unique set of challenges:
+'''
 
-*   **The Character Barrier:** Memorizing thousands of complex characters (Hanzi).
-*   **Tonal Language:** Mastering the four primary tones (and the neutral tone) which can completely change a word's meaning.
-*   **Complex Grammar:** Understanding a grammatical system that differs significantly from Indo-European languages.
-*   **Scarcity of Integrated Tools:** Learners often juggle multiple apps—a dictionary, a flashcard app, a character writing app, a textbook—leading to a fragmented experience.
-*   **Lack of Context:** Dictionaries often provide translations without the necessary context, nuance, or example sentences.
+[.text-center]
+*WenZi (文字)* is a comprehensive suite of tools designed for learners, educators, and researchers of the Chinese language. It integrates cutting-edge technology into a unified, user-friendly platform, aiming to be the "VS Code for Chinese language learning".
 
-{project-name} is architected from the ground up to address these problems directly.
+image::dashboard.png[WenZi Dashboard, width=100%, link=image]
 
-== Target Audience
+'''
 
-*   **Students & Self-Learners:** From beginners taking their first steps to advanced learners preparing for HSK 6.
-*   **Educators & Tutors:** Who need reliable, comprehensive tools for creating lesson plans and tracking student progress.
-*   **Researchers & Linguists:** Who require access to a rich, structured dataset and powerful analysis tools.
-*   **Developers:** Who want to build their own language-learning applications on top of a robust platform.
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// FEATURES
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-== Feature Overview
-[dlist]
-AI-Powered Dictionary:: A multi-faceted dictionary that provides not just definitions, but also character etymology, stroke order animations, component breakdowns, and AI-generated example sentences.
-Advanced Search:: Search by Pinyin, Hanzi, English, or even by character components. Our search engine understands ambiguous queries and provides intelligent suggestions.
-OCR & Image Analysis:: Point your camera at a menu, a sign, or a book, and get instant translations and character breakdowns.
-Stroke Order Engine:: Interactive animations for every character, helping you learn the correct writing form.
-Personalized Notebook:: Save words, create flashcard decks, and track your learning progress. The system uses a Spaced Repetition System (SRS) for optimal memorization.
-Community Hub:: Connect with other learners, ask questions, and share resources. (Future Goal)
-Extensible API:: A well-documented API that allows developers to integrate {project-name}\'s functionalities into their own applications.
+[.text-center]
+== 🚀 Features
 
-== System Architecture
-[[architecture-overview]]
+[cols="1,1,1", frame=none, grid=none]
+|===
+| [^.^a]
+.✨ AI-Powered Dictionary
+--
+Go beyond simple definitions. Get character etymology, component breakdowns, and AI-generated contextual examples for a deeper understanding.
 
-{project-name} is designed as a high-performance, scalable, and resilient system. It follows a microservices-inspired approach, with distinct engines for different functionalities, all orchestrated via a central API gateway.
+image::search-demo.gif[AI Dictionary Demo]
+--
+| [^.^a]
+.✍️ Interactive Stroke Order
+--
+Learn to write any of the thousands of supported characters with beautiful, interactive SVG animations. Master the fundamentals of Hanzi construction.
+
+image::stroke-order.gif[Stroke Order Demo]
+--
+| [^.^a]
+.📷 Instant OCR Recognition
+--
+Point your camera at a menu, sign, or book and get instant translations and character breakdowns. Your environment becomes your textbook.
+
+image::ocr-demo.gif[OCR Demo]
+--
+|===
+
+'''
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// DATASET
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+[.text-center]
+== 📊 The WenZi Dataset
+
+The backbone of WenZi is a massive, meticulously curated dataset, aggregated from premier linguistic sources and refined through a multi-stage pipeline.
+
+[sidebar]
+.Dataset Sources
+* icon:database[] *CC-CEDICT* - Core Chinese-English dictionary.
+* icon:book[] *Unihan Database* - Rich character metadata.
+* icon:globe[] *Wiktionary* - Example sentences & etymology.
+* icon:users[] *Hand-curated content* - By our team of linguists.
+
+[IMPORTANT]
+.Data Quality is Paramount
+Our data pipeline (`scripts/import-dictionary.ts`) is a rigorous process involving cleaning, normalization, and indexing to ensure the highest accuracy and consistency. The entire processed dataset is available under a Creative Commons license.
+
+'''
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// ARCHITECTURE
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+[.text-center]
+== 🏗 System Architecture
+
+WenZi is built on a modern, scalable, and resilient technology stack, designed for high performance and a seamless user experience.
 
 .System Architecture Diagram
 [plantuml, system-architecture-diagram, png]
 ----
 @startuml
 !theme vibrant
-skinparam rectangle<<backend>> {
-    backgroundColor #444
-    fontColor #FFF
-}
-skinparam database<<db>> {
-    backgroundColor #888
-    fontColor #FFF
-}
+skinparam rectangle<<backend>> { backgroundColor #444; fontColor #FFF; }
+skinparam database<<db>> { backgroundColor #888; fontColor #FFF; }
 
-cloud "User's Device (Browser, Mobile)" as UserDevice
-
-package "Cloud Platform (Vercel / Firebase)" {
+cloud "User's Device" as UserDevice
+package "Cloud Platform" {
     node "Frontend (Astro + React)" as Frontend
     node "API Gateway" as Gateway
 }
-
-package "Backend Services (Serverless Functions)" <<backend>> {
+package "Backend Services" <<backend>> {
     node "Search Engine" as Search
     node "Dictionary Engine" as Dictionary
     node "OCR Engine" as OCR
-    node "Stroke Order Engine" as StrokeOrder
-    node "User Service" as User
 }
-
 package "Data Tier" {
-    database "Primary Database (Turso/libSQL)" as SQLDb <<db>>
-    database "Vector Database (Pinecone)" as VectorDb <<db>>
-    database "Static Data Chunks (JSON)" as StaticJson <<db>>
+    database "Primary DB (Turso)" as SQLDb <<db>>
+    database "Vector DB (Pinecone)" as VectorDb <<db>>
+    database "Static JSON Chunks" as StaticJson <<db>>
     database "Cache (Redis)" as Cache <<db>>
 }
 
 UserDevice --> Frontend
 Frontend --> Gateway
-
-Gateway --> Search
-Gateway --> Dictionary
-Gateway --> OCR
-Gateway --> StrokeOrder
-Gateway --> User
-
-Search --> StaticJson
-Search --> VectorDb
-Search --> Cache
-
-Dictionary --> SQLDb
-Dictionary --> StaticJson
-
+Gateway --> Search & Dictionary & OCR
+Search --> StaticJson & VectorDb & Cache
+Dictionary --> SQLDb & StaticJson
 OCR --> VectorDb
-StrokeOrder --> StaticJson
-
-User --> SQLDb
-
 @enduml
 ----
 
-=== Frontend Architecture
-The frontend is built with https://astro.build[Astro], a modern static site builder that allows us to ship zero JavaScript by default. For interactive components, or "islands of interactivity," we use https://react.dev[React] (specifically, `.tsx` components). This "Islands Architecture" provides the best of both worlds: fast-loading static content and rich, dynamic user interfaces where needed.
+[%collapsible]
+.Dive Deeper into the Architecture
+====
+The system follows a microservices-inspired approach with a polyglot persistence strategy.
 
-See <<folder-structure>> for more details on the frontend codebase layout.
+*   **Frontend:** Built with Astro for fast, static-first pages, with interactive React "islands" for dynamic components. Styled with Tailwind CSS.
+*   **Backend:** A set of serverless functions acting as specialized engines (Search, OCR, etc.).
+*   **Databases:** We use Turso (libSQL) for relational user data, Pinecone for vector search (OCR/semantic), Redis for caching, and sharded JSON files for the main dictionary data to ensure lightning-fast lookups.
+====
 
-==== Key Libraries
-*   **Astro:** Core framework for static site generation.
-*   **React:** For interactive UI components (`.tsx`).
-*   **Tailwind CSS:** For styling.
-*   **TanStack Query:** For data fetching, caching, and state management.
-*   **Zustand:** For lightweight global state management.
+'''
 
-=== Backend Architecture
-The backend consists of a set of serverless functions acting as microservices. This architecture allows for independent scaling of services based on demand. For example, the OCR engine might require more resources than the dictionary engine.
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// CORE ENGINES
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-=== Database Architecture
-We employ a polyglot persistence strategy, using different databases for different needs:
+[.text-center]
+== ⚙️ Core Engines Deep Dive
 
-.Primary Database (Turso/libSQL):: Based on SQLite, it provides a fast and reliable relational store for user data, notebooks, and other structured information. See `src/lib/db.ts` for the schema and client.
-.Vector Database (e.g., Pinecone):: Used by the OCR and advanced search features to find visually or semantically similar characters.
-.Static JSON Chunks:: The core dictionary data is pre-compiled and split into smaller JSON files located in `public/data/chunks/`. This allows the frontend to fetch only the data it needs on demand, reducing initial load times. This is a key performance optimization.
-.Cache (Redis):: A Redis layer caches frequent API responses and dictionary lookups to reduce database load and improve response times.
+[cols="2,3"]
+|===
+| [^.^a]
+.🔍 *Search Engine*
+--
+Our custom search service is optimized for the complexities of the Chinese language.
 
-=== Search Engine Architecture
-The search engine is a custom-built service optimized for Chinese language queries.
+[checklist]
+* Parses Pinyin, Hanzi, English.
+* Fuzzy matching for typos.
+* Radical/component-based search.
+--
 
-*   **Indexing:** All dictionary entries are indexed. See <<indexing>>.
-*   **Query Parsing:** The engine can parse queries in Pinyin (with or without tones), Hanzi, and English.
-*   **Fuzzy Matching:** It uses algorithms like Levenshtein distance to handle typos.
-*   **Component-based Search:** Allows searching for characters by their constituent radicals or components.
-
-.Search Query Data Flow
-[graphviz, search-data-flow, png]
-----
-digraph SearchFlow {
-  rankdir=LR;
-  node [shape=box, style=rounded];
-
-  USER [label="User Input"];
-  GATEWAY [label="API Gateway"];
-  SEARCH_SVC [label="Search Service"];
-  CACHE [label="Redis Cache", shape=cylinder];
-  STATIC_JSON [label="Static Chunks", shape=cylinder];
-  VECTOR_DB [label="Vector DB", shape=cylinder];
-  RESULTS [label="Ranked Results"];
-
-  USER -> GATEWAY [label="/search?q=xuexi"];
-  GATEWAY -> SEARCH_SVC;
-  SEARCH_SVC -> CACHE [label="Check Cache"];
-  CACHE -> SEARCH_SVC [label="Cache Miss"];
-  SEARCH_SVC -> STATIC_JSON [label="Fetch Candidates ('x.json')"];
-  SEARCH_SVC -> VECTOR_DB [label="(If English query)"];
-  STATIC_JSON -> SEARCH_SVC;
-  VECTOR_DB -> SEARCH_SVC;
-  SEARCH_SVC -> RESULTS [label="Rank & Sort"];
-  RESULTS -> GATEWAY;
-  GATEWAY -> USER;
-}
-----
-
+| [^.^a]
 [source,typescript,linenums]
 ----
 // src/lib/searchService.ts
 export class SearchService {
-  // ...
-  async search(query: string, options: SearchOptions): Promise<SearchResult[]> { // <1>
-    // Step 1: Normalize and parse the query
-    const parsedQuery = this.parseQuery(query);
-
-    // Step 2: Fetch initial candidates from static chunks or cache
-    let candidates = await this.fetchFromChunks(parsedQuery.initialChar);
-
-    // Step 3: Rank results based on relevance
-    const rankedResults = this.rank(candidates, parsedQuery);
-
-    // Step 4: Return top results
-    return rankedResults.slice(0, options.limit || 50);
+  async search(query: string, opts: SearchOptions) {
+    const parsed = this.parseQuery(query); // <1>
+    let candidates = await this.fetchFromChunks(parsed); // <2>
+    const ranked = this.rank(candidates, parsed); // <3>
+    return ranked.slice(0, opts.limit);
   }
-  // ...
 }
 ----
-<1> The main search function orchestrates the entire search process.
+<1> Normalize Pinyin, tones, etc.
+<2> Fetch candidates from pre-sharded JSON for speed.
+<3> Rank results by relevance.
 
-=== OCR Architecture
-The OCR engine uses a deep learning model to recognize Chinese characters in images. The process is as follows:
+| [^.^a]
+.🈶 *Hanzi Engine*
+--
+Provides rich, structured data for any character.
 
-.   Image pre-processing (grayscale, binarization, noise reduction).
-.   Contour detection to identify potential character bounding boxes.
-.   Each bounding box is passed to a Convolutional Neural Network (CNN) for classification.
-.   The classified characters are then looked up in our dictionary.
+[dlist]
+`simplified`:: e.g., 你
+`traditional`:: e.g., 你
+`pinyin`:: nǐ
+`hsk_level`:: 1
+`stroke_count`:: 7
+--
 
-=== Stroke Order Engine
-The stroke order data is stored as a series of SVG paths or coordinates in the static JSON files. The frontend `StrokeOrder.astro` component reads this data and uses a JavaScript animation library to render the character being drawn stroke by stroke.
-
-=== Dictionary Engine
-This is the core service that provides detailed information about a word or character. It aggregates data from our primary database and the static JSON chunks.
-
-== Dataset Pipeline
-[[dataset-pipeline]]
-The quality of our dictionary is paramount. The data pipeline is a multi-stage process that ensures accuracy and richness.
-
-=== Data Sources
-Our dataset is a careful aggregation of several open-source and public domain resources:
-
-*   **CC-CEDICT:** A public domain Chinese-to-English dictionary.
-*   **Unihan Database:** Provides detailed information about Han characters, including radical-stroke counts and variants.
-*   **Wikitionary:** For example sentences and etymological information.
-*   **Hand-curated content:** Our team of linguists adds and refines entries.
-
-=== Data Cleaning
-The raw data from these sources is often inconsistent. The cleaning script (`scripts/import-dictionary.ts`) performs several tasks:
-
-*   Removes duplicates.
-*   Corrects formatting errors.
-*   Merges entries for the same word from different sources.
-
-=== Normalization
-All data is normalized into a consistent schema. For example, all Pinyin is converted to use numbered tones (e.g., "ma1", "ma2"). See <<appendix-data-schema>> for the full schema.
-
-.Dictionary Entry JSON Schema
-[source,json]
-----
-{
-  "id": "cedict-12345",
-  "simplified": "你好",
-  "traditional": "你好",
-  "pinyin": "nǐ hǎo",
-  "pinyin_numbered": "ni3 hao3",
-  "hanviet": "nhĩ hảo",
-  "vietnamese": "hello; hi",
-  "definitions": [
-    {
-      "source": "cc-cedict",
-      "text": "Hello! Hi! How are you?"
-    }
-  ],
-  "hsk_level": 1,
-  "components": ["你", "好"],
-  "stroke_count": 13,
-  "audio_url": "https://cdn.wenzi.example.com/audio/ni3hao3.mp3"
-}
-----
-
-=== Indexing
-After cleaning and normalization, the data is indexed for the search engine. The main dictionary is split into chunks based on the starting letter of the Pinyin transcription (`a.json`, `b.json`, etc.). This is a crucial optimization for the frontend. The `scripts/split-dictionary.ts` script handles this process.
-
+| [^.^a]
 [TIP]
-The entire dataset pipeline can be run locally. See the <<developer-documentation>> section for instructions.
+.Character Breakdown
+====
+The Hanzi engine decomposes characters into their fundamental components (radicals), helping learners understand character construction and etymology. For example, the character `好` (hǎo) is broken down into `女` (nǚ - woman) and `子` (zǐ - child).
+====
+|===
 
-== Caching
-[[caching]]
-We use a multi-level caching strategy to ensure fast response times.
+'''
 
-*   **CDN Caching:** Static assets, including the JSON data chunks, are cached at the edge by our hosting provider (e.g., Vercel or Cloudflare).
-*   **API Caching:** The API Gateway caches responses for common queries.
-*   **Client-side Caching:** The frontend uses `localStorage` and `sessionStorage` to cache dictionary entries and user preferences. See `src/lib/storage.ts`.
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// PERFORMANCE & SECURITY & ROADMAP
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-== Performance Optimization
+[cols="1,1,1", frame=none, grid=none]
+|===
+| [^.^a]
+.⚡ *Performance*
+--
 Performance is a core feature.
 
-*   **Static-First:** Using Astro to deliver pre-rendered HTML.
-*   **Code Splitting:** JavaScript is only loaded for the interactive components that need it.
-*   **Data Sharding:** The dictionary is split into small, manageable chunks.
-*   **Optimized Images:** Using modern image formats like WebP.
-*   **Database Query Optimization:** All database queries are analyzed and optimized.
+[checklist]
+* Static-first with Astro.
+* Edge-cached data chunks.
+* Optimized database queries.
+* Sub-50ms search response (warm).
+--
+| [^.^a]
+.🔒 *Security*
+--
+We take security seriously.
 
-== API Design
-[[api-design]]
-We provide a RESTful API for developers. Access to the API requires an API key. See <<appendix-api-docs>> for full documentation.
+[checklist]
+* Encrypted data (rest & transit).
+* Strict input validation.
+* API rate limiting.
+* Regular security audits.
+--
+| [^.^a]
+.🛣 *Roadmap*
+--
+WenZi is constantly evolving.
 
-[NOTE]
-The API is still under development and subject to change.
-
-=== Authentication
-Authentication is handled via OAuth 2.0. Users can sign in using their Google, GitHub, or email accounts. API keys are issued to authenticated users.
-
-=== Authorization
-User roles (e.g., free user, premium user, administrator) are used to control access to certain features.
-
-=== Security Model
-Security is a top priority. We follow industry best practices to protect our users and our system.
-
-*   **Data Encryption:** All data is encrypted at rest and in transit.
-*   **Input Validation:** All user input is strictly validated to prevent XSS and other injection attacks.
-*   **Rate Limiting:** The API has rate limits to prevent abuse.
-*   **Regular Security Audits:** We conduct regular security audits of our codebase and infrastructure.
-
-=== Privacy Model
-We are committed to protecting user privacy.
-
-*   **Data Minimization:** We only collect the data that is necessary to provide our services.
-*   **Anonymization:** User data used for research purposes is anonymized.
-*   **Transparency:** Our privacy policy clearly explains what data we collect and how we use it.
-
-== Installation
-To get a local copy up and running, follow these steps.
-
-.Prerequisites:
-*   Node.js (v18 or later)
-*   pnpm (or npm/yarn)
-
-.Clone the repository:
-[source,bash]
-----
-git clone {github-url}.git
-cd wenzi
-----
-
-.Install dependencies:
-[source,bash]
-----
-pnpm install
-----
-
-== Deployment
-The project is configured for easy deployment on platforms like Vercel, Netlify, or Firebase Hosting.
-
-To build the project for production:
-[source,bash]
-----
-pnpm build
-----
-The output will be in the `dist/` directory. You can then deploy this directory to any static hosting service.
-
-=== Docker
-A `Dockerfile` is provided for containerized deployments.
-
-[source,dockerfile]
-----
-# Stage 1: Build the application
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY package*.json .
-RUN npm install
-COPY . .
-RUN npm run build
-
-# Stage 2: Serve the application
-FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-----
-
-To build and run the Docker image:
-[source,bash]
-----
-docker build -t wenzi .
-docker run -p 8080:80 wenzi
-----
-
-== Local Development
-To start the development server:
-[source,bash]
-----
-pnpm dev
-----
-This will start a hot-reloading development server at `http://localhost:4321`.
-
-=== Environment Variables
-Create a `.env` file in the root of the project to store your environment variables. See <<config-table>> for a full list.
-
-.Example `.env` file
-[source,ini]
-----
-# Public environment variables (prefixed with PUBLIC_)
-PUBLIC_API_URL=http://localhost:4321/api
-
-# Private server-side variables
-TURSO_DATABASE_URL=...
-TURSO_AUTH_TOKEN=...
-REDIS_URL=...
-PINECONE_API_KEY=...
-----
-
-=== Configuration
-[[config-table]]
-The main configuration file is `astro.config.mjs`. Here you can configure integrations, server settings, and more. Environment variables provide the primary means of configuring the application in different environments.
-
-.Application Configuration Environment Variables
-[width="100%", cols="1,2,1,1", options="header"]
-|===
-| Variable | Description | Type | Default
-
-| `PUBLIC_API_URL`
-| The public URL of the API gateway. Used by the frontend.
-| String
-| `/api`
-
-| `TURSO_DATABASE_URL`
-| The connection URL for the primary Turso/libSQL database.
-| String
-| `""`
-
-| `TURSO_AUTH_TOKEN`
-| The authentication token for the Turso database.
-| String
-| `""`
-
-| `REDIS_URL`
-| The connection URL for the Redis cache.
-| String
-| `""`
-
-| `PINECONE_API_KEY`
-| The API key for the Pinecone vector database.
-| String
-| `""`
-
-| `PINECONE_ENVIRONMENT`
-| The environment for the Pinecone index.
-| String
-| `""`
-
-| `PINECONE_INDEX_NAME`
-| The name of the Pinecone index for OCR and semantic search.
-| String
-| `wenzi-index`
-
-| `LOG_LEVEL`
-| The logging level for the application.
-| String (`debug`, `info`, `warn`, `error`)
-| `info`
-
-| `SESSION_SECRET`
-| A secret key for signing session cookies.
-| String
-| (A randomly generated string)
-
-| `GITHUB_CLIENT_ID`
-| The client ID for GitHub OAuth.
-| String
-| `""`
-
-| `GITHUB_CLIENT_SECRET`
-| The client secret for GitHub OAuth.
-| String
-| `""`
+[checklist]
+* [*] Advanced Grammar Engine
+* [ ] AI-powered Tutor Chatbot
+* [ ] Native Mobile Apps
+* [ ] Plugin Ecosystem
+--
 |===
 
-== Usage Guide
-[IMPORTANT]
-This section describes how an end-user interacts with the deployed web application.
+'''
 
-=== Screenshots Placeholders
-image::landing-page.png[Landing Page, 800]
-image::dictionary-search.png[Dictionary Search Results, 800]
-image::ocr-capture.png[OCR Capture in Action, 400]
+[.text-center]
+image::mobile-view.png[WenZi on Mobile, width=70%]
 
-=== Feature Walkthrough
+'''
 
-.Searching for a Word
-. Type `nihao` or `你好` into the search bar on the main page.
-. Press kbd:[Enter] or click the btn:[Search] button.
-. You will be taken to the dictionary page for `你好`, showing its definition, stroke order for each character, and example sentences.
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// CONTRIBUTING & LICENSE
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-.Using the OCR
-. Navigate to the `menu:Tools[OCR]` page.
-. Upload an image or use your device\'s camera.
-. The application will highlight recognized characters. Click on a character to see its definition.
+[.text-center]
+== 🤝 Get Involved
 
-== Developer Documentation
-[[developer-documentation]]
+WenZi is built by the community, for the community. We welcome all contributions!
 
-=== Coding Standards
-*   **JavaScript/TypeScript:** We use ESLint and Prettier to enforce a consistent code style. Run `pnpm lint` and `pnpm format` before committing.
-*   **Astro:** Follow the official Astro best practices.
-*   **React:** Use functional components and hooks.
-
-=== Folder Structure
-[dlist]
-`src/`:: Contains all the source code.
-`src/components/`:: Reusable Astro and React components.
-`src/layouts/`:: Base page layouts.
-`src/pages/`:: Application pages (routes).
-`src/lib/`:: Core library code (database client, search service, etc.).
-`public/`:: Static assets (images, fonts, data chunks).
-`scripts/`:: Node.js scripts for data processing.
-
-=== Testing Strategy
-We use Vitest for unit and integration testing.
-
-*   **Unit Tests:** Each function in `src/lib` should have a corresponding `.test.ts` file.
-*   **Component Tests:** React components are tested using `@testing-library/react`.
-*   **E2E Tests:** We use Playwright for end-to-end testing of user flows.
-
-To run all tests:
-[source,bash]
-----
-pnpm test
-----
-
-=== CI/CD
-We use GitHub Actions for our Continuous Integration and Deployment pipeline. The workflow file is located at `.github/workflows/main.yml`.
-
-The pipeline runs on every push and pull request, and includes the following jobs:
-*   Linting and formatting checks.
-*   Running all tests.
-*   Building the application.
-*   Deploying to production (on merges to the `main` branch).
-
-== Benchmark Results
-Performance is regularly benchmarked.
-
-.Search Performance (p95 latency)
-[cols="2,1,1", options="header"]
+[cols="1,2", frame=none, grid=none]
 |===
-| Query Type
-| Cold Start (ms)
-| Warm Cache (ms)
+| [^.^a]
+.icon:github[large] *Contribute on GitHub*
+--
+Check out our `CONTRIBUTING.adoc` guide for details on our code of conduct, pull request process, and development setup. Start by looking at issues tagged with `good first issue`.
 
-| Pinyin (e.g., "xuexi")
-| 120
-| 15
+btn:[GitHub Repository]
+--
+| [^.^a]
+.icon:book[large] *License*
+--
+*Source Code*: Licensed under the *MIT License*.
 
-| Hanzi (e.g., "学习")
-| 100
-| 12
+*Dataset*: Licensed under the *Creative Commons Attribution-ShareAlike 4.0 International License*.
 
-| English (e.g., "study")
-| 250
-| 45
+See the `LICENSE` file for full details.
+--
 |===
 
-.OCR Accuracy
-[cols="1,1", options="header"]
-|===
-| Scenario
-| Character Accuracy Rate
-
-| Printed Text (High-res)
-| 99.5%
-
-| Handwritten (Neat)
-| 92.0%
-
-| Street Signs (Low-res)
-| 85.0%
-|===
-
-== Research Notes
-Developing {project-name} involved significant research into computational linguistics and machine learning.
-
-.Challenges in Pinyin-to-Hanzi Conversion footnote:[Pinyin is a romanization system, meaning one Pinyin syllable can correspond to many different Hanzi characters.]
-One of the hardest problems is disambiguating Pinyin input. For example, "yishi" could mean 意识 (yìshí, consciousness), 仪式 (yíshì, ceremony), 医师 (yīshī, doctor), and many others. We use a combination of n-gram models and context from surrounding words to predict the most likely character sequence. The formula for our ranking score is roughly:
-latexmath:[\\text{Score}(H|P) = \\alpha \\cdot \\log(P(H)) + (1-\\alpha) \\cdot \\log(P(H|C))]
-Where latexmath:[H] is the Hanzi sequence, latexmath:[P] is the Pinyin input, and latexmath:[C] is the context.
-
-.Semantic Search with Word Embeddings
-For English-to-Chinese search, simple keyword matching is insufficient. We use pre-trained word embeddings (like BERT) to represent both the English query and the Chinese definitions in a high-dimensional vector space. A search then becomes a k-nearest neighbor problem in this space, allowing us to find semantically related terms even if they don't share any keywords.
-
-== Known Limitations
-*   The OCR engine struggles with highly stylized or calligraphic fonts.
-*   The `hanviet` and `vietnamese` fields in the dictionary are community-contributed and may not be as complete or accurate as the Chinese-English definitions.
-*   The Spaced Repetition System (SRS) algorithm is basic and could be improved with more advanced models of memory.
-
-== Future Work
-We have an ambitious roadmap for {project-name}.
-
-*   **Advanced Grammar Analysis Engine:** A tool that can parse sentences and explain their grammatical structure.
-*   **AI-Powered Tutor:** An interactive chatbot that can practice conversation with learners and provide real-time feedback on pronunciation and grammar.
-*   **Mobile App:** Native iOS and Android applications.
-*   **Plugin Ecosystem:** Allow third-party developers to create and share plugins, such as new dictionary sources or learning games.
-
-== Roadmap
-[cols="1,1,2,1", options="header"]
-|===
-| Quarter | Status | Feature | Target Audience
-
-| Q4 2023 | [ ] In Progress | Grammar Analysis (Alpha) | Researchers
-| Q1 2024 | [ ] Planned | Mobile App (Beta) | All Users
-| Q2 2024 | [ ] Planned | AI Tutor (Prototype) | Advanced Learners
-| Q3 2024 | [x] Done | Initial Release 2.0.0 | All Users
-|===
-
-== FAQ
-[qanda]
-How is this different from Pleco or Google Translate?::
-{project-name} is open-source and aims to be a platform, not just an app. Our focus is on integration and providing a holistic learning environment, from character-level details to high-level concepts, backed by a powerful and open API.
-
-Can I use the dictionary data for my own project?::
-Yes, the aggregated dictionary data is available under the Creative Commons Attribution-ShareAlike (CC-BY-SA) license.
-
-What's the difference between "simplified" and "traditional" characters?::
-Simplified Chinese characters are standardized characters prescribed in the People's Republic of China. Traditional Chinese characters are used in Taiwan, Hong Kong, and Macau. Our dictionary provides both forms.
-
-== Glossary
-[glossary]
-Astro:: A modern web framework for building fast, content-driven websites.
-Hanzi:: The logographic characters used in the writing of Chinese.
-Hanviet:: Sino-Vietnamese vocabulary, the portion of the Vietnamese vocabulary of Chinese origin.
-HSK:: The Hanyu Shuiping Kaoshi (汉语水平考试), the official standardized test of Standard Chinese language proficiency for non-native speakers.
-Islands Architecture:: A web development architecture pattern that encourages small, focused, and independently rendered components on otherwise static pages.
-libSQL:: An open-source fork of SQLite.
-OCR:: Optical Character Recognition; the process of converting images of text into machine-encoded text.
-Pinyin:: The official romanization system for Standard Mandarin Chinese in mainland China.
-Radical:: A graphical component of a Chinese character under which the character is traditionally indexed in a dictionary.
-React:: A popular JavaScript library for building user interfaces.
-SRS:: Spaced Repetition System; a learning technique that incorporates increasing intervals of time between subsequent reviews of previously learned material.
-Turso:: A distributed database platform based on libSQL.
-Vector Database:: A database that stores and queries data as high-dimensional vectors, often used for similarity search in AI applications.
-
-== References
-. CC-CEDICT Project. https://cc-cedict.org/wiki/
-. The Unicode Consortium. _The Unicode Standard_. https://www.unicode.org/versions/latest/
-. Vaswani, A., et al. (2017). _Attention Is All You Need_. https://arxiv.org/abs/1706.03762
-
-[appendix]
-== Appendix A: Data Schema
-[[appendix-data-schema]]
-
-The following table describes the structure of a single dictionary entry object.
-
-[width="100%", cols="1,1,3", options="header"]
-|===
-| Field | Type | Description
-
-| `id`
-| string
-| A unique identifier for the entry, typically prefixed with the source (e.g., `cedict-12345`).
-
-| `simplified`
-| string
-| The word or character in Simplified Chinese.
-
-| `traditional`
-| string
-| The word or character in Traditional Chinese. Can be the same as `simplified`.
-
-| `pinyin`
-| string
-| The Pinyin transcription with tone marks.
-
-| `pinyin_numbered`
-| string
-| The Pinyin transcription with numbered tones (e.g., `ni3 hao3`).
-
-| `hanviet`
-| string
-| The Sino-Vietnamese reading of the word.
-
-| `vietnamese`
-| string
-| The definition of the word in Vietnamese.
-
-| `definitions`
-| array[object]
-| An array of definition objects. Each object contains a `source` (e.g., "cc-cedict") and `text` field.
-
-| `hsk_level`
-| number
-| The HSK level of the word, if applicable (1-6).
-
-| `components`
-| array[string]
-| An array of the individual characters that make up the word.
-
-| `stroke_count`
-| number
-| The total stroke count of the `simplified` form.
-
-| `audio_url`
-| string
-| A URL to an audio file of the word's pronunciation.
-
-| `stroke_order_data`
-| object
-| Data required to render the stroke order animation (e.g., SVG paths).
-
-| `etymology`
-| object
-| Information about the character's origin and evolution. (Future implementation)
-|===
-
-[appendix]
-== Appendix B: API Documentation
-[[appendix-api-docs]]
-
-The {project-name} API is a RESTful service that provides programmatic access to our dictionary and language tools.
-
-=== General Information
-*   **Base URL:** `{api-docs-url}`
-*   **Authentication:** All requests must include an `X-API-Key` header with your API key.
-*   **Rate Limiting:** The default rate limit is 100 requests per minute.
-*   **Responses:** All responses are in JSON format.
-
-=== Endpoints
-
-==== Search
-[discrete]
-===== `GET /search`
-Performs a search for a word or character. This is the most versatile endpoint.
-
-.Parameters
-[width="100%", cols="1,1,1,3", options="header"]
-|===
-| Name | Location | Type | Description
-
-| `q`
-| Query
-| string
-| *Required*. The search query. Can be Hanzi, Pinyin (with or without tones), or English.
-
-| `mode`
-| Query
-| string
-| The search mode. Can be `fuzzy` (default), `exact`, or `english`.
-
-| `limit`
-| Query
-| integer
-| The maximum number of results to return. Default is 20. Max is 100.
-|===
-
-.Example Request
-[source,bash]
-----
-curl -X GET "{api-docs-url}/search?q=你好" \
-     -H "X-API-Key: YOUR_API_KEY"
-----
-
-.Example Response
-[source,json]
-----
-{
-  "status": "success",
-  "data": [
-    {
-      "id": "cedict-12345",
-      "simplified": "你好",
-      "pinyin": "nǐ hǎo",
-      "definitions": [
-        {"text": "Hello! Hi! How are you?"}
-      ]
-    }
-  ]
+// CSS for custom admonition style and centered text
+[suppress]
+<style>
+.text-center { text-align: center; }
+.feature-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
 }
-----
-
-==== Dictionary
-[discrete]
-===== `GET /entry/{id}`
-Retrieves a single, complete dictionary entry by its unique ID.
-
-.Parameters
-[width="100%", cols="1,1,1,3", options="header"]
-|===
-| Name | Location | Type | Description
-
-| `id`
-| Path
-| string
-| *Required*. The unique ID of the dictionary entry (e.g., `cedict-12345`).
-|===
-
-.Example Request
-[source,bash]
-----
-curl -X GET "{api-docs-url}/entry/cedict-12345" \
-     -H "X-API-Key: YOUR_API_KEY"
-----
-
-==== OCR
-[discrete]
-===== `POST /ocr/image`
-Submits an image for character recognition.
-
-.Request Body
-The request body should be multipart/form-data, with a single field named `image` containing the image file.
-
-.Example Request
-[source,bash]
-----
-curl -X POST "{api-docs-url}/ocr/image" \
-     -H "X-API-Key: YOUR_API_KEY" \
-     -F "image=@/path/to/your/image.png"
-----
-
-.Example Response
-[source,json]
-----
-{
-  "status": "success",
-  "data": {
-    "text": "你好世界",
-    "characters": [
-      {
-        "char": "你",
-        "confidence": 0.99,
-        "bounding_box": [10, 10, 50, 50]
-      },
-      // ...
-    ]
-  }
-}
-----
-
-==== Error Responses
-If an error occurs, the API will respond with a non-200 status code and a JSON body describing the error.
-
-.Error Response Body
-[source,json]
-----
-{
-  "status": "error",
-  "code": "invalid_api_key",
-  "message": "The provided API key is not valid."
-}
-----
-
-.Common Error Codes
-[width="100%", cols="1,1,2", options="header"]
-|===
-| Code | HTTP Status | Description
-
-| `bad_request`
-| 400
-| A required parameter was missing or invalid.
-
-| `unauthorized`
-| 401
-| No API key was provided.
-
-| `invalid_api_key`
-| 403
-| The provided API key is not valid.
-
-| `rate_limit_exceeded`
-| 429
-| You have exceeded your request rate limit.
-
-| `internal_server_error`
-| 500
-| An unexpected error occurred on the server.
-|===
-
-[appendix]
-== Appendix C: Changelog
-[[appendix-changelog]]
-
-This is a summary of the major changes in each release of {project-name}.
-
-=== Version 2.0.0 (2023-10-27) - "The Architect"
-*   **Major Feature:** Rearchitected frontend with Astro for significant performance improvements (`#125`).
-*   **Major Feature:** Introduced the `public/data/chunks` system for on-demand dictionary loading (`#128`).
-*   **Improvement:** Migrated state management to Zustand for simpler global state (`#135`).
-*   **Bugfix:** Fixed an issue where stroke order animations would fail on certain characters (`#130`).
-
-=== Version 1.5.0 (2023-06-15) - "The Polyglot"
-*   **Feature:** Added `hanviet` and `vietnamese` fields to the dictionary schema (`#110`).
-*   **Feature:** Implemented basic fuzzy search using Levenshtein distance (`#112`).
-*   **Improvement:** Upgraded React to version 18 (`#105`).
-
-=== Version 1.0.0 (2023-01-20) - "The Foundation"
-*   **Initial Release**
-*   **Core Features:** React-based frontend (CRA), Express.js backend, basic dictionary search, and user accounts.
-*   **Data:** Initial dataset based on CC-CEDICT.
-
-=== Version 0.5.0 (2022-09-30) - "The Recognizer"
-*   **Major Feature:** Alpha version of the OCR engine using Tesseract.js on the client-side.
-*   **Improvement:** Refined database schema for user notebooks.
-
-=== Version 0.1.0 (2022-05-01) - "First Stroke"
-*   Project initiated.
-*   Initial proof-of-concept for a searchable Chinese dictionary.
-
-[appendix]
-== Appendix D: License
-The source code for {project-name} is licensed under the MIT License.
-
-See the `LICENSE` file for the full text.
-
-The dictionary dataset, located in `public/data`, is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-
-== Contribution Guide
-We welcome contributions! Please see our `CONTRIBUTING.adoc` guide for details on how to get started, including our code of conduct, pull request process, and development setup.
-
-To start, check out the open issues on our {github-url}/issues[GitHub issue tracker]. Issues tagged with `good first issue` are a great place to begin.
+.feature-card .title { font-size: 1.2rem; font-weight: 700; margin-top: 1rem; }
+.feature-card .icon { font-size: 2rem; }
+</style>
