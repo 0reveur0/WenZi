@@ -23,49 +23,63 @@ const {
     <title>{title}</title>
     <style is:global>
       :root {
-        --color-bg:          #f0f4f9;
-        --color-surface:     #ffffff;
-        --color-border:      #e2e8f0;
-        --color-text:        #0f172a;
-        --color-text-muted:  #64748b;
-        --color-primary:     #2b4c7e;
-        --color-primary-dim: #eef2f8;
+        --color-bg:            #f8fafc;
+        --color-surface:       #ffffff;
+        --color-border:        #e2e8f0;
+        --color-text:          #1e293b;
+        --color-text-muted:    #475569;
+        --color-primary:       #2b4c7e;
+        --color-primary-dim:   #eef2f8;
         --color-primary-hover: #1e3a63;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-        --shadow-md: 0 4px 20px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.05);
-        --radius-sm: 8px;
-        --radius-md: 14px;
-        --radius-lg: 20px;
-        --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+        --shadow-sm: 0 1px 4px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04);
+        --shadow-md: 0 4px 24px rgba(0,0,0,.09), 0 1px 4px rgba(0,0,0,.05);
+        --shadow-lg: 0 8px 40px rgba(0,0,0,.11), 0 2px 8px rgba(0,0,0,.06);
+        --radius-sm:  10px;
+        --radius-md:  16px;
+        --radius-lg:  24px;
+        --radius-xl:  32px;
+        --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+        --font-mono:  'JetBrains Mono', ui-monospace, monospace;
+        /* Typography scale */
+        --text-xs:    0.75rem;
+        --text-sm:    0.875rem;
+        --text-base:  1rem;
+        --text-lg:    1.125rem;
+        --text-xl:    1.25rem;
+        --text-2xl:   1.5rem;
+        --lh-tight:   1.4;
+        --lh-normal:  1.7;
+        --lh-relaxed: 1.85;
       }
 
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme='light']) {
-          --color-bg:          #0d1520;
-          --color-surface:     #1a2332;
-          --color-border:      #263348;
-          --color-text:        #e8edf5;
-          --color-text-muted:  #7f98b8;
-          --color-primary:     #5b8ad4;
-          --color-primary-dim: #1a2840;
+          --color-bg:            #0d1520;
+          --color-surface:       #162032;
+          --color-border:        #1e2d42;
+          --color-text:          #e2e8f0;
+          --color-text-muted:    #7f98b8;
+          --color-primary:       #5b8ad4;
+          --color-primary-dim:   #162038;
           --color-primary-hover: #7ba4e0;
-          --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
-          --shadow-md: 0 4px 20px rgba(0,0,0,.5);
+          --shadow-sm: 0 1px 4px rgba(0,0,0,.45);
+          --shadow-md: 0 4px 24px rgba(0,0,0,.55);
+          --shadow-lg: 0 8px 40px rgba(0,0,0,.65);
         }
       }
 
       [data-theme='dark'] {
-        --color-bg:          #0d1520;
-        --color-surface:     #1a2332;
-        --color-border:      #263348;
-        --color-text:        #e8edf5;
-        --color-text-muted:  #7f98b8;
-        --color-primary:     #5b8ad4;
-        --color-primary-dim: #1a2840;
+        --color-bg:            #0d1520;
+        --color-surface:       #162032;
+        --color-border:        #1e2d42;
+        --color-text:          #e2e8f0;
+        --color-text-muted:    #7f98b8;
+        --color-primary:       #5b8ad4;
+        --color-primary-dim:   #162038;
         --color-primary-hover: #7ba4e0;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
-        --shadow-md: 0 4px 20px rgba(0,0,0,.5);
+        --shadow-sm: 0 1px 4px rgba(0,0,0,.45);
+        --shadow-md: 0 4px 24px rgba(0,0,0,.55);
+        --shadow-lg: 0 8px 40px rgba(0,0,0,.65);
       }
 
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,8 +92,10 @@ const {
         min-height: 100dvh;
         display: flex;
         flex-direction: column;
-        line-height: 1.6;
+        line-height: var(--lh-normal);
+        font-size: 1rem;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         transition: background 0.2s, color 0.2s;
       }
 
@@ -88,9 +104,22 @@ const {
       a:hover { text-decoration: underline; }
       img, svg { display: block; max-width: 100%; }
 
+      /* Global focus visible for accessibility */
+      :focus-visible {
+        outline: 2.5px solid var(--color-primary);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
       ::selection {
         background: var(--color-primary);
         color: #fff;
+      }
+
+      /* Hanzi font rendering — smoother on all platforms */
+      [lang='zh'] {
+        font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'SimSun', serif;
+        font-weight: 400;
       }
     </style>
     <script is:inline>

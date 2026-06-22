@@ -157,180 +157,182 @@ const pageTitle = `${simplified} — WenZi`;
 <style>
   .page { display: flex; flex-direction: column; min-height: 100dvh; }
 
-  .detail { flex: 1; padding: 2rem 1.5rem 4rem; }
+  .detail { flex: 1; padding: 2rem 1.25rem 5rem; }
+  @media (min-width: 640px) { .detail { padding: 2.5rem 2rem 5rem; } }
+
   .container {
-    max-width: 680px;
+    max-width: 720px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
-  /* Character card */
+  /* ── Character card ────────────────────────────────────────────────── */
   .char-card {
     background: var(--color-primary);
-    border-radius: 24px;
-    padding: 2.5rem 2rem;
-    box-shadow: 0 8px 32px color-mix(in srgb, var(--color-primary) 35%, transparent);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2rem 2.5rem;
+    box-shadow: 0 12px 48px color-mix(in srgb, var(--color-primary) 45%, transparent);
   }
   .char-card-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    gap: 1.25rem;
   }
   .char-display {
     display: flex;
     align-items: flex-end;
-    gap: 1.5rem;
+    gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
   }
   .char-main {
-    font-size: clamp(4.5rem, 18vw, 8rem);
+    font-size: clamp(5rem, 22vw, 9rem);
     line-height: 1;
     color: #fff;
     font-weight: 300;
     letter-spacing: -.02em;
-    text-shadow: 0 4px 24px rgba(0,0,0,.2);
+    text-shadow: 0 6px 32px rgba(0,0,0,.25);
   }
   .char-trad-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .25rem;
-    padding-bottom: .75rem;
+    gap: .3rem;
+    padding-bottom: .85rem;
   }
   .char-trad-label {
     font-size: .65rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    color: rgba(255,255,255,.55);
+    letter-spacing: .1em;
+    color: rgba(255,255,255,.5);
   }
   .char-trad {
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
-    color: rgba(255,255,255,.75);
+    font-size: clamp(1.75rem, 6vw, 2.75rem);
+    color: rgba(255,255,255,.8);
     font-weight: 300;
   }
-  .char-meta { display: flex; flex-direction: column; gap: .35rem; }
+  .char-meta { display: flex; flex-direction: column; gap: .5rem; }
   .char-pinyin {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-style: italic;
-    color: rgba(255,255,255,.9);
-    letter-spacing: .02em;
+    color: rgba(255,255,255,.95);
+    letter-spacing: .04em;
+    font-weight: 400;
   }
   .char-hanviet {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: rgba(255,255,255,.7);
+    line-height: var(--lh-normal);
   }
-  .char-hanviet strong { color: rgba(255,255,255,.9); font-weight: 600; }
+  .char-hanviet strong { color: rgba(255,255,255,.95); font-weight: 700; }
 
-  /* Bilingual meaning card */
+  /* ── Bilingual meaning card ────────────────────────────────────────── */
   .meaning-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 20px;
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
   }
   .meaning-row {
-    padding: 1.1rem 1.5rem;
+    padding: 1.4rem 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: .45rem;
+    gap: .6rem;
     transition: background .2s;
   }
-  .meaning-row.active {
-    background: var(--color-primary-dim);
-  }
+  .meaning-row.active { background: var(--color-primary-dim); }
   .meaning-divider {
     height: 1px;
     background: var(--color-border);
-    margin: 0 1rem;
+    margin: 0 1.25rem;
   }
   .meaning-lang-tag {
     display: flex;
     align-items: center;
-    gap: .4rem;
+    gap: .45rem;
   }
-  .flag { font-size: .9rem; line-height: 1; }
+  .flag { font-size: 1rem; line-height: 1; }
   .lang-name {
-    font-size: .68rem;
+    font-size: .7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .07em;
+    letter-spacing: .08em;
     color: var(--color-text-muted);
   }
   .meaning-row.active .lang-name { color: var(--color-primary); }
   .meaning-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--color-text);
-    line-height: 1.45;
+    line-height: var(--lh-relaxed);
   }
   .meaning-row.active .meaning-text { color: var(--color-primary); }
 
-  /* Examples card */
+  /* ── Examples card ─────────────────────────────────────────────────── */
   .examples-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.75rem;
   }
-  .examples-header {
-    margin-bottom: .9rem;
-  }
+  .examples-header { margin-bottom: 1.1rem; }
   .examples-label {
     font-size: .72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .07em;
+    letter-spacing: .09em;
     color: var(--color-text-muted);
   }
   .examples-list {
     display: flex;
     flex-direction: column;
-    gap: .85rem;
+    gap: 1rem;
   }
   :global(.example-item) {
-    border-left: 3px solid var(--color-primary-dim);
-    padding: .6rem .85rem;
-    border-radius: 0 10px 10px 0;
-    background: #f8fafc;
+    border-left: 3px solid var(--color-primary);
+    padding: .85rem 1.1rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: var(--color-bg);
   }
   :global([data-theme='dark'] .example-item) { background: rgba(255,255,255,.04); }
   :global(.example-cn) {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: .28rem;
+    margin-bottom: .4rem;
+    line-height: var(--lh-normal);
   }
   :global(.example-en) {
-    font-size: .88rem;
+    font-size: .95rem;
     color: var(--color-text-muted);
     font-style: italic;
-    line-height: 1.5;
+    line-height: var(--lh-relaxed);
   }
   :global(.example-vi) {
-    font-size: .88rem;
+    font-size: .95rem;
     color: var(--color-primary);
-    line-height: 1.5;
-    margin-top: .15rem;
+    line-height: var(--lh-relaxed);
+    margin-top: .25rem;
+    font-weight: 500;
   }
 
-  /* Actions */
-  .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+  /* ── Actions ────────────────────────────────────────────────────────── */
+  .actions { display: flex; gap: .85rem; flex-wrap: wrap; }
   .action-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: .65rem 1.25rem;
-    border-radius: 12px;
-    font-size: .9rem;
-    font-weight: 500;
+    gap: 9px;
+    padding: .75rem 1.4rem;
+    border-radius: var(--radius-md);
+    font-size: .95rem;
+    font-weight: 600;
     cursor: pointer;
     border: 1.5px solid var(--color-border);
     background: var(--color-surface);
@@ -360,42 +362,43 @@ const pageTitle = `${simplified} — WenZi`;
   }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
 
-  /* Info pills */
+  /* ── Info pills ─────────────────────────────────────────────────────── */
   .info-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: .6rem;
+    gap: .75rem;
   }
   .pill {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
-    padding: .65rem 1.1rem;
+    padding: .8rem 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: .2rem;
-    min-width: 90px;
+    gap: .3rem;
+    min-width: 100px;
   }
   .pill-label {
-    font-size: .65rem;
+    font-size: .68rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .07em;
+    letter-spacing: .08em;
     color: var(--color-text-muted);
   }
   .pill-value {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-text);
     letter-spacing: .01em;
+    line-height: 1.3;
   }
 
   .footer {
     border-top: 1px solid var(--color-border);
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem;
     text-align: center;
-    font-size: .78rem;
+    font-size: .82rem;
     color: var(--color-text-muted);
   }
 </style>
