@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WordPage from '../../components/dictionary/WordPage';
+import { શબ્દ } from '../../lib/schema';
+
+// Note: This is a placeholder for how you might fetch data.
+// You will need to replace this with your actual data fetching logic.
+const mockWordData = {
+    id: 1,
+    simplified: '你好',
+    traditional: '你好',
+    pinyin: 'nǐ hǎo',
+    hanviet: 'nễ hảo',
+    partOfSpeech: 'Interjection',
+    hsk: 1,
+    tocfl: 1,
+    frequency: 5,
+    meaning_vi: 'xin chào',
+    meaning_en: 'hello',
+    examples: [
+        {
+            id: 1,
+            word_id: 1,
+            sentence: '你好，世界！',
+            translation_vi: 'Chào thế giới!',
+            translation_en: 'Hello, World!'
+        }
+    ],
+    synonyms: [],
+    antonyms: [],
+    collocations: [],
+    related_words: []
+};
+
+const { slug } = Astro.params;
+---
+<BaseLayout title={`Word: ${slug}`}>
+    <WordPage client:load wordData={mockWordData} />
+</BaseLayout>
