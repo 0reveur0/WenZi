@@ -26,4 +26,4 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ id, hanzi, pinyin, meanin
   );
 };
 
-export default CharacterCard;
+export default React.memo(CharacterCard);

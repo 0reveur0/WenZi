@@ -19,4 +19,4 @@ const WordCard: React.FC<WordCardProps> = ({ id, hanzi, pinyin, meaning }) => {
   );
 };
 
-export default WordCard;
+export default React.memo(WordCard);

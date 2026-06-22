@@ -19,9 +19,9 @@ export function getMeaning(
 ): string {
   const l = lang ?? getLang();
   if (l === 'en') {
-    return entry.meaning_en || entry.vietnamese || '';
+    return entry.meaning_en || '';
   }
-  return entry.meaning_vi || entry.vietnamese || entry.meaning_en || '';
+  return entry.meaning_vi || entry.vietnamese || '';
 }
 
 export const UI = {

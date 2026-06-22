@@ -22,4 +22,4 @@ const CharBreakdown: React.FC<CharBreakdownProps> = ({ word }) => {
   );
 };
 
-export default CharBreakdown;
+export default React.memo(CharBreakdown);

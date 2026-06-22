@@ -168,7 +168,7 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
         <div class="grid gap-4 md:grid-cols-[1fr_320px] lg:grid-cols-[280px_1fr_320px]">
 
           <aside class="hidden lg:block space-y-4">
-            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+            <section class="rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
               <div class="mb-4 flex items-center gap-3">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-100 text-rose-600">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
@@ -187,13 +187,13 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
                     <span class={`mt-1 inline-flex h-7 w-7 items-center justify-center rounded-2xl ${index < 3 ? 'bg-sky-600 text-white' : 'bg-slate-200 text-slate-700'} text-xs font-semibold`}>
                       {index + 1}
                     </span>
-                    <p class="text-sm leading-6 text-slate-700">{question}</p>
+                    <p class="break-words text-sm leading-6 text-slate-700">{question}</p>
                   </li>
                 ))}
               </ol>
             </section>
 
-            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+            <section class="rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
               <div class="mb-4 flex items-center gap-3">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">
                   <Grid class="h-5 w-5" />
@@ -220,7 +220,7 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
           </aside>
 
           <section class="space-y-4">
-            <div class="rounded-[32px] bg-white border border-slate-200/80 p-5 shadow-sm transition hover:shadow-md">
+            <div class="rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm transition hover:shadow-md">
               <div class="flex items-center gap-4">
                 <div class="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-sm font-bold text-white">{currentUser.avatar}</div>
                 <button id="create-post-btn" type="button" class="flex-1 rounded-full border border-slate-200/80 bg-slate-50 px-4 py-3 text-left text-sm text-slate-500 transition hover:border-slate-300 hover:bg-white">
@@ -237,54 +237,11 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
               ))}
             </div>
 
-            <div id="post-list" class="space-y-4">
-              {POSTS.map((post) => (
-                <article class={`rounded-[28px] border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${post.pinned ? 'ring-1 ring-sky-200' : ''}`} data-id={post.id}>
-                  <div class="flex flex-wrap items-start justify-between gap-3">
-                    <div class="flex items-center gap-3">
-                      <div class="flex h-12 w-12 items-center justify-center rounded-3xl text-sm font-bold text-white" style={`background:${post.color}`}>
-                        {post.avatar}
-                      </div>
-                      <div class="min-w-0">
-                        <p class="text-sm font-semibold text-slate-950">{post.name}</p>
-                        <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                          {post.role && <span class={`rounded-full px-2 py-1 ${post.role === 'BTV' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700'}`}>{post.role}</span>}
-                          <span>{post.time}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-slate-500">
-                      {post.pinned && (
-                        <span class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1 text-sky-700">
-                          <Pin class="h-3.5 w-3.5" /> Ghim
-                        </span>
-                      )}
-                      <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-600">{post.category}</span>
-                    </div>
-                  </div>
-                  <h2 class="mt-5 text-lg font-extrabold leading-7 text-slate-950 transition hover:text-sky-600">{post.title}</h2>
-                  <p class="mt-3 text-sm leading-7 text-slate-600">{post.content}</p>
-                  <div class="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-200/80 pt-4 text-sm text-slate-600">
-                    <button class={`post-stat inline-flex items-center gap-2 rounded-full px-3 py-2 transition ${post.liked ? 'bg-rose-50 text-rose-600' : 'hover:bg-slate-100'}`} type="button" data-like={post.id}>
-                      <Heart class="h-4 w-4" />
-                      <span>{post.likes}</span>
-                    </button>
-                    <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 hover:bg-slate-100">
-                      <MessageCircle class="h-4 w-4" />
-                      <span>{post.comments}</span>
-                    </span>
-                    <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 hover:bg-slate-100">
-                      <Eye class="h-4 w-4" />
-                      <span>{post.views}</span>
-                    </span>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <div id="post-list" class="space-y-4"></div>
           </section>
 
           <aside class="hidden md:block space-y-4">
-            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+            <section class="rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
               <label class="relative block text-slate-900">
                 <span class="sr-only">Tìm kiếm bài viết</span>
                 <Search class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
@@ -292,7 +249,7 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
               </label>
             </section>
 
-            <section class="rounded-[28px] bg-white border border-slate-200/80 p-5 shadow-sm">
+            <section class="rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
               <div class="mb-5 flex items-center gap-3">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
                   <Crown class="h-5 w-5" />
@@ -318,7 +275,7 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
     </main>
 
     <div id="modal-post" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm">
-      <div class="w-full max-w-xl rounded-[30px] bg-white p-6 shadow-2xl">
+      <div class="w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl">
         <div class="mb-6 flex items-center justify-between">
           <div>
             <p class="text-lg font-bold text-slate-950">Đăng bài mới</p>
@@ -330,7 +287,7 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
             </svg>
           </button>
         </div>
-        <div class="grid gap-4">
+        <div class.grid.gap-4>
           <input id="new-post-title" type="text" placeholder="Tiêu đề bài viết..." class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100" maxlength="120" />
           <textarea id="new-post-content" rows="5" placeholder="Nội dung bài viết..." class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100 resize-none" maxlength="1000"></textarea>
           <select id="new-post-cat" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100">
@@ -359,31 +316,20 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
 </BaseLayout>
 
 <style>
-  /* Typography improvements for community page */
-
-  /* Post title: bump from text-lg (1.125rem) to slightly larger with better weight */
-  :global(.community-post h2),
   :global(h2.text-lg.font-extrabold) {
     font-size: 1.2rem;
     line-height: 1.55;
     letter-spacing: -.01em;
   }
 
-  /* Post body content: bump from text-sm (0.875rem) to 0.975rem */
   :global(p.text-sm.leading-7) {
     font-size: .975rem;
     line-height: 1.85;
   }
 
-  /* Hot questions list items */
   :global(p.text-sm.leading-6) {
     font-size: .925rem;
     line-height: 1.7;
-  }
-
-  /* Category / sidebar labels */
-  :global(.sidebar-section p.text-sm) {
-    font-size: .925rem;
   }
 </style>
 
@@ -403,7 +349,7 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
   const modalCancel = document.getElementById('modal-post-cancel');
   const modalSubmit = document.getElementById('modal-post-submit');
   const newTitle = document.getElementById('new-post-title');
-  const newContent = document.getElementById('new-post-content');
+  const newContent =.getElementById('new-post-content');
   const newCat = document.getElementById('new-post-cat');
   const filterButtons = Array.from(document.querySelectorAll('.filter-tab'));
   const categoryButtons = Array.from(document.querySelectorAll('[data-cat]'));
@@ -420,18 +366,18 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
   function renderPosts(postsToRender) {
     if (!postList) return;
     if (postsToRender.length === 0) {
-      postList.innerHTML = `<div class="rounded-[28px] border border-slate-200/80 bg-white p-8 text-center text-sm text-slate-500 shadow-sm">Không tìm thấy bài viết phù hợp.</div>`;
+      postList.innerHTML = `<div class="rounded-3xl border border-slate-200/80 bg-white p-8 text-center text-sm text-slate-500 shadow-sm">Không tìm thấy bài viết phù hợp.</div>`;
       return;
     }
 
     postList.innerHTML = postsToRender
       .map((post) => `
-      <article class="rounded-[28px] border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${post.pinned ? 'ring-1 ring-sky-200' : ''}" data-id="${post.id}">
+      <article class="rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${post.pinned ? 'ring-1 ring-sky-200' : ''}" data-id="${post.id}">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <div class="flex h-12 w-12 items-center justify-center rounded-3xl text-sm font-bold text-white" style="background: ${post.color}">${post.avatar}</div>
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-3xl text-sm font-bold text-white flex-shrink-0" style="background: ${post.color}">${post.avatar}</div>
             <div class="min-w-0">
-              <p class="text-sm font-semibold text-slate-950">${post.name}</p>
+              <p class="text-sm font-semibold text-slate-950 truncate">${post.name}</p>
               <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
                 ${post.role ? `<span class="rounded-full px-2 py-1 ${post.role === 'BTV' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700'}">${post.role}</span>` : ''}
                 <span>${post.time}</span>
@@ -439,12 +385,12 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
             </div>
           </div>
           <div class="flex items-center gap-2 text-xs text-slate-500">
-            ${post.pinned ? `<span class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1 text-sky-700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5"><path d="M6 2h12v4H6z"></path><path d="M12 6v16"></path></svg>Ghim</span>` : ''}
+            ${post.pinned ? `<span class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1 text-sky-700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5"><path d="M6 2h12v4H6z"/><path d="M12 6v16"/></svg>Ghim</span>` : ''}
             <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-600">${post.category}</span>
           </div>
         </div>
-        <h2 class="mt-5 text-lg font-extrabold leading-7 text-slate-950 transition hover:text-sky-600">${post.title}</h2>
-        <p class="mt-3 text-sm leading-7 text-slate-600">${post.content}</p>
+        <h2 class="mt-5 text-lg font-extrabold leading-7 text-slate-950 transition hover:text-sky-600 break-words">${post.title}</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-600 break-words">${post.content}</p>
         <div class="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-200/80 pt-4 text-sm text-slate-600">
           <button class="inline-flex items-center gap-2 rounded-full px-3 py-2 transition ${post.liked ? 'bg-rose-50 text-rose-600' : 'hover:bg-slate-100'}" data-like="${post.id}" type="button">
             <svg viewBox="0 0 24 24" fill="${post.liked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"> <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -598,10 +544,10 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
     };
     posts.unshift(newPost);
     filteredPosts = [...posts];
+    renderPosts(filteredPosts); // Rerender with the new post immediately
     modalPost?.classList.add('hidden');
     newTitle.value = '';
     newContent.value = '';
-    renderPosts(filteredPosts);
   });
 
   modalPost?.addEventListener('click', (event) => {
@@ -609,13 +555,18 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
       modalPost.classList.add('hidden');
     }
   });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+      renderPosts(posts);
+      renderLeaderboard('tuần');
+  });
 
-  updateFilters('Tất cả');
-  renderLeaderboard('tuần');
   lbTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      lbTabs.forEach((item) => item.classList.remove('bg-slate-900', 'text-white'));
-      lbTabs.forEach((item) => item.classList.add('bg-slate-50', 'text-slate-600'));
+      lbTabs.forEach((item) => {
+        item.classList.remove('bg-slate-900', 'text-white');
+        item.classList.add('bg-slate-50', 'text-slate-600');
+    });
       tab.classList.remove('bg-slate-50', 'text-slate-600');
       tab.classList.add('bg-slate-900', 'text-white');
       renderLeaderboard(tab.dataset.period || 'tuần');

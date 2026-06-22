@@ -24,7 +24,7 @@ const { backHref, activePage = 'home' } = Astro.props;
       </a>
     ) : (
       <a href="/" class="brand" aria-label="WenZi — Trang chủ">
-        <img src="/favicon.png" alt="" width="32" height="32" class="brand-logo" />
+        <img src="/logo.png" alt="" width="40" height="40" class="brand-logo" />
         <span class="brand-name">WenZi</span>
       </a>
     )}
@@ -196,21 +196,21 @@ const { backHref, activePage = 'home' } = Astro.props;
   .brand {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 12px;
     text-decoration: none;
     flex-shrink: 0;
   }
   .brand-logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     object-fit: contain;
     flex-shrink: 0;
   }
   .brand-name {
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: -.02em;
+    font-size: 1.15rem;
+    letter-spacing: -.03em;
     color: var(--color-text);
   }
 
