@@ -350,12 +350,18 @@ const ICONS = { Grid, Heart, MessageCircle, Eye, Pin, Search, Crown, MessageSqua
       WenZi © 2026 — MIT License
     </footer>
   </div>
+
+  <div id="__community_data__" hidden
+    data-posts={JSON.stringify(POSTS)}
+    data-categories={JSON.stringify(CATEGORIES)}
+    data-lb={JSON.stringify(LEADERBOARD)}
+  ></div>
 </BaseLayout>
 
-<script type="module">
-  const POSTS_DATA = ${JSON.stringify(POSTS)};
-  const CATEGORIES_DATA = ${JSON.stringify(CATEGORIES)};
-  const LB_DATA = ${JSON.stringify(LEADERBOARD)};
+<script is:inline>
+  const POSTS_DATA = JSON.parse(document.getElementById('__community_data__').dataset.posts);
+  const CATEGORIES_DATA = JSON.parse(document.getElementById('__community_data__').dataset.categories);
+  const LB_DATA = JSON.parse(document.getElementById('__community_data__').dataset.lb);
 
   let activeCategory = '';
   let filteredPosts = [...POSTS_DATA];

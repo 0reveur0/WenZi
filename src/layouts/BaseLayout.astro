@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title?: string;
   description?: string;
@@ -90,9 +92,6 @@ const {
         background: var(--color-primary);
         color: #fff;
       }
-    </style>
-    <style is:global>
-      @import '../styles/global.css';
     </style>
     <script is:inline>
       (function () {
