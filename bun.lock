@@ -9,6 +9,7 @@
         "@tailwindcss/vite": "^4.3.1",
         "astro": "^5.9.4",
         "hanzi-writer": "^3.7.3",
+        "lucide-astro": "^0.556.0",
         "sql.js": "^1.14.1",
         "tailwindcss": "^4.3.1",
       },
@@ -507,6 +508,8 @@
     "longest-streak": ["longest-streak@3.1.0", "http://package-firewall.replit.local/npm/longest-streak/-/longest-streak-3.1.0.tgz", {}, "sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g=="],
 
     "lru-cache": ["lru-cache@11.5.1", "http://package-firewall.replit.local/npm/lru-cache/-/lru-cache-11.5.1.tgz", {}, "sha512-RPimw/7aMdv2oqRrxKwvZXcPfwBrn/JZ2xYcY9Hus/6LaS3VOAKVWKWgNLCFSiOm1ESXinjsDlidVU7JlnCN2A=="],
+
+    "lucide-astro": ["lucide-astro@0.556.0", "http://package-firewall.replit.local/npm/lucide-astro/-/lucide-astro-0.556.0.tgz", { "peerDependencies": { "astro": ">=2.7.1" } }, "sha512-ugMjPb45AMfkLCaduNSbyy5NQEKvB1TxVVMmUS4S6L807PMESnX0Qp+DIKHjbyjJmPXOyLRbrzvR3YikTK7brg=="],
 
     "magic-string": ["magic-string@0.30.21", "http://package-firewall.replit.local/npm/magic-string/-/magic-string-0.30.21.tgz", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 

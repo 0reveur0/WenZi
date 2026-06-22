@@ -1,7 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import { Activity, Bell, BookOpen, HelpCircle, Inbox, LogOut, MonitorSmartphone } from 'lucide-astro';
-import logo from '../../favicon.png';
 
 interface Props {
   backHref?: string;
@@ -24,7 +23,7 @@ const { backHref, activePage = 'home' } = Astro.props;
       </a>
     ) : (
       <a href="/" class="brand" aria-label="WenZi — Trang chủ">
-        <img src={logo.src} alt="" width="32" height="32" class="brand-logo" />
+        <img src="/favicon.png" alt="" width="32" height="32" class="brand-logo" />
         <span class="brand-name">WenZi</span>
       </a>
     )}
